@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2ABE973D-4840-4978-97A5-754922B3245B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Intelbras.CRM2013.Application.SiteIntelbras</RootNamespace>
+    <AssemblyName>Intelbras.CRM2013.Application.SiteIntelbras</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RestSharp.105.2.3\lib\net452\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Integrador.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RespostaLogin.cs" />
+    <Compile Include="RespostaPut.cs" />
+    <Compile Include="RespostaToken.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DAL\Intelbras.CRM2013.DAL\Intelbras.CRM2013.DAL.csproj">
+      <Project>{3f0cb21f-57a3-4b01-9358-2c6e4452fff7}</Project>
+      <Name>Intelbras.CRM2013.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Domain\Intelbras.CRM2013.Domain\Intelbras.CRM2013.Domain.csproj">
+      <Project>{ead3a0c5-db56-40be-a2fa-48541997f852}</Project>
+      <Name>Intelbras.CRM2013.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SDKore\SDKore.Crm\SDKore.Crm.csproj">
+      <Project>{0a4cfa2f-0cbe-4840-b594-f70f630604d7}</Project>
+      <Name>SDKore.Crm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SDKore\SDKore\SDKore.csproj">
+      <Project>{d13ad9c0-3498-4f41-a385-eecc7883dab0}</Project>
+      <Name>SDKore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util\Intelbras.CRM2013.Util\Intelbras.CRM2013.Util.csproj">
+      <Project>{dc24a936-f29b-46a8-9139-96d140a527c6}</Project>
+      <Name>Intelbras.CRM2013.Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

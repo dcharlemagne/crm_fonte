@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="C#" CodeBehind="Intelbras.asmx.cs" Class="Intelbras.CRM2013.Application.WebServices.Intelbras.Intelbras" %>

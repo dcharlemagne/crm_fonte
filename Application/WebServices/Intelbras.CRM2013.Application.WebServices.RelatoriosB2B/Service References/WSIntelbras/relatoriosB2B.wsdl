@@ -1,0 +1,1837 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="urn:relatorios:crm:intelbras.com.br" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:S2="urn:relatorios:crm:intelbras.com.br:relatoriosB2B" xmlns:S1="urn:soap-fault:details" xmlns:prodata="urn:schemas-progress-com:xml-prodata:0001" name="relatoriosB2B" targetNamespace="urn:relatorios:crm:intelbras.com.br" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>EncodingType=DOC_LITERAL, WSA_Product=11.5 - Fri Nov 28 18:10:07 EST 2014</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="urn:soap-fault:details">
+      <xsd:element name="FaultDetail">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="errorMessage" type="xsd:string" />
+            <xsd:element name="requestID" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:relatorios:crm:intelbras.com.br:relatoriosB2B">
+      <xsd:complexType name="ListagemCotasRepres_ttCotaFinalRow">
+        <xsd:sequence>
+          <xsd:element name="cod-estabel" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-diretoria" nillable="true" type="xsd:string" />
+          <xsd:element name="nome-diretoria" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-gerente" nillable="true" type="xsd:int" />
+          <xsd:element name="nome-gerente" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-rep" nillable="true" type="xsd:int" />
+          <xsd:element name="nome-abrev" nillable="true" type="xsd:string" />
+          <xsd:element name="fm-cod-com" nillable="true" type="xsd:string" />
+          <xsd:element name="desc-fm-cod-com" nillable="true" type="xsd:string" />
+          <xsd:element name="desc-unid-negoc" nillable="true" type="xsd:string" />
+          <xsd:element name="it-codigo" nillable="true" type="xsd:string" />
+          <xsd:element name="desc-item" nillable="true" type="xsd:string" />
+          <xsd:element name="qt-cota" nillable="true" type="xsd:int" />
+          <xsd:element name="qt-faturado" nillable="true" type="xsd:int" />
+          <xsd:element name="qt-devolvido" nillable="true" type="xsd:int" />
+          <xsd:element name="qt-carteira" nillable="true" type="xsd:int" />
+          <xsd:element name="qt-fatmenosdev" nillable="true" type="xsd:decimal" />
+          <xsd:element name="qt-faturar" nillable="true" type="xsd:decimal" />
+          <xsd:element name="qt-saldo-vender" nillable="true" type="xsd:decimal" />
+          <xsd:element name="perc-realizado" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ListagemCotasRepres_ttCotaFinalParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttCotaFinalRow" type="S2:ListagemCotasRepres_ttCotaFinalRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ListagemCotasRepres_ttErroRow">
+        <xsd:sequence>
+          <xsd:element name="mensagem" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ListagemCotasRepres_ttErroParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttErroRow" type="S2:ListagemCotasRepres_ttErroRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CurvaABCRepres_ttCurvaRow">
+        <xsd:sequence>
+          <xsd:element name="cod-gr-cli" nillable="true" type="xsd:int" />
+          <xsd:element name="descricao" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-emitente" nillable="true" type="xsd:int" />
+          <xsd:element name="cod-unid-negoc" nillable="true" type="xsd:string" />
+          <xsd:element name="nome-emit" nillable="true" type="xsd:string" />
+          <xsd:element name="des-unid-negoc" nillable="true" type="xsd:string" />
+          <xsd:element name="total-periodo" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CurvaABCRepres_ttCurvaParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttCurvaRow" type="S2:CurvaABCRepres_ttCurvaRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DetalheFaturamentoCliente_ttDetalheRow">
+        <xsd:sequence>
+          <xsd:element name="familia" nillable="true" type="xsd:string" />
+          <xsd:element name="origem" nillable="true" type="xsd:string" />
+          <xsd:element name="desc-familia" nillable="true" type="xsd:string" />
+          <xsd:element name="desc-origem" nillable="true" type="xsd:string" />
+          <xsd:element name="unid-neg" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="6" maxOccurs="6" name="periodo" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="6" maxOccurs="6" name="quantidade" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="6" maxOccurs="6" name="valor" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="6" maxOccurs="6" name="valor-total" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="6" maxOccurs="6" name="registros" nillable="true" type="xsd:int" />
+          <xsd:element name="carteira-qtde" nillable="true" type="xsd:int" />
+          <xsd:element name="carteira-valor" nillable="true" type="xsd:decimal" />
+          <xsd:element name="carteira-valor-total" nillable="true" type="xsd:decimal" />
+          <xsd:element name="carteira-regs" nillable="true" type="xsd:int" />
+          <xsd:element name="faturado-qtde" nillable="true" type="xsd:int" />
+          <xsd:element name="faturado-valor" nillable="true" type="xsd:decimal" />
+          <xsd:element name="faturado-valor-total" nillable="true" type="xsd:decimal" />
+          <xsd:element name="faturado-regs" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DetalheFaturamentoCliente_ttDetalheParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttDetalheRow" type="S2:DetalheFaturamentoCliente_ttDetalheRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ListagemDevolClientes_ttDevolucaoRow">
+        <xsd:sequence>
+          <xsd:element name="cod-rep" nillable="true" type="xsd:int" />
+          <xsd:element name="nome-abrev" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-emitente" nillable="true" type="xsd:int" />
+          <xsd:element name="nome-emit" nillable="true" type="xsd:string" />
+          <xsd:element name="nr-nota-fis" nillable="true" type="xsd:string" />
+          <xsd:element name="serie" nillable="true" type="xsd:string" />
+          <xsd:element name="it-codigo" nillable="true" type="xsd:string" />
+          <xsd:element name="desc-item" nillable="true" type="xsd:string" />
+          <xsd:element name="cod_unid_negoc" nillable="true" type="xsd:string" />
+          <xsd:element name="des_unid_negoc" nillable="true" type="xsd:string" />
+          <xsd:element name="dt-devol" nillable="true" type="xsd:date" />
+          <xsd:element name="sequencia" nillable="true" type="xsd:int" />
+          <xsd:element name="preco-total" nillable="true" type="xsd:decimal" />
+          <xsd:element name="qt-devolvida" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ListagemDevolClientes_ttDevolucaoParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttDevolucaoRow" type="S2:ListagemDevolClientes_ttDevolucaoRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DetalheCliente_ttEmitenteRow">
+        <xsd:sequence>
+          <xsd:element name="cod-emitente" nillable="true" type="xsd:int" />
+          <xsd:element name="nome-emit" nillable="true" type="xsd:string" />
+          <xsd:element name="cgc" nillable="true" type="xsd:string" />
+          <xsd:element name="ins-estadual" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="2" maxOccurs="2" name="telefone" nillable="true" type="xsd:string" />
+          <xsd:element name="endereco" nillable="true" type="xsd:string" />
+          <xsd:element name="bairro" nillable="true" type="xsd:string" />
+          <xsd:element name="cidade" nillable="true" type="xsd:string" />
+          <xsd:element name="estado" nillable="true" type="xsd:string" />
+          <xsd:element name="cep" nillable="true" type="xsd:string" />
+          <xsd:element name="endereco-cob" nillable="true" type="xsd:string" />
+          <xsd:element name="bairro-cob" nillable="true" type="xsd:string" />
+          <xsd:element name="cidade-cob" nillable="true" type="xsd:string" />
+          <xsd:element name="estado-cob" nillable="true" type="xsd:string" />
+          <xsd:element name="cep-cob" nillable="true" type="xsd:string" />
+          <xsd:element name="lim-credito" nillable="true" type="xsd:decimal" />
+          <xsd:element name="dt-lim-cred" nillable="true" type="xsd:date" />
+          <xsd:element name="cod-suframa" nillable="true" type="xsd:string" />
+          <xsd:element name="bonificacao" nillable="true" type="xsd:decimal" />
+          <xsd:element name="ind-cred-cli" nillable="true" type="xsd:int" />
+          <xsd:element name="observacoes" nillable="true" type="xsd:string" />
+          <xsd:element name="categoria" nillable="true" type="xsd:string" />
+          <xsd:element name="ds-gr-cli" nillable="true" type="xsd:string" />
+          <xsd:element name="desc-pontual" nillable="true" type="xsd:decimal" />
+          <xsd:element name="contrato-vendor" nillable="true" type="xsd:boolean" />
+          <xsd:element name="consumidor-final" nillable="true" type="xsd:boolean" />
+          <xsd:element name="cod-estabel" nillable="true" type="xsd:string" />
+          <xsd:element name="indice" nillable="true" type="xsd:int" />
+          <xsd:element name="val-limite-supcard" nillable="true" type="xsd:decimal" />
+          <xsd:element name="val-limite-intelbras" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DetalheCliente_ttEmitenteParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttEmitenteRow" type="S2:DetalheCliente_ttEmitenteRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DetalheCliente_ttContEmitRow">
+        <xsd:sequence>
+          <xsd:element name="cod-emit" nillable="true" type="xsd:int" />
+          <xsd:element name="sequencia" nillable="true" type="xsd:int" />
+          <xsd:element name="nome" nillable="true" type="xsd:string" />
+          <xsd:element name="e-mail" nillable="true" type="xsd:string" />
+          <xsd:element name="telefone" nillable="true" type="xsd:string" />
+          <xsd:element name="ramal" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DetalheCliente_ttContEmitParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttContEmitRow" type="S2:DetalheCliente_ttContEmitRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ListagemPedidosCliente_ttPedVendaRow">
+        <xsd:sequence>
+          <xsd:element name="cod-emitente" nillable="true" type="xsd:int" />
+          <xsd:element name="nome-emit" nillable="true" type="xsd:string" />
+          <xsd:element name="nome-abrev" nillable="true" type="xsd:string" />
+          <xsd:element name="nr-pedcli" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-estabel" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-sit-ped" nillable="true" type="xsd:int" />
+          <xsd:element name="cod-sit-aval" nillable="true" type="xsd:int" />
+          <xsd:element name="desc-cancela" nillable="true" type="xsd:string" />
+          <xsd:element name="dt-entrega" nillable="true" type="xsd:date" />
+          <xsd:element name="dt-emissao" nillable="true" type="xsd:date" />
+          <xsd:element name="no-ab-reppri" nillable="true" type="xsd:string" />
+          <xsd:element name="vl-liq-ped" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-tot-ped" nillable="true" type="xsd:decimal" />
+          <xsd:element name="desc-cond-pagto" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ListagemPedidosCliente_ttPedVendaParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttPedVendaRow" type="S2:ListagemPedidosCliente_ttPedVendaRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DetalhePedidos_ttPedVendaRow">
+        <xsd:sequence>
+          <xsd:element name="nome-abrev" nillable="true" type="xsd:string" />
+          <xsd:element name="nr-pedcli" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-emitente" nillable="true" type="xsd:int" />
+          <xsd:element name="nome-emit" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-estabel" nillable="true" type="xsd:string" />
+          <xsd:element name="observacoes" nillable="true" type="xsd:string" />
+          <xsd:element name="desc-bloq-cr" nillable="true" type="xsd:string" />
+          <xsd:element name="cond-espec" nillable="true" type="xsd:string" />
+          <xsd:element name="vendor" nillable="true" type="xsd:boolean" />
+          <xsd:element name="vendor-taxa" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vendor-dias-carencia" nillable="true" type="xsd:int" />
+          <xsd:element name="desc-cond-pagto" nillable="true" type="xsd:string" />
+          <xsd:element name="tipo-frete" nillable="true" type="xsd:string" />
+          <xsd:element name="dt-entrega" nillable="true" type="xsd:date" />
+          <xsd:element name="dt-emissao" nillable="true" type="xsd:date" />
+          <xsd:element name="cod-rep" nillable="true" type="xsd:int" />
+          <xsd:element name="no-ab-reppri" nillable="true" type="xsd:string" />
+          <xsd:element name="nome-transp" nillable="true" type="xsd:string" />
+          <xsd:element name="endereco" nillable="true" type="xsd:string" />
+          <xsd:element name="bairro" nillable="true" type="xsd:string" />
+          <xsd:element name="cep" nillable="true" type="xsd:string" />
+          <xsd:element name="cidade" nillable="true" type="xsd:string" />
+          <xsd:element name="estado" nillable="true" type="xsd:string" />
+          <xsd:element name="vl-substrib" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DetalhePedidos_ttPedVendaParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttPedVendaRow" type="S2:DetalhePedidos_ttPedVendaRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DetalhePedidos_ttPedItemRow">
+        <xsd:sequence>
+          <xsd:element name="nome-abrev" nillable="true" type="xsd:string" />
+          <xsd:element name="nr-pedcli" nillable="true" type="xsd:string" />
+          <xsd:element name="it-codigo" nillable="true" type="xsd:string" />
+          <xsd:element name="desc-item" nillable="true" type="xsd:string" />
+          <xsd:element name="vl-preuni" nillable="true" type="xsd:decimal" />
+          <xsd:element name="qt-pedida" nillable="true" type="xsd:decimal" />
+          <xsd:element name="saldo-item" nillable="true" type="xsd:decimal" />
+          <xsd:element name="aliq-ipi" nillable="true" type="xsd:decimal" />
+          <xsd:element name="situacao" nillable="true" type="xsd:string" />
+          <xsd:element name="vl-substrib" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DetalhePedidos_ttPedItemParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttPedItemRow" type="S2:DetalhePedidos_ttPedItemRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DetalhePedidos_ttNotaFiscalRow">
+        <xsd:sequence>
+          <xsd:element name="cod-estabel" nillable="true" type="xsd:string" />
+          <xsd:element name="serie" nillable="true" type="xsd:string" />
+          <xsd:element name="nr-nota-fis" nillable="true" type="xsd:string" />
+          <xsd:element name="nome-abrev" nillable="true" type="xsd:string" />
+          <xsd:element name="nr-pedcli" nillable="true" type="xsd:string" />
+          <xsd:element name="dt-emis-nota" nillable="true" type="xsd:date" />
+          <xsd:element name="nome-transp" nillable="true" type="xsd:string" />
+          <xsd:element name="desc-cond-pagto" nillable="true" type="xsd:string" />
+          <xsd:element name="vl-tot-nota" nillable="true" type="xsd:decimal" />
+          <xsd:element name="cancelada" nillable="true" type="xsd:boolean" />
+          <xsd:element name="observ-nota" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DetalhePedidos_ttNotaFiscalParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttNotaFiscalRow" type="S2:DetalhePedidos_ttNotaFiscalRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ListagemTitulosCliente_ttTitAcrRow">
+        <xsd:sequence>
+          <xsd:element name="cod-tit-acr" nillable="true" type="xsd:string" />
+          <xsd:element name="tit-status" nillable="true" type="xsd:string" />
+          <xsd:element name="des-espec-docto" nillable="true" type="xsd:string" />
+          <xsd:element name="ser-notafis" nillable="true" type="xsd:string" />
+          <xsd:element name="nr-notafis" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-parcela" nillable="true" type="xsd:string" />
+          <xsd:element name="dat-vecto" nillable="true" type="xsd:date" />
+          <xsd:element name="dias-atraso" nillable="true" type="xsd:int" />
+          <xsd:element name="cod-tit-acr-bco" nillable="true" type="xsd:string" />
+          <xsd:element name="val-saldo" nillable="true" type="xsd:decimal" />
+          <xsd:element name="val-cartorio" nillable="true" type="xsd:decimal" />
+          <xsd:element name="nome-portador" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ListagemTitulosCliente_ttTitAcrParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttTitAcrRow" type="S2:ListagemTitulosCliente_ttTitAcrRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ListagemTitulosClientesRepres_ttDevolucaoRow">
+        <xsd:sequence>
+          <xsd:element name="nome-abrev-repres" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-emitente" nillable="true" type="xsd:int" />
+          <xsd:element name="nome-emit" nillable="true" type="xsd:string" />
+          <xsd:element name="cidade" nillable="true" type="xsd:string" />
+          <xsd:element name="estado" nillable="true" type="xsd:string" />
+          <xsd:element name="lim-credito" nillable="true" type="xsd:decimal" />
+          <xsd:element name="dt-lim-cred" nillable="true" type="xsd:date" />
+          <xsd:element name="tot-vencido" nillable="true" type="xsd:decimal" />
+          <xsd:element name="tot-a-vencer" nillable="true" type="xsd:decimal" />
+          <xsd:element name="total-geral" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ListagemTitulosClientesRepres_ttDevolucaoParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttDevolucaoRow" type="S2:ListagemTitulosClientesRepres_ttDevolucaoRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ListagemTabelasPreco_ttPrecoItemRow">
+        <xsd:sequence>
+          <xsd:element name="lay-nome" nillable="true" type="xsd:string" />
+          <xsd:element name="it-codigo" nillable="true" type="xsd:string" />
+          <xsd:element name="desc-item" nillable="true" type="xsd:string" />
+          <xsd:element name="fm-cod-com" nillable="true" type="xsd:string" />
+          <xsd:element name="ds-fm-cod-com" nillable="true" type="xsd:string" />
+          <xsd:element name="vl-preco-pma" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-preco-pmd" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-preco-sem-ipi" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-preco-com-ipi" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ListagemTabelasPreco_ttPrecoItemParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttPrecoItemRow" type="S2:ListagemTabelasPreco_ttPrecoItemRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="faturamentoConsolidado">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <prodata:index name="idx_ord" prodata:primaryIndex="true">
+              <prodata:table name="ttFaturamento" />
+              <prodata:field name="ordem" />
+            </prodata:index>
+            <prodata:index name="idx_ord" prodata:primaryIndex="true">
+              <prodata:table name="ttSegmentos" />
+              <prodata:field name="ordem" />
+            </prodata:index>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element prodata:tableName="ttSegmentos" minOccurs="0" maxOccurs="unbounded" name="segmentos">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="cod_unid_negoc" nillable="true" type="xsd:string" />
+                  <xsd:element name="segmento" nillable="true" type="xsd:string" />
+                  <xsd:element prodata:tableName="ttFaturamento" minOccurs="0" maxOccurs="unbounded" name="faturamento">
+                    <xsd:complexType>
+                      <xsd:sequence>
+                        <xsd:element name="periodo" nillable="true" type="xsd:string" />
+                        <xsd:element name="cod_unid_negoc" nillable="true" type="xsd:string" />
+                        <xsd:element name="segmento" nillable="true" type="xsd:string" />
+                        <xsd:element name="vl_orcado" nillable="true" type="xsd:decimal" />
+                        <xsd:element name="vl_faturado" nillable="true" type="xsd:decimal" />
+                        <xsd:element name="perc_atingido" nillable="true" type="xsd:decimal" />
+                      </xsd:sequence>
+                    </xsd:complexType>
+                  </xsd:element>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+        <xsd:unique name="idx_pri">
+          <xsd:selector xpath=".//S2:faturamento" />
+          <xsd:field xpath="S2:periodo" />
+          <xsd:field xpath="S2:cod_unid_negoc" />
+          <xsd:field xpath="S2:segmento" />
+        </xsd:unique>
+        <xsd:unique name="idx_pri_2">
+          <xsd:selector xpath=".//S2:segmentos" />
+          <xsd:field xpath="S2:cod_unid_negoc" />
+          <xsd:field xpath="S2:segmento" />
+        </xsd:unique>
+        <xsd:keyref prodata:nested="true" name="RELATION1" refer="S2:idx_pri_2">
+          <xsd:selector xpath=".//S2:faturamento" />
+          <xsd:field xpath="S2:cod_unid_negoc" />
+          <xsd:field xpath="S2:segmento" />
+        </xsd:keyref>
+      </xsd:element>
+      <xsd:complexType name="FaturamentoConsolidado_ttFaturamentoMensalRow">
+        <xsd:sequence>
+          <xsd:element name="ordem" nillable="true" type="xsd:int" />
+          <xsd:element name="mercado" nillable="true" type="xsd:string" />
+          <xsd:element name="unid-neg" nillable="true" type="xsd:string" />
+          <xsd:element name="segmento" nillable="true" type="xsd:string" />
+          <xsd:element name="periodo-2" nillable="true" type="xsd:string" />
+          <xsd:element name="vl-fat-orc-2" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-fat-real-2" nillable="true" type="xsd:decimal" />
+          <xsd:element name="periodo-1" nillable="true" type="xsd:string" />
+          <xsd:element name="vl-fat-orc-1" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-fat-real-1" nillable="true" type="xsd:decimal" />
+          <xsd:element name="periodo-0" nillable="true" type="xsd:string" />
+          <xsd:element name="vl-fat-orc-0" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-periodo-ant" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-fat-real-0" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-cart" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-pendente" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="FaturamentoConsolidado_ttFaturamentoMensalParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttFaturamentoMensalRow" type="S2:FaturamentoConsolidado_ttFaturamentoMensalRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="FaturamentoPorEstabelec_ttFaturamentoRow">
+        <xsd:sequence>
+          <xsd:element name="cod-estabel" nillable="true" type="xsd:string" />
+          <xsd:element name="cod_unid_negoc" nillable="true" type="xsd:string" />
+          <xsd:element name="des_unid_negoc" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-gerente" nillable="true" type="xsd:int" />
+          <xsd:element name="nome-gerente" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-rep" nillable="true" type="xsd:int" />
+          <xsd:element name="nome-abrev" nillable="true" type="xsd:string" />
+          <xsd:element name="vl-cota" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-faturado" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-carteira" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-devolvido" nillable="true" type="xsd:decimal" />
+          <xsd:element name="pc-cota" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-orcamento" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="FaturamentoPorEstabelec_ttFaturamentoParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttFaturamentoRow" type="S2:FaturamentoPorEstabelec_ttFaturamentoRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="FaturamentoRepresentante_ttGrCliRow">
+        <xsd:sequence>
+          <xsd:element name="cod-gr-cli" nillable="true" type="xsd:int" />
+          <xsd:element name="descricao" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="FaturamentoRepresentante_ttGrCliParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttGrCliRow" type="S2:FaturamentoRepresentante_ttGrCliRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="FaturamentoRepresentante_ttFaturamentoRepresRow">
+        <xsd:sequence>
+          <xsd:element name="cod-gr-cli" nillable="true" type="xsd:int" />
+          <xsd:element name="cod-emitente" nillable="true" type="xsd:int" />
+          <xsd:element name="nome-emit" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-repres" nillable="true" type="xsd:int" />
+          <xsd:element name="nome-repres" nillable="true" type="xsd:string" />
+          <xsd:element name="cd-unid-negoc" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-gerente" nillable="true" type="xsd:int" />
+          <xsd:element name="nome-gerente" nillable="true" type="xsd:string" />
+          <xsd:element name="vl-faturado" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-carteira" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-devolvido" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="FaturamentoRepresentante_ttFaturamentoRepresParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttFaturamentoRepresRow" type="S2:FaturamentoRepresentante_ttFaturamentoRepresRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ListagemPedidosAbertoCliente_ttSaldoCarteiraRow">
+        <xsd:sequence>
+          <xsd:element name="nr-pedcli" nillable="true" type="xsd:string" />
+          <xsd:element name="nr-sequencia" nillable="true" type="xsd:int" />
+          <xsd:element name="it-codigo" nillable="true" type="xsd:string" />
+          <xsd:element name="desc-item" nillable="true" type="xsd:string" />
+          <xsd:element name="qt-saldo" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-carteira" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ListagemPedidosAbertoCliente_ttSaldoCarteiraParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttSaldoCarteiraRow" type="S2:ListagemPedidosAbertoCliente_ttSaldoCarteiraRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ListagemNotasCliente_ttNotasRow">
+        <xsd:sequence>
+          <xsd:element name="cod-estabel" nillable="true" type="xsd:string" />
+          <xsd:element name="serie" nillable="true" type="xsd:string" />
+          <xsd:element name="nr-pedido" nillable="true" type="xsd:string" />
+          <xsd:element name="nr-nota-fis" nillable="true" type="xsd:string" />
+          <xsd:element name="dt-emis-nota" nillable="true" type="xsd:date" />
+          <xsd:element name="vl-merc-tot-fat" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-tot-nota" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ListagemNotasCliente_ttNotasParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttNotasRow" type="S2:ListagemNotasCliente_ttNotasRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RankingEstabelecimento_ttRankingRow">
+        <xsd:sequence>
+          <xsd:element name="cod-estabel" nillable="true" type="xsd:string" />
+          <xsd:element name="cod_unid_negoc" nillable="true" type="xsd:string" />
+          <xsd:element name="des_unid_negoc" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-rep" nillable="true" type="xsd:int" />
+          <xsd:element name="nome-abrev" nillable="true" type="xsd:string" />
+          <xsd:element name="perc" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-cota" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-faturado" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-devolvido" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RankingEstabelecimento_ttRankingParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttRankingRow" type="S2:RankingEstabelecimento_ttRankingRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DetalheNotaFiscal_ttNotaFiscalRow">
+        <xsd:sequence>
+          <xsd:element name="cod-estabel" nillable="true" type="xsd:string" />
+          <xsd:element name="serie" nillable="true" type="xsd:string" />
+          <xsd:element name="nr-nota-fis" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-emitente" nillable="true" type="xsd:int" />
+          <xsd:element name="nome-transp" nillable="true" type="xsd:string" />
+          <xsd:element name="dt-emis-nota" nillable="true" type="xsd:date" />
+          <xsd:element name="dt-confirma" nillable="true" type="xsd:date" />
+          <xsd:element name="dt-cancel" nillable="true" type="xsd:date" />
+          <xsd:element name="dt-saida" nillable="true" type="xsd:date" />
+          <xsd:element name="peso-liq-tot" nillable="true" type="xsd:decimal" />
+          <xsd:element name="peso-bru-tot" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-mercad" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-tot-ipi" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-tot-nota" nillable="true" type="xsd:decimal" />
+          <xsd:element name="nr-volumes" nillable="true" type="xsd:string" />
+          <xsd:element name="nat-operacao" nillable="true" type="xsd:string" />
+          <xsd:element name="cgc" nillable="true" type="xsd:string" />
+          <xsd:element name="ins-estadual" nillable="true" type="xsd:string" />
+          <xsd:element name="nr-pedcli" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-cond-pag" nillable="true" type="xsd:int" />
+          <xsd:element name="des-cond-pag" nillable="true" type="xsd:string" />
+          <xsd:element name="nr-fatura" nillable="true" type="xsd:string" />
+          <xsd:element name="observ-nota" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-nota" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-rep" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DetalheNotaFiscal_ttNotaFiscalParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttNotaFiscalRow" type="S2:DetalheNotaFiscal_ttNotaFiscalRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DetalheNotaFiscal_ttEmitenteRow">
+        <xsd:sequence>
+          <xsd:element name="cod-emitente" nillable="true" type="xsd:int" />
+          <xsd:element name="nome-emit" nillable="true" type="xsd:string" />
+          <xsd:element name="cgc" nillable="true" type="xsd:string" />
+          <xsd:element name="ins-estadual" nillable="true" type="xsd:string" />
+          <xsd:element name="telefone" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-gr-cli" nillable="true" type="xsd:int" />
+          <xsd:element name="descricao" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DetalheNotaFiscal_ttEmitenteParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttEmitenteRow" type="S2:DetalheNotaFiscal_ttEmitenteRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DetalheNotaFiscal_ttTransporteRow">
+        <xsd:sequence>
+          <xsd:element name="cod-transp" nillable="true" type="xsd:int" />
+          <xsd:element name="nome" nillable="true" type="xsd:string" />
+          <xsd:element name="nome-abrev" nillable="true" type="xsd:string" />
+          <xsd:element name="cgc" nillable="true" type="xsd:string" />
+          <xsd:element name="ins-estadual" nillable="true" type="xsd:string" />
+          <xsd:element name="endereco" nillable="true" type="xsd:string" />
+          <xsd:element name="bairro" nillable="true" type="xsd:string" />
+          <xsd:element name="cep" nillable="true" type="xsd:string" />
+          <xsd:element name="cidade" nillable="true" type="xsd:string" />
+          <xsd:element name="estado" nillable="true" type="xsd:string" />
+          <xsd:element name="pais" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DetalheNotaFiscal_ttTransporteParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttTransporteRow" type="S2:DetalheNotaFiscal_ttTransporteRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DetalheNotaFiscal_ttItNotaFiscRow">
+        <xsd:sequence>
+          <xsd:element name="cod-estabel" nillable="true" type="xsd:string" />
+          <xsd:element name="serie" nillable="true" type="xsd:string" />
+          <xsd:element name="nr-nota-fis" nillable="true" type="xsd:string" />
+          <xsd:element name="nr-seq-fat" nillable="true" type="xsd:int" />
+          <xsd:element name="it-codigo" nillable="true" type="xsd:string" />
+          <xsd:element name="desc-item" nillable="true" type="xsd:string" />
+          <xsd:element name="class-fiscal" nillable="true" type="xsd:string" />
+          <xsd:element name="aliquota-icm" nillable="true" type="xsd:decimal" />
+          <xsd:element name="aliquota-ipi" nillable="true" type="xsd:decimal" />
+          <xsd:element name="qt-faturada" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-ipi-it" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-preuni" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-merc-liq" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-total" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DetalheNotaFiscal_ttItNotaFiscParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttItNotaFiscRow" type="S2:DetalheNotaFiscal_ttItNotaFiscRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DetalheNotaFiscal_ttFatDuplicRow">
+        <xsd:sequence>
+          <xsd:element name="cod-estabel" nillable="true" type="xsd:string" />
+          <xsd:element name="serie" nillable="true" type="xsd:string" />
+          <xsd:element name="nr-fatura" nillable="true" type="xsd:string" />
+          <xsd:element name="ind-fat-nota" nillable="true" type="xsd:int" />
+          <xsd:element name="flag-atualiz" nillable="true" type="xsd:boolean" />
+          <xsd:element name="parcela" nillable="true" type="xsd:string" />
+          <xsd:element name="dt-venciment" nillable="true" type="xsd:date" />
+          <xsd:element name="valor-parcela" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DetalheNotaFiscal_ttFatDuplicParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttFatDuplicRow" type="S2:DetalheNotaFiscal_ttFatDuplicRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DetalheNotaFiscal_ttTotaisRow">
+        <xsd:sequence>
+          <xsd:element name="cod-estabel" nillable="true" type="xsd:string" />
+          <xsd:element name="serie" nillable="true" type="xsd:string" />
+          <xsd:element name="nr-nota-fis" nillable="true" type="xsd:string" />
+          <xsd:element name="base-icms" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-icms" nillable="true" type="xsd:decimal" />
+          <xsd:element name="base-icms-sub" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-icms-sub" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DetalheNotaFiscal_ttTotaisParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttTotaisRow" type="S2:DetalheNotaFiscal_ttTotaisRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TabPrecoAstec_ttPrecoItemRow">
+        <xsd:sequence>
+          <xsd:element name="it-codigo" nillable="true" type="xsd:string" />
+          <xsd:element name="descricao" nillable="true" type="xsd:string" />
+          <xsd:element name="preco-venda" nillable="true" type="xsd:decimal" />
+          <xsd:element name="preco-venda2" nillable="true" type="xsd:decimal" />
+          <xsd:element name="preco-venda3" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TabPrecoAstec_ttPrecoItemParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttPrecoItemRow" type="S2:TabPrecoAstec_ttPrecoItemRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TabPrecoAstecPorItem_ttEstruturaRow">
+        <xsd:sequence>
+          <xsd:element name="seq" nillable="true" type="xsd:int" />
+          <xsd:element name="nivel" nillable="true" type="xsd:int" />
+          <xsd:element name="it-codigo" nillable="true" type="xsd:string" />
+          <xsd:element name="descricao" nillable="true" type="xsd:string" />
+          <xsd:element name="aliquota-ipi" nillable="true" type="xsd:decimal" />
+          <xsd:element name="preco-venda" nillable="true" type="xsd:decimal" />
+          <xsd:element name="preco-venda2" nillable="true" type="xsd:decimal" />
+          <xsd:element name="preco-venda3" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TabPrecoAstecPorItem_ttEstruturaParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttEstruturaRow" type="S2:TabPrecoAstecPorItem_ttEstruturaRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CurvaDetalhadoCliente_ttDetalheRow">
+        <xsd:sequence>
+          <xsd:element name="familia" nillable="true" type="xsd:string" />
+          <xsd:element name="produto" nillable="true" type="xsd:string" />
+          <xsd:element name="desc-familia" nillable="true" type="xsd:string" />
+          <xsd:element name="desc-produto" nillable="true" type="xsd:string" />
+          <xsd:element name="unid-neg" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="6" maxOccurs="6" name="periodo" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="6" maxOccurs="6" name="quantidade" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="6" maxOccurs="6" name="valor" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="6" maxOccurs="6" name="valor-total" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="6" maxOccurs="6" name="registros" nillable="true" type="xsd:int" />
+          <xsd:element name="carteira-qtde" nillable="true" type="xsd:int" />
+          <xsd:element name="carteira-valor" nillable="true" type="xsd:decimal" />
+          <xsd:element name="carteira-valor-total" nillable="true" type="xsd:decimal" />
+          <xsd:element name="carteira-regs" nillable="true" type="xsd:int" />
+          <xsd:element name="faturado-qtde" nillable="true" type="xsd:int" />
+          <xsd:element name="faturado-valor" nillable="true" type="xsd:decimal" />
+          <xsd:element name="faturado-valor-total" nillable="true" type="xsd:decimal" />
+          <xsd:element name="faturado-regs" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CurvaDetalhadoCliente_ttDetalheParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttDetalheRow" type="S2:CurvaDetalhadoCliente_ttDetalheRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BuscaItemVenda_ttEstruturaRow">
+        <xsd:sequence>
+          <xsd:element name="seq" nillable="true" type="xsd:int" />
+          <xsd:element name="nivel" nillable="true" type="xsd:int" />
+          <xsd:element name="it-codigo" nillable="true" type="xsd:string" />
+          <xsd:element name="descricao" nillable="true" type="xsd:string" />
+          <xsd:element name="it-pai" nillable="true" type="xsd:string" />
+          <xsd:element name="local-montag" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BuscaItemVenda_ttEstruturaParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttEstruturaRow" type="S2:BuscaItemVenda_ttEstruturaRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="es0429rp_ttRawDigitaRow">
+        <xsd:sequence>
+          <xsd:element name="raw-digita" nillable="true" type="xsd:base64Binary" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="es0429rp_ttRawDigitaParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttRawDigitaRow" type="S2:es0429rp_ttRawDigitaRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="es0780_ttcomponenteRow">
+        <xsd:sequence>
+          <xsd:element name="seq" nillable="true" type="xsd:int" />
+          <xsd:element name="componente" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="es0780_ttcomponenteParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttcomponenteRow" type="S2:es0780_ttcomponenteRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ListagemCotasRepres">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pCodEstabel" nillable="true" type="xsd:string" />
+            <xsd:element name="pCodRepres" nillable="true" type="xsd:string" />
+            <xsd:element name="pDtInicial" nillable="true" type="xsd:date" />
+            <xsd:element name="pDiretoria" nillable="true" type="xsd:boolean" />
+            <xsd:element name="pGerente" nillable="true" type="xsd:boolean" />
+            <xsd:element name="pRepres" nillable="true" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ListagemCotasRepresResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttCotaFinal" nillable="true" type="S2:ListagemCotasRepres_ttCotaFinalParam" />
+            <xsd:element name="ttErro" nillable="true" type="S2:ListagemCotasRepres_ttErroParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CurvaABCRepres">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pCodRepres" nillable="true" type="xsd:int" />
+            <xsd:element name="pDes_unid_negoc" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CurvaABCRepresResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttCurva" nillable="true" type="S2:CurvaABCRepres_ttCurvaParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DetalheFaturamentoCliente">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pCodEmitente" nillable="true" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DetalheFaturamentoClienteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttDetalhe" nillable="true" type="S2:DetalheFaturamentoCliente_ttDetalheParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ListagemDevolClientes">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pCodEstabel" nillable="true" type="xsd:string" />
+            <xsd:element name="pCodRep" nillable="true" type="xsd:int" />
+            <xsd:element name="pDes_unid_negoc" nillable="true" type="xsd:string" />
+            <xsd:element name="pDtInicial" nillable="true" type="xsd:date" />
+            <xsd:element name="pDtFinal" nillable="true" type="xsd:date" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ListagemDevolClientesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttDevolucao" nillable="true" type="S2:ListagemDevolClientes_ttDevolucaoParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DetalheCliente">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pCodEmitente" nillable="true" type="xsd:int" />
+            <xsd:element name="pCodEstabel" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DetalheClienteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttEmitente" nillable="true" type="S2:DetalheCliente_ttEmitenteParam" />
+            <xsd:element name="ttContEmit" nillable="true" type="S2:DetalheCliente_ttContEmitParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ListagemPedidosCliente">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pCodRep" nillable="true" type="xsd:string" />
+            <xsd:element name="pCodEmitente" nillable="true" type="xsd:int" />
+            <xsd:element name="pDtInicial" nillable="true" type="xsd:date" />
+            <xsd:element name="pDtFinal" nillable="true" type="xsd:date" />
+            <xsd:element name="pNrPedcli" nillable="true" type="xsd:string" />
+            <xsd:element name="pCodSitPed" nillable="true" type="xsd:int" />
+            <xsd:element name="pEmiteDuplic" nillable="true" type="xsd:boolean" />
+            <xsd:element name="pCodEstabel" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ListagemPedidosClienteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttPedVenda" nillable="true" type="S2:ListagemPedidosCliente_ttPedVendaParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DetalhePedidos">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pCodEstabel" nillable="true" type="xsd:string" />
+            <xsd:element name="pCodEmitente" nillable="true" type="xsd:int" />
+            <xsd:element name="pNrPedcli" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DetalhePedidosResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttPedVenda" nillable="true" type="S2:DetalhePedidos_ttPedVendaParam" />
+            <xsd:element name="ttPedItem" nillable="true" type="S2:DetalhePedidos_ttPedItemParam" />
+            <xsd:element name="ttNotaFiscal" nillable="true" type="S2:DetalhePedidos_ttNotaFiscalParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ListagemTitulosCliente">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pCodCliente" nillable="true" type="xsd:int" />
+            <xsd:element name="pCodEstab" nillable="true" type="xsd:string" />
+            <xsd:element name="pStatusTit" nillable="true" type="xsd:string" />
+            <xsd:element name="pDtInicial" nillable="true" type="xsd:date" />
+            <xsd:element name="pDtFinal" nillable="true" type="xsd:date" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ListagemTitulosClienteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttTitAcr" nillable="true" type="S2:ListagemTitulosCliente_ttTitAcrParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ListagemTitulosClientesRepres">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pCodRepres" nillable="true" type="xsd:int" />
+            <xsd:element name="pCodCliente" nillable="true" type="xsd:int" />
+            <xsd:element name="pCodEstab" nillable="true" type="xsd:string" />
+            <xsd:element name="pStatusTit" nillable="true" type="xsd:string" />
+            <xsd:element name="pDtInicial" nillable="true" type="xsd:date" />
+            <xsd:element name="pDtFinal" nillable="true" type="xsd:date" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ListagemTitulosClientesRepresResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttDevolucao" nillable="true" type="S2:ListagemTitulosClientesRepres_ttDevolucaoParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ListagemTabelasPreco">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pCodEstabelOrig" nillable="true" type="xsd:string" />
+            <xsd:element name="pEstadoDest" nillable="true" type="xsd:string" />
+            <xsd:element name="pCdCategoria" nillable="true" type="xsd:int" />
+            <xsd:element name="pDsUnidComerc" nillable="true" type="xsd:string" />
+            <xsd:element name="pCodGrCli" nillable="true" type="xsd:int" />
+            <xsd:element name="pCodCliente" nillable="true" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ListagemTabelasPrecoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttPrecoItem" nillable="true" type="S2:ListagemTabelasPreco_ttPrecoItemParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="escrm099">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="escrm099Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element ref="S2:faturamentoConsolidado" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="FaturamentoConsolidado">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pMercado" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="FaturamentoConsolidadoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttFaturamentoMensal" nillable="true" type="S2:FaturamentoConsolidado_ttFaturamentoMensalParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="FaturamentoPorEstabelec">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pCodEstabel" nillable="true" type="xsd:string" />
+            <xsd:element name="pCodRep" nillable="true" type="xsd:string" />
+            <xsd:element name="pDes_unid_negoc" nillable="true" type="xsd:string" />
+            <xsd:element name="pDtInicial" nillable="true" type="xsd:date" />
+            <xsd:element name="pDtFinal" nillable="true" type="xsd:date" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="FaturamentoPorEstabelecResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttFaturamento" nillable="true" type="S2:FaturamentoPorEstabelec_ttFaturamentoParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="FaturamentoRepresentante">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pCodEstabel" nillable="true" type="xsd:string" />
+            <xsd:element name="pCodRep" nillable="true" type="xsd:int" />
+            <xsd:element name="pDes_unid_negoc" nillable="true" type="xsd:string" />
+            <xsd:element name="pDtInicial" nillable="true" type="xsd:date" />
+            <xsd:element name="pDtFinal" nillable="true" type="xsd:date" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="FaturamentoRepresentanteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttGrCli" nillable="true" type="S2:FaturamentoRepresentante_ttGrCliParam" />
+            <xsd:element name="ttFaturamentoRepres" nillable="true" type="S2:FaturamentoRepresentante_ttFaturamentoRepresParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ListagemPedidosAbertoCliente">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pcodEstabel" nillable="true" type="xsd:string" />
+            <xsd:element name="pcodRep" nillable="true" type="xsd:int" />
+            <xsd:element name="pcodEmitente" nillable="true" type="xsd:int" />
+            <xsd:element name="pdesUnidNegoc" nillable="true" type="xsd:string" />
+            <xsd:element name="pdtInicial" nillable="true" type="xsd:date" />
+            <xsd:element name="pdtFinal" nillable="true" type="xsd:date" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ListagemPedidosAbertoClienteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttSaldoCarteira" nillable="true" type="S2:ListagemPedidosAbertoCliente_ttSaldoCarteiraParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ListagemNotasCliente">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pcodEstabel" nillable="true" type="xsd:string" />
+            <xsd:element name="pcodRep" nillable="true" type="xsd:int" />
+            <xsd:element name="pcodEmitente" nillable="true" type="xsd:int" />
+            <xsd:element name="pdtInicial" nillable="true" type="xsd:date" />
+            <xsd:element name="pdtFinal" nillable="true" type="xsd:date" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ListagemNotasClienteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttNotas" nillable="true" type="S2:ListagemNotasCliente_ttNotasParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RankingEstabelecimento">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pcodEstabel" nillable="true" type="xsd:string" />
+            <xsd:element name="pperiodo" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RankingEstabelecimentoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttRanking" nillable="true" type="S2:RankingEstabelecimento_ttRankingParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DetalheNotaFiscal">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pcodEstabel" nillable="true" type="xsd:string" />
+            <xsd:element name="pserie" nillable="true" type="xsd:string" />
+            <xsd:element name="pnrNotaFis" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DetalheNotaFiscalResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttNotaFiscal" nillable="true" type="S2:DetalheNotaFiscal_ttNotaFiscalParam" />
+            <xsd:element name="ttEmitente" nillable="true" type="S2:DetalheNotaFiscal_ttEmitenteParam" />
+            <xsd:element name="ttTransporte" nillable="true" type="S2:DetalheNotaFiscal_ttTransporteParam" />
+            <xsd:element name="ttItNotaFisc" nillable="true" type="S2:DetalheNotaFiscal_ttItNotaFiscParam" />
+            <xsd:element name="ttFatDuplic" nillable="true" type="S2:DetalheNotaFiscal_ttFatDuplicParam" />
+            <xsd:element name="ttTotais" nillable="true" type="S2:DetalheNotaFiscal_ttTotaisParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="TabPrecoAstec">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="TabPrecoAstecResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttPrecoItem" nillable="true" type="S2:TabPrecoAstec_ttPrecoItemParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="TabPrecoAstecPorItem">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pItem" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="TabPrecoAstecPorItemResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttEstrutura" nillable="true" type="S2:TabPrecoAstecPorItem_ttEstruturaParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CurvaDetalhadoCliente">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pCodRep" nillable="true" type="xsd:int" />
+            <xsd:element name="pDes_unid_negoc" nillable="true" type="xsd:string" />
+            <xsd:element name="pCodEmitente" nillable="true" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CurvaDetalhadoClienteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttDetalhe" nillable="true" type="S2:CurvaDetalhadoCliente_ttDetalheParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BuscaItemVenda">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pItem" nillable="true" type="xsd:string" />
+            <xsd:element name="pDesc" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="BuscaItemVendaResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttEstrutura" nillable="true" type="S2:BuscaItemVenda_ttEstruturaParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="es0026">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="es0026Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="es0429rp">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="rawParam" nillable="true" type="xsd:base64Binary" />
+            <xsd:element name="ttRawDigita" nillable="true" type="S2:es0429rp_ttRawDigitaParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="es0429rpResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="es0575">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="es0575Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="es0577">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="es0577Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="es0780">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pCdb" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="es0780Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="pCorporativo" nillable="true" type="xsd:boolean" />
+            <xsd:element name="pSerie" nillable="true" type="xsd:string" />
+            <xsd:element name="pNrNotaFis" nillable="true" type="xsd:string" />
+            <xsd:element name="pDtEmisNota" nillable="true" type="xsd:date" />
+            <xsd:element name="pNomeEmit" nillable="true" type="xsd:string" />
+            <xsd:element name="pItCodigo" nillable="true" type="xsd:string" />
+            <xsd:element name="pDescItem" nillable="true" type="xsd:string" />
+            <xsd:element name="pNrOrdProd" nillable="true" type="xsd:int" />
+            <xsd:element name="pSigla" nillable="true" type="xsd:string" />
+            <xsd:element name="pDescSigla" nillable="true" type="xsd:string" />
+            <xsd:element name="pDataFabric" nillable="true" type="xsd:dateTime" />
+            <xsd:element name="ttcomponente" nillable="true" type="S2:es0780_ttcomponenteParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="relatoriosB2B_es0577Response">
+    <wsdl:part name="parameters" element="S2:es0577Response" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_escrm099">
+    <wsdl:part name="parameters" element="S2:escrm099" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_DetalheNotaFiscal">
+    <wsdl:part name="parameters" element="S2:DetalheNotaFiscal" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_es0575">
+    <wsdl:part name="parameters" element="S2:es0575" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_es0577">
+    <wsdl:part name="parameters" element="S2:es0577" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_ListagemTabelasPreco">
+    <wsdl:part name="parameters" element="S2:ListagemTabelasPreco" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_ListagemCotasRepres">
+    <wsdl:part name="parameters" element="S2:ListagemCotasRepres" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_FaturamentoPorEstabelecResponse">
+    <wsdl:part name="parameters" element="S2:FaturamentoPorEstabelecResponse" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_escrm099Response">
+    <wsdl:part name="parameters" element="S2:escrm099Response" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_FaturamentoRepresentanteResponse">
+    <wsdl:part name="parameters" element="S2:FaturamentoRepresentanteResponse" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_es0026">
+    <wsdl:part name="parameters" element="S2:es0026" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_ListagemPedidosClienteResponse">
+    <wsdl:part name="parameters" element="S2:ListagemPedidosClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="FaultDetailMessage">
+    <wsdl:part name="FaultDetail" element="S1:FaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_CurvaDetalhadoCliente">
+    <wsdl:part name="parameters" element="S2:CurvaDetalhadoCliente" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_DetalheClienteResponse">
+    <wsdl:part name="parameters" element="S2:DetalheClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_ListagemTitulosClientesRepresResponse">
+    <wsdl:part name="parameters" element="S2:ListagemTitulosClientesRepresResponse" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_DetalheFaturamentoCliente">
+    <wsdl:part name="parameters" element="S2:DetalheFaturamentoCliente" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_TabPrecoAstecResponse">
+    <wsdl:part name="parameters" element="S2:TabPrecoAstecResponse" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_ListagemTitulosCliente">
+    <wsdl:part name="parameters" element="S2:ListagemTitulosCliente" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_ListagemPedidosCliente">
+    <wsdl:part name="parameters" element="S2:ListagemPedidosCliente" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_es0026Response">
+    <wsdl:part name="parameters" element="S2:es0026Response" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_TabPrecoAstec">
+    <wsdl:part name="parameters" element="S2:TabPrecoAstec" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_DetalhePedidos">
+    <wsdl:part name="parameters" element="S2:DetalhePedidos" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_DetalheNotaFiscalResponse">
+    <wsdl:part name="parameters" element="S2:DetalheNotaFiscalResponse" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_ListagemCotasRepresResponse">
+    <wsdl:part name="parameters" element="S2:ListagemCotasRepresResponse" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_FaturamentoConsolidadoResponse">
+    <wsdl:part name="parameters" element="S2:FaturamentoConsolidadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_es0780">
+    <wsdl:part name="parameters" element="S2:es0780" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_es0429rp">
+    <wsdl:part name="parameters" element="S2:es0429rp" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_FaturamentoConsolidado">
+    <wsdl:part name="parameters" element="S2:FaturamentoConsolidado" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_TabPrecoAstecPorItem">
+    <wsdl:part name="parameters" element="S2:TabPrecoAstecPorItem" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_DetalheFaturamentoClienteResponse">
+    <wsdl:part name="parameters" element="S2:DetalheFaturamentoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_es0780Response">
+    <wsdl:part name="parameters" element="S2:es0780Response" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_ListagemDevolClientes">
+    <wsdl:part name="parameters" element="S2:ListagemDevolClientes" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_ListagemDevolClientesResponse">
+    <wsdl:part name="parameters" element="S2:ListagemDevolClientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_RankingEstabelecimento">
+    <wsdl:part name="parameters" element="S2:RankingEstabelecimento" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_FaturamentoPorEstabelec">
+    <wsdl:part name="parameters" element="S2:FaturamentoPorEstabelec" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_CurvaABCRepres">
+    <wsdl:part name="parameters" element="S2:CurvaABCRepres" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_FaturamentoRepresentante">
+    <wsdl:part name="parameters" element="S2:FaturamentoRepresentante" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_ListagemTitulosClientesRepres">
+    <wsdl:part name="parameters" element="S2:ListagemTitulosClientesRepres" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_ListagemTitulosClienteResponse">
+    <wsdl:part name="parameters" element="S2:ListagemTitulosClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_BuscaItemVendaResponse">
+    <wsdl:part name="parameters" element="S2:BuscaItemVendaResponse" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_CurvaABCRepresResponse">
+    <wsdl:part name="parameters" element="S2:CurvaABCRepresResponse" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_ListagemTabelasPrecoResponse">
+    <wsdl:part name="parameters" element="S2:ListagemTabelasPrecoResponse" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_ListagemNotasCliente">
+    <wsdl:part name="parameters" element="S2:ListagemNotasCliente" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_ListagemPedidosAbertoClienteResponse">
+    <wsdl:part name="parameters" element="S2:ListagemPedidosAbertoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_CurvaDetalhadoClienteResponse">
+    <wsdl:part name="parameters" element="S2:CurvaDetalhadoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_ListagemPedidosAbertoCliente">
+    <wsdl:part name="parameters" element="S2:ListagemPedidosAbertoCliente" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_DetalheCliente">
+    <wsdl:part name="parameters" element="S2:DetalheCliente" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_es0429rpResponse">
+    <wsdl:part name="parameters" element="S2:es0429rpResponse" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_TabPrecoAstecPorItemResponse">
+    <wsdl:part name="parameters" element="S2:TabPrecoAstecPorItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_ListagemNotasClienteResponse">
+    <wsdl:part name="parameters" element="S2:ListagemNotasClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_es0575Response">
+    <wsdl:part name="parameters" element="S2:es0575Response" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_DetalhePedidosResponse">
+    <wsdl:part name="parameters" element="S2:DetalhePedidosResponse" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_RankingEstabelecimentoResponse">
+    <wsdl:part name="parameters" element="S2:RankingEstabelecimentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="relatoriosB2B_BuscaItemVenda">
+    <wsdl:part name="parameters" element="S2:BuscaItemVenda" />
+  </wsdl:message>
+  <wsdl:portType name="relatoriosB2BObj">
+    <wsdl:operation name="ListagemCotasRepres">
+      <wsdl:input message="tns:relatoriosB2B_ListagemCotasRepres" />
+      <wsdl:output message="tns:relatoriosB2B_ListagemCotasRepresResponse" />
+      <wsdl:fault name="relatoriosB2BFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CurvaABCRepres">
+      <wsdl:input message="tns:relatoriosB2B_CurvaABCRepres" />
+      <wsdl:output message="tns:relatoriosB2B_CurvaABCRepresResponse" />
+      <wsdl:fault name="relatoriosB2BFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DetalheFaturamentoCliente">
+      <wsdl:input message="tns:relatoriosB2B_DetalheFaturamentoCliente" />
+      <wsdl:output message="tns:relatoriosB2B_DetalheFaturamentoClienteResponse" />
+      <wsdl:fault name="relatoriosB2BFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListagemDevolClientes">
+      <wsdl:input message="tns:relatoriosB2B_ListagemDevolClientes" />
+      <wsdl:output message="tns:relatoriosB2B_ListagemDevolClientesResponse" />
+      <wsdl:fault name="relatoriosB2BFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DetalheCliente">
+      <wsdl:input message="tns:relatoriosB2B_DetalheCliente" />
+      <wsdl:output message="tns:relatoriosB2B_DetalheClienteResponse" />
+      <wsdl:fault name="relatoriosB2BFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListagemPedidosCliente">
+      <wsdl:input message="tns:relatoriosB2B_ListagemPedidosCliente" />
+      <wsdl:output message="tns:relatoriosB2B_ListagemPedidosClienteResponse" />
+      <wsdl:fault name="relatoriosB2BFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DetalhePedidos">
+      <wsdl:input message="tns:relatoriosB2B_DetalhePedidos" />
+      <wsdl:output message="tns:relatoriosB2B_DetalhePedidosResponse" />
+      <wsdl:fault name="relatoriosB2BFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListagemTitulosCliente">
+      <wsdl:input message="tns:relatoriosB2B_ListagemTitulosCliente" />
+      <wsdl:output message="tns:relatoriosB2B_ListagemTitulosClienteResponse" />
+      <wsdl:fault name="relatoriosB2BFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListagemTitulosClientesRepres">
+      <wsdl:input message="tns:relatoriosB2B_ListagemTitulosClientesRepres" />
+      <wsdl:output message="tns:relatoriosB2B_ListagemTitulosClientesRepresResponse" />
+      <wsdl:fault name="relatoriosB2BFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListagemTabelasPreco">
+      <wsdl:input message="tns:relatoriosB2B_ListagemTabelasPreco" />
+      <wsdl:output message="tns:relatoriosB2B_ListagemTabelasPrecoResponse" />
+      <wsdl:fault name="relatoriosB2BFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="escrm099">
+      <wsdl:input message="tns:relatoriosB2B_escrm099" />
+      <wsdl:output message="tns:relatoriosB2B_escrm099Response" />
+      <wsdl:fault name="relatoriosB2BFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FaturamentoConsolidado">
+      <wsdl:input message="tns:relatoriosB2B_FaturamentoConsolidado" />
+      <wsdl:output message="tns:relatoriosB2B_FaturamentoConsolidadoResponse" />
+      <wsdl:fault name="relatoriosB2BFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FaturamentoPorEstabelec">
+      <wsdl:input message="tns:relatoriosB2B_FaturamentoPorEstabelec" />
+      <wsdl:output message="tns:relatoriosB2B_FaturamentoPorEstabelecResponse" />
+      <wsdl:fault name="relatoriosB2BFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FaturamentoRepresentante">
+      <wsdl:input message="tns:relatoriosB2B_FaturamentoRepresentante" />
+      <wsdl:output message="tns:relatoriosB2B_FaturamentoRepresentanteResponse" />
+      <wsdl:fault name="relatoriosB2BFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListagemPedidosAbertoCliente">
+      <wsdl:input message="tns:relatoriosB2B_ListagemPedidosAbertoCliente" />
+      <wsdl:output message="tns:relatoriosB2B_ListagemPedidosAbertoClienteResponse" />
+      <wsdl:fault name="relatoriosB2BFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListagemNotasCliente">
+      <wsdl:input message="tns:relatoriosB2B_ListagemNotasCliente" />
+      <wsdl:output message="tns:relatoriosB2B_ListagemNotasClienteResponse" />
+      <wsdl:fault name="relatoriosB2BFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RankingEstabelecimento">
+      <wsdl:input message="tns:relatoriosB2B_RankingEstabelecimento" />
+      <wsdl:output message="tns:relatoriosB2B_RankingEstabelecimentoResponse" />
+      <wsdl:fault name="relatoriosB2BFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DetalheNotaFiscal">
+      <wsdl:input message="tns:relatoriosB2B_DetalheNotaFiscal" />
+      <wsdl:output message="tns:relatoriosB2B_DetalheNotaFiscalResponse" />
+      <wsdl:fault name="relatoriosB2BFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TabPrecoAstec">
+      <wsdl:input message="tns:relatoriosB2B_TabPrecoAstec" />
+      <wsdl:output message="tns:relatoriosB2B_TabPrecoAstecResponse" />
+      <wsdl:fault name="relatoriosB2BFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TabPrecoAstecPorItem">
+      <wsdl:input message="tns:relatoriosB2B_TabPrecoAstecPorItem" />
+      <wsdl:output message="tns:relatoriosB2B_TabPrecoAstecPorItemResponse" />
+      <wsdl:fault name="relatoriosB2BFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CurvaDetalhadoCliente">
+      <wsdl:input message="tns:relatoriosB2B_CurvaDetalhadoCliente" />
+      <wsdl:output message="tns:relatoriosB2B_CurvaDetalhadoClienteResponse" />
+      <wsdl:fault name="relatoriosB2BFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaItemVenda">
+      <wsdl:input message="tns:relatoriosB2B_BuscaItemVenda" />
+      <wsdl:output message="tns:relatoriosB2B_BuscaItemVendaResponse" />
+      <wsdl:fault name="relatoriosB2BFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="es0026">
+      <wsdl:input message="tns:relatoriosB2B_es0026" />
+      <wsdl:output message="tns:relatoriosB2B_es0026Response" />
+      <wsdl:fault name="relatoriosB2BFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="es0429rp">
+      <wsdl:input message="tns:relatoriosB2B_es0429rp" />
+      <wsdl:output message="tns:relatoriosB2B_es0429rpResponse" />
+      <wsdl:fault name="relatoriosB2BFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="es0575">
+      <wsdl:input message="tns:relatoriosB2B_es0575" />
+      <wsdl:output message="tns:relatoriosB2B_es0575Response" />
+      <wsdl:fault name="relatoriosB2BFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="es0577">
+      <wsdl:input message="tns:relatoriosB2B_es0577" />
+      <wsdl:output message="tns:relatoriosB2B_es0577Response" />
+      <wsdl:fault name="relatoriosB2BFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="es0780">
+      <wsdl:input message="tns:relatoriosB2B_es0780" />
+      <wsdl:output message="tns:relatoriosB2B_es0780Response" />
+      <wsdl:fault name="relatoriosB2BFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="relatoriosB2BObj" type="tns:relatoriosB2BObj">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListagemCotasRepres">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="relatoriosB2BFault">
+        <soap:fault use="literal" name="relatoriosB2BFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CurvaABCRepres">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="relatoriosB2BFault">
+        <soap:fault use="literal" name="relatoriosB2BFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DetalheFaturamentoCliente">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="relatoriosB2BFault">
+        <soap:fault use="literal" name="relatoriosB2BFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListagemDevolClientes">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="relatoriosB2BFault">
+        <soap:fault use="literal" name="relatoriosB2BFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DetalheCliente">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="relatoriosB2BFault">
+        <soap:fault use="literal" name="relatoriosB2BFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListagemPedidosCliente">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="relatoriosB2BFault">
+        <soap:fault use="literal" name="relatoriosB2BFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DetalhePedidos">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="relatoriosB2BFault">
+        <soap:fault use="literal" name="relatoriosB2BFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListagemTitulosCliente">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="relatoriosB2BFault">
+        <soap:fault use="literal" name="relatoriosB2BFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListagemTitulosClientesRepres">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="relatoriosB2BFault">
+        <soap:fault use="literal" name="relatoriosB2BFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListagemTabelasPreco">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="relatoriosB2BFault">
+        <soap:fault use="literal" name="relatoriosB2BFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="escrm099">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="relatoriosB2BFault">
+        <soap:fault use="literal" name="relatoriosB2BFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FaturamentoConsolidado">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="relatoriosB2BFault">
+        <soap:fault use="literal" name="relatoriosB2BFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FaturamentoPorEstabelec">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="relatoriosB2BFault">
+        <soap:fault use="literal" name="relatoriosB2BFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FaturamentoRepresentante">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="relatoriosB2BFault">
+        <soap:fault use="literal" name="relatoriosB2BFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListagemPedidosAbertoCliente">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="relatoriosB2BFault">
+        <soap:fault use="literal" name="relatoriosB2BFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListagemNotasCliente">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="relatoriosB2BFault">
+        <soap:fault use="literal" name="relatoriosB2BFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RankingEstabelecimento">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="relatoriosB2BFault">
+        <soap:fault use="literal" name="relatoriosB2BFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DetalheNotaFiscal">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="relatoriosB2BFault">
+        <soap:fault use="literal" name="relatoriosB2BFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="TabPrecoAstec">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="relatoriosB2BFault">
+        <soap:fault use="literal" name="relatoriosB2BFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="TabPrecoAstecPorItem">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="relatoriosB2BFault">
+        <soap:fault use="literal" name="relatoriosB2BFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CurvaDetalhadoCliente">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="relatoriosB2BFault">
+        <soap:fault use="literal" name="relatoriosB2BFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaItemVenda">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="relatoriosB2BFault">
+        <soap:fault use="literal" name="relatoriosB2BFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="es0026">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="relatoriosB2BFault">
+        <soap:fault use="literal" name="relatoriosB2BFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="es0429rp">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="relatoriosB2BFault">
+        <soap:fault use="literal" name="relatoriosB2BFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="es0575">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="relatoriosB2BFault">
+        <soap:fault use="literal" name="relatoriosB2BFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="es0577">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="relatoriosB2BFault">
+        <soap:fault use="literal" name="relatoriosB2BFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="es0780">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="relatoriosB2BFault">
+        <soap:fault use="literal" name="relatoriosB2BFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="relatoriosB2BService">
+    <wsdl:port name="relatoriosB2BObj" binding="tns:relatoriosB2BObj">
+      <wsdl:documentation>
+      </wsdl:documentation>
+      <soap:address location="http://wsa.intelbras.com.br:8080/wsa2/wsa2" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

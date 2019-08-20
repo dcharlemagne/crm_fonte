@@ -1,0 +1,1 @@
+function Mscrm_Isv_new_extrato_pagamento_ocorrencia_Form_Group0_Control0_1(){crmForm.Recalcular();}

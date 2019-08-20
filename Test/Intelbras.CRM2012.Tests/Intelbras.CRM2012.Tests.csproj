@@ -1,0 +1,486 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6E667A44-3662-4FF4-A9CA-74CADF2C92ED}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Intelbras.CRM2013.Tests</RootNamespace>
+    <AssemblyName>Intelbras.CRM2013.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Excel.4.5, Version=2.1.2.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib testes\Excel.4.5.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.5.452, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib testes\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Intelbras.Message.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4a235c6c6b22ff8b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\Intelbras.Message.Helper.dll</HintPath>
+    </Reference>
+    <Reference Include="microsoft.crm.sdk, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\microsoft.crm.sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>Lib testes\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\..\Libs\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="microsoft.xrm.sdk, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\microsoft.xrm.sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise />
+  </Choose>
+  <ItemGroup>
+    <Compile Include="Base.cs" />
+    <Compile Include="Canal.cs" />
+    <Compile Include="ExcluiProdutosPolitica.cs" />
+    <Compile Include="SDKoreTeste.cs" />
+    <Compile Include="Service References\IsolService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PortalB2BNotaFiscal\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="TestesBeneficioDoCanalService.cs" />
+    <Compile Include="TestesMunicipio.cs" />
+    <Compile Include="TestesContato.cs" />
+    <Compile Include="TestesOcorrencia.cs" />
+    <Compile Include="TestesPedidoB2B.cs" />
+    <Compile Include="TestesPoliticaComercial.cs" />
+    <Compile Include="TestesMsgsSolicitacaoRollBack.cs" />
+    <Compile Include="ImportarContasContatos.cs" />
+    <Compile Include="Service References\WsCrm4\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="testeChange14.cs" />
+    <Compile Include="TestesIntegracaoCrm4.cs" />
+    <Compile Include="TestesCrmWebServices.cs" />
+    <Compile Include="RetornoDW.cs" />
+    <Compile Include="TestesPedido.cs" />
+    <Compile Include="ImportarPlanilhaCompromisso.cs" />
+    <Compile Include="TestesObterPreco.cs" />
+    <Compile Include="TestesSefaz.cs" />
+    <Compile Include="TestesSolicitacaoBeneficio.cs" />
+    <Compile Include="TestesChange038.cs" />
+    <Compile Include="TestesMonitoramento.cs" />
+    <Compile Include="MConta0091.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SellOutWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Sharepoint.cs" />
+    <Compile Include="TestesPlugin.cs" />
+    <Compile Include="TestesSellOut.cs" />
+    <Compile Include="MFatura0094.cs" />
+    <Compile Include="MConta0072.cs" />
+    <Compile Include="Planilha.cs" />
+    <Compile Include="Testes.cs" />
+    <Compile Include="Integracao.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Unicidade.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Application\Batch\Intelbras.CRM2013.Application.AtualizarAtendimentoChat\Intelbras.CRM2013.Application.AtualizarAtendimentoChat.csproj">
+      <Project>{96D8F38E-AD15-44F8-9525-1A25F05C600E}</Project>
+      <Name>Intelbras.CRM2013.Application.AtualizarAtendimentoChat</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Application\WebServices\Intelbras.Crm.Application.WebServices.Isol\Intelbras.CRM2013.Application.WebServices.Isol.csproj">
+      <Project>{3329227B-BC95-4EBB-90BD-EF8BC1A527BA}</Project>
+      <Name>Intelbras.CRM2013.Application.WebServices.Isol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DAL\Intelbras.CRM2013.DAL\Intelbras.CRM2013.DAL.csproj">
+      <Project>{3f0cb21f-57a3-4b01-9358-2c6e4452fff7}</Project>
+      <Name>Intelbras.CRM2013.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Domain\Intelbras.CRM2013.Domain\Intelbras.CRM2013.Domain.csproj">
+      <Project>{ead3a0c5-db56-40be-a2fa-48541997f852}</Project>
+      <Name>Intelbras.CRM2013.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SDKore\SDKore.Crm\SDKore.Crm.csproj">
+      <Project>{0a4cfa2f-0cbe-4840-b594-f70f630604d7}</Project>
+      <Name>SDKore.Crm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util\Intelbras.CRM2013.Util\Intelbras.CRM2013.Util.csproj">
+      <Project>{dc24a936-f29b-46a8-9139-96d140a527c6}</Project>
+      <Name>Intelbras.CRM2013.Util</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SDKore\SDKore.Crm\SDKore.Crm.csproj">
+      <Project>{0a4cfa2f-0cbe-4840-b594-f70f630604d7}</Project>
+      <Name>SDKore.Crm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SDKore\SDKore\SDKore.csproj">
+      <Project>{d13ad9c0-3498-4f41-a385-eecc7883dab0}</Project>
+      <Name>SDKore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Key.snk" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\DataSources\System.Xml.Linq.XElement.datasource" />
+    <None Include="Properties\DataSources\System.Xml.XmlNode.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.Advertencia.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.Anexo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.Auditoria.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.CarregaElementosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.Categoria.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.CategoriaUN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.ClienteDoContrato.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.ClienteParticipanteEndereco.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.ClientePotencial.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.CondicaoPagamento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.Conta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.Contato.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.Contrato.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.Defeito.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.Diagnostico.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.Endereco.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.Estabelecimento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.Estado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.Extrato.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.ExtratoFidelidade.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.FamiliaComercial.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.Fatura.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.Fila.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.FuncaoRelacionamento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.GrupoDoCliente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.GrupoPremio.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.IntervencaoTecnica.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.LinhaComercial.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.LinhaDeContrato.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.ListarClientesParticipantesDoContratoPorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.ListarExtratoFidelidaadeInvalidosAtivosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.ListarExtratoFidelidaadeNaoValidosEAtivosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.ListarOcorrenciasParaIsolAprimoradoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.ListarOcorrenciasPorCpfCnpjClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.ListarOcorrenciasPorNomeClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.ListarOcorrenciasPorNotaFiscalDeCompraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.ListarOcorrenciasPorStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.ListarPontuacaoFidelidadePorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.ListarPorStatusDiagnosticoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.ListItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.LogisticaReversa.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.Moeda.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.Municipio.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.Ocorrencia.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.Oportunidade.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.Pais.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.Pedido.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.Pontuacao.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.PrecoItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.PremioFidelidade.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.Product.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.ProdutoPedido.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.RelacionamentoCliente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.Representante.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.Resgate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.Solucao.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.TabelaDePreco.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.UnidadeNegocio.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\Intelbras.CRM2013.Tests.IsolService.Usuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IsolService\isolservice1.wsdl" />
+    <None Include="Service References\PortalB2BNotaFiscal\NotaFiscal.wsdl" />
+    <None Include="Service References\SellOutWebService\selloutws.wsdl" />
+    <None Include="Service References\WsCrm4\ConsultaCRM4.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ServiceReferenceMetadataStorage Include="Service References\ListaDataServices\">
+      <Type>datasvcmap</Type>
+    </ServiceReferenceMetadataStorage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\IsolService\" />
+    <WCFMetadataStorage Include="Service References\PortalB2BNotaFiscal\" />
+    <WCFMetadataStorage Include="Service References\SellOutWebService\" />
+    <WCFMetadataStorage Include="Service References\WsCrm4\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SellOutWebService\selloutws.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SellOutWebService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SellOutWebService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SellOutWebService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Lib testes\Excel.4.5.dll" />
+    <Content Include="Lib testes\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="Lib testes\Microsoft.Office.Interop.Excel.dll" />
+    <None Include="Service References\IsolService\isolservice1.disco" />
+    <None Include="Service References\IsolService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\IsolService\configuration.svcinfo" />
+    <None Include="Service References\IsolService\configuration91.svcinfo" />
+    <None Include="Service References\PortalB2BNotaFiscal\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\PortalB2BNotaFiscal\configuration.svcinfo" />
+    <None Include="Service References\PortalB2BNotaFiscal\configuration91.svcinfo" />
+    <None Include="Service References\PortalB2BNotaFiscal\NotaFiscal.disco" />
+    <None Include="Service References\WsCrm4\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\WsCrm4\configuration.svcinfo" />
+    <None Include="Service References\WsCrm4\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

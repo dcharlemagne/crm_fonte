@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{98E804A1-0043-491F-844F-C4173A4DB4D6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Intelbras.CRM2013.Application.Plugin</RootNamespace>
+    <AssemblyName>Intelbras.CRM2013.Application.Plugin</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Intelbras.CRM2013.Application.Plugin.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Intelbras.Message.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4a235c6c6b22ff8b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\Intelbras.Message.Helper.dll</HintPath>
+    </Reference>
+    <Reference Include="microsoft.crm.sdk">
+      <HintPath>..\..\Libs\microsoft.crm.sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy">
+      <HintPath>..\..\Libs\microsoft.crm.sdk.proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.SharePoint">
+      <HintPath>..\..\Libs\Microsoft.SharePoint.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client">
+      <HintPath>..\..\Libs\Microsoft.SharePoint.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Runtime">
+      <HintPath>..\..\Libs\Microsoft.SharePoint.Client.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk">
+      <HintPath>..\..\Libs\microsoft.xrm.sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Annotation\ManagerPreEvent.cs" />
+    <Compile Include="Annotation\ManagerPostEvent.cs" />
+    <Compile Include="itbc_acao\ManagerPostEvent .cs" />
+    <Compile Include="itbc_causa\ManagerPostEvent .cs" />
+    <Compile Include="itbc_contasegmento\ManagerPostEvent.cs" />
+    <Compile Include="itbc_feriado\ManagerPostEventAssync.cs" />
+    <Compile Include="itbc_produtodacondiodepagamento\ManagerPostEvent.cs" />
+    <Compile Include="itbc_marca\ManagerPostEvent.cs" />
+    <Compile Include="itbc_regiao_atuacao\ManagerPostEvent.cs" />
+    <Compile Include="itbc_pausa_de_tarefa\ManagerPostEvent.cs" />
+    <Compile Include="itbc_pausa_de_tarefa\ManagerPreEvent.cs" />
+    <Compile Include="new_pagamento_servico\ManagerPostEvent.cs" />
+    <Compile Include="itbc_tipopagamento\ManagerPostEvent.cs" />
+    <Compile Include="itbc_modelo\ManagerPostEvent.cs" />
+    <Compile Include="itbc_oportunidade\ManagerPostEvent.cs" />
+    <Compile Include="Lead\ManagerPreEvent.cs" />
+    <Compile Include="Lead\ManagerPostEventAssync.cs" />
+    <Compile Include="Account\ManagerPostEvent.cs" />
+    <Compile Include="Account\ManagerPostEventAssync.cs" />
+    <Compile Include="Account\ManagerPreEvent.cs" />
+    <Compile Include="Associate\AssociateEvent.cs" />
+    <Compile Include="Contact\ManagerPostEvent.cs" />
+    <Compile Include="Contact\ManagerPostEventAssync.cs" />
+    <Compile Include="Contact\ManagerPreEvent.cs" />
+    <Compile Include="Contract\ManagerPreEvent.cs" />
+    <Compile Include="CustomerAddress\ManagerPostEvent.cs" />
+    <Compile Include="CustomerAddress\ManagerPreEvent.cs" />
+    <Compile Include="Email\ManagerPreEvent.cs" />
+    <Compile Include="Incident\ManagerPostEvent.cs" />
+    <Compile Include="Incident\ManagerPostEventAsync.cs" />
+    <Compile Include="Incident\ManagerPreEvent.cs" />
+    <Compile Include="IPluginExecutionContextExtension.cs" />
+    <Compile Include="itbc_acessoaokonviva\ManagerPostEvent.cs" />
+    <Compile Include="itbc_acessoaokonviva\ManagerPreEvent.cs" />
+    <Compile Include="itbc_acessosextranetcontatos\ManagerPreEvent.cs" />
+    <Compile Include="itbc_arquivoestoquegiro\ManagerPostEventAssync.cs" />
+    <Compile Include="itbc_arquivodesellout\ManagerPostEventAssync.cs" />
+    <Compile Include="itbc_benefdocanal\ManagerPostEventAssync.cs" />
+    <Compile Include="itbc_benefdocanal\ManagerPostEvent.cs" />
+    <Compile Include="itbc_benefdocanal\ManagerPreEvent.cs" />
+    <Compile Include="itbc_beneficio\ManagerPostEvent.cs" />
+    <Compile Include="itbc_cnae\ManagerPostEvent.cs" />
+    <Compile Include="itbc_cnae\ManagerPreEvent.cs" />
+    <Compile Include="itbc_compdocanal\ManagerPreEvent.cs" />
+    <Compile Include="itbc_compromissos\ManagerPostEvent.cs" />
+    <Compile Include="itbc_denuncia\ManagerPostEventAssync.cs" />
+    <Compile Include="itbc_deparadeunidadedokonviva\ManagerPreEvent.cs" />
+    <Compile Include="itbc_famildeprod\ManagerPostEvent.cs" />
+    <Compile Include="itbc_histdistrib\ManagerPostEvent.cs" />
+    <Compile Include="itbc_histdistrib\ManagerPreEvent.cs" />
+    <Compile Include="itbc_metaunidade\ManagerPreEvent.cs" />
+    <Compile Include="itbc_parmetrosglobais\ManagerPostEvent.cs" />
+    <Compile Include="itbc_portfoliokeyaccountrepresentantes\ManagerPostEvent.cs" />
+    <Compile Include="itbc_acessosextranet\ManagerPostEvent.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="itbc_acessosextranetcontatos\ManagerPostEvent.cs" />
+    <Compile Include="itbc_categoriasdocanal\ManagerPostEvent.cs" />
+    <Compile Include="itbc_categoriasdocanal\ManagerPreEvent.cs" />
+    <Compile Include="itbc_categoria\ManagerPostEvent.cs" />
+    <Compile Include="itbc_classificacao\ManagerPostEvent.cs" />
+    <Compile Include="itbc_colaboradorestreincert\ManagerPostEvent.cs" />
+    <Compile Include="itbc_compdocanal\ManagerPostEvent.cs" />
+    <Compile Include="itbc_denuncia\ManagerPreEvent.cs" />
+    <Compile Include="itbc_itbc_prodestabelecimento\ManagerPostEvent.cs" />
+    <Compile Include="itbc_itbc_prodestabelecimento\ManagerPreEvent.cs" />
+    <Compile Include="itbc_orcamentounidade\ManagerPreEvent.cs" />
+    <Compile Include="itbc_portfolio\itbc_perfil\ManagerPreEvent.cs" />
+    <Compile Include="itbc_politicacomercial\ManagerPreEvent.cs" />
+    <Compile Include="itbc_portfoliokeyaccountrepresentantes\ManagerPreEvent.cs" />
+    <Compile Include="itbc_portfolio\ManagerPreEvent.cs" />
+    <Compile Include="itbc_posvenda\ManagerPostEvent.cs" />
+    <Compile Include="itbc_proddoport\ManagerPreEvent.cs" />
+    <Compile Include="itbc_postagem\ManagerPreEvent.cs" />
+    <Compile Include="itbc_prodportreinecertif\ManagerPostEvent.cs" />
+    <Compile Include="itbc_produtopoliticacomercial\ManagerPreEvent.cs" />
+    <Compile Include="itbc_produtosdalistapsdid\ManagerPreEvent.cs" />
+    <Compile Include="itbc_produtosdasolicitacao\ManagerPostEvent.cs" />
+    <Compile Include="itbc_produtosdasolicitacao\ManagerPreEvent.cs" />
+    <Compile Include="itbc_parametrosbeneficios\ManagerPostEvent.cs" />
+    <Compile Include="itbc_segmento\ManagerPostEvent.cs" />
+    <Compile Include="itbc_psdid\ManagerPostEvent.cs" />
+    <Compile Include="itbc_psdid\ManagerPreEvent.cs" />
+    <Compile Include="itbc_regiaogeo\ManagerPostEvent.cs" />
+    <Compile Include="itbc_relacionamentodocanal\ManagerPostEvent.cs" />
+    <Compile Include="itbc_relacionamentodocanal\ManagerPreEvent.cs" />
+    <Compile Include="itbc_solicitacaodebeneficio\ManagerPostEvent.cs" />
+    <Compile Include="itbc_solicitacaodebeneficio\ManagerPostEventAssync.cs" />
+    <Compile Include="itbc_solicitacaodebeneficio\ManagerPreEvent.cs" />
+    <Compile Include="itbc_solicitacaodecadastro\ManagerPostEvent.cs" />
+    <Compile Include="itbc_subclassificacoes\ManagerPostEvent.cs" />
+    <Compile Include="itbc_treinamento_certificacao_canal\ManagerPostEvent.cs" />
+    <Compile Include="itbc_unidadedokonviva\ManagerPreEvent.cs" />
+    <Compile Include="ITracingServiceExtension.cs" />
+    <Compile Include="new_diagnostico_ocorrencia\ManagerPostEvent.cs" />
+    <Compile Include="new_diagnostico_ocorrencia\ManagerPostEventAsync.cs" />
+    <Compile Include="new_diagnostico_ocorrencia\ManagerPreEvent.cs" />
+    <Compile Include="new_extrato_logistica_reversa\ManagerPreEvent.cs" />
+    <Compile Include="new_lancamento_avulso\ManagerPostEvent.cs" />
+    <Compile Include="new_pagamento_servico\ManagerPreEvent.cs" />
+    <Compile Include="new_valor_servico_posto\ManagerPreEvent.cs" />
+    <Compile Include="PluginBase.cs" />
+    <Compile Include="pricelevel\ManagerPreEvent.cs" />
+    <Compile Include="productpricelevel\ManagerPreEvent.cs" />
+    <Compile Include="product\ManagerPostEvent.cs" />
+    <Compile Include="product\ManagerPostEventAssync.cs" />
+    <Compile Include="product\ManagerPreEvent.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="salesorderdetail\ManagerPreEvent.cs" />
+    <Compile Include="salesorder\ManagerPostEvent.cs" />
+    <Compile Include="systemuser\ManagerPostEvent.cs" />
+    <Compile Include="systemuser\ManagerPreEvent.cs" />
+    <Compile Include="systemuser\ManagerPostEventAssyn.cs" />
+    <Compile Include="task\ManagerPostEvent.cs" />
+    <Compile Include="task\ManagerPreEvent.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Intelbras.CRM2013.Application.Plugin.snk" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DAL\Intelbras.CRM2013.DAL\Intelbras.CRM2013.DAL.csproj">
+      <Project>{3f0cb21f-57a3-4b01-9358-2c6e4452fff7}</Project>
+      <Name>Intelbras.CRM2013.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Domain\Intelbras.CRM2013.Domain\Intelbras.CRM2013.Domain.csproj">
+      <Project>{ead3a0c5-db56-40be-a2fa-48541997f852}</Project>
+      <Name>Intelbras.CRM2013.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SDKore\SDKore.Crm\SDKore.Crm.csproj">
+      <Project>{0a4cfa2f-0cbe-4840-b594-f70f630604d7}</Project>
+      <Name>SDKore.Crm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SDKore\SDKore\SDKore.csproj">
+      <Project>{d13ad9c0-3498-4f41-a385-eecc7883dab0}</Project>
+      <Name>SDKore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util\Intelbras.CRM2013.Util\Intelbras.CRM2013.Util.csproj">
+      <Project>{dc24a936-f29b-46a8-9139-96d140a527c6}</Project>
+      <Name>Intelbras.CRM2013.Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<SDKoreSettings>
+  <webServices>
+    <add key="CrmService" url="http://172.16.40.167:5555/"/>
+  </webServices>
+  <dataBases>
+    <add key="CrmDataBase" connectionString=""/>
+    <add key="TrideaEssentialsDataBase" connectionString="server=homologacrm\dev_crm;database=TrideaEssentials;Integrated Security=SSPI"/>
+  </dataBases>
+
+  <!--
+    Sessão aonde é possível informar usuários para que sejam utilizadas por aplicações
+    que utilizem usuários específicos para algum tipo de autenticação.
+    
+    IMPORTANTE: A leitura destes dados é sempre realizada de maneira criptografada utilizando o aplicativo CryptoGenerate
+                          que consta no diretório das APIS do famework Tridea.Essentials.
+  -->
+  <!-- A linha contendo o appName CrmAdmin sempre deve existir. -->
+  <users>
+    <add appName="CrmAdmin" user="sI7kMehpydMQX4PQz5BsWXPk4fFWUWayJedXrted024=" password="sI7kMehpydMQX4PQz5BsWXPk4fFWUWayJedXrted024=" domain="utcengenharia"/>
+    <add appName="SAP" user="user" password="senha" domain="exemplo"/>
+  </users>
+
+  <appSettings>
+    <add key="ProxyAddress" value="http://10.10.1.2:8080" />
+    <add key="" value="" />
+  </appSettings>
+
+  <!-- Implementação de repositórios para aplicações que possuem um Domain Model-->
+  <repositories>
+    <add key="Repository" type="Braskem.Roadmap.DAL,Braskem.Roadmap.DAL" />
+  </repositories>
+  <domains>
+    <add key="Domain" type="Braskem.Roadmap.Domain,Braskem.Roadmap.Domain" />
+  </domains>
+
+
+</SDKoreSettings>

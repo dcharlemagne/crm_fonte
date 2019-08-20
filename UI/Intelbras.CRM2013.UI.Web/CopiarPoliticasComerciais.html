@@ -1,0 +1,172 @@
+﻿<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="ClientGlobalContext.js.aspx"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="itbc_datepicker_pt_br"></script>
+    <script type="text/javascript" src="itbc_modernizr"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/json2/20150503/json2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="itbc_estilos_modal_crm">
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <meta>
+    <meta charset="utf-8">
+</head>
+<body style="zoom: 1; word-wrap: break-word;">
+    <div class="ms-crm-RefreshDialog-Main-Container">
+        <div id="tdDialogHeader" class="ms-crm-RefreshDialog-Header">
+            <div style="width: 75%;" id="dialogHeaderTitle" class="ms-crm-RefreshDialog-Header-Title ms-crm-TextAutoEllipsis" title="Your dialog header">Duplicar Políticas Comerciais</div>
+            <div id="dialogHeaderDesc" class="ms-crm-RefreshDialog-Header-Desc" title="Your dialog additional description">Você selecionou<span id="numSelected"> XX </span>Política(s) Comerciais</div>
+        </div>
+        <div id="DlgHdBodyContainer" class="ms-crm-RefreshDialog-Main">
+            <form id="form1" method="post" name="form1">
+                <div>
+                    <input id="copiarProdutos" title="Selecione para manter os produtos da política comercial." type="checkbox">
+                    <label for="copiarProdutos">Manter produtos</label>
+                    <input id="copiarEstados" title="Selecione para manter os estados da política comercial." type="checkbox">
+                    <label for="copiarEstados">Manter estados</label>
+                </div>
+                <div class="div-spacing-label">
+                    <label>Selecione a vigência da Política comercial</label>
+                </div>
+                <div>
+                    <label>Início:</label>
+                    <input id="dataInicioVigencia" title="Selecione uma data inicial de vigência." type="date">
+                    <label>Término:</label>
+                    <input id="dataFinalVigencia" title="Selecione uma data final de vigência." type="date">
+                </div>
+            </form>
+            <br>
+            <div id="carregando">
+                Copiando Registros
+                <img src="itbc_imagem_carregando">
+            </div>
+            <div id="feedback-erro" class="div-feedback-error"></div>
+        </div>
+        <div id="tdDialogFooter" class="ms-crm-RefreshDialog-Footer">
+            <button style="margin-left: 8px;" id="btnOK" class="ms-crm-RefreshDialog-Button" tabIndex="1" type="button">
+                OK
+            </button>
+            <button style="margin-right: 30px; margin-left: 8px;" id="cmdDialogCancel" class="ms-crm-RefreshDialog-Button" tabIndex="2" type="button">
+                Cancelar
+            </button>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#carregando").hide();
+
+            var numReg = localStorage.getItem("registrosNum")
+
+            $("#numSelected").html(" " + numReg + " ");
+            if (numReg <= 0) {
+                $("#btnOK").prop("disabled", true);
+                $("#feedback-erro").html("Selecione pelo menos 1 registro para ser duplicado!");
+            }
+
+            $("#form1 input").click(function () {
+                $("#feedback-erro").html("");
+            });
+
+            if (!Modernizr.inputtypes.date) {
+                $("input[type=date]").datepicker($.datepicker.regional["pt-BR"]);
+            }
+
+            $("#btnOK").click(function () {
+
+                $("#carregando").show();
+
+                $("#btnOK").prop("disabled", true);
+
+                var feedback = validateFormDuplicar();
+
+                if (feedback === true) {
+                    var orgName = Xrm.Page.context.getOrgUniqueName();
+
+                    //var url = "https://integracrmd.intelbras.com.br/crm/CrmWebApoioFormulario.asmx/CopiarPoliticas";
+                    var url = "https://integracrmh.intelbras.com.br/crm/CrmWebApoioFormulario.asmx/CopiarPoliticas";
+                    //var url = "https://integracrm.intelbras.com.br/crm/CrmWebApoioFormulario.asmx/CopiarPoliticas";
+
+                    var dataInicial = $("#dataInicioVigencia").val();
+                    var dataFinal = $("#dataFinalVigencia").val();
+
+                    // IE não funciona HTML5
+                    if (!Modernizr.inputtypes.date) {
+                        dataInicial = $.datepicker.parseDate("dd/mm/yy", dataInicial);
+                        dataFinal = $.datepicker.parseDate("dd/mm/yy", dataFinal);
+                        dataInicial.toString('yyyy-mm-dd');
+                        dataFinal.toString('yyyy-mm-dd');
+                    }
+
+                    parametros = {
+                        organizationName: orgName,
+                        copiarProdutos: $("#copiarProdutos").is(':checked'),
+                        copiarEstados: $("#copiarEstados").is(':checked'),
+                        dataInicialVigencia: dataInicial,
+                        dataFinalVigencia: dataFinal,
+                        idDosRegistros: localStorage.getItem("registros"),
+                    };
+
+                    $.ajax({
+                        type: "post",
+                        async: true,
+                        url: url,
+                        data: JSON.stringify(parametros),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        processdata: true,
+                        beforeSend: function (XMLHttpRequest) {
+                            XMLHttpRequest.setRequestHeader("Accept", "application/json");
+                        },
+                        success: function (data, textStatus, XmlHttpRequest) {
+                            copiarCallback(true, data);
+                        },
+                        error: function (data, textStatus, errorThrown, XmlHttpRequest) {
+                            copiarCallback(false, data);
+                        }
+                    });
+                }
+                else {
+                    $("#carregando").hide();
+                    $("#btnOK").prop("disabled", false);
+                    $("#feedback-erro").html(feedback);
+                }
+            });
+
+            $("#cmdDialogCancel").click(function () {
+                closeWindow();
+            });
+        });
+
+
+
+        function validateFormDuplicar() {
+            if (/Invalid|NaN/.test(new Date($("#dataInicioVigencia").val())) || /Invalid|NaN/.test(new Date($("#dataFinalVigencia").val()))) {
+                return "Formato de data inválido!"
+            }
+            var dataIni = new Date($("#dataInicioVigencia").val());
+            var dataFim = new Date($("#dataFinalVigencia").val());
+
+            if (dataIni >= dataFim) {
+                return "A data inicial deve ser menor que a data final";
+            }
+
+            return true;
+        }
+
+        function copiarCallback(retorno, obj) {
+            $("#carregando").hide();
+
+            if (retorno) {
+                $("#feedback-erro").html("As copias foram realizadas com sucesso! Essa janela será fechada automaticamente.");
+                setTimeout(function () {
+
+                    closeWindow();
+                }, 6000);
+            }
+        }
+
+    </script>
+
+</body>
+</html>

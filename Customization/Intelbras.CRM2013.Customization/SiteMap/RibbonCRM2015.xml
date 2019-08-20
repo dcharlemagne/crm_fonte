@@ -1,0 +1,389 @@
+<ImportExportXml version="7.0.0000.3543" SolutionPackageVersion="7.0" languagecode="1046" generatedBy="OnPremise" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SolutionManifest>
+    <UniqueName>MenusCRM2015</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="Menus CRM 2015" languagecode="1046" />
+    </LocalizedNames>
+    <Descriptions />
+    <Version>1.0.0.0</Version>
+    <Managed>0</Managed>
+    <Publisher>
+      <UniqueName>intelbras</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="Intelbras" languagecode="1046" />
+      </LocalizedNames>
+      <Descriptions />
+      <EMailAddress xsi:nil="true"></EMailAddress>
+      <SupportingWebsiteUrl xsi:nil="true"></SupportingWebsiteUrl>
+      <CustomizationPrefix>itbc</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>99352</CustomizationOptionValuePrefix>
+      <Addresses>
+        <Address>
+          <AddressNumber>1</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+        <Address>
+          <AddressNumber>2</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+      </Addresses>
+    </Publisher>
+    <RootComponents>
+      <RootComponent type="62" />
+    </RootComponents>
+    <MissingDependencies>
+      <MissingDependency>
+        <Required key="0" type="1" schemaName="new_dia" displayName="Dia" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="2" type="1" schemaName="new_portador" displayName="Portador" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="3" type="1" schemaName="new_grupo_premio_fidelidade" displayName="Grupo Prêmio" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="4" type="1" schemaName="new_uf" displayName="UF" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="5" type="1" schemaName="new_cidade" displayName="Cidade" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="6" type="1" schemaName="new_servico_assistencia_tecnica" displayName="Serviço Assistência Técnica" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="7" type="1" schemaName="codek_answer_type" displayName="Tipo de Resposta" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="8" type="1" schemaName="codek_livechat_default_answers" displayName="LiveChat Default Answer" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="9" type="1" schemaName="new_tipo_posto" displayName="Tipo Posto" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="10" type="1" schemaName="new_acao" displayName="Ação" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="11" type="1" schemaName="new_receita_padrao" displayName="Receita Padrão" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="12" type="1" schemaName="new_pontuacao" displayName="Pontuação" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="13" type="1" schemaName="new_mensagem" displayName="Mensagem" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="14" type="1" schemaName="new_extrato_pagamento_ocorrencia" displayName="Extrato de Pagamento" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="15" type="1" schemaName="new_regional" displayName="Regional" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="16" type="1" schemaName="new_tabela_preco" displayName="Tabela Preço" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="17" type="1" schemaName="new_estabelecimento" displayName="Estabelecimento" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="18" type="1" schemaName="new_extrato_fidelidade" displayName="Extrato Fidelidade" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="19" type="1" schemaName="new_titulo" displayName="Título" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="20" type="1" schemaName="codek_livechat_config" displayName="LiveChat Configuration" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="21" type="1" schemaName="new_promocao_pontuacao_fidelidade" displayName="Promoção de Pontuação" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="22" type="1" schemaName="new_prioridade_ligacao_callcenter" displayName="Prioridade Ligação Call Center" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="23" type="1" schemaName="new_relacionamento" displayName="Categoria e UN" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="24" type="1" schemaName="new_cliente_participante_contrato" displayName="Cliente Participante Contrato" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="25" type="1" schemaName="new_sla" displayName="Critério SLA" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="26" type="1" schemaName="new_classificacao_assunto" displayName="Classificação de Assuntos" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="27" type="1" schemaName="new_indice" displayName="Indice" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="28" type="1" schemaName="codek_livechat_tracking" displayName="LiveChat Tracking" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="29" type="1" schemaName="new_premio_fidelidade" displayName="Prêmio" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="30" type="1" schemaName="new_desconto_pedido_programado" displayName="Desconto Programado" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="31" type="1" schemaName="codek_livechat_subject" displayName="LiveChat Subject" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="32" type="1" schemaName="new_pagamento_servico" displayName="Pagamento Serviço" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="33" type="1" schemaName="new_config_sistema" displayName="Configuração de Sistema" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="34" type="1" schemaName="new_categoria" displayName="Categoria" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="35" type="1" schemaName="new_resgate_premio_fidelidade" displayName="Resgate de Prêmios" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="36" type="1" schemaName="codek_sequential_number" displayName="Sequential Number" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="37" type="1" schemaName="new_canal_venda" displayName="Canal de Venda" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="38" type="1" schemaName="new_registro_log" displayName="Registro de Log" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="39" type="1" schemaName="new_extrato_logistica_reversa" displayName="Extrato Logística Reversa" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="40" type="1" schemaName="new_natureza_operacao" displayName="Natureza de Operação" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="41" type="1" schemaName="new_tipo_motivo_auditoria" displayName="Tipo Motivo Auditoria" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="42" type="1" schemaName="new_dicionriodehyperlinks" displayName="Dicionário de Hyperlink" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="43" type="1" schemaName="new_localidade" displayName="Localidade" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="44" type="1" schemaName="codek_livechat_survey" displayName="LiveChat Survey" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="45" type="1" schemaName="codek_answer" displayName="Resposta" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="46" type="1" schemaName="new_feriado_municipal_estadual" displayName="Feriados Municipais e Estaduais" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="47" type="1" schemaName="new_importacao_assistencia_tecnica" displayName="Importação Assistência Técnica" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="48" type="1" schemaName="new_permissao_usuario_b2b" displayName="Permissão Usuário B2B" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="49" type="1" schemaName="msdyn_postruleconfig" displayName="Configuração de Regra de Postagem" solution="ActivityFeedsCore (7.0.0.3543)" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="50" type="1" schemaName="codek_question" displayName="Pergunta" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="51" type="1" schemaName="new_condicao_pagamento" displayName="Condição Pagamento" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="52" type="1" schemaName="new_rota" displayName="Rota" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="53" type="1" schemaName="codek_answer_list" displayName="Lista de Resposta" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="54" type="1" schemaName="new_processamentofidelidade" displayName="Processamento Fidelidade" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="55" type="1" schemaName="new_grupo_cliente" displayName="Grupo de Cliente" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="56" type="1" schemaName="msdyn_postconfig" displayName="Configuração de Postagem" solution="ActivityFeedsCore (7.0.0.3543)" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="57" type="1" schemaName="new_defeito" displayName="Defeito" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="58" type="1" schemaName="new_permissao_usuario_servico" displayName="Permissão Usuário Serviço" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="59" type="1" schemaName="new_categoriadohyperlink" displayName="Categoria do Hyperlink" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="60" type="1" schemaName="new_item_tabela" displayName="Item da Tabela de Preço" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="61" type="1" schemaName="new_transportadora" displayName="Transportadora" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="62" type="1" schemaName="new_linha_unidade_negocio" displayName="Linha Unidade Negócio" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="63" type="1" schemaName="new_representante" displayName="Representante" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="64" type="1" schemaName="codek_livechat_interval_reason" displayName="LiveChat Interval Reason" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="65" type="1" schemaName="new_unxcategoria" displayName="UN x Categoria" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="66" type="1" schemaName="codek_livechat_operator" displayName="LiveChat Operator" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="67" type="1" schemaName="new_tabela_financiamento" displayName="Tabela de Financiamento" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="68" type="1" schemaName="new_familiacomercial" displayName="Família Comercial" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="69" type="1" schemaName="new_cliente_participante_endereco" displayName="Cliente Participante Endereço" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="70" type="1" schemaName="codek_search" displayName="Pesquisa" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="71" type="1" schemaName="codek_option_answer" displayName="Item Picklist / Escala Classificação" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="72" type="1" schemaName="new_grupo_estoque" displayName="Grupo de Estoque" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="73" type="1" schemaName="new_pais" displayName="Pais" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="74" type="1" schemaName="new_familia_material" displayName="Família de Material" solution="Active" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="75" type="61" schemaName="msdyn_/Images/Wall_16.png" displayName="msdyn_/Images/Wall_16.png" solution="ActivityFeedsCore (7.0.0.3543)" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required key="76" type="61" schemaName="msdyn_/PersonalWall.htm" displayName="msdyn_/PersonalWall.htm" solution="ActivityFeedsCore (7.0.0.3543)" />
+        <Dependent key="1" type="62" id="{c5009de7-c254-e611-80be-00155d0a710c}" />
+      </MissingDependency>
+    </MissingDependencies>
+  </SolutionManifest>
+</ImportExportXml>

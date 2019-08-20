@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://wsa.intelbras.com.br:8080/wsa2/wsa2/wsdl?targetURI=urn:crm:intelbras.com.br" filename="integracaoERP.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>

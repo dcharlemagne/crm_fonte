@@ -1,0 +1,9 @@
+C:\crm\crm_fonte\SDKore\SDKore\obj\Debug\SDKore.csprojResolveAssemblyReference.cache
+C:\crm\crm_fonte\SDKore\SDKore\bin\Debug\SDKore.dll
+C:\crm\crm_fonte\SDKore\SDKore\bin\Debug\SDKore.pdb
+C:\crm\crm_fonte\SDKore\SDKore\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+C:\crm\crm_fonte\SDKore\SDKore\bin\Debug\Microsoft.Practices.Unity.dll
+C:\crm\crm_fonte\SDKore\SDKore\bin\Debug\microsoft.xrm.sdk.dll
+C:\crm\crm_fonte\SDKore\SDKore\bin\Debug\microsoft.xrm.sdk.xml
+C:\crm\crm_fonte\SDKore\SDKore\obj\Debug\SDKore.dll
+C:\crm\crm_fonte\SDKore\SDKore\obj\Debug\SDKore.pdb

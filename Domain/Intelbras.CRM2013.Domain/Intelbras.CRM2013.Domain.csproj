@@ -1,0 +1,1555 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EAD3A0C5-DB56-40BE-A2FA-48541997F852}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Intelbras.CRM2013.Domain</RootNamespace>
+    <AssemblyName>Intelbras.CRM2013.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Intelbras.CRM2013.Domain.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.80.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ClosedXML.0.80.1\lib\net40-client\ClosedXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Intelbras.Message.Helper">
+      <HintPath>..\..\Libs\Intelbras.Message.Helper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Data.Edm.5.6.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Data.OData.5.6.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Data.Services.Client.5.6.0\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder2">
+      <HintPath>..\..\Libs\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\..\Libs\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\Microsoft.SharePoint.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\Microsoft.SharePoint.Client.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="microsoft.xrm.sdk, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\microsoft.xrm.sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Spatial, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Spatial.5.6.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enum\AcaoAssistencia.cs" />
+    <Compile Include="Enum\All.cs" />
+    <Compile Include="Enum\Areas.cs" />
+    <Compile Include="Enum\CategoriaLogOcorrencia.cs" />
+    <Compile Include="Enum\Diagnostico.cs" />
+    <Compile Include="Enum\EstagiosDaVenda.cs" />
+    <Compile Include="Enum\FormaDeTributacao.cs" />
+    <Compile Include="Enum\Identificadores.cs" />
+    <Compile Include="Enum\IntervencaoTecnica.cs" />
+    <Compile Include="Enum\NaturezaDoCliente.cs" />
+    <Compile Include="Enum\OrigemDaOcorrencia.cs" />
+    <Compile Include="Enum\OrigemDoContato.cs" />
+    <Compile Include="Enum\SituacaoContratoAutorizacaoPostagemCorreios.cs" />
+    <Compile Include="Enum\StatusArquivoEstoqueGiro.cs" />
+    <Compile Include="Enum\StatusDaIntegracao.cs" />
+    <Compile Include="Enum\StatusDaValidacao.cs" />
+    <Compile Include="Enum\StatusLiveChatTracking.cs" />
+    <Compile Include="Enum\StatusDaNotaFiscal.cs" />
+    <Compile Include="Enum\StatusDaOcorrencia.cs" />
+    <Compile Include="Enum\StatusDaOportunidade.cs" />
+    <Compile Include="Enum\StatusArquivoSellout.cs" />
+    <Compile Include="Enum\StatusDoContrato.cs" />
+    <Compile Include="Enum\StatusDoDiagnostico.cs" />
+    <Compile Include="Enum\StatusDoObjetoPostal.cs" />
+    <Compile Include="Enum\StatusDoPedido.cs" />
+    <Compile Include="Enum\StatusDoProcessamentoLogisticaReversa.cs" />
+    <Compile Include="Enum\TipoDeAtividade.cs" />
+    <Compile Include="Enum\TipoDeAssunto.cs" />
+    <Compile Include="Enum\TipoDeAvaliacao.cs" />
+    <Compile Include="Enum\TipoDeDocumento.cs" />
+    <Compile Include="Enum\TipoDeEndereco.cs" />
+    <Compile Include="Enum\TipoDeETicket.cs" />
+    <Compile Include="Enum\TipoDeModalidade.cs" />
+    <Compile Include="Enum\TipoDeNotaFiscal.cs" />
+    <Compile Include="Enum\PoliticaPosVenda.cs" />
+    <Compile Include="Enum\TipoDeOcorrencia.cs" />
+    <Compile Include="Enum\TipoDePergunta.cs" />
+    <Compile Include="Enum\TipoDePrioridade.cs" />
+    <Compile Include="Enum\TipoDeRelacao.cs" />
+    <Compile Include="Enum\TipoDeSolicitacaoCorreios.cs" />
+    <Compile Include="Enum\TipoDeVigencia.cs" />
+    <Compile Include="Enum\TipoDoCliente.cs" />
+    <Compile Include="Enum\TipoPermissaoB2b.cs" />
+    <Compile Include="Exceptions\ChaveIntegracaoContatoException.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="Integracao\Base.cs" />
+    <Compile Include="Integracao\MSG0315.cs" />
+    <Compile Include="Integracao\MSG0306.cs" />
+    <Compile Include="Integracao\MSG0297.cs" />
+    <Compile Include="Integracao\MSG0292.cs" />
+    <Compile Include="Integracao\MSG0288.cs" />
+    <Compile Include="Integracao\MSG0290.cs" />
+    <Compile Include="Integracao\MSG0287.cs" />
+    <Compile Include="Integracao\MSG0198.cs" />
+    <Compile Include="Integracao\MSG0289.cs" />
+    <Compile Include="Integracao\MSG0284.cs" />
+    <Compile Include="Integracao\MSG0282.cs" />
+    <Compile Include="Integracao\MSG0281.cs" />
+    <Compile Include="Integracao\MSG0280.cs" />
+    <Compile Include="Integracao\MSG0279.cs" />
+    <Compile Include="Integracao\MSG0278.cs" />
+    <Compile Include="Integracao\MSG0277.cs" />
+    <Compile Include="Integracao\MSG0276.cs" />
+    <Compile Include="Integracao\MSG0270.cs" />
+    <Compile Include="Integracao\MSG0269.cs" />
+    <Compile Include="Integracao\MSG0268.cs" />
+    <Compile Include="Integracao\MSG0267.cs" />
+    <Compile Include="Integracao\MSG0168.cs" />
+    <Compile Include="Integracao\MSG0170.cs" />
+    <Compile Include="Integracao\MSG0195.cs" />
+    <Compile Include="Integracao\MSG0194.cs" />
+    <Compile Include="Integracao\MSG0192.cs" />
+    <Compile Include="Integracao\MSG0191.cs" />
+    <Compile Include="Integracao\MSG0190.cs" />
+    <Compile Include="Integracao\MSG0092.cs" />
+    <Compile Include="Integracao\MSG0106.cs" />
+    <Compile Include="Integracao\MSG0105.cs" />
+    <Compile Include="Integracao\MSG0104.cs" />
+    <Compile Include="Integracao\MSG0103.cs" />
+    <Compile Include="Integracao\MSG0138.cs" />
+    <Compile Include="Integracao\MSG0164.cs" />
+    <Compile Include="Integracao\MSG0166.cs" />
+    <Compile Include="Integracao\MSG0167.cs" />
+    <Compile Include="Integracao\MSG0169.cs" />
+    <Compile Include="Integracao\MSG0159.cs" />
+    <Compile Include="Integracao\MSG0161.cs" />
+    <Compile Include="Integracao\MSG0160.cs" />
+    <Compile Include="Integracao\MSG0158.cs" />
+    <Compile Include="Integracao\MSG0157.cs" />
+    <Compile Include="Integracao\MSG0156.cs" />
+    <Compile Include="Integracao\MSG0155.cs" />
+    <Compile Include="Integracao\MSG0154.cs" />
+    <Compile Include="Integracao\MSG0153.cs" />
+    <Compile Include="Integracao\MSG0146.cs" />
+    <Compile Include="Integracao\MSG0148.cs" />
+    <Compile Include="Integracao\MSG0147.cs" />
+    <Compile Include="Integracao\MSG0145.cs" />
+    <Compile Include="Integracao\MSG0144.cs" />
+    <Compile Include="Integracao\MSG0110.cs" />
+    <Compile Include="Integracao\MSG0109.cs" />
+    <Compile Include="Integracao\MSG0108.cs" />
+    <Compile Include="Integracao\MSG0107.cs" />
+    <Compile Include="Integracao\MSG0142.cs" />
+    <Compile Include="Integracao\MSG0141.cs" />
+    <Compile Include="Integracao\MSG0152.cs" />
+    <Compile Include="Integracao\MSG0151.cs" />
+    <Compile Include="Integracao\MSG0150.cs" />
+    <Compile Include="Integracao\MSG0149.cs" />
+    <Compile Include="Integracao\MSG0143.cs" />
+    <Compile Include="Integracao\MSG0114.cs" />
+    <Compile Include="Integracao\MSG0056.cs" />
+    <Compile Include="Integracao\MSG0120.cs" />
+    <Compile Include="Integracao\MSG0140.cs" />
+    <Compile Include="Integracao\MSG0139.cs" />
+    <Compile Include="Integracao\MSG0121.cs" />
+    <Compile Include="Integracao\MSG0116.cs" />
+    <Compile Include="Integracao\MSG0115.cs" />
+    <Compile Include="Integracao\MSG0101.cs" />
+    <Compile Include="Integracao\IntegracaoSellout.cs" />
+    <Compile Include="Integracao\MSG0018.cs" />
+    <Compile Include="Integracao\MSG0162.cs" />
+    <Compile Include="Integracao\MSG0163.cs" />
+    <Compile Include="Integracao\MSG0172.cs" />
+    <Compile Include="Integracao\MSG0165.cs" />
+    <Compile Include="Integracao\MSG0173.cs" />
+    <Compile Include="Integracao\MSG0175.cs" />
+    <Compile Include="Integracao\MSG0180.cs" />
+    <Compile Include="Integracao\MSG0182.cs" />
+    <Compile Include="Integracao\MSG0181.cs" />
+    <Compile Include="Integracao\MSG0179.cs" />
+    <Compile Include="Integracao\MSG0185.cs" />
+    <Compile Include="Integracao\MSG0183.cs" />
+    <Compile Include="Integracao\MSG0176.cs" />
+    <Compile Include="Integracao\MSG0186.cs" />
+    <Compile Include="Integracao\MSG0187.cs" />
+    <Compile Include="Integracao\MSG0193.cs" />
+    <Compile Include="Integracao\MSG0283.cs" />
+    <Compile Include="Integracao\MSG0300.cs" />
+    <Compile Include="Integracao\MSG0299.cs" />
+    <Compile Include="Integracao\MSG0298.cs" />
+    <Compile Include="Integracao\MSG0304 .cs" />
+    <Compile Include="Integracao\MSG0294.cs" />
+    <Compile Include="Integracao\MSG0293.cs" />
+    <Compile Include="Integracao\RetornaGuid.cs" />
+    <Compile Include="Integracao\MSG0086.cs" />
+    <Compile Include="Integracao\MSG0130.cs" />
+    <Compile Include="Integracao\MSG0129.cs" />
+    <Compile Include="Integracao\MSG0102.cs" />
+    <Compile Include="Integracao\MSG0076.cs" />
+    <Compile Include="Integracao\MSG0028.cs" />
+    <Compile Include="Integracao\MSG0060.cs" />
+    <Compile Include="Integracao\MSG0063.cs" />
+    <Compile Include="Integracao\MSG0067.cs" />
+    <Compile Include="Integracao\MSG0069.cs" />
+    <Compile Include="Integracao\MSG0071.cs" />
+    <Compile Include="Integracao\MSG0100.cs" />
+    <Compile Include="Integracao\MSG0111.cs" />
+    <Compile Include="Integracao\MSG0118.cs" />
+    <Compile Include="Integracao\MSG0124.cs" />
+    <Compile Include="Integracao\MSG0125.cs" />
+    <Compile Include="Integracao\MSG0126.cs" />
+    <Compile Include="Integracao\MSG0127.cs" />
+    <Compile Include="Integracao\MSG0026.cs" />
+    <Compile Include="Integracao\MSG0032.cs" />
+    <Compile Include="Integracao\MSG0042.cs" />
+    <Compile Include="Integracao\MSG0048.cs" />
+    <Compile Include="Integracao\MSG0062.cs" />
+    <Compile Include="Integracao\MSG0068.cs" />
+    <Compile Include="Integracao\MSG0070.cs" />
+    <Compile Include="Integracao\MSG0077.cs" />
+    <Compile Include="Integracao\MSG0079.cs" />
+    <Compile Include="Integracao\MSG0082.cs" />
+    <Compile Include="Integracao\MSG0084.cs" />
+    <Compile Include="Integracao\MSG0087.cs" />
+    <Compile Include="Integracao\MSG0117.cs" />
+    <Compile Include="Integracao\MSG0128.cs" />
+    <Compile Include="Integracao\MSG0132.cs" />
+    <Compile Include="Integracao\MSG0133.cs" />
+    <Compile Include="Integracao\MSG0123.cs" />
+    <Compile Include="Integracao\MSG0078.cs" />
+    <Compile Include="Integracao\MSG0134.cs" />
+    <Compile Include="Integracao\MSG0064.cs" />
+    <Compile Include="Integracao\MSG0054.cs" />
+    <Compile Include="Integracao\MSG0038.cs" />
+    <Compile Include="Integracao\MSG0030.cs" />
+    <Compile Include="Integracao\MSG0131.cs" />
+    <Compile Include="Integracao\MSG0034.cs" />
+    <Compile Include="Integracao\MSG0046.cs" />
+    <Compile Include="Integracao\MSG0050.cs" />
+    <Compile Include="Integracao\MSG0008.cs" />
+    <Compile Include="Integracao\MSG0010.cs" />
+    <Compile Include="Integracao\MSG0012.cs" />
+    <Compile Include="Integracao\MSG0052.cs" />
+    <Compile Include="Integracao\MSG0044.cs" />
+    <Compile Include="Integracao\IBase.cs" />
+    <Compile Include="Integracao\MSG0001.cs" />
+    <Compile Include="Integracao\MSG0002.cs" />
+    <Compile Include="Integracao\MSG0004.cs" />
+    <Compile Include="Integracao\MSG0006.cs" />
+    <Compile Include="Integracao\MSG0014.cs" />
+    <Compile Include="Integracao\MSG0016.cs" />
+    <Compile Include="Integracao\MSG0022.cs" />
+    <Compile Include="Integracao\MSG0024.cs" />
+    <Compile Include="Integracao\MSG0036.cs" />
+    <Compile Include="Integracao\MSG0040.cs" />
+    <Compile Include="Integracao\MSG0058.cs" />
+    <Compile Include="Integracao\MSG0066.cs" />
+    <Compile Include="Integracao\MSG0072.cs" />
+    <Compile Include="Integracao\MSG0075.cs" />
+    <Compile Include="Integracao\MSG0088.cs" />
+    <Compile Include="Integracao\MSG0091.cs" />
+    <Compile Include="Integracao\MSG0094.cs" />
+    <Compile Include="Integracao\MSG0119.cs" />
+    <Compile Include="Integracao\MSG0122.cs" />
+    <Compile Include="Integracao\MSG0136.cs" />
+    <Compile Include="Integracao\MSG0137.cs" />
+    <Compile Include="IRepository\IAcao.cs" />
+    <Compile Include="IRepository\ICausa.cs" />
+    <Compile Include="IRepository\IHistoricoCategoria.cs" />
+    <Compile Include="IRepository\ILiveChatTracking.cs" />
+    <Compile Include="IRepository\IArquivoDeEstoqueGiro.cs" />
+    <Compile Include="IRepository\IAdvertencia.cs" />
+    <Compile Include="IRepository\IAssunto.cs" />
+    <Compile Include="IRepository\IAuditoria.cs" />
+    <Compile Include="IRepository\IAutorizacaoDePostagem.cs" />
+    <Compile Include="IRepository\ICadastraProdutos.cs" />
+    <Compile Include="IRepository\ICanalVerde.cs" />
+    <Compile Include="IRepository\IAreaAtuacao.cs" />
+    <Compile Include="IRepository\IContaSegmento.cs" />
+    <Compile Include="IRepository\IQuestionarioGrupoPergunta.cs" />
+    <Compile Include="IRepository\IRegiaoDeAtuacao.cs" />
+    <Compile Include="IRepository\IPausaTarefa.cs" />
+    <Compile Include="IRepository\IProdutoCondicaoPagamento.cs" />
+    <Compile Include="IRepository\IProdutoProjeto.cs" />
+    <Compile Include="IRepository\ITipoPagamento.cs" />
+    <Compile Include="IRepository\IModelo.cs" />
+    <Compile Include="IRepository\IMarca.cs" />
+    <Compile Include="IRepository\IEndereco.cs" />
+    <Compile Include="IRepository\ICategoriaB2B.cs" />
+    <Compile Include="IRepository\IClienteParticipanteDoContrato.cs" />
+    <Compile Include="IRepository\IClienteParticipanteDoEndereco.cs" />
+    <Compile Include="IRepository\IClienteParticipante.cs" />
+    <Compile Include="IRepository\IClientePotencial.cs" />
+    <Compile Include="IRepository\ICNAE.cs" />
+    <Compile Include="IRepository\ICompromisso.cs" />
+    <Compile Include="IRepository\IContrato.cs" />
+    <Compile Include="IRepository\ICreditoFidelidade.cs" />
+    <Compile Include="IRepository\IDebitoFidelidade.cs" />
+    <Compile Include="IRepository\IDefeitoOcorrenciaCliente.cs" />
+    <Compile Include="IRepository\IDefeito.cs" />
+    <Compile Include="IRepository\IDiagnosticoOcorrencia.cs" />
+    <Compile Include="IRepository\IDiagnostico.cs" />
+    <Compile Include="IRepository\IExtrato.cs" />
+    <Compile Include="IRepository\IExtratoFidelidade.cs" />
+    <Compile Include="IRepository\IFeriado.cs" />
+    <Compile Include="IRepository\IGrupoCliente.cs" />
+    <Compile Include="IRepository\IGrupoFidelidade.cs" />
+    <Compile Include="IRepository\IGrupoPremio.cs" />
+    <Compile Include="IRepository\IHistoricoDePostagem.cs" />
+    <Compile Include="IRepository\IDocumentoCanalEstoqueGiro.cs" />
+    <Compile Include="IRepository\IHistoricoDistribuidor.cs" />
+    <Compile Include="IRepository\IImportacaoAssistenciaTecnica.cs" />
+    <Compile Include="IRepository\IIntervencao.cs" />
+    <Compile Include="IRepository\IItemPedido.cs" />
+    <Compile Include="IRepository\ILancamentoAvulsoDoExtrato.cs" />
+    <Compile Include="IRepository\ILinhaComercial.cs" />
+    <Compile Include="IRepository\ILinhaDoContrato.cs" />
+    <Compile Include="IRepository\ILog.cs" />
+    <Compile Include="IRepository\ILocalidade.cs" />
+    <Compile Include="IRepository\ILogisticaReversa.cs" />
+    <Compile Include="IRepository\IItemTabelaPrecoB2B.cs" />
+    <Compile Include="IRepository\IMarcas.cs" />
+    <Compile Include="IRepository\IMetaCanalTrimestre.cs" />
+    <Compile Include="IRepository\IOcorrenciaBase.cs" />
+    <Compile Include="IRepository\IOcorrencia.cs" />
+    <Compile Include="IRepository\IPagamentoServico.cs" />
+    <Compile Include="IRepository\IPesquisaSatisfacao.cs" />
+    <Compile Include="IRepository\IPontosDoParticipante.cs" />
+    <Compile Include="IRepository\IPontuacao.cs" />
+    <Compile Include="IRepository\IPotencialdoSupervisorporTrimestre.cs" />
+    <Compile Include="IRepository\IArquivoDeSellOut.cs" />
+    <Compile Include="IRepository\IDeParaDeUnidadeDoKonviva.cs" />
+    <Compile Include="IRepository\IDocumentoCanaisExtranet.cs" />
+    <Compile Include="IRepository\IConfiguracaoBeneficio.cs" />
+    <Compile Include="IRepository\IItemFila.cs" />
+    <Compile Include="IRepository\IFila.cs" />
+    <Compile Include="IRepository\IFamiliaPoliticaComercial.cs" />
+    <Compile Include="IRepository\IListaPrecoPSDEstado.cs" />
+    <Compile Include="IRepository\IAcaoSubsidiadaVmc.cs" />
+    <Compile Include="IRepository\IAcessoKonviva.cs" />
+    <Compile Include="IRepository\IHistoricoComprasTrimestre.cs" />
+    <Compile Include="IRepository\IHistoricoComprasSubFamilia.cs" />
+    <Compile Include="IRepository\IHistoricoComprasSegmento.cs" />
+    <Compile Include="IRepository\IHistoricoComprasProdutoMes.cs" />
+    <Compile Include="IRepository\IHistoricoComprasProduto.cs" />
+    <Compile Include="IRepository\IHistoricoComprasFamilia.cs" />
+    <Compile Include="IRepository\IHistoricoComprasCanalProdutoMes.cs" />
+    <Compile Include="IRepository\IHistoricoCompras.cs" />
+    <Compile Include="IRepository\IMetadaUnidadeporProdutoMes.cs" />
+    <Compile Include="IRepository\IPoliticaComercialXConta.cs" />
+    <Compile Include="IRepository\IPoliticaComercialXEstado.cs" />
+    <Compile Include="IRepository\IPotencialdoKAporTrimestre.cs" />
+    <Compile Include="IRepository\IPremio.cs" />
+    <Compile Include="IRepository\IPremioFidelidade.cs" />
+    <Compile Include="IRepository\IPrioridadeLigacaoCallCenter.cs" />
+    <Compile Include="IRepository\IPrivilegio.cs" />
+    <Compile Include="IRepository\IProcessamentoFidelidade.cs" />
+    <Compile Include="IRepository\IProdutoAssisteciaTecnica.cs" />
+    <Compile Include="IRepository\IProdutoKit.cs" />
+    <Compile Include="IRepository\IProdutoResgatadoFidelidade.cs" />
+    <Compile Include="IRepository\IProdutosdaSolicitacao.cs" />
+    <Compile Include="IRepository\IQuestionarioOpcao.cs" />
+    <Compile Include="IRepository\IQuestionarioPergunta.cs" />
+    <Compile Include="IRepository\IQuestionarioResposta.cs" />
+    <Compile Include="IRepository\IRegional.cs" />
+    <Compile Include="IRepository\IFuncaoRelacionamento.cs" />
+    <Compile Include="IRepository\IRelacionamento.cs" />
+    <Compile Include="IRepository\IRelacionamentoCliente.cs" />
+    <Compile Include="IRepository\IResgate.cs" />
+    <Compile Include="IRepository\IResgateDePremio.cs" />
+    <Compile Include="IRepository\ISegmentoComercialConta.cs" />
+    <Compile Include="IRepository\ISegmentoComercial.cs" />
+    <Compile Include="IRepository\ISinonimosMarcas.cs" />
+    <Compile Include="IRepository\ISolicitacaoXUnidades.cs" />
+    <Compile Include="IRepository\ISolucao.cs" />
+    <Compile Include="IRepository\IRelacionamentoB2B.cs" />
+    <Compile Include="IRepository\ISharePointDocumentLocation.cs" />
+    <Compile Include="IRepository\IStatusBeneficios.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IRepository\ITabelaPrecoB2B.cs" />
+    <Compile Include="IRepository\IPostagem.cs" />
+    <Compile Include="IRepository\ITipoDeDenuncia.cs" />
+    <Compile Include="IRepository\IParametroBeneficio.cs" />
+    <Compile Include="IRepository\IBeneficio.cs" />
+    <Compile Include="IRepository\IParecer.cs" />
+    <Compile Include="IRepository\IHistoricoComprasCanal.cs" />
+    <Compile Include="IRepository\IPortfoliodoKeyAccountRepresentantes.cs" />
+    <Compile Include="IRepository\IDocumentoSharePoint.cs" />
+    <Compile Include="IRepository\IPotencialDetalhadodoSupervisorporProduto.cs" />
+    <Compile Include="IRepository\IPotencialdoKAporFamilia.cs" />
+    <Compile Include="IRepository\IPotencialdoKAporProduto.cs" />
+    <Compile Include="IRepository\IPotencialdoKAporSegmento.cs" />
+    <Compile Include="IRepository\IPotencialdoKAporSubfamilia.cs" />
+    <Compile Include="IRepository\IPotencialdoKARepresentante.cs" />
+    <Compile Include="IRepository\IPotencialdoSupervisor.cs" />
+    <Compile Include="IRepository\IPotencialdoSupervisorporFamilia.cs" />
+    <Compile Include="IRepository\IPotencialdoSupervisorporProduto.cs" />
+    <Compile Include="IRepository\IPotencialdoSupervisorporSegmento.cs" />
+    <Compile Include="IRepository\IPotencialdoSupervisorporSubfamilia.cs" />
+    <Compile Include="IRepository\ISharePointSite.cs" />
+    <Compile Include="IRepository\ISolicitacaoBeneficio.cs" />
+    <Compile Include="IRepository\ICompromissosDoPrograma.cs" />
+    <Compile Include="IRepository\IAnotacao.cs" />
+    <Compile Include="IRepository\IMetadaUnidade.cs" />
+    <Compile Include="IRepository\IMetadaUnidadeporFamilia.cs" />
+    <Compile Include="IRepository\IMetadaUnidadeporProduto.cs" />
+    <Compile Include="IRepository\IMetadaUnidadeporSegmento.cs" />
+    <Compile Include="IRepository\IMetadaUnidadeporSubfamilia.cs" />
+    <Compile Include="IRepository\IMetadaUnidadeporTrimestre.cs" />
+    <Compile Include="IRepository\IMetaDetalhadadaUnidadeporProduto.cs" />
+    <Compile Include="IRepository\IMetaDetalhadadoCanalporProduto.cs" />
+    <Compile Include="IRepository\IMetaDetalhadadoKAporProduto.cs" />
+    <Compile Include="IRepository\IMetadoCanal.cs" />
+    <Compile Include="IRepository\IMetadoCanalporFamilia.cs" />
+    <Compile Include="IRepository\IMetadoCanalporProduto.cs" />
+    <Compile Include="IRepository\IMetadoCanalporSegmento.cs" />
+    <Compile Include="IRepository\IMetadoCanalporSubFamilia.cs" />
+    <Compile Include="IRepository\IFuncaoConexao.cs" />
+    <Compile Include="IRepository\IListaDesconto.cs" />
+    <Compile Include="IRepository\IObservacao.cs" />
+    <Compile Include="IRepository\IOportunidade.cs" />
+    <Compile Include="IRepository\IOrcamentodaUnidade.cs" />
+    <Compile Include="IRepository\IOrcamentodaUnidadeDetalhadoporProduto.cs" />
+    <Compile Include="IRepository\IOrcamentodaUnidadeporFamilia.cs" />
+    <Compile Include="IRepository\IOrcamentodaUnidadeporProduto.cs" />
+    <Compile Include="IRepository\IOrcamentodaUnidadeporSegmento.cs" />
+    <Compile Include="IRepository\IOrcamentodaUnidadeporSubFamilia.cs" />
+    <Compile Include="IRepository\IOrcamentodaUnidadeporTrimestre.cs" />
+    <Compile Include="IRepository\IOrcamentodoCanalDetalhadoporProduto.cs" />
+    <Compile Include="IRepository\IOrcamentodoCanalporFamilia.cs" />
+    <Compile Include="IRepository\IOrcamentodoCanalporProduto.cs" />
+    <Compile Include="IRepository\IOrcamentodoCanalporSegmento.cs" />
+    <Compile Include="IRepository\IOrcamentodoCanalporSubFamilia.cs" />
+    <Compile Include="IRepository\IOrcamentoPorCanal.cs" />
+    <Compile Include="IRepository\IParametroGlobal.cs" />
+    <Compile Include="IRepository\IRegiaoAtuacao.cs" />
+    <Compile Include="IRepository\IAcessoExtranet.cs" />
+    <Compile Include="IRepository\IStatusCompromissos.cs" />
+    <Compile Include="IRepository\ITipoAcessoExtranet.cs" />
+    <Compile Include="IRepository\IAcessoExtranetContatos.cs" />
+    <Compile Include="IRepository\IBeneficioDoCanal.cs" />
+    <Compile Include="IRepository\IBeneficiosCompromissos.cs" />
+    <Compile Include="IRepository\IBens.cs" />
+    <Compile Include="IRepository\ICanaldeVenda.cs" />
+    <Compile Include="IRepository\ICategoria.cs" />
+    <Compile Include="IRepository\ICategoriasCanal.cs" />
+    <Compile Include="IRepository\ICEP.cs" />
+    <Compile Include="IRepository\IClassificacao.cs" />
+    <Compile Include="IRepository\IColaboradorTreinadoCertificado.cs" />
+    <Compile Include="IRepository\ICompromissosDoCanal.cs" />
+    <Compile Include="IRepository\ICondicaoPagamento.cs" />
+    <Compile Include="IRepository\IConexao.cs" />
+    <Compile Include="IRepository\IConta.cs" />
+    <Compile Include="IRepository\IContato.cs" />
+    <Compile Include="IRepository\IDenuncia.cs" />
+    <Compile Include="IRepository\IDocumentoCanal.cs" />
+    <Compile Include="IRepository\IEmail.cs" />
+    <Compile Include="IRepository\IEmpresasColigadas.cs" />
+    <Compile Include="IRepository\IEquipe.cs" />
+    <Compile Include="IRepository\IEstabelecimento.cs" />
+    <Compile Include="IRepository\IEstado.cs" />
+    <Compile Include="IRepository\IEstruturaAtendimento.cs" />
+    <Compile Include="IRepository\IEstruturaProduto.cs" />
+    <Compile Include="IRepository\IFamiliaComercial.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IRepository\IFamiliaMaterial.cs" />
+    <Compile Include="IRepository\IFamiliaProduto.cs" />
+    <Compile Include="IRepository\IFatura.cs" />
+    <Compile Include="IRepository\IFormaPagamento.cs" />
+    <Compile Include="IRepository\IFornecedorCanal.cs" />
+    <Compile Include="IRepository\IGrupoEstoque.cs" />
+    <Compile Include="IRepository\IGrupoUnidade.cs" />
+    <Compile Include="IRepository\IIndice.cs" />
+    <Compile Include="IRepository\IItemListaPreco.cs" />
+    <Compile Include="IRepository\ILinhaCorteDistribuidor.cs" />
+    <Compile Include="IRepository\ILinhaCorteEstado.cs" />
+    <Compile Include="IRepository\ILinhaCorteRevenda.cs" />
+    <Compile Include="IRepository\IListaPreco.cs" />
+    <Compile Include="IRepository\IListaPrecoPSD.cs" />
+    <Compile Include="IRepository\IListaPrecoXEstado.cs" />
+    <Compile Include="IRepository\IMensagem.cs" />
+    <Compile Include="IRepository\IMoeda.cs" />
+    <Compile Include="IRepository\IMunicipio.cs" />
+    <Compile Include="IRepository\IMunicipioUF.cs" />
+    <Compile Include="IRepository\INaturezaOperacao.cs" />
+    <Compile Include="IRepository\INivelPosVenda.cs" />
+    <Compile Include="IRepository\INivelPosVendaClassificacao.cs" />
+    <Compile Include="IRepository\IOrigem.cs" />
+    <Compile Include="IRepository\IPais.cs" />
+    <Compile Include="IRepository\IParticipantesDoProcesso.cs" />
+    <Compile Include="IRepository\IPedido.cs" />
+    <Compile Include="IRepository\IPerfil.cs" />
+    <Compile Include="IRepository\IPoliticaComercial.cs" />
+    <Compile Include="IRepository\IPortador.cs" />
+    <Compile Include="IRepository\IPortfolio.cs" />
+    <Compile Include="IRepository\IProcesso.cs" />
+    <Compile Include="IRepository\IProduto.cs" />
+    <Compile Include="IRepository\IProdutoEstabelecimento.cs" />
+    <Compile Include="IRepository\IProdutoFatura.cs" />
+    <Compile Include="IRepository\IProdutoListaPSD.cs" />
+    <Compile Include="IRepository\IProdutoPedido.cs" />
+    <Compile Include="IRepository\IProdutoPoliticaComercial.cs" />
+    <Compile Include="IRepository\IProdutoPortfolio.cs" />
+    <Compile Include="IRepository\IProdutoTreinamento.cs" />
+    <Compile Include="IRepository\IReceitaPadrao.cs" />
+    <Compile Include="IRepository\IReferenciasCanal.cs" />
+    <Compile Include="IRepository\IRegiao.cs" />
+    <Compile Include="IRepository\IRegiaoGeografica.cs" />
+    <Compile Include="IRepository\IRelacionamentoCanal.cs" />
+    <Compile Include="IRepository\IRota.cs" />
+    <Compile Include="IRepository\ISegmento.cs" />
+    <Compile Include="IRepository\ISeguroConta.cs" />
+    <Compile Include="IRepository\ISolicitacaoCadastro.cs" />
+    <Compile Include="IRepository\ISubclassificacoes.cs" />
+    <Compile Include="IRepository\ISubfamiliaProduto.cs" />
+    <Compile Include="IRepository\ITabelaFinanciamento.cs" />
+    <Compile Include="IRepository\ITabelaPreco.cs" />
+    <Compile Include="IRepository\ITarefa.cs" />
+    <Compile Include="IRepository\ITeamMembership.cs" />
+    <Compile Include="IRepository\ITipoDeAtividade.cs" />
+    <Compile Include="IRepository\ITipodeParametroGlobal.cs" />
+    <Compile Include="IRepository\ITipoPosto.cs" />
+    <Compile Include="IRepository\ITipoSolicitacao.cs" />
+    <Compile Include="IRepository\ITitulo.cs" />
+    <Compile Include="IRepository\ITransportadora.cs" />
+    <Compile Include="IRepository\ITurmaCanal.cs" />
+    <Compile Include="IRepository\ITreinamentoCertificacao.cs" />
+    <Compile Include="IRepository\ITreinamentoCanal.cs" />
+    <Compile Include="IRepository\IUnidadeDeNegocio.cs" />
+    <Compile Include="IRepository\IUnidadeKonviva.cs" />
+    <Compile Include="IRepository\IUnidadeDeMedida.cs" />
+    <Compile Include="IRepository\IUnidadeNegocio.cs" />
+    <Compile Include="IRepository\IUsuario.cs" />
+    <Compile Include="IRepository\IUtil.cs" />
+    <Compile Include="IRepository\IValorDoServicoPorPosto.cs" />
+    <Compile Include="IRepository\IValorDoServico.cs" />
+    <Compile Include="IRepository\IVeiculo.cs" />
+    <Compile Include="Model\Acao.cs" />
+    <Compile Include="Model\AcessoExtranetContato.cs" />
+    <Compile Include="Model\AcaoSubsidiadaVmc.cs" />
+    <Compile Include="Model\Causa.cs" />
+    <Compile Include="Model\ContaSegmento.cs" />
+    <Compile Include="Model\HistoricoCategoria.cs" />
+    <Compile Include="Model\QuestionarioGrupoPergunta.cs" />
+    <Compile Include="Model\RegiaoDeAtuacao.cs" />
+    <Compile Include="Model\LiveChatTracking.cs" />
+    <Compile Include="Model\ArquivoDeEstoqueGiro.cs" />
+    <Compile Include="Model\Advertencia.cs" />
+    <Compile Include="Model\ArquivoDeSellOut.cs" />
+    <Compile Include="Model\Assunto.cs" />
+    <Compile Include="Model\Auditoria.cs" />
+    <Compile Include="Model\AutorizacaoPostagemCorreios.cs" />
+    <Compile Include="Model\CadastroProdutos.cs" />
+    <Compile Include="Model\CategoriaUN.cs" />
+    <Compile Include="Model\ClienteParticipante.cs" />
+    <Compile Include="Model\ClienteParticipanteDoContrato.cs" />
+    <Compile Include="Model\ClienteParticipanteEndereco.cs" />
+    <Compile Include="Model\ClientePotencial.cs" />
+    <Compile Include="Model\CategoriaB2B.cs" />
+    <Compile Include="Model\Endereco.cs" />
+    <Compile Include="Model\Log.cs" />
+    <Compile Include="Model\AreaAtuacao.cs" />
+    <Compile Include="Model\PausaTarefa.cs" />
+    <Compile Include="Model\ProdutoCondicaoPagamento .cs" />
+    <Compile Include="Model\ProdutoProjeto.cs" />
+    <Compile Include="Model\TipoPagamentoServico.cs" />
+    <Compile Include="Model\Modelo.cs" />
+    <Compile Include="Model\Marcas.cs" />
+    <Compile Include="Model\OcorrenciaBase.cs" />
+    <Compile Include="Model\ProdutoBase.cs" />
+    <Compile Include="Model\Postagem.cs" />
+    <Compile Include="Model\SegmentoComercialConta.cs" />
+    <Compile Include="Model\QuestionarioOpcao.cs" />
+    <Compile Include="Model\QuestionarioPergunta.cs" />
+    <Compile Include="Model\QuestionarioResposta.cs" />
+    <Compile Include="Model\SegmentoComercial.cs" />
+    <Compile Include="Model\SinonimosMarcas.cs" />
+    <Compile Include="Model\SolicitacaoXUnidades.cs" />
+    <Compile Include="Model\Marca.cs" />
+    <Compile Include="Model\VerbaVMC.cs" />
+    <Compile Include="Model\CNAE.cs" />
+    <Compile Include="Model\Compromisso.cs" />
+    <Compile Include="Model\ContaCorrente.cs" />
+    <Compile Include="Model\Contrato.cs" />
+    <Compile Include="Model\ContratosAssociados.cs" />
+    <Compile Include="Model\CreditoFidelidade.cs" />
+    <Compile Include="Model\DebitoFidelidade.cs" />
+    <Compile Include="Model\Defeito.cs" />
+    <Compile Include="Model\DefeitoOcorrenciaCliente.cs" />
+    <Compile Include="Model\DeParaDeUnidadeDoKonviva.cs" />
+    <Compile Include="Model\Diagnostico.cs" />
+    <Compile Include="Model\DiagnosticoOcorrencia.cs" />
+    <Compile Include="Model\DocumentoCanaisExtranet.cs" />
+    <Compile Include="Model\ConfiguracaoBeneficio.cs" />
+    <Compile Include="Model\DocumentoCanalEstoqueGiro.cs" />
+    <Compile Include="Model\EnderecoXML.cs" />
+    <Compile Include="Model\Extrato.cs" />
+    <Compile Include="Model\ExtratoFidelidade.cs" />
+    <Compile Include="Model\Fila.cs" />
+    <Compile Include="Model\FuncaoRelacionamento.cs" />
+    <Compile Include="Model\GrupoDoCliente.cs" />
+    <Compile Include="Model\GrupoPremio.cs" />
+    <Compile Include="Model\GrupoPremioFidelidade.cs" />
+    <Compile Include="Model\HistoricoDePostagem.cs" />
+    <Compile Include="Model\HistoricoDistribuidor.cs" />
+    <Compile Include="Model\ImportacaoAssistenciaTecnica.cs" />
+    <Compile Include="Model\IntegracaoCorreios.cs" />
+    <Compile Include="Model\IntervencaoTecnica.cs" />
+    <Compile Include="Model\ItemFila.cs" />
+    <Compile Include="Model\BeneficioDoCanal.cs" />
+    <Compile Include="Model\BeneficiosCompromissos.cs" />
+    <Compile Include="Model\Beneficio.cs" />
+    <Compile Include="Model\Bens.cs" />
+    <Compile Include="Model\CanaldeVenda.cs" />
+    <Compile Include="Model\Categoria.cs" />
+    <Compile Include="Model\CategoriasCanal.cs" />
+    <Compile Include="Model\CEP.cs" />
+    <Compile Include="Model\Anotacao.cs" />
+    <Compile Include="Model\CompromissosDoPrograma.cs" />
+    <Compile Include="Model\FamiliaPoliticaComercial.cs" />
+    <Compile Include="Model\LancamentoAvulsoDoExtrato.cs" />
+    <Compile Include="Model\LinhaComercial.cs" />
+    <Compile Include="Model\LinhaDeContrato.cs" />
+    <Compile Include="Model\ItemTabelaPrecoB2B.cs" />
+    <Compile Include="Model\ListaPrecoPSDEstado.cs" />
+    <Compile Include="Model\HistoricoCompra.cs" />
+    <Compile Include="Model\HistoricoComprasCanalProdutoMes.cs" />
+    <Compile Include="Model\HistoricoComprasFamilia.cs" />
+    <Compile Include="Model\HistoricoComprasSubfamilia.cs" />
+    <Compile Include="Model\HistoricoComprasTrimestre.cs" />
+    <Compile Include="Model\HistoricoDeComprasPorProduto.cs" />
+    <Compile Include="Model\HistoricoDeComprasPorProdutoMes.cs" />
+    <Compile Include="Model\HistoricoComprasSegmento.cs" />
+    <Compile Include="Model\CanalVerde.cs" />
+    <Compile Include="Model\Localidade.cs" />
+    <Compile Include="Model\LocalidadeContrato.cs" />
+    <Compile Include="Model\LogisticaReversa.cs" />
+    <Compile Include="Model\MensagemDeRetornoEMS.cs" />
+    <Compile Include="Model\MetadoCanalporTrimestre.cs" />
+    <Compile Include="Model\MetadaUnidadeporProdutoMes.cs" />
+    <Compile Include="Model\ObjetoColeta.cs" />
+    <Compile Include="Model\ObjetoPostal.cs" />
+    <Compile Include="Model\Ocorrencia.cs" />
+    <Compile Include="Model\PagamentoServico.cs" />
+    <Compile Include="Model\PermissoesAcessoB2b.cs" />
+    <Compile Include="Model\PesquisaSatisfacao.cs" />
+    <Compile Include="Model\PoliticaComercialXConta.cs" />
+    <Compile Include="Model\PoliticaComercialXEstado.cs" />
+    <Compile Include="Model\PontosDoParticipante.cs" />
+    <Compile Include="Model\Pontuacao.cs" />
+    <Compile Include="Model\PotencialdoKAporTrimestre.cs" />
+    <Compile Include="Model\PotencialdoSupervisorporTrimestre.cs" />
+    <Compile Include="Model\Premio.cs" />
+    <Compile Include="Model\PremioFidelidade.cs" />
+    <Compile Include="Model\PrioridadeLigacaoCallCenter.cs" />
+    <Compile Include="Model\Privilegio.cs" />
+    <Compile Include="Model\ProcessamentoFidelidade.cs" />
+    <Compile Include="Model\ProdutoAssisteciaTecnica.cs" />
+    <Compile Include="Model\ProdutoKit.cs" />
+    <Compile Include="Model\ProdutoResgatadoFidelidade.cs" />
+    <Compile Include="Model\ProdutosdaSolicitacao.cs" />
+    <Compile Include="Model\Regional.cs" />
+    <Compile Include="Model\Relacionamento.cs" />
+    <Compile Include="Model\RelacionamentoCliente.cs" />
+    <Compile Include="Model\Representante.cs" />
+    <Compile Include="Model\Resgate.cs" />
+    <Compile Include="Model\ResgateDePremios.cs" />
+    <Compile Include="Model\Resposta.cs" />
+    <Compile Include="Model\RetornoLogisticaReversaXML.cs" />
+    <Compile Include="Model\SerieDoProduto.cs" />
+    <Compile Include="Model\RelacionamentoB2B.cs" />
+    <Compile Include="Model\SharePointDocumentLocation.cs" />
+    <Compile Include="Model\Solicitacao.cs" />
+    <Compile Include="Model\SolicitacaoLogisticaReversaXML.cs" />
+    <Compile Include="Model\Solucao.cs" />
+    <Compile Include="Model\SolucaoOcorrencia.cs" />
+    <Compile Include="Model\StatusBeneficios.cs" />
+    <Compile Include="Model\Veiculo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\TabelaDePreco.cs" />
+    <Compile Include="Model\Telefone.cs" />
+    <Compile Include="Model\TabelaPrecoB2B.cs" />
+    <Compile Include="Model\TipoDedenuncia.cs" />
+    <Compile Include="Model\ParametroBeneficio.cs" />
+    <Compile Include="Model\Parecer.cs" />
+    <Compile Include="Model\ProdutoLista.cs" />
+    <Compile Include="Model\FechamentodoPedido.cs" />
+    <Compile Include="Model\HistoricoCompraCanal.cs" />
+    <Compile Include="Model\PortfoliodoKeyAccountRepresentantes.cs" />
+    <Compile Include="Model\DocumentoSharePoint.cs" />
+    <Compile Include="Model\PotencialDetalhadodoSupervisorporProduto.cs" />
+    <Compile Include="Model\PotencialdoKAporFamilia.cs" />
+    <Compile Include="Model\PotencialdoKAporProduto.cs" />
+    <Compile Include="Model\PotencialdoKAporSegmento.cs" />
+    <Compile Include="Model\PotencialdoKAporSubfamilia.cs" />
+    <Compile Include="Model\PotencialdoKARepresentante.cs" />
+    <Compile Include="Model\PotencialdoSupervisor.cs" />
+    <Compile Include="Model\PotencialdoSupervisorporFamilia.cs" />
+    <Compile Include="Model\PotencialdoSupervisorporProduto.cs" />
+    <Compile Include="Model\PotencialdoSupervisorporSegmento.cs" />
+    <Compile Include="Model\PotencialdoSupervisorporSubfamilia.cs" />
+    <Compile Include="Model\SharePointSite.cs" />
+    <Compile Include="Model\SolicitacaoBeneficio.cs" />
+    <Compile Include="Model\MetadoCanalporSubFamilia.cs" />
+    <Compile Include="Model\OrcamentoDetalhado.cs" />
+    <Compile Include="Model\Classificacao.cs" />
+    <Compile Include="Model\ColaboradorTreinadoCertificado.cs" />
+    <Compile Include="Model\CompromissosDoCanal.cs" />
+    <Compile Include="Model\CondicaoPagamento.cs" />
+    <Compile Include="Model\Conexao.cs" />
+    <Compile Include="Model\Conta.cs" />
+    <Compile Include="Model\Contato.cs" />
+    <Compile Include="Model\AcessoExtranet.cs" />
+    <Compile Include="Model\MetadaUnidadeporFamilia.cs" />
+    <Compile Include="Model\MetadaUnidade.cs" />
+    <Compile Include="Model\FuncaoConexao.cs" />
+    <Compile Include="Model\ListaDesconto.cs" />
+    <Compile Include="Model\MetadaUnidadeporProduto.cs" />
+    <Compile Include="Model\MetadaUnidadeporSegmento.cs" />
+    <Compile Include="Model\MetadaUnidadeporSubfamilia.cs" />
+    <Compile Include="Model\MetadaUnidadeporTrimestre.cs" />
+    <Compile Include="Model\MetaDetalhadadaUnidadeporProduto.cs" />
+    <Compile Include="Model\MetaDetalhadadoCanalporProduto.cs" />
+    <Compile Include="Model\MetaDetalhadadoKAporProduto.cs" />
+    <Compile Include="Model\MetadoCanal.cs" />
+    <Compile Include="Model\MetadoCanalporFamilia.cs" />
+    <Compile Include="Model\MetadoCanalporProduto.cs" />
+    <Compile Include="Model\MetadoCanalporSegmento.cs" />
+    <Compile Include="Model\Observacao.cs" />
+    <Compile Include="Model\Oportunidade.cs" />
+    <Compile Include="Model\IntegracaoBase.cs" />
+    <Compile Include="Model\OrcamentodaUnidade.cs" />
+    <Compile Include="Model\OrcamentodaUnidadeDetalhadoporProduto.cs" />
+    <Compile Include="Model\OrcamentodaUnidadeporFamilia.cs" />
+    <Compile Include="Model\OrcamentodaUnidadeporProduto.cs" />
+    <Compile Include="Model\OrcamentodaUnidadeporSegmento.cs" />
+    <Compile Include="Model\OrcamentodaUnidadeporSubFamilia.cs" />
+    <Compile Include="Model\OrcamentodaUnidadeporTrimestre.cs" />
+    <Compile Include="Model\OrcamentodoCanalDetalhadoporProduto.cs" />
+    <Compile Include="Model\OrcamentodoCanalporFamilia.cs" />
+    <Compile Include="Model\OrcamentodoCanalporProduto.cs" />
+    <Compile Include="Model\OrcamentodoCanalporSegmento.cs" />
+    <Compile Include="Model\OrcamentodoCanalporSubFamilia.cs" />
+    <Compile Include="Model\OrcamentoPorCanal.cs" />
+    <Compile Include="Model\OrcamentoResumido.cs" />
+    <Compile Include="Model\ParametroGlobal.cs" />
+    <Compile Include="Model\PrecoProduto.cs" />
+    <Compile Include="Model\Revenda.cs" />
+    <Compile Include="Model\StatusCompromissos.cs" />
+    <Compile Include="Model\TipoDeAcessoExtranet.cs" />
+    <Compile Include="Model\RegiaoAtuacao.cs" />
+    <Compile Include="Model\Denuncia.cs" />
+    <Compile Include="Model\DocumentoCanal.cs" />
+    <Compile Include="Model\DomainBase.cs" />
+    <Compile Include="Model\Email.cs" />
+    <Compile Include="Model\EmpresasColigadas.cs" />
+    <Compile Include="Model\Equipe.cs" />
+    <Compile Include="Model\Estabelecimento.cs" />
+    <Compile Include="Model\Estado.cs" />
+    <Compile Include="Model\EstruturaAtendimento.cs" />
+    <Compile Include="Model\EstruturaProduto.cs" />
+    <Compile Include="Model\FamiliaComercial.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\FamiliaMaterial.cs" />
+    <Compile Include="Model\FamiliaProduto.cs" />
+    <Compile Include="Model\Fatura.cs" />
+    <Compile Include="Model\FormaPagamento.cs" />
+    <Compile Include="Model\FornecedorCanal.cs" />
+    <Compile Include="Model\GrupoEstoque.cs" />
+    <Compile Include="Model\GrupoUnidade.cs" />
+    <Compile Include="Model\Indice.cs" />
+    <Compile Include="Model\LinhaCorteEstado.cs" />
+    <Compile Include="Model\ListaPrecoXEstado.cs" />
+    <Compile Include="Model\MunicipioUF.cs" />
+    <Compile Include="Model\ParticipantesDoProcesso.cs" />
+    <Compile Include="Model\Perfil.cs" />
+    <Compile Include="Model\Portador.cs" />
+    <Compile Include="Model\Portfolio.cs" />
+    <Compile Include="Model\Processo.cs" />
+    <Compile Include="Model\Produto.cs" />
+    <Compile Include="Model\ProdutoEstabelecimento.cs" />
+    <Compile Include="Model\ProdutoFatura.cs" />
+    <Compile Include="Model\ProdutoListaPSDPPPSCF.cs" />
+    <Compile Include="Model\ProdutoPedido.cs" />
+    <Compile Include="Model\ProdutoPoliticaComercial.cs" />
+    <Compile Include="Model\ProdutoPortfolio.cs" />
+    <Compile Include="Model\ProdutoTreinamento.cs" />
+    <Compile Include="Model\ReceitaPadrao.cs" />
+    <Compile Include="Model\ReferenciasCanal.cs" />
+    <Compile Include="Model\Regiao.cs" />
+    <Compile Include="Model\RegiaoGeografica.cs" />
+    <Compile Include="Model\RelacionamentoCanal.cs" />
+    <Compile Include="Model\Rota.cs" />
+    <Compile Include="Model\Segmento.cs" />
+    <Compile Include="Model\ItemListaPreco.cs" />
+    <Compile Include="Model\LinhaCorteDistribuidor.cs" />
+    <Compile Include="Model\LinhaCorteRevenda.cs" />
+    <Compile Include="Model\ListaPreco.cs" />
+    <Compile Include="Model\ListaPrecoPSDPPPSCF.cs" />
+    <Compile Include="Model\Mensagem.cs" />
+    <Compile Include="Model\Moeda.cs" />
+    <Compile Include="Model\Municipio.cs" />
+    <Compile Include="Model\NaturezaOperacao.cs" />
+    <Compile Include="Model\NivelPosVenda.cs" />
+    <Compile Include="Model\NivelPosVendaClassificacao.cs" />
+    <Compile Include="Model\Origem.cs" />
+    <Compile Include="Model\Pais.cs" />
+    <Compile Include="Model\Pedido.cs" />
+    <Compile Include="Model\PoliticaComercial.cs" />
+    <Compile Include="Model\SegurodaConta.cs" />
+    <Compile Include="Model\SolicitacaoCadastro.cs" />
+    <Compile Include="Model\SubfamiliaProduto.cs" />
+    <Compile Include="Model\TabelaFinanciamento.cs" />
+    <Compile Include="Model\TabelaPreco.cs" />
+    <Compile Include="Model\Tarefa.cs" />
+    <Compile Include="Model\TeamMembership.cs" />
+    <Compile Include="Model\TipoDeAtividade.cs" />
+    <Compile Include="Model\TipodeParametroGlobal.cs" />
+    <Compile Include="Model\TipoPosto.cs" />
+    <Compile Include="Model\TipoSolicitacao.cs" />
+    <Compile Include="Model\Titulo.cs" />
+    <Compile Include="Model\Transportadora.cs" />
+    <Compile Include="Model\AcessoKonviva.cs" />
+    <Compile Include="Model\TurmaCanal.cs" />
+    <Compile Include="Model\TreinamentoCertificacao.cs" />
+    <Compile Include="Model\TreinamentoCanal.cs" />
+    <Compile Include="Model\UnidadeKonviva.cs" />
+    <Compile Include="Model\Unidade.cs" />
+    <Compile Include="Model\UnidadeNegocio.cs" />
+    <Compile Include="Model\Usuario.cs" />
+    <Compile Include="Model\ValorDoServico.cs" />
+    <Compile Include="Model\ValorDoServicoPorPosto.cs" />
+    <Compile Include="Model\WalmartClientePedido.cs" />
+    <Compile Include="Model\WalmartEnderecoPedido.cs" />
+    <Compile Include="Model\WalmartItemPedido.cs" />
+    <Compile Include="Model\WalmartPedido.cs" />
+    <Compile Include="Model\WebServiceBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="IRepository\IIntegrador.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BarramentoWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Servicos\AcaoService.cs" />
+    <Compile Include="Servicos\AnotacaoService.cs" />
+    <Compile Include="Servicos\CausaService.cs" />
+    <Compile Include="Servicos\ContaSegmentoService.cs" />
+    <Compile Include="Servicos\HistoricoCategoriaService.cs" />
+    <Compile Include="Servicos\QuestionarioGrupoPerguntaServices.cs" />
+    <Compile Include="Servicos\RegiaoDeAtuacaoService.cs" />
+    <Compile Include="Servicos\LiveChateTrackingService.cs" />
+    <Compile Include="Servicos\AreaAtuacaoService.cs" />
+    <Compile Include="Servicos\PagamentoServicoService.cs" />
+    <Compile Include="Servicos\ProdutoCondicaoPagamentoService.cs" />
+    <Compile Include="Servicos\ProdutoProjetoService.cs" />
+    <Compile Include="Servicos\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Servicos\PausaTarefaService.cs" />
+    <Compile Include="Servicos\TipoPagamentoService.cs" />
+    <Compile Include="Servicos\ModeloService.cs" />
+    <Compile Include="Servicos\MarcaService.cs" />
+    <Compile Include="Servicos\HistoricoDistribuidorService.cs" />
+    <Compile Include="Servicos\MarcasServices.cs" />
+    <Compile Include="Servicos\PrioridadeLigacaoCallCenterService.cs" />
+    <Compile Include="Servicos\QuestionarioOpcaoServices.cs" />
+    <Compile Include="Servicos\QuestionarioPerguntaServices.cs" />
+    <Compile Include="Servicos\QuestionarioRespostaServices.cs" />
+    <Compile Include="Servicos\SegmentoComercialService.cs" />
+    <Compile Include="Servicos\SellinService.cs" />
+    <Compile Include="Servicos\PostagemService.cs" />
+    <Compile Include="Servicos\SinonimosMarcasServices.cs" />
+    <Compile Include="Servicos\SolicitacaoXUnidadesService.cs" />
+    <Compile Include="Servicos\UtilService.cs" />
+    <Compile Include="Servicos\VeiculoService.cs" />
+    <Compile Include="Servicos\VerbaVmcService.cs" />
+    <Compile Include="Servicos\AcessoExtranetService.cs" />
+    <Compile Include="Servicos\ArquivoDeEstoqueGiroServices.cs" />
+    <Compile Include="Servicos\ArquivoDeSellOutServices.cs" />
+    <Compile Include="Servicos\CepService.cs" />
+    <Compile Include="Servicos\ClienteParticipanteService.cs" />
+    <Compile Include="Servicos\EnderecoService.cs" />
+    <Compile Include="Servicos\CategoriaB2BService.cs" />
+    <Compile Include="Servicos\CnaeService.cs" />
+    <Compile Include="Servicos\ContratoService.cs" />
+    <Compile Include="Servicos\DocService.cs" />
+    <Compile Include="Servicos\Docs\CNPJ.cs" />
+    <Compile Include="Servicos\Docs\CPF.cs" />
+    <Compile Include="Servicos\Docs\DocFactory.cs" />
+    <Compile Include="Servicos\Docs\Documento.cs" />
+    <Compile Include="Servicos\Docs\Estrangeiro.cs" />
+    <Compile Include="Servicos\ERPIntegrationService.cs" />
+    <Compile Include="Servicos\ExtratoService.cs" />
+    <Compile Include="Servicos\FetchService.cs" />
+    <Compile Include="Servicos\GestaoSLA\CalendarioDeFeriados.cs" />
+    <Compile Include="Servicos\GestaoSLA\CalendarioDeTrabalho.cs" />
+    <Compile Include="Servicos\GestaoSLA\DiaDaSemana.cs" />
+    <Compile Include="Servicos\GestaoSLA\Feriado.cs" />
+    <Compile Include="Servicos\GestaoSLA\SLA.cs" />
+    <Compile Include="Servicos\DocumentoCanalEstoqueGiroService.cs" />
+    <Compile Include="Servicos\HistoricoComprasSegmentoServices.cs" />
+    <Compile Include="Servicos\ColaboradorTreinadoCertificadoService.cs" />
+    <Compile Include="Servicos\DocumentoCanaisExtranetService.cs" />
+    <Compile Include="Servicos\DeParaDeUnidadeDoKonvivaService.cs" />
+    <Compile Include="Servicos\EmailService.cs" />
+    <Compile Include="Servicos\ConfiguracaoBeneficioService.cs" />
+    <Compile Include="Servicos\Integracao.cs" />
+    <Compile Include="Servicos\ItemFilaService.cs" />
+    <Compile Include="Servicos\FilaServices.cs" />
+    <Compile Include="Servicos\HistoricoComprasFamiliaService.cs" />
+    <Compile Include="Servicos\CanalVerdeService.cs" />
+    <Compile Include="Servicos\LeadService.cs" />
+    <Compile Include="Servicos\NotasService.cs" />
+    <Compile Include="Servicos\OcorrenciaService.cs" />
+    <Compile Include="Servicos\PotencialdoKAporTrimestreService.cs" />
+    <Compile Include="Servicos\ProdutoKitService.cs" />
+    <Compile Include="Servicos\SharepointService.cs" />
+    <Compile Include="Servicos\RelacionamentoB2BService.cs" />
+    <Compile Include="Servicos\TabelaPrecoExtranetService.cs" />
+    <Compile Include="Servicos\TabelaPrecoB2BService.cs" />
+    <Compile Include="Servicos\UnidadeKonvivaService.cs" />
+    <Compile Include="Servicos\ArquivoService.cs" />
+    <Compile Include="Servicos\BeneficioDoCanalService .cs" />
+    <Compile Include="Servicos\AcaoSubsidiadaVmcService.cs" />
+    <Compile Include="Servicos\BeneficioService.cs" />
+    <Compile Include="Servicos\BensService.cs" />
+    <Compile Include="Servicos\CanalDeVendaService.cs" />
+    <Compile Include="Servicos\CanalServices.cs" />
+    <Compile Include="Servicos\CategoriaService.cs" />
+    <Compile Include="Servicos\ClassificacaoService.cs" />
+    <Compile Include="Servicos\CondicaoPagamentoService.cs" />
+    <Compile Include="Servicos\ConexaoService.cs" />
+    <Compile Include="Servicos\ContaService.cs" />
+    <Compile Include="Servicos\ContatoService.cs" />
+    <Compile Include="Servicos\CategoriaCanalService.cs" />
+    <Compile Include="Servicos\CompromissosDoCanalService .cs" />
+    <Compile Include="Servicos\BeneficiosCompromissosService.cs" />
+    <Compile Include="Servicos\FormaPagamentoService.cs" />
+    <Compile Include="Servicos\DenunciaService .cs" />
+    <Compile Include="Servicos\HistoricoComprasCanalProdutoMesService.cs" />
+    <Compile Include="Servicos\HistoricoCompraSegmentoService.cs" />
+    <Compile Include="Servicos\HistoricoComprasProdutoMesService.cs" />
+    <Compile Include="Servicos\HistoricoComprasProdutoService.cs" />
+    <Compile Include="Servicos\HistoricoComprasSubfamiliaService.cs" />
+    <Compile Include="Servicos\HistoricoComprasTrimestreService.cs" />
+    <Compile Include="Servicos\HistoricoComprasService.cs" />
+    <Compile Include="Servicos\HistoricoCompraUnidadeService.cs" />
+    <Compile Include="Servicos\ProdutosdaSolicitacaoService.cs" />
+    <Compile Include="Servicos\RegiaoService.cs" />
+    <Compile Include="Servicos\ParametroBeneficioService.cs" />
+    <Compile Include="Servicos\ParecerService.cs" />
+    <Compile Include="Servicos\StatusBeneficiosService.cs" />
+    <Compile Include="Servicos\StatusCompromissoService.cs" />
+    <Compile Include="Servicos\HistoricoComprasCanalService.cs" />
+    <Compile Include="Servicos\PortfoliodoKeyAccountRepresentantesService.cs" />
+    <Compile Include="Servicos\PotencialDetalhadodoSupervisorporProdutoService.cs" />
+    <Compile Include="Servicos\PotencialdoKAporFamiliaService.cs" />
+    <Compile Include="Servicos\PotencialdoKAporProdutoService.cs" />
+    <Compile Include="Servicos\PotencialdoKAporSegmentoService.cs" />
+    <Compile Include="Servicos\PotencialdoKAporSubfamiliaService.cs" />
+    <Compile Include="Servicos\PotencialdoKARepresentanteService.cs" />
+    <Compile Include="Servicos\PotencialdoSupervisorporFamiliaService.cs" />
+    <Compile Include="Servicos\PotencialdoSupervisorporProdutoService.cs" />
+    <Compile Include="Servicos\PotencialdoSupervisorporSegmentoService.cs" />
+    <Compile Include="Servicos\PotencialdoSupervisorporSubfamiliaService.cs" />
+    <Compile Include="Servicos\PotencialdoSupervisorService.cs" />
+    <Compile Include="Servicos\ProdutoListaPSDService.cs" />
+    <Compile Include="Servicos\ListaPSDService.cs" />
+    <Compile Include="Servicos\SharePointSiteService.cs" />
+    <Compile Include="Servicos\SolicitacaoBeneficioService.cs" />
+    <Compile Include="Servicos\MetadoCanalporSubFamiliaService.cs" />
+    <Compile Include="Servicos\SellOutService.cs" />
+    <Compile Include="Servicos\PerfilServices.cs" />
+    <Compile Include="Servicos\SharepointServices.cs" />
+    <Compile Include="Servicos\TarefaService.cs" />
+    <Compile Include="Servicos\EquipeService.cs" />
+    <Compile Include="Servicos\MetadaUnidadeporFamiliaService.cs" />
+    <Compile Include="Servicos\MetadaUnidadeporProdutoService.cs" />
+    <Compile Include="Servicos\MetadaUnidadeporSegmentoService.cs" />
+    <Compile Include="Servicos\MetadaUnidadeporSubfamiliaService.cs" />
+    <Compile Include="Servicos\MetadaUnidadeporTrimestreService.cs" />
+    <Compile Include="Servicos\MetadaUnidadeService.cs" />
+    <Compile Include="Servicos\MetaDetalhadadaUnidadeporProdutoService.cs" />
+    <Compile Include="Servicos\MetaDetalhadadoCanalporProdutoService.cs" />
+    <Compile Include="Servicos\MetaDetalhadadoKAporProdutoService.cs" />
+    <Compile Include="Servicos\MetadoCanalporFamiliaService.cs" />
+    <Compile Include="Servicos\MetadoCanalporProdutoService.cs" />
+    <Compile Include="Servicos\MetadoCanalporSegmentoService.cs" />
+    <Compile Include="Servicos\MetadoCanalService.cs" />
+    <Compile Include="Servicos\ObservacaoService.cs" />
+    <Compile Include="Servicos\OrcamentodaUnidadeDetalhadoporProdutoService.cs" />
+    <Compile Include="Servicos\OrcamentodaUnidadeporFamiliaService.cs" />
+    <Compile Include="Servicos\OrcamentodaUnidadeporProdutoService.cs" />
+    <Compile Include="Servicos\OrcamentodaUnidadeporSegmentoService.cs" />
+    <Compile Include="Servicos\OrcamentodaUnidadeporSubFamiliaService.cs" />
+    <Compile Include="Servicos\OrcamentodaUnidadeporTrimestreService.cs" />
+    <Compile Include="Servicos\OrcamentodaUnidadeService.cs" />
+    <Compile Include="Servicos\OrcamentoDetalhadoService.cs" />
+    <Compile Include="Servicos\OrcamentodoCanalDetalhadoporProdutoService.cs" />
+    <Compile Include="Servicos\OrcamentodoCanalporFamiliaService.cs" />
+    <Compile Include="Servicos\OrcamentodoCanalporProdutoService.cs" />
+    <Compile Include="Servicos\OrcamentodoCanalporSegmentoService.cs" />
+    <Compile Include="Servicos\OrcamentodoCanalporSubFamiliaService.cs" />
+    <Compile Include="Servicos\OrcamentodoCanalService.cs" />
+    <Compile Include="Servicos\GrupoUnidadeMedidaService.cs" />
+    <Compile Include="Servicos\ProdutoFaturaService.cs" />
+    <Compile Include="Servicos\LinhaCorteService.cs" />
+    <Compile Include="Servicos\TipodeParametroGlobalService.cs" />
+    <Compile Include="Servicos\TipoSolicitacaoService.cs" />
+    <Compile Include="Servicos\AcessoKonvivaService.cs" />
+    <Compile Include="Servicos\TurmaCanalService.cs" />
+    <Compile Include="Servicos\TreinamentoCertificacaoService.cs" />
+    <Compile Include="Servicos\UsuarioService.cs" />
+    <Compile Include="Servicos\SolicitacaoService.cs" />
+    <Compile Include="Servicos\PortfolioService.cs" />
+    <Compile Include="Servicos\FamiliaMaterialService.cs" />
+    <Compile Include="Servicos\DocumentoCanalService.cs" />
+    <Compile Include="Servicos\FaturaService.cs" />
+    <Compile Include="Servicos\ListaDescontoService.cs" />
+    <Compile Include="Servicos\GrupoEstoqueService.cs" />
+    <Compile Include="Servicos\EmpresasColigadasService.cs" />
+    <Compile Include="Servicos\EstadoServices.cs" />
+    <Compile Include="Servicos\EstruturaAtendimentoService.cs" />
+    <Compile Include="Servicos\FornecedorCanalService.cs" />
+    <Compile Include="Servicos\AcessoExtranetContatoService.cs" />
+    <Compile Include="Servicos\IndiceService.cs" />
+    <Compile Include="Servicos\MensagemService.cs" />
+    <Compile Include="Servicos\MunicipioServices.cs" />
+    <Compile Include="Servicos\NaturezaOperacaoService.cs" />
+    <Compile Include="Servicos\NivelPosVendaService.cs" />
+    <Compile Include="Servicos\PaisServices.cs" />
+    <Compile Include="Servicos\ParametroGlobalService.cs" />
+    <Compile Include="Servicos\PedidoService.cs" />
+    <Compile Include="Servicos\PortadorService.cs" />
+    <Compile Include="Servicos\ProcessoDeSolicitacoes.cs" />
+    <Compile Include="Servicos\ProdutoEstabelecimentoService.cs" />
+    <Compile Include="Servicos\ProdutoService.cs" />
+    <Compile Include="Servicos\ReceitaPadraoService.cs" />
+    <Compile Include="Servicos\ReferenciasCanalService.cs" />
+    <Compile Include="Servicos\RegiaoAtuacaoServices.cs" />
+    <Compile Include="Servicos\RotaService.cs" />
+    <Compile Include="Servicos\SeguroContaService.cs" />
+    <Compile Include="Servicos\SubClassificacaoService.cs" />
+    <Compile Include="Servicos\TabelaFinanciamentoService.cs" />
+    <Compile Include="Servicos\TabelaPrecoService.cs" />
+    <Compile Include="Servicos\TransportadoraService.cs" />
+    <Compile Include="Servicos\DicionarioMensagens.cs" />
+    <Compile Include="Servicos\EnderecoServices.cs" />
+    <Compile Include="Servicos\EstabelecimentoService.cs" />
+    <Compile Include="Servicos\FamiliaComercialService.cs" />
+    <Compile Include="Servicos\FamiliaProdutoService.cs" />
+    <Compile Include="Servicos\ListaPrecoService.cs" />
+    <Compile Include="Servicos\MoedaService.cs" />
+    <Compile Include="Servicos\OrigemService.cs" />
+    <Compile Include="Servicos\PoliticaComercialService.cs" />
+    <Compile Include="Servicos\RelacionamentoCanalService.cs" />
+    <Compile Include="Model\Subclassificacoes.cs" />
+    <Compile Include="Servicos\RepositoryService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Servicos\SegmentoService.cs" />
+    <Compile Include="Servicos\SubFamiliaProdutoService.cs" />
+    <Compile Include="Servicos\TreinamentoService.cs" />
+    <Compile Include="Servicos\UnidadeNegocioService.cs" />
+    <Compile Include="Servicos\UnidadeService.cs" />
+    <Compile Include="ValueObjects\ClienteDoContrato.cs" />
+    <Compile Include="ValueObjects\FiltroContaSellout.cs" />
+    <Compile Include="ValueObjects\ImpressaoOcorrenciaIsolVO.cs" />
+    <Compile Include="ValueObjects\LookupVO.cs" />
+    <Compile Include="ValueObjects\OcorrenciaIsol.cs" />
+    <Compile Include="ValueObjects\PedidoEnvio.cs" />
+    <Compile Include="ValueObjects\PicklistVO.cs" />
+    <Compile Include="ValueObjects\PontuacaoProduto.cs" />
+    <Compile Include="ValueObjects\PrecoItem.cs" />
+    <Compile Include="ValueObjects\ResgateDoParticipante.cs" />
+    <Compile Include="ValueObjects\RetornoDoFaturamento.cs" />
+    <Compile Include="ViewModels\OndeComprarQuemInstala.cs" />
+    <Compile Include="ViewModels\ProdutoSolicitacaoViewModel.cs" />
+    <Compile Include="ViewModels\ValorProdutoICMSViewModel.cs" />
+    <Compile Include="ViewModels\ChaveValorViewModel.cs" />
+    <Compile Include="ViewModels\CepViewModel.cs" />
+    <Compile Include="ViewModels\IbgeViewModel.cs" />
+    <Compile Include="ViewModels\ModeloMetaResumidaClienteViewModel.cs" />
+    <Compile Include="ViewModels\ModeloMetaDetalhadaClienteViewModel.cs" />
+    <Compile Include="ViewModels\ModeloMetaKeyAccountViewModel.cs" />
+    <Compile Include="ViewModels\ModeloMetaProdutoMesViewModel.cs" />
+    <Compile Include="ViewModels\PosicaoEntregaViewModel.cs" />
+    <Compile Include="ViewModels\ProdutoFaturaViewModel.cs" />
+    <Compile Include="ViewModels\SefazViewModel.cs" />
+    <Compile Include="ViewModels\TituloSolicitacaoViewModel.cs" />
+    <Compile Include="Web References\br.com.intelbras.sp2013dev\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\IntelbrasService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\Sellout\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SharepointWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\TabelaPrecoExtranet\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WalMart.Service\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Intelbras.CRM2013.Domain.snk" />
+    <None Include="Key.snk" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\System.Xml.Linq.XElement.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\BarramentoWebService\Intelbras.CRM2013.Domain.BarramentoWebService.PostMessageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BarramentoWebService\Intelbras.CRM2013.Domain.BarramentoWebService.PostMessageResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BarramentoWebService\item1.wsdl" />
+    <None Include="Service References\BarramentoWebService\item3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BarramentoWebService\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BarramentoWebService\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BarramentoWebService\MessageReceiver1.wsdl" />
+    <None Include="Servicos\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\br.com.intelbras.sp2013dev\Lists.wsdl" />
+    <None Include="Web References\br.com.intelbras.sp2013dev\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\IntelbrasService\BuscarEstabTabPreco_ttEstabelecRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\IntelbrasService\buscarEstruturaDoItemPor_ttEstruturaRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\IntelbrasService\BuscarItemCDB_ttcomponenteRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\IntelbrasService\BuscarPrecoItemAstec_ttErrosRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\IntelbrasService\BuscarPreco_ttErrosRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\IntelbrasService\BuscarPreco_ttPrecoItemRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\IntelbrasService\BuscarProdutosCliente_ttProdutosRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\IntelbrasService\Buscar_DadosCep_ttRetornoCEPRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\IntelbrasService\Buscar_dadosCliente_ttClienteRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\IntelbrasService\Buscar_DadosGrCliente_ttRetornoGrupoRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\IntelbrasService\BuscaTabelas_ttTbPrecoRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\IntelbrasService\criarPedido_ttErroRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\IntelbrasService\integracaoERP.wsdl" />
+    <None Include="Web References\IntelbrasService\Integrar_ttRetornoRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\IntelbrasService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\Sellout\QtdProdutoSellout.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Sellout\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\Sellout\selloutcrmws.wsdl" />
+    <None Include="Web References\SharepointWebService\alterarFiscalItem_ttMensagemRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\alterarMedidasItem_ttMensagemRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\aprovaReprovaPreco_ttErroRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\buscaCodigoItem_ttItemRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\buscaCodigoItem_ttMensagemRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\buscaEstFamMat_ttEstabelecRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\buscaEstFamMat_ttMensagemRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\buscaFamiliaCodParcial_ttFamiliaRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\buscaFamiliaDescParcial_ttFamiliaRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\buscaItemCampoFaixa_ttItemRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\consultaFamiliaMaterial_ttFamiliaRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\consultaFamiliaMaterial_ttMensagemRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\consultaItem_ttItemFabricRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\consultaItem_ttItemRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\consultaItem_ttMensagemRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\folhaEspec_ttFolhEspecRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\integracaoItem_ttMensagemRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\integracaoSP.wsdl" />
+    <None Include="Web References\SharepointWebService\ListagemCentroCusto_ttCentroCustoRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\ListagemCidades_ttCidadeRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\ListaItensBloqueados_ttErroRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\ListaItensBloqueados_ttWebPedRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SharepointWebService\zoomAcondicionamento_ttAcondRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\zoomCarFamilia_ttCarFamiliaItemRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\zoomCompFamilia_ttCompFamiliaItemRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\zoomDestaque_ttDestaqueNcmRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\zoomFabricante_ttFabricanteRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\zoomFamComercial_ttFamComercRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\zoomFamiliaItem_ttFamiliaItemRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\zoomGrupEstoque_ttGrupEstoqueRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\zoomItem_ttItemRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\zoomNcm_ttNcmRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\zoomSubFamilia_ttSubFamiliaItemRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SharepointWebService\zoomUnMedida_ttTabUnidadeRow.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\TabelaPrecoExtranet\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\TabelaPrecoExtranet\Resposta.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\TabelaPrecoExtranet\SellOutService.wsdl" />
+    <None Include="Web References\TabelaPrecoExtranet\TabelaPrecoPlanilhaResposta.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WalMart.Service\Category.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WalMart.Service\ConsultarParcelamentoResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WalMart.Service\FeedCategoryDTO.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WalMart.Service\FieldDTO.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WalMart.Service\FieldGroupDTO.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WalMart.Service\FieldGroupIntegration.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WalMart.Service\FieldIntegration.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WalMart.Service\FieldValueDTO.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WalMart.Service\FieldValueIntegration.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WalMart.Service\Image.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WalMart.Service\ParceiroIntegracao.wsdl" />
+    <None Include="Web References\WalMart.Service\ProductFieldValueIntegration.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WalMart.Service\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WalMart.Service\SkuFieldValueIntegration.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WalMart.Service\Vale.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\BarramentoWebService\" />
+    <WCFMetadataStorage Include="Service References\BarramentoWebService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://10.1.11.75:8080/sellout%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\TabelaPrecoExtranet\</RelPath>
+      <UpdateFromURL>http://10.1.11.75:8080/sellout%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Intelbras_CRM2013_Domain_TabelaPrecoExtranet_SellOutServiceService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://crm2013d.intelbras.com.br:5554/ISV/wssellout/selloutcrmws.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\Sellout\</RelPath>
+      <UpdateFromURL>http://crm2013d.intelbras.com.br:5554/ISV/wssellout/selloutcrmws.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Intelbras_CRM2013_Domain_Sellout_SellOutCRMWS</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://wsa.intelbras.com.br:8080/wsa2/wsa2/wsdl%3ftargetURI=urn:crm:intelbras.com.br">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\IntelbrasService\</RelPath>
+      <UpdateFromURL>http://wsa.intelbras.com.br:8080/wsa2/wsa2/wsdl%3ftargetURI=urn:crm:intelbras.com.br</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Intelbras_CRM2013_Domain_IntelbrasService_integracaoERPService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://wsa.intelbras.com.br:8080/wsa2/wsa2/wsdl%3ftargetURI=urn:sharepoint:intelbras.com.br">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SharepointWebService\</RelPath>
+      <UpdateFromURL>http://wsa.intelbras.com.br:8080/wsa2/wsa2/wsdl%3ftargetURI=urn:sharepoint:intelbras.com.br</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Intelbras_CRM2013_Domain_SharepointWebService_integracaoSPService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://api.walmartb2b.com.br/v1.0.14/ParceiroIntegracao.asmx%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WalMart.Service\</RelPath>
+      <UpdateFromURL>https://api.walmartb2b.com.br/v1.0.14/ParceiroIntegracao.asmx%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Intelbras_CRM2013_Domain_WalMart_Service_ParceiroIntegracao</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://sp2013dev.intelbras.com.br/_vti_bin/Lists.asmx%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\br.com.intelbras.sp2013dev\</RelPath>
+      <UpdateFromURL>https://sp2013dev.intelbras.com.br/_vti_bin/Lists.asmx%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Intelbras_CRM2013_Domain_br_com_intelbras_sp2013dev_Lists</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SDKore\SDKore.Crm\SDKore.Crm.csproj">
+      <Project>{0a4cfa2f-0cbe-4840-b594-f70f630604d7}</Project>
+      <Name>SDKore.Crm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SDKore\SDKore\SDKore.csproj">
+      <Project>{d13ad9c0-3498-4f41-a385-eecc7883dab0}</Project>
+      <Name>SDKore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util\Intelbras.CRM2013.Util\Intelbras.CRM2013.Util.csproj">
+      <Project>{dc24a936-f29b-46a8-9139-96d140a527c6}</Project>
+      <Name>Intelbras.CRM2013.Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\Sellout\selloutcrmws.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BarramentoWebService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BarramentoWebService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BarramentoWebService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

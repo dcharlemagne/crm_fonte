@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PortalB2BEMS.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PortalB2BEMS_WSEMS_integracaoERPService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://wsa.intelbras.com.br:8080/wsa11/wsa11</Value>
+    </Setting>
+    <Setting Name="PortalB2BEMS_WSIntelbras_relatoriosB2BService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://wsa.intelbras.com.br:8080/wsa1/wsa1</Value>
+    </Setting>
+    <Setting Name="PortalB2BEMS_IsolService_IsolService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://crm.intelbras.com.br/isv/intelbras/webservices/vendas/isolservice.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

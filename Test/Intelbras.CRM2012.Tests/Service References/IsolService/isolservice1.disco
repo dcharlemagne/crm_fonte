@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="https://crm2015h.intelbras.com.br/isv/intelbras/webservices/vendas/isolservice.asmx?wsdl" docRef="https://crm2015h.intelbras.com.br/isv/intelbras/webservices/vendas/isolservice.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://crm2015h.intelbras.com.br/isv/intelbras/webservices/vendas/isolservice.asmx" xmlns:q1="http://schemas.microsoft.com/crm/2009/WebServices" binding="q1:IsolServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://crm2015h.intelbras.com.br/isv/intelbras/webservices/vendas/isolservice.asmx" xmlns:q2="http://schemas.microsoft.com/crm/2009/WebServices" binding="q2:IsolServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

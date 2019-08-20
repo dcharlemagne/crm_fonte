@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3F0CB21F-57A3-4B01-9358-2C6E4452FFF7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Intelbras.CRM2013.DAL</RootNamespace>
+    <AssemblyName>Intelbras.CRM2013.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Intelbras.CRM2013.DAL.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML">
+      <HintPath>..\..\packages\ClosedXML.0.80.1\lib\net40-client\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="microsoft.crm.sdk.proxy">
+      <HintPath>..\..\Libs\microsoft.crm.sdk.proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.IdentityModel.6.1.7600.16394\lib\net35\Microsoft.IdentityModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\Test\Intelbras.CRM2012.Tests\Lib testes\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="microsoft.xrm.sdk">
+      <HintPath>..\..\Libs\microsoft.xrm.sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="RepAcao.cs" />
+    <Compile Include="RepAdvertencia.cs" />
+    <Compile Include="RepCausa.cs" />
+    <Compile Include="RepHistoricoCategoria.cs" />
+    <Compile Include="RepProdutoProjeto.cs" />
+    <Compile Include="RepAssunto.cs" />
+    <Compile Include="RepAtualizacaoCRM.cs" />
+    <Compile Include="RepAuditoria.cs" />
+    <Compile Include="RepAutorizacaoDePostagem.cs" />
+    <Compile Include="RepCadastraProdutos.cs" />
+    <Compile Include="RepContaSegmento.cs" />
+    <Compile Include="RepLiveChatTracking.cs" />
+    <Compile Include="RepMarca.cs" />
+    <Compile Include="RepClienteParticipanteDoContrato.cs" />
+    <Compile Include="RepClienteParticipanteDoEndereco.cs" />
+    <Compile Include="RepClienteParticipante.cs" />
+    <Compile Include="RepClientePotencial.cs" />
+    <Compile Include="RepCompromisso.cs" />
+    <Compile Include="RepAreaAtuacao.cs" />
+    <Compile Include="RepContrato.cs" />
+    <Compile Include="RepCreditoFidelidade.cs" />
+    <Compile Include="RepDebitoFidelidade.cs" />
+    <Compile Include="RepDefeitoOcorrenciaCliente.cs" />
+    <Compile Include="RepDefeito.cs" />
+    <Compile Include="RepDiagnosticoOcorrencia.cs" />
+    <Compile Include="RepDiagnostico.cs" />
+    <Compile Include="RepEndereco.cs" />
+    <Compile Include="RepExtrato.cs" />
+    <Compile Include="RepExtratoFidelidade.cs" />
+    <Compile Include="RepFeriado.cs" />
+    <Compile Include="RepGrupoCliente.cs" />
+    <Compile Include="RepGrupoFidelidade.cs" />
+    <Compile Include="RepGrupoPremio.cs" />
+    <Compile Include="RepHistoricoDePostagem.cs" />
+    <Compile Include="RepImportacaoAssistenciaTecnica.cs" />
+    <Compile Include="RepIntervencao.cs" />
+    <Compile Include="RepItemPedido.cs" />
+    <Compile Include="RepLancamentoAvulsoDoExtrato.cs" />
+    <Compile Include="RepLinhaComercial.cs" />
+    <Compile Include="RepLinhaDoContrato.cs" />
+    <Compile Include="RepLocalidade.cs" />
+    <Compile Include="RepLog.cs" />
+    <Compile Include="RepLogisticaReversa.cs" />
+    <Compile Include="RepMarcas.cs" />
+    <Compile Include="RepOcorrenciaBase.cs" />
+    <Compile Include="RepOcorrencia.cs" />
+    <Compile Include="RepOportunidade.cs" />
+    <Compile Include="RepPagamentoServico.cs" />
+    <Compile Include="RepPausaTarefa.cs" />
+    <Compile Include="RepPesquisaSatisfacao.cs" />
+    <Compile Include="RepPontosDoParticipante.cs" />
+    <Compile Include="RepPontuacao.cs" />
+    <Compile Include="RepPremio.cs" />
+    <Compile Include="RepPremioIntelbras.cs" />
+    <Compile Include="RepPrioridadeLigacaoCallCenter.cs" />
+    <Compile Include="RepPrivilegio.cs" />
+    <Compile Include="RepProcessamentoFidelidade.cs" />
+    <Compile Include="RepProdutoAssisteciaTecica.cs" />
+    <Compile Include="RepProdutoCondicaoPagamento .cs" />
+    <Compile Include="RepProdutoResgatadoFidelidade.cs" />
+    <Compile Include="RepQuestionarioGrupoPergunta.cs" />
+    <Compile Include="RepQuestionarioPergunta.cs" />
+    <Compile Include="RepQuestionarioOpcao.cs" />
+    <Compile Include="RepQuestionarioResposta.cs" />
+    <Compile Include="RepRegiaoDeAtuacao.cs" />
+    <Compile Include="RepRegional.cs" />
+    <Compile Include="RepFuncaoRelacionamento.cs" />
+    <Compile Include="RepRelacionamento.cs" />
+    <Compile Include="RepArquivoDeEstoqueGiro.cs" />
+    <Compile Include="RepArquivoDeSellOut.cs" />
+    <Compile Include="RepCanalVerde.cs" />
+    <Compile Include="RepCnae.cs" />
+    <Compile Include="RepDocumentoCanalEstoqueGiro.cs" />
+    <Compile Include="RepCategoriaB2B.cs" />
+    <Compile Include="RepHistoricoDistribuidor.cs" />
+    <Compile Include="RepMetadoCanalTrimestre.cs" />
+    <Compile Include="RepPotencialdoSupervisorporTrimestre.cs" />
+    <Compile Include="RepDeParaDeUnidadeDoKonviva.cs" />
+    <Compile Include="RepDocumentoCanaisExtranet.cs" />
+    <Compile Include="RepConfiguracaoBeneficio.cs" />
+    <Compile Include="RepFamiliaPoliticaComercial.cs" />
+    <Compile Include="RepItemFila.cs" />
+    <Compile Include="RepListaPrecoPSDEstado.cs" />
+    <Compile Include="RepAcaoSubsidiadaVmc.cs" />
+    <Compile Include="RepFormaPagamento.cs" />
+    <Compile Include="RepDenuncia.cs" />
+    <Compile Include="RepHistoricoComprasTrimestre.cs" />
+    <Compile Include="RepHistoricoComprasSubFamilia.cs" />
+    <Compile Include="RepHistoricoComprasSegmento.cs" />
+    <Compile Include="RepHistoricoComprasProdutoMes.cs" />
+    <Compile Include="RepHistoricoComprasProduto.cs" />
+    <Compile Include="RepHistoricoComprasFamilia.cs" />
+    <Compile Include="RepHistoricoComprasCanalProdutoMes.cs" />
+    <Compile Include="RepHistoricoCompras.cs" />
+    <Compile Include="RepMetadaUnidadeporProdutoMes.cs" />
+    <Compile Include="RepPoliticaComercialXConta.cs" />
+    <Compile Include="RepPoliticaComercialXEstado.cs" />
+    <Compile Include="RepPotencialdoKAporTrimestre.cs" />
+    <Compile Include="RepProdutoKit.cs" />
+    <Compile Include="RepProdutosdaSolicitacao.cs" />
+    <Compile Include="RepRelacionamentoCliente.cs" />
+    <Compile Include="RepResgate.cs" />
+    <Compile Include="RepSegmentoComercial.cs" />
+    <Compile Include="RepSinonimosMarcas.cs" />
+    <Compile Include="RepSolicitacaoXUnidades.cs" />
+    <Compile Include="RepSolucao.cs" />
+    <Compile Include="RepRelacionamentoB2B.cs" />
+    <Compile Include="RepSharePointDocumentLocation.cs" />
+    <Compile Include="RepStatusBeneficios.cs" />
+    <Compile Include="RepFila.cs" />
+    <Compile Include="RepItemTabelaPrecoB2B.cs" />
+    <Compile Include="RepTabelaPrecoB2B.cs" />
+    <Compile Include="RepPostagem.cs" />
+    <Compile Include="RepTipoDeDenuncia.cs" />
+    <Compile Include="DataBaseSqlServer.cs" />
+    <Compile Include="RepParametroBeneficio.cs" />
+    <Compile Include="RepBeneficio.cs" />
+    <Compile Include="RepParecer.cs" />
+    <Compile Include="RepPortfoliodoKeyAccountRepresentantes.cs" />
+    <Compile Include="RepDocumentoSharePoint.cs" />
+    <Compile Include="RepPotencialDetalhadodoSupervisorporProduto.cs" />
+    <Compile Include="RepPotencialdoKAporFamilia.cs" />
+    <Compile Include="RepPotencialdoKAporProduto.cs" />
+    <Compile Include="RepPotencialdoKAporSegmento.cs" />
+    <Compile Include="RepPotencialdoKAporSubfamilia.cs" />
+    <Compile Include="RepPotencialdoKARepresentante.cs" />
+    <Compile Include="RepPotencialdoSupervisor.cs" />
+    <Compile Include="RepPotencialdoSupervisorporFamilia.cs" />
+    <Compile Include="RepPotencialdoSupervisorporProduto.cs" />
+    <Compile Include="RepPotencialdoSupervisorporSegmento.cs" />
+    <Compile Include="RepPotencialdoSupervisorporSubfamilia.cs" />
+    <Compile Include="RepSharePointSite.cs" />
+    <Compile Include="RepCompromissosDoPrograma.cs" />
+    <Compile Include="RepAnotacao.cs" />
+    <Compile Include="RepMetadaUnidade.cs" />
+    <Compile Include="RepMetadoCanalporSubFamilia.cs" />
+    <Compile Include="RepProdutoPortfolio.cs" />
+    <Compile Include="RepSolicitacaoBeneficio.cs" />
+    <Compile Include="RepSubClassificacoes.cs" />
+    <Compile Include="RepMetadaUnidadeporFamilia.cs" />
+    <Compile Include="RepMetadaUnidadeporProduto.cs" />
+    <Compile Include="RepMetadaUnidadeporSegmento.cs" />
+    <Compile Include="RepMetadaUnidadeporSubfamilia.cs" />
+    <Compile Include="RepMetadaUnidadeporTrimestre.cs" />
+    <Compile Include="RepMetaDetalhadadaUnidadeporProduto.cs" />
+    <Compile Include="RepMetaDetalhadadoCanalporProduto.cs" />
+    <Compile Include="RepMetaDetalhadadoKAporProduto.cs" />
+    <Compile Include="RepMetadoCanal.cs" />
+    <Compile Include="RepMetadoCanalporFamilia.cs" />
+    <Compile Include="RepMetadoCanalporProduto.cs" />
+    <Compile Include="RepMetadoCanalporSegmento.cs" />
+    <Compile Include="RepDocumentoCanal.cs" />
+    <Compile Include="RepFuncaoConexao.cs" />
+    <Compile Include="RepLinhaCorteEstado.cs" />
+    <Compile Include="RepListaDesconto.cs" />
+    <Compile Include="RepObservacao.cs" />
+    <Compile Include="RepOrcamentodaUnidade.cs" />
+    <Compile Include="RepOrcamentodaUnidadeDetalhadoporProduto.cs" />
+    <Compile Include="RepOrcamentodaUnidadeporFamilia.cs" />
+    <Compile Include="RepOrcamentodaUnidadeporProduto.cs" />
+    <Compile Include="RepOrcamentodaUnidadeporSegmento.cs" />
+    <Compile Include="RepOrcamentodaUnidadeporSubFamilia.cs" />
+    <Compile Include="RepOrcamentodaUnidadeporTrimestre.cs" />
+    <Compile Include="RepOrcamentodoCanalDetalhadoporProduto.cs" />
+    <Compile Include="RepOrcamentodoCanalporFamilia.cs" />
+    <Compile Include="RepOrcamentodoCanalporProduto.cs" />
+    <Compile Include="RepOrcamentodoCanalporSegmento.cs" />
+    <Compile Include="RepOrcamentodoCanalporSubFamilia.cs" />
+    <Compile Include="RepOrcamentoPorCanal.cs" />
+    <Compile Include="RepParametroGlobal.cs" />
+    <Compile Include="RepRegiaoAtuacao.cs" />
+    <Compile Include="RepProdutoPedido.cs" />
+    <Compile Include="RepStatusCompromissos.cs" />
+    <Compile Include="RepSubFamiliaProduto.cs" />
+    <Compile Include="RepAcessoExtranet.cs" />
+    <Compile Include="RepRegiao.cs" />
+    <Compile Include="RepRota.cs" />
+    <Compile Include="RepHistoricoComprasCanal.cs" />
+    <Compile Include="RepTabelaPreco.cs" />
+    <Compile Include="RepTipoAcessoExtranet.cs" />
+    <Compile Include="RepColaboradorTreinadoCertificado.cs" />
+    <Compile Include="RepEmail.cs" />
+    <Compile Include="RepListaPrecoXEstado.cs" />
+    <Compile Include="RepPortfolio.cs" />
+    <Compile Include="RepProdutoEstabelecimento.cs" />
+    <Compile Include="RepReceitaPadrao.cs" />
+    <Compile Include="RepReferenciasCanal.cs" />
+    <Compile Include="RepSeguroConta.cs" />
+    <Compile Include="RepTabelaFinanciamento.cs" />
+    <Compile Include="RepTarefa.cs" />
+    <Compile Include="RepTipoDeAtividade.cs" />
+    <Compile Include="RepTipodeParametroGlobal.cs" />
+    <Compile Include="RepTipoPagamento.cs" />
+    <Compile Include="RepTipoSolicitacao.cs" />
+    <Compile Include="RepTransportadora.cs" />
+    <Compile Include="RepRegiaoGeo.cs" />
+    <Compile Include="RepFamiliaComercial.cs" />
+    <Compile Include="RepBeneficioDoCanal.cs" />
+    <Compile Include="RepBeneficiosCompromissos.cs" />
+    <Compile Include="RepCompromissosDoCanal.cs" />
+    <Compile Include="RepParticipantesDoProcesso.cs" />
+    <Compile Include="RepPerfil.cs" />
+    <Compile Include="RepPortador.cs" />
+    <Compile Include="RepProcesso.cs" />
+    <Compile Include="RepProdutoFatura.cs" />
+    <Compile Include="RepProdutoListaPSD.cs" />
+    <Compile Include="RepProdutoTreinamento.cs" />
+    <Compile Include="RepRelacionamentoCanal.cs" />
+    <Compile Include="RepConexao.cs" />
+    <Compile Include="RepConta.cs" />
+    <Compile Include="RepContato.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepEmpresasColigadas.cs" />
+    <Compile Include="RepEquipe.cs" />
+    <Compile Include="RepEstabelecimento.cs" />
+    <Compile Include="RepEstado.cs" />
+    <Compile Include="RepEstruturaAtendimento.cs" />
+    <Compile Include="RepEstruturaProduto.cs" />
+    <Compile Include="RepFamiliaMaterial.cs" />
+    <Compile Include="RepFamiliaProduto.cs" />
+    <Compile Include="RepFatura.cs" />
+    <Compile Include="RepFornecedorCanal.cs" />
+    <Compile Include="RepGrupoEstoque.cs" />
+    <Compile Include="RepGrupoUnidade.cs" />
+    <Compile Include="RepIndice.cs" />
+    <Compile Include="RepItemListaPreco.cs" />
+    <Compile Include="RepLinhaCorteDistribuidor.cs" />
+    <Compile Include="RepLinhaCorteRevenda.cs" />
+    <Compile Include="RepListaPreco.cs" />
+    <Compile Include="RepListaPrecoPSD.cs" />
+    <Compile Include="RepMensagem.cs" />
+    <Compile Include="RepMoeda.cs" />
+    <Compile Include="RepMunicipio.cs" />
+    <Compile Include="RepNaturezaOperacao.cs" />
+    <Compile Include="RepNivelPosVenda.cs" />
+    <Compile Include="RepNivelPosVendaClassificacao.cs" />
+    <Compile Include="RepOrigem.cs" />
+    <Compile Include="RepPais.cs" />
+    <Compile Include="RepPedido.cs" />
+    <Compile Include="RepAcessoExtranetContatos.cs" />
+    <Compile Include="RepBens.cs" />
+    <Compile Include="RepCanaldeVenda.cs" />
+    <Compile Include="RepCategoria.cs" />
+    <Compile Include="RepCategoriasCanal.cs" />
+    <Compile Include="RepClassificacao.cs" />
+    <Compile Include="RepCondicaoPagamento.cs" />
+    <Compile Include="RepPoliticaComercial.cs" />
+    <Compile Include="RepProduto.cs" />
+    <Compile Include="RepProdutoPoliticaComercial.cs" />
+    <Compile Include="RepSegmento.cs" />
+    <Compile Include="RepSolicitacaoCadastro.cs" />
+    <Compile Include="RepTeamMembership.cs" />
+    <Compile Include="RepAcessoKonviva.cs" />
+    <Compile Include="RepUnidadeKonviva.cs" />
+    <Compile Include="RepTurmaCanal.cs" />
+    <Compile Include="RepTreinamentoCertificacao.cs" />
+    <Compile Include="RepTreinamentoCanal.cs" />
+    <Compile Include="RepUnidadeDeMedida.cs" />
+    <Compile Include="RepUnidadeNegocio.cs" />
+    <Compile Include="RepUtil.cs" />
+    <Compile Include="RepUsuario.cs" />
+    <Compile Include="RepResgateDePremio.cs" />
+    <Compile Include="RepTipoPosto.cs" />
+    <Compile Include="RepValorDoServicoPorPosto.cs" />
+    <Compile Include="RepValorDoServico.cs" />
+    <Compile Include="RepVeiculo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Intelbras.CRM2013.DAL.snk" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\Intelbras.CRM2013.Domain\Intelbras.CRM2013.Domain.csproj">
+      <Project>{ead3a0c5-db56-40be-a2fa-48541997f852}</Project>
+      <Name>Intelbras.CRM2013.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SDKore\SDKore.Crm\SDKore.Crm.csproj">
+      <Project>{0a4cfa2f-0cbe-4840-b594-f70f630604d7}</Project>
+      <Name>SDKore.Crm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SDKore\SDKore\SDKore.csproj">
+      <Project>{d13ad9c0-3498-4f41-a385-eecc7883dab0}</Project>
+      <Name>SDKore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

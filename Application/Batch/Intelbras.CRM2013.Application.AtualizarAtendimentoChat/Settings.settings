@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Intelbras.CRM2013.Application.AtualizarAtendimentoChat" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="App" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\TrideaByAlfa\AtualizarAtendimentoChat</Value>
+    </Setting>
+    <Setting Name="Log" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\TrideaByAlfa\AtualizarAtendimentoChat\Log</Value>
+    </Setting>
+    <Setting Name="HabilitarLog" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

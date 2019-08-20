@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ListagemDeNotasFiscaisPorEmitente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoEstabelecimento" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoRepresentante" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoEmitente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtInicial" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtFinal" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListagemDeNotasFiscaisPorEmitenteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListagemDeNotasFiscaisPorEmitenteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DetalhesDaNotaFiscal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoEstabelecimento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serieNotaFiscal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nrNotaFiscal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DetalhesDaNotaFiscalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DetalhesDaNotaFiscalResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ItensDaNotaFiscal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoEstabelecimento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serieNotaFiscal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nrNotaFiscal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ItensDaNotaFiscalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ItensDaNotaFiscalResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FaturasDaNotaFiscal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoEstabelecimento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serieNotaFiscal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nrNotaFiscal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FaturasDaNotaFiscalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FaturasDaNotaFiscalResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TotaisDaNotaFiscal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoEstabelecimento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serieNotaFiscal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nrNotaFiscal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TotaisDaNotaFiscalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TotaisDaNotaFiscalResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransportadoraDaNotaFiscal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoEstabelecimento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serieNotaFiscal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nrNotaFiscal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransportadoraDaNotaFiscalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TransportadoraDaNotaFiscalResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ListagemDeNotasFiscaisPorEmitenteSoapIn">
+    <wsdl:part name="parameters" element="tns:ListagemDeNotasFiscaisPorEmitente" />
+  </wsdl:message>
+  <wsdl:message name="ListagemDeNotasFiscaisPorEmitenteSoapOut">
+    <wsdl:part name="parameters" element="tns:ListagemDeNotasFiscaisPorEmitenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="DetalhesDaNotaFiscalSoapIn">
+    <wsdl:part name="parameters" element="tns:DetalhesDaNotaFiscal" />
+  </wsdl:message>
+  <wsdl:message name="DetalhesDaNotaFiscalSoapOut">
+    <wsdl:part name="parameters" element="tns:DetalhesDaNotaFiscalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ItensDaNotaFiscalSoapIn">
+    <wsdl:part name="parameters" element="tns:ItensDaNotaFiscal" />
+  </wsdl:message>
+  <wsdl:message name="ItensDaNotaFiscalSoapOut">
+    <wsdl:part name="parameters" element="tns:ItensDaNotaFiscalResponse" />
+  </wsdl:message>
+  <wsdl:message name="FaturasDaNotaFiscalSoapIn">
+    <wsdl:part name="parameters" element="tns:FaturasDaNotaFiscal" />
+  </wsdl:message>
+  <wsdl:message name="FaturasDaNotaFiscalSoapOut">
+    <wsdl:part name="parameters" element="tns:FaturasDaNotaFiscalResponse" />
+  </wsdl:message>
+  <wsdl:message name="TotaisDaNotaFiscalSoapIn">
+    <wsdl:part name="parameters" element="tns:TotaisDaNotaFiscal" />
+  </wsdl:message>
+  <wsdl:message name="TotaisDaNotaFiscalSoapOut">
+    <wsdl:part name="parameters" element="tns:TotaisDaNotaFiscalResponse" />
+  </wsdl:message>
+  <wsdl:message name="TransportadoraDaNotaFiscalSoapIn">
+    <wsdl:part name="parameters" element="tns:TransportadoraDaNotaFiscal" />
+  </wsdl:message>
+  <wsdl:message name="TransportadoraDaNotaFiscalSoapOut">
+    <wsdl:part name="parameters" element="tns:TransportadoraDaNotaFiscalResponse" />
+  </wsdl:message>
+  <wsdl:portType name="NotaFiscalSoap">
+    <wsdl:operation name="ListagemDeNotasFiscaisPorEmitente">
+      <wsdl:input message="tns:ListagemDeNotasFiscaisPorEmitenteSoapIn" />
+      <wsdl:output message="tns:ListagemDeNotasFiscaisPorEmitenteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DetalhesDaNotaFiscal">
+      <wsdl:input message="tns:DetalhesDaNotaFiscalSoapIn" />
+      <wsdl:output message="tns:DetalhesDaNotaFiscalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ItensDaNotaFiscal">
+      <wsdl:input message="tns:ItensDaNotaFiscalSoapIn" />
+      <wsdl:output message="tns:ItensDaNotaFiscalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FaturasDaNotaFiscal">
+      <wsdl:input message="tns:FaturasDaNotaFiscalSoapIn" />
+      <wsdl:output message="tns:FaturasDaNotaFiscalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TotaisDaNotaFiscal">
+      <wsdl:input message="tns:TotaisDaNotaFiscalSoapIn" />
+      <wsdl:output message="tns:TotaisDaNotaFiscalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransportadoraDaNotaFiscal">
+      <wsdl:input message="tns:TransportadoraDaNotaFiscalSoapIn" />
+      <wsdl:output message="tns:TransportadoraDaNotaFiscalSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NotaFiscalSoap" type="tns:NotaFiscalSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListagemDeNotasFiscaisPorEmitente">
+      <soap:operation soapAction="http://tempuri.org/ListagemDeNotasFiscaisPorEmitente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DetalhesDaNotaFiscal">
+      <soap:operation soapAction="http://tempuri.org/DetalhesDaNotaFiscal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ItensDaNotaFiscal">
+      <soap:operation soapAction="http://tempuri.org/ItensDaNotaFiscal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FaturasDaNotaFiscal">
+      <soap:operation soapAction="http://tempuri.org/FaturasDaNotaFiscal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TotaisDaNotaFiscal">
+      <soap:operation soapAction="http://tempuri.org/TotaisDaNotaFiscal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransportadoraDaNotaFiscal">
+      <soap:operation soapAction="http://tempuri.org/TransportadoraDaNotaFiscal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NotaFiscalSoap12" type="tns:NotaFiscalSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListagemDeNotasFiscaisPorEmitente">
+      <soap12:operation soapAction="http://tempuri.org/ListagemDeNotasFiscaisPorEmitente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DetalhesDaNotaFiscal">
+      <soap12:operation soapAction="http://tempuri.org/DetalhesDaNotaFiscal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ItensDaNotaFiscal">
+      <soap12:operation soapAction="http://tempuri.org/ItensDaNotaFiscal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FaturasDaNotaFiscal">
+      <soap12:operation soapAction="http://tempuri.org/FaturasDaNotaFiscal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TotaisDaNotaFiscal">
+      <soap12:operation soapAction="http://tempuri.org/TotaisDaNotaFiscal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransportadoraDaNotaFiscal">
+      <soap12:operation soapAction="http://tempuri.org/TransportadoraDaNotaFiscal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NotaFiscal">
+    <wsdl:port name="NotaFiscalSoap" binding="tns:NotaFiscalSoap">
+      <soap:address location="https://crm2015h.intelbras.com.br/ISV/Intelbras/WebServices/PortalB2BEMS/NotaFiscal.asmx" />
+    </wsdl:port>
+    <wsdl:port name="NotaFiscalSoap12" binding="tns:NotaFiscalSoap12">
+      <soap12:address location="https://crm2015h.intelbras.com.br/ISV/Intelbras/WebServices/PortalB2BEMS/NotaFiscal.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

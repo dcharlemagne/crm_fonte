@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:extranet:intelbras.com.br" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns="http://schemas.xmlsoap.org/wsdl/" name="SellOutService" targetNamespace="urn:extranet:intelbras.com.br" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="urn:extranet:intelbras.com.br">
+      <xsd:element name="Logar">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="email" type="xsd:string" />
+            <xsd:element name="senha" type="xsd:string" />
+            <xsd:element name="isHash" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="Resposta">
+        <xsd:all>
+          <xsd:element name="resultado" nillable="true" type="xsd:boolean" />
+          <xsd:element name="mensagem" nillable="true" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:element name="LogarResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="LogarResult" type="tns:Resposta" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="IncluirPlanilhaTabelaPreco">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="conta" type="xsd:string" />
+            <xsd:element name="gerarPSD" type="xsd:boolean" />
+            <xsd:element name="gerarPP" type="xsd:boolean" />
+            <xsd:element name="gerarPSCF" type="xsd:boolean" />
+            <xsd:element name="gerarValorNulo" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="IncluirPlanilhaTabelaPrecoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IncluirPlanilhaTabelaPrecoResult" type="tns:Resposta" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ListarPlanilhasTabelaPreco">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="conta" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="TabelaPrecoPlanilhaResposta">
+        <xsd:all>
+          <xsd:element name="resultado" nillable="true" type="xsd:boolean" />
+          <xsd:element name="mensagem" nillable="true" type="xsd:string" />
+          <xsd:element name="planilhas" nillable="true" type="soap-enc:Array" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:element name="ListarPlanilhasTabelaPrecoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ListarPlanilhasTabelaPrecoResult" type="tns:TabelaPrecoPlanilhaResposta" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="LogarIn">
+    <wsdl:part name="parameters" element="tns:Logar" />
+  </wsdl:message>
+  <wsdl:message name="LogarOut">
+    <wsdl:part name="parameters" element="tns:LogarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IncluirPlanilhaTabelaPrecoIn">
+    <wsdl:part name="parameters" element="tns:IncluirPlanilhaTabelaPreco" />
+  </wsdl:message>
+  <wsdl:message name="IncluirPlanilhaTabelaPrecoOut">
+    <wsdl:part name="parameters" element="tns:IncluirPlanilhaTabelaPrecoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarPlanilhasTabelaPrecoIn">
+    <wsdl:part name="parameters" element="tns:ListarPlanilhasTabelaPreco" />
+  </wsdl:message>
+  <wsdl:message name="ListarPlanilhasTabelaPrecoOut">
+    <wsdl:part name="parameters" element="tns:ListarPlanilhasTabelaPrecoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SellOutServicePort">
+    <wsdl:operation name="Logar">
+      <documentation>Logar</documentation>
+      <wsdl:input message="tns:LogarIn" />
+      <wsdl:output message="tns:LogarOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IncluirPlanilhaTabelaPreco">
+      <documentation>IncluirPlanilhaTabelaPreco</documentation>
+      <wsdl:input message="tns:IncluirPlanilhaTabelaPrecoIn" />
+      <wsdl:output message="tns:IncluirPlanilhaTabelaPrecoOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarPlanilhasTabelaPreco">
+      <documentation>ListarPlanilhasTabelaPreco</documentation>
+      <wsdl:input message="tns:ListarPlanilhasTabelaPrecoIn" />
+      <wsdl:output message="tns:ListarPlanilhasTabelaPrecoOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SellOutServiceBinding" type="tns:SellOutServicePort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Logar">
+      <soap:operation soapAction="urn:extranet:intelbras.com.br#Logar" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IncluirPlanilhaTabelaPreco">
+      <soap:operation soapAction="urn:extranet:intelbras.com.br#IncluirPlanilhaTabelaPreco" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPlanilhasTabelaPreco">
+      <soap:operation soapAction="urn:extranet:intelbras.com.br#ListarPlanilhasTabelaPreco" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SellOutServiceService">
+    <wsdl:port name="SellOutServicePort" binding="tns:SellOutServiceBinding">
+      <soap:address location="http://10.1.11.75:8080/sellout" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

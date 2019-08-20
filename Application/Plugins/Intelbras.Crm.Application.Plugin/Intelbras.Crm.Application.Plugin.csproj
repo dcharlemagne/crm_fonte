@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{55BBAA65-DA30-4E34-B97E-C9C0C529451D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Intelbras.Crm.Application.Plugin</RootNamespace>
+    <AssemblyName>Intelbras.Crm.Application.Plugin</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Intelbras.Crm.Application.Plugin.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release Final|AnyCPU'">
+    <OutputPath>bin\Release Final\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseFinal|AnyCPU'">
+    <OutputPath>bin\ReleaseFinal\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Intelbras.Helper, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0ecc44fe4595cb62, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libs\Intelbras.Helper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Crm.Sdk, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Libs\Microsoft.Crm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Crm.SdkTypeProxy, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Libs\Microsoft.Crm.SdkTypeProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Tridea.Framework">
+      <HintPath>..\..\..\Libs\Tridea.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Tridea.Framework.Crm, Version=1.0.0.0, Culture=neutral, PublicKeyToken=01a4ac17de1cb471, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libs\Tridea.Framework.Crm.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="account\FacedeCliente.cs" />
+    <Compile Include="account\FactoryCliente.cs" />
+    <Compile Include="account\PreCreate.cs" />
+    <Compile Include="contact\FacadeContato.cs" />
+    <Compile Include="contact\FactoryContato.cs" />
+    <Compile Include="contact\PostActionAsync.cs" />
+    <Compile Include="contact\PreValidacoes.cs" />
+    <Compile Include="contact\PreDelete.cs" />
+    <Compile Include="incident\PostCreateAsync.cs" />
+    <Compile Include="incident\PostUpdateAsync.cs" />
+    <Compile Include="incident\FacadeOcorrencia.cs" />
+    <Compile Include="incident\FactoryOcorrencia.cs" />
+    <Compile Include="incident\PostUpdate.cs" />
+    <Compile Include="incident\PostLogAsync.cs" />
+    <Compile Include="new_calendario_participante\PreCreate.cs" />
+    <Compile Include="new_calendario_treinamento\PostUpdateAsync.cs" />
+    <Compile Include="new_calendario_treinamento\PreCreate.cs" />
+    <Compile Include="new_calendario_treinamento\PreDelete.cs" />
+    <Compile Include="new_diagnostico_ocorrencia\LogAsync.cs" />
+    <Compile Include="new_diagnostico_ocorrencia\PostSetStateDynamicEntity.cs" />
+    <Compile Include="new_diagnostico_ocorrencia\PreUpdate.cs" />
+    <Compile Include="new_diagnostico_ocorrencia\PreCreate.cs" />
+    <Compile Include="new_diagnostico_ocorrencia\PostCreate.cs" />
+    <Compile Include="new_diagnostico_ocorrencia\PostDelete.cs" />
+    <Compile Include="new_diagnostico_ocorrencia\PostUpdate.cs" />
+    <Compile Include="new_extrato_logistica_reversa\PreDelete.cs" />
+    <Compile Include="new_lancamento_avulso\PostCreate.cs" />
+    <Compile Include="new_lancamento_avulso\PostUpdate.cs" />
+    <Compile Include="new_lancamento_avulso\PostDelete.cs" />
+    <Compile Include="email\PreManegerEvent.cs" />
+    <Compile Include="incident\PostCreate.cs" />
+    <Compile Include="incident\PreCreate.cs" />
+    <Compile Include="incident\PreUpdate.cs" />
+    <Compile Include="new_calendario_custos\PostCreate.cs" />
+    <Compile Include="new_calendario_custos\PostDelete.cs" />
+    <Compile Include="new_calendario_custos\PostUpdate.cs" />
+    <Compile Include="new_calendario_custos\PreDelete.cs" />
+    <Compile Include="new_calendario_participante\PostCreate.cs" />
+    <Compile Include="new_calendario_participante\PostDelete.cs" />
+    <Compile Include="new_calendario_participante\PreDelete.cs" />
+    <Compile Include="new_pontos_participante_fidelidade\PostCreate.cs" />
+    <Compile Include="new_resgate_premio_fidelidade\PostCreate.cs" />
+    <Compile Include="new_resgate_premio_fidelidade\PreCreate.cs" />
+    <Compile Include="new_valor_servico_posto\PreUpdate.cs" />
+    <Compile Include="new_valor_servico_posto\PreCreate.cs" />
+    <Compile Include="PluginHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Intelbras.Crm.Application.Plugin.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\CrossCutting\Intelbras.Crm.CrossCutting\Intelbras.Crm.CrossCutting.csproj">
+      <Project>{4138F228-313A-4387-B4CA-C32867FFBD62}</Project>
+      <Name>Intelbras.Crm.CrossCutting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Domain\Intelbras.Crm.Domain\Intelbras.Crm.Domain.csproj">
+      <Project>{53865112-4938-485C-B136-9D788D4FF92D}</Project>
+      <Name>Intelbras.Crm.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Infrastructure\Intelbras.Crm.Infrastructure.Dal\Intelbras.Crm.Infrastructure.Dal.csproj">
+      <Project>{09A6BBF1-A6A1-45E2-A1B9-527584062709}</Project>
+      <Name>Intelbras.Crm.Infrastructure.Dal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="https://crm2013h.intelbras.com.br:5554/ISV/wssellout/selloutws.asmx?wsdl" docRef="https://crm2013h.intelbras.com.br:5554/ISV/wssellout/selloutws.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://crm2013h.intelbras.com.br:5554/ISV/wssellout/selloutws.asmx" xmlns:q1="http://tempuri.org/" binding="q1:SelloutWSSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://crm2013h.intelbras.com.br:5554/ISV/wssellout/selloutws.asmx" xmlns:q2="http://tempuri.org/" binding="q2:SelloutWSSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

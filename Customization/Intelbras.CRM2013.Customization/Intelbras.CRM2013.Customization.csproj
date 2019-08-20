@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C084F792-272C-491D-8CEC-2CF42BF6D7D2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Intelbras.CRM2013.Customization</RootNamespace>
+    <AssemblyName>Intelbras.CRM2013.Customization</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CrmRibbonActions\itbc_consulta_status_gko_js.js" />
+    <Content Include="CrmRibbonActions\CopiarRegistros.js" />
+    <Content Include="Entidades\Account Ribbon\AccountRibbon.xml" />
+    <Content Include="Entidades\itbc_assuntos_por_acoes.js" />
+    <Content Include="Entidades\itbc_conta.js" />
+    <Content Include="Entidades\CampaignActivity_main_library.js" />
+    <Content Include="Entidades\ContractDetail_main_library.js" />
+    <Content Include="Entidades\itbc_customer_address.js" />
+    <Content Include="Entidades\itbc_pausa_de_tarefa.js" />
+    <Content Include="Entidades\Obsoleto\accountcrm4.js" />
+    <Content Include="Entidades\Obsoleto\Config.js" />
+    <Content Include="Entidades\Obsoleto\Contract.js" />
+    <Content Include="Entidades\Obsoleto\Contrato.js" />
+    <Content Include="Entidades\Obsoleto\CustomerAddress_main_library.js" />
+    <Content Include="Entidades\Codek\codek_answer_type_main_library.js" />
+    <Content Include="Entidades\Codek\codek_question_main_library.js" />
+    <Content Include="Entidades\Codek\codek_search_main_library.js" />
+    <Content Include="Entidades\Codek\CodeK_sequential_number_main_library.js" />
+    <Content Include="Entidades\Codek\codek_workgroup.js" />
+    <Content Include="Entidades\Codek\codek_workgroup_main_library.js" />
+    <Content Include="Entidades\Obsoleto\contact.js" />
+    <Content Include="Entidades\Contract_main_library.js" />
+    <Content Include="Entidades\itbc_contato.js" />
+    <Content Include="Entidades\Obsoleto\customeraddress_ribbon.js" />
+    <Content Include="Entidades\Email_main_library.js" />
+    <Content Include="Entidades\itbc_checklist_configuracao.js" />
+    <Content Include="Entidades\itbc_contato_rapido.js" />
+    <Content Include="Entidades\itbc_email.js" />
+    <Content Include="Entidades\itbc_familiaDaPoliticaComercial.js" />
+    <Content Include="Entidades\itbc_incident_isol.js" />
+    <Content Include="Entidades\itbc_incident_call_center.js" />
+    <Content Include="Entidades\Incident_main_library.js" />
+    <Content Include="Entidades\Invoice_main_library.js" />
+    <Content Include="Entidades\itbc_acessoaokonviva.js" />
+    <Content Include="Entidades\itbc_beneficio.js" />
+    <Content Include="Entidades\itbc_categoria.js" />
+    <Content Include="Entidades\itbc_conta_portfolio.js" />
+    <Content Include="Entidades\itbc_docscanaisextranet.js" />
+    <Content Include="Entidades\itbc_deparadeunidadedokonviva.js" />
+    <Content Include="Entidades\itbc_lead.js" />
+    <Content Include="Entidades\itbc_oportunidade.js" />
+    <Content Include="Entidades\SalesOrder_main_library.js" />
+    <Content Include="Entidades\Task_main_library.js" />
+    <Content Include="Entidades\Obsoleto\Global.js" />
+    <Content Include="Entidades\Obsoleto\itbc_lsdid.js" />
+    <Content Include="Entidades\itbc_portfolio.js" />
+    <Content Include="Entidades\itbc_portfoliokeyaccountrepresentantes.js" />
+    <Content Include="Entidades\Obsoleto\itbc_modelodemeta.js" />
+    <Content Include="Entidades\itbc_psdid.js" />
+    <Content Include="Entidades\Obsoleto\Intelbras.Library.js" />
+    <Content Include="Entidades\Obsoleto\Conta-Portfolio.js" />
+    <Content Include="Entidades\itbc_fatura.js" />
+    <Content Include="Entidades\itbc_BeneficioCanal.js" />
+    <Content Include="Entidades\itbc_BeneficioCompromisso.js" />
+    <Content Include="Entidades\itbc_compdocanal.js" />
+    <Content Include="Entidades\itbc_FamiliaComercial.js" />
+    <Content Include="Entidades\itbc_FornecedorCanal.js" />
+    <Content Include="Entidades\itbc_HistoricoDetalhadoCompraProduto.js" />
+    <Content Include="Entidades\itbc_HistoricoCompradoCanal.js" />
+    <Content Include="Entidades\itbc_HistoricoCompraSegmento.js" />
+    <Content Include="Entidades\itbc_HistoricoCompraTrimestre.js" />
+    <Content Include="Entidades\itbc_HistoricoCompraFamilia.js" />
+    <Content Include="Entidades\itbc_HistoricoCompraProduto.js" />
+    <Content Include="Entidades\itbc_HistoricoCompraSubFamilia.js" />
+    <Content Include="Entidades\itbc_HistoricoDetalhadoCompradoCanal.js" />
+    <Content Include="Entidades\itbc_BensImoveisEmpresa.js" />
+    <Content Include="Entidades\itbc_ProdutoEstabelecimento.js" />
+    <Content Include="Entidades\itbc_LinhaCorteRevenda.js" />
+    <Content Include="Entidades\itbc_MetasUnidadeNegocio.js" />
+    <Content Include="Entidades\itbc_ParamBeneficio.js" />
+    <Content Include="Entidades\itbc_ParticipanteProcesso.js" />
+    <Content Include="Entidades\itbc_Perfil.js" />
+    <Content Include="Entidades\itbc_NivelPosVendaClassificacao.js" />
+    <Content Include="Entidades\itbc_Processo.js" />
+    <Content Include="Entidades\itbc_ProdutoPorfolio.js" />
+    <Content Include="Entidades\itbc_ProdutoTreinamentoCertificacao.js" />
+    <Content Include="Entidades\itbc_ProdutoPoliticaComercial.js" />
+    <Content Include="Entidades\itbc_ProdutosListaPSD.js" />
+    <Content Include="Entidades\itbc_ProdutoSolicitacao.js" />
+    <Content Include="Entidades\Obsoleto\itbc_segmentodeinteresse.js" />
+    <Content Include="Entidades\itbc_acessosextranetcontatos.js" />
+    <Content Include="Entidades\Obsoleto\itbc_canaissemmeta.js" />
+    <Content Include="Entidades\itbc_categoriasdocanal.js" />
+    <Content Include="Entidades\itbc_colaboradorestreincert.js" />
+    <Content Include="Entidades\itbc_denuncia.js" />
+    <Content Include="Entidades\itbc_docsrequeridoscanal.js" />
+    <Content Include="Entidades\itbc_empresas_coligadas.js" />
+    <Content Include="Entidades\itbc_estrutura_atendimento.js" />
+    <Content Include="Entidades\itbc_HistoricoCompraUnidade.js" />
+    <Content Include="Entidades\Obsoleto\itbc_metadetalhadadocanal.js" />
+    <Content Include="Entidades\Obsoleto\itbc_metadocliente.js" />
+    <Content Include="Entidades\itbc_MetaFamilia.js" />
+    <Content Include="Entidades\itbc_MetaProduto.js" />
+    <Content Include="Entidades\itbc_MetaSegmento.js" />
+    <Content Include="Entidades\itbc_MetaTrimestre.js" />
+    <Content Include="Entidades\itbc_MetaSubFamilia.js" />
+    <Content Include="Entidades\Obsoleto\itbc_orcamentodaunidade.js" />
+    <Content Include="Entidades\Obsoleto\itbc_politicacomercial.js" />
+    <Content Include="Entidades\itbc_ReferenciadoCanal.js" />
+    <Content Include="Entidades\itbc_RelacionamentodoCanal.js" />
+    <Content Include="Entidades\itbc_SolicitacaoBeneficio.js" />
+    <Content Include="Entidades\itbc_Solicitacoes.js" />
+    <Content Include="Entidades\itbc_TreinamentoCertfiCanal.js" />
+    <Content Include="Entidades\itbc_unidadedeinteresse.js" />
+    <Content Include="Entidades\itbc_js_histdistrib.js" />
+    <Content Include="Entidades\itbc_XrmServiceToolkit.js" />
+    <Content Include="Entidades\itbc_XrmServiceToolkit.min.js" />
+    <Content Include="Util\itbc_util.js" />
+    <Content Include="Entidades\Obsoleto\lead.js" />
+    <Content Include="Entidades\itbc_multiPickList.js" />
+    <Content Include="Entidades\New_auditoria_ocorrencia_main_library.js" />
+    <Content Include="Entidades\New_causa_main_library.js" />
+    <Content Include="Entidades\New_classificacao_assunto_main_library.js" />
+    <Content Include="Entidades\New_cliente_Linha_main_library.js" />
+    <Content Include="Entidades\New_cliente_participante_contrato_main_library.js" />
+    <Content Include="Entidades\Obsoleto\new_cliente_participante_endereco.js" />
+    <Content Include="Entidades\New_cliente_participante_endereco_main_library.js" />
+    <Content Include="Entidades\New_comunicado_advertencia_main_library.js" />
+    <Content Include="Entidades\Obsoleto\new_conformidade.js" />
+    <Content Include="Entidades\New_conformidade_main_library.js" />
+    <Content Include="Entidades\New_criterio_sla_assistencia_tecnica_main_library.js" />
+    <Content Include="Entidades\New_defeito_main_library.js" />
+    <Content Include="Entidades\New_defeito_ocorrencia_cliente_main_library.js" />
+    <Content Include="Entidades\New_diagnostico_ocorrencia_main_library.js" />
+    <Content Include="Entidades\New_duplicata_main_library.js" />
+    <Content Include="Entidades\New_extrato_pagamento_ocorrencia_main_library.js" />
+    <Content Include="Entidades\new_extrato_pagamento_ocorrencia_ribbon.js" />
+    <Content Include="Entidades\Obsoleto\new_feriado_municipal_estadual.js" />
+    <Content Include="Entidades\New_feriado_municipal_estadual_main_library.js" />
+    <Content Include="Entidades\New_Importacao_Assistencia_tecnica_main_library.js" />
+    <Content Include="Entidades\New_intervencao_tecnica_main_library.js" />
+    <Content Include="Entidades\New_lancamento_avulso_main_library.js" />
+    <Content Include="Entidades\New_linha_posto_servico_main_library.js" />
+    <Content Include="Entidades\New_linha_unidade_negocio_main_library.js" />
+    <Content Include="Entidades\Obsoleto\New_log_ocorrencia_main_library.js" />
+    <Content Include="Entidades\New_pagamento_servico_main_library.js" />
+    <Content Include="Entidades\Obsoleto\New_perguntas_main_library.js" />
+    <Content Include="Entidades\New_permissao_usuario_b2b_main_library.js" />
+    <Content Include="Entidades\New_permissao_usuario_servico_main_library.js" />
+    <Content Include="Entidades\Obsoleto\new_politicacomercial.js" />
+    <Content Include="Entidades\New_pontuacao_main_library.js" />
+    <Content Include="Entidades\Obsoleto\new_premio_fidelidade.js" />
+    <Content Include="Entidades\New_premio_fidelidade_main_library.js" />
+    <Content Include="Entidades\New_produto_assistecia_tecica_main_library.js" />
+    <Content Include="Entidades\Obsoleto\New_publicoalvo_main_library.js" />
+    <Content Include="Entidades\Obsoleto\new_registro_materiais.js" />
+    <Content Include="Entidades\New_registro_materiais_main_library.js" />
+    <Content Include="Entidades\New_relacionamento_main_library.js" />
+    <Content Include="Entidades\Obsoleto\New_respostas_avaliacao_main_library.js" />
+    <Content Include="Entidades\New_servico_assistencia_tecnica_main_library.js" />
+    <Content Include="Entidades\Sla_main.js" />
+    <Content Include="Entidades\New_sla_main_library.js" />
+    <Content Include="Entidades\Obsoleto\new_tipo_cobranca.js" />
+    <Content Include="Entidades\New_tipo_cobranca_main_library.js" />
+    <Content Include="Entidades\New_tipo_motivo_auditoria_main_library.js" />
+    <Content Include="Entidades\New_tipo_posto_linha_main_library.js" />
+    <Content Include="Entidades\New_tipo_posto_main_library.js" />
+    <Content Include="Entidades\New_unxcategoria_main_library.js" />
+    <Content Include="Entidades\New_valor_servico_main_library.js" />
+    <Content Include="Entidades\New_valor_servico_posto_main_library.js" />
+    <Content Include="Entidades\Obsoleto\opportunity.js" />
+    <Content Include="Entidades\PhoneCall_main_library.js" />
+    <Content Include="Entidades\phonecall_ribbon.js" />
+    <Content Include="Entidades\itbc_product.js" />
+    <Content Include="Entidades\Product_main_library.js" />
+    <Content Include="Entidades\itbc_task.js" />
+    <Content Include="Entidades\Obsoleto\TrideaFramework.Base.js" />
+    <Content Include="Entidades\Obsoleto\Util.js" />
+    <Content Include="Entidades\Obsoleto\XrmServiceToolkit.js" />
+    <Content Include="Entidades\Obsoleto\XrmServiceToolkit.min.js" />
+    <Content Include="SDKoreBase\itbc_jquery_1.9.1.min.js" />
+    <Content Include="SDKoreBase\itbc_SDKore.Metadata.js" />
+    <Content Include="SDKoreBase\itbc_SDKore.js" />
+    <Content Include="SiteMap\Configuracoes\revalidacao_adesao.html" />
+    <Content Include="SiteMap\Configuracoes\itbc_site_map.js" />
+    <Content Include="SiteMap\RibbonCRM2015.xml" />
+    <Content Include="Util\itbc_config.js" />
+    <Content Include="Util\itbc_custom_view.js" />
+    <Content Include="Util\itbc_jquery.js" />
+    <Content Include="Util\itbc_json2.js" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

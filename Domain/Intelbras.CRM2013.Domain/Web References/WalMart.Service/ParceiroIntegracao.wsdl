@@ -1,0 +1,4359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.walmart.com.br/parceiro/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.walmart.com.br/parceiro/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.walmart.com.br/parceiro/">
+      <s:element name="ConsultarProdutosAtualizados">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acesstoken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="utm_campaign" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="utm_medium" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="quantity" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarProdutosAtualizadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarProdutosAtualizadosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarProdutosDesativados">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acesstoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarProdutosDesativadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarProdutosDesativadosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarProduto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acesstoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idProduto" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="utm_campaign" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="utm_medium" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarProdutoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarProdutoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarProdutosMaisVendidos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acesstoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="qtdPorCategoria" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarProdutosMaisVendidosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarProdutosMaisVendidosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CatalogoPegarSkusAtualizados">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acesstoken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="utm_campaign" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="utm_medium" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CatalogoPegarSkusAtualizadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CatalogoPegarSkusAtualizadosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarSkusDesativados">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acesstoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarSkusDesativadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarSkusDesativadosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalcularFrete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acesstoken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="skus" type="tns:ArrayOfSku" />
+            <s:element minOccurs="0" maxOccurs="1" name="cepEntrega" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSku">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Sku" nillable="true" type="tns:Sku" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Sku">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FlagDisponivel" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrecoDe" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrecoPor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Peso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PesoReal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Altura" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AlturaReal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Largura" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LarguraReal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comprimento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ComprimentoReal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PesoCubico" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrecoPontos" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantidade" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataEdicao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdSkuFornecedor" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FlagSkuRecebeDesconto" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NMelhorParcela" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="VMelhorParcela" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="EANs" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdProduto" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CalcularFreteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalcularFreteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalcularFreteB2B">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acesstoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idSubContrato" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="skus" type="tns:ArrayOfSku" />
+            <s:element minOccurs="0" maxOccurs="1" name="cepEntrega" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalcularFreteB2BResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalcularFreteB2BResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalcularOpcoesFrete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acesstoken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idSkus" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="cepEntrega" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="utm_campaign" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="utm_medium" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CalcularOpcoesFreteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalcularOpcoesFreteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IncluirPedidoB2B">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acesstoken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pedidoB2B" type="tns:Pedido" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Pedido">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdPedido" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdContratoB2B" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdSubContratoB2B" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdLoteB2B" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdOperacaoComercial" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdPedidoParceiro" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdTipoFaturamento" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CNPJClienteB2B" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Parceiro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Campanha" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Midia" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorPago" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorFrete" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Itens" type="tns:ArrayOfItemPedido" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente" type="tns:Cliente" />
+          <s:element minOccurs="0" maxOccurs="1" name="EnderecoEntrega" type="tns:Endereco" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoStatus" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrazoEntrega" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataEntrega" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NomeTipoCalculoPontos" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequerAprovacao" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdTipoFrete" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataAgendada" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TurnoAgendado" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorTotalPedido" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="FormasPagamento" type="tns:ArrayOfFormaPagamento" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfItemPedido">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ItemPedido" nillable="true" type="tns:ItemPedido" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ItemPedido">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdSku" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantidade" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrecoVenda" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="QtdPontos" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoStatus" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrazoEntrega" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmbalarPresente" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorEmbalagemPresente" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Servicos" type="tns:ArrayOfItemServico" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfItemServico">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ItemServico" nillable="true" type="tns:ItemServico" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ItemServico">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdSkuServico" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdSku" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdServicoTipo" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cliente">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cpf" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NomeCompleto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TelefoneResidencial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TelefoneCelular" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TelefoneComercial" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataNascimento" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Genero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cnpj" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NomeFantasia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RazaoSocial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InscricaoEstadual" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Endereco">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NomeDestinatario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cep" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cidade" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bairro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoLogradouro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Logradouro" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Numero" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Complemento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PontoReferencia" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFormaPagamento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FormaPagamento" nillable="true" type="tns:FormaPagamento" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FormaPagamento">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdFormaPagamento" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="QuantidadeParcelas" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Valor" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bandeira" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorJuros" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="DadosCartao" type="tns:DadosCartao" />
+          <s:element minOccurs="0" maxOccurs="1" name="DadosPagamentoParceiro" type="tns:DadosPagamentoParceiro" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DadosCartao">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Numero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValidadeAno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValidadeMes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CpfCnpj" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DadosPagamentoParceiro">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoAutorizacaoParceiro" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataAutorizacaoParceiro" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="NossoNumeroBoletoParceiro" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IncluirPedidoB2BResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IncluirPedidoB2BResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IncluirPedidoB2C">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accesstoken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pedidoB2C" type="tns:PedidoB2C" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PedidoB2C">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdPedido" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdPedidoParceiro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Parceiro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Campanha" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Midia" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorPago" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Itens" type="tns:ArrayOfItemPedido" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente" type="tns:Cliente" />
+          <s:element minOccurs="0" maxOccurs="1" name="EnderecoEntrega" type="tns:Endereco" />
+          <s:element minOccurs="0" maxOccurs="1" name="IpCliente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FreteEntrega" type="tns:FreteEntrega" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoVale" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FormasPagamento" type="tns:ArrayOfFormaPagamento" />
+          <s:element minOccurs="0" maxOccurs="1" name="UsuarioGuid" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FreteEntrega">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ValorFrete" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Prazo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdTipoFrete" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataAgendada" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrimeiraDataDisponivel" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TurnoAgendado" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IncluirPedidoB2CResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IncluirPedidoB2CResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IncluirPedidoCobrancaParceiro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accesstoken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pedidoB2C" type="tns:PedidoB2C" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IncluirPedidoCobrancaParceiroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IncluirPedidoCobrancaParceiroResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarPedidoB2B">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acesstoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idPedido" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarPedidoB2BResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarPedidoB2BResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarPedidoB2BParceiro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acesstoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IdOperacaoComercial" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="IdPedidoParceiro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarPedidoB2BParceiroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarPedidoB2BParceiroResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarPedidoFI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acesstoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idPedido" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarPedidoFIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarPedidoFIResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarPedidoFISkuPai">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acesstoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idPedido" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarPedidoFISkuPaiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarPedidoFISkuPaiResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarReview">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acesstoken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarReviewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarReviewResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReiniciarAtualizacaoProdutos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utmSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acessToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReiniciarAtualizacaoProdutosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReiniciarAtualizacaoProdutosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReiniciarAtualizacaoSku">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utmSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acessToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReiniciarAtualizacaoSkuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReiniciarAtualizacaoSkuResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarSkuPorCategoria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utmSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acessToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idCategoria" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarSkuPorCategoriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarSkuPorCategoriaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarSkuPorMarca">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utmSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acessToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idMarca" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarSkuPorMarcaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarSkuPorMarcaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarSkuPorDepartamento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utmSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acessToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idDepartamento" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarSkuPorDepartamentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarSkuPorDepartamentoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarSkusAtualizados">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utmSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acessToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarSkusAtualizadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarSkusAtualizadosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObterDadosCPF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utmSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acessToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CpfCnpj" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObterDadosCPFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObterDadosCPFResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObterDadosEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utmSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acessToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObterDadosEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObterDadosEmailResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObterQtdItensCarrinho">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utmSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acessToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GUID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObterQtdItensCarrinhoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObterQtdItensCarrinhoResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AprovarPedidoB2B">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utmSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acessToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="numeroPedido" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="campanha" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AprovarPedidoB2BResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AprovarPedidoB2BResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarPedidosPorPeriodo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utmSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accessToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dataInicio" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dataFim" nillable="true" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarPedidosPorPeriodoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarPedidosPorPeriodoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalcularFreteComDesconto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acesstoken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="skus" type="tns:ArrayOfSku" />
+            <s:element minOccurs="0" maxOccurs="1" name="cepEntrega" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalcularFreteComDescontoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalcularFreteComDescontoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarFiltrosDepartamento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utmSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acessToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idDepartamento" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarFiltrosDepartamentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarFiltrosDepartamentoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarProdutoPorSku">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acesstoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idSku" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="utm_campaign" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="utm_medium" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarProdutoPorSkuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarProdutoPorSkuResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarProdutoCampoValor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acesstoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="timestamp" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="page" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarProdutoCampoValorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarProdutoCampoValorResult" type="tns:ProductFieldValueIntegration" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ProductFieldValueIntegration">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ProductFieldValueDTOCollection" type="tns:ArrayOfProductFieldValueDTO" />
+        </s:sequence>
+        <s:attribute name="Page" type="s:int" use="required" />
+        <s:attribute name="TotalPages" type="s:int" use="required" />
+        <s:attribute name="TotalResultsReturned" type="s:int" use="required" />
+        <s:attribute name="TotalResults" type="s:int" use="required" />
+      </s:complexType>
+      <s:complexType name="ArrayOfProductFieldValueDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProductFieldValueDTO" nillable="true" type="tns:ProductFieldValueDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductFieldValueDTO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ProductFieldValueId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FieldId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FieldName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FieldValueId" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FieldValueName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdatedDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Deleted" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="FieldGroupId" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultarSkuCampoValor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acesstoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="timestamp" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="page" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarSkuCampoValorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarSkuCampoValorResult" type="tns:SkuFieldValueIntegration" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SkuFieldValueIntegration">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SkuFieldValueDTOCollection" type="tns:ArrayOfSkuFieldValueDTO" />
+        </s:sequence>
+        <s:attribute name="Page" type="s:int" use="required" />
+        <s:attribute name="TotalPages" type="s:int" use="required" />
+        <s:attribute name="TotalResultsReturned" type="s:int" use="required" />
+      </s:complexType>
+      <s:complexType name="ArrayOfSkuFieldValueDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SkuFieldValueDTO" nillable="true" type="tns:SkuFieldValueDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SkuFieldValueDTO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SkuFieldValueId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SkuId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FieldId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FieldValueId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FlagTemValor" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdatedDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Deleted" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultarCampo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acesstoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="timestamp" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="page" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarCampoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarCampoResult" type="tns:FieldIntegration" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FieldIntegration">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FieldDTOCollection" type="tns:ArrayOfFieldDTO" />
+        </s:sequence>
+        <s:attribute name="Page" type="s:int" use="required" />
+        <s:attribute name="TotalPages" type="s:int" use="required" />
+        <s:attribute name="TotalResults" type="s:int" use="required" />
+        <s:attribute name="TotalResultsReturned" type="s:int" use="required" />
+      </s:complexType>
+      <s:complexType name="ArrayOfFieldDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FieldDTO" nillable="true" type="tns:FieldDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FieldDTO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="FieldId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FieldTypeId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CategoryId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Position" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsFilter" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsRequired" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsOnProductDetails" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsStockKeppingUnit" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsWizard" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="IntegrationReference" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Text" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DefaultValue" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FieldGroupId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FieldGroupPosition" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Deleted" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="FieldGroupName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdatedDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultarCampoValor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acesstoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="timestamp" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="page" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarCampoValorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarCampoValorResult" type="tns:FieldValueIntegration" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FieldValueIntegration">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FieldValueDTOCollection" type="tns:ArrayOfFieldValueDTO" />
+        </s:sequence>
+        <s:attribute name="Page" type="s:int" use="required" />
+        <s:attribute name="TotalPages" type="s:int" use="required" />
+        <s:attribute name="TotalResultsReturned" type="s:int" use="required" />
+        <s:attribute name="TotalResults" type="s:int" use="required" />
+      </s:complexType>
+      <s:complexType name="ArrayOfFieldValueDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FieldValueDTO" nillable="true" type="tns:FieldValueDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FieldValueDTO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdField" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Position" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Text" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdatedDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Deleted" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultarImagensAtualizadas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acessToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Timestamp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TotalResults" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PageNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarImagensAtualizadasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarImagensAtualizadasResult" type="tns:Image" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Image">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Images" type="tns:ArrayOfFeedImageDTO" />
+        </s:sequence>
+        <s:attribute name="PageNumber" type="s:int" use="required" />
+        <s:attribute name="TotalResults" type="s:int" use="required" />
+        <s:attribute name="TotalPages" type="s:int" use="required" />
+        <s:attribute name="ReturnedResults" type="s:int" use="required" />
+      </s:complexType>
+      <s:complexType name="ArrayOfFeedImageDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FeedImageDTO" nillable="true" type="tns:FeedImageDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FeedImageDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Text" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdTipoArquivo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdArquivo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdSku" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdateDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdateType" type="tns:UpdateType" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdProduto" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ordem" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="UpdateType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Insert" />
+          <s:enumeration value="Delete" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="ValidarVale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accesstoken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cpfCnpj" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarValeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidarValeResult" type="tns:Vale" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Vale">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Valor" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Validade" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Tipo" type="tns:TipoVale" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="tns:StatusVale" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="TipoVale">
+        <s:restriction base="s:string">
+          <s:enumeration value="ValeTroca" />
+          <s:enumeration value="ValePresente" />
+          <s:enumeration value="ValeVirtual" />
+          <s:enumeration value="CupomDesconto" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="StatusVale">
+        <s:restriction base="s:string">
+          <s:enumeration value="Inexistente" />
+          <s:enumeration value="Ativo" />
+          <s:enumeration value="Bloqueado" />
+          <s:enumeration value="Cancelado" />
+          <s:enumeration value="SemSaldo" />
+          <s:enumeration value="LimiteResgateExcedido" />
+          <s:enumeration value="Expirado" />
+          <s:enumeration value="NaoPermitido" />
+          <s:enumeration value="UsuarioInvalido" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="ValidarClienteBradesco">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarClienteBradescoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidarClienteBradescoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarParcelamento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accesstoken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pedidoB2C" type="tns:PedidoB2C" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarParcelamentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarParcelamentoResult" type="tns:ConsultarParcelamentoResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ConsultarParcelamentoResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorFrete" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorFreteParceiro" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Skus" type="tns:ArrayOfConsultarParcelamentoResultSkuItem" />
+          <s:element minOccurs="0" maxOccurs="1" name="FormasDePagamento" type="tns:ArrayOfFormaDePagamento" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfConsultarParcelamentoResultSkuItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ConsultarParcelamentoResultSkuItem" nillable="true" type="tns:ConsultarParcelamentoResultSkuItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ConsultarParcelamentoResultSkuItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdSku" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorSku" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorEmbrulho" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TemEstoque" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFormaDePagamento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FormaDePagamento" nillable="true" type="tns:FormaDePagamento" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FormaDePagamento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NomeFormaPagamento" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdFormaPagamento" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="OpcoesDeParcelamento" type="tns:ArrayOfParcelamentoFrontEnd" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfParcelamentoFrontEnd">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ParcelamentoFrontEnd" nillable="true" type="tns:ParcelamentoFrontEnd" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ParcelamentoFrontEnd">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="NumeroDeParcelas" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TaxaDeJuros" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdFormaPagamento" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorParcela" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorTotalComJuros" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorJuros" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultaSkuDestaque">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utmSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acessToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaSkuDestaqueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaSkuDestaqueResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCategoriasAtualizadas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acessToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Timestamp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TotalResults" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PageNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCategoriasAtualizadasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCategoriasAtualizadasResult" type="tns:Category" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Category">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Categories" type="tns:ArrayOfFeedCategoryDTO" />
+        </s:sequence>
+        <s:attribute name="PageNumber" type="s:int" use="required" />
+        <s:attribute name="TotalResults" type="s:int" use="required" />
+        <s:attribute name="TotalPages" type="s:int" use="required" />
+        <s:attribute name="ReturnedResults" type="s:int" use="required" />
+      </s:complexType>
+      <s:complexType name="ArrayOfFeedCategoryDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FeedCategoryDTO" nillable="true" type="tns:FeedCategoryDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FeedCategoryDTO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FatherCategoryId" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DepartamentId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShowInStoreFront" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Position" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Keywords" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StockKeepingUnitSelectionMode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShowBrandFilter" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdateDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCategoriaById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acessToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idCategoria" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCategoriaByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCategoriaByIdResult" type="tns:FeedCategoryDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCampoGrupo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acessToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idGrupo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCampoGrupoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCampoGrupoResult" type="tns:FieldGroupDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FieldGroupDTO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="categoryid" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="position" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="deleted" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Timestamp" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCampoGrupoByTimestamp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acesstoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="timestamp" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="page" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCampoGrupoByTimestampResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCampoGrupoByTimestampResult" type="tns:FieldGroupIntegration" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FieldGroupIntegration">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FieldGroupDTOCollection" type="tns:ArrayOfFieldGroupDTO" />
+        </s:sequence>
+        <s:attribute name="Page" type="s:int" use="required" />
+        <s:attribute name="TotalPages" type="s:int" use="required" />
+        <s:attribute name="TotalResults" type="s:int" use="required" />
+        <s:attribute name="TotalResultsReturned" type="s:int" use="required" />
+      </s:complexType>
+      <s:complexType name="ArrayOfFieldGroupDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FieldGroupDTO" nillable="true" type="tns:FieldGroupDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCampo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acessToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idCampo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCampoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCampoResult" type="tns:FieldDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCampoByTimestamp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acesstoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="timestamp" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="page" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCampoByTimestampResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCampoByTimestampResult" type="tns:FieldIntegration" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCampoValor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acessToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idCampoValor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCampoValorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCampoValorResult" type="tns:FieldValueDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SolicitarCancelamentoPedido">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="emailRemetenteEndereco" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailRemetenteNome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cpf" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remetenteNome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remetenteSobrenome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remetenteEndereco" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="assunto" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="remetenteTelefoneDDD" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="remetenteTelefoneNum" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="remetenteCelularDDD" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="remetenteCelularNum" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="comentario" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idPedido" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SolicitarCancelamentoPedidoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SolicitarCancelamentoPedidoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarProdutosMaisVendidosRandom">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utm_source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acesstoken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="qtdPorCategoria" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="qtdDeMaisVendidos" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarProdutosMaisVendidosRandomResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarProdutosMaisVendidosRandomResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="ProductFieldValueIntegration" nillable="true" type="tns:ProductFieldValueIntegration" />
+      <s:element name="SkuFieldValueIntegration" nillable="true" type="tns:SkuFieldValueIntegration" />
+      <s:element name="FieldIntegration" nillable="true" type="tns:FieldIntegration" />
+      <s:element name="FieldValueIntegration" nillable="true" type="tns:FieldValueIntegration" />
+      <s:element name="Image" nillable="true" type="tns:Image" />
+      <s:element name="Vale" nillable="true" type="tns:Vale" />
+      <s:element name="Category" nillable="true" type="tns:Category" />
+      <s:element name="FeedCategoryDTO" nillable="true" type="tns:FeedCategoryDTO" />
+      <s:element name="FieldGroupDTO" nillable="true" type="tns:FieldGroupDTO" />
+      <s:element name="FieldGroupIntegration" nillable="true" type="tns:FieldGroupIntegration" />
+      <s:element name="FieldDTO" nillable="true" type="tns:FieldDTO" />
+      <s:element name="FieldValueDTO" nillable="true" type="tns:FieldValueDTO" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConsultarProdutosAtualizadosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarProdutosAtualizados" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutosAtualizadosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarProdutosAtualizadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutosDesativadosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarProdutosDesativados" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutosDesativadosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarProdutosDesativadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutoSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarProduto" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutoSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarProdutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutosMaisVendidosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarProdutosMaisVendidos" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutosMaisVendidosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarProdutosMaisVendidosResponse" />
+  </wsdl:message>
+  <wsdl:message name="CatalogoPegarSkusAtualizadosSoapIn">
+    <wsdl:part name="parameters" element="tns:CatalogoPegarSkusAtualizados" />
+  </wsdl:message>
+  <wsdl:message name="CatalogoPegarSkusAtualizadosSoapOut">
+    <wsdl:part name="parameters" element="tns:CatalogoPegarSkusAtualizadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkusDesativadosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarSkusDesativados" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkusDesativadosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarSkusDesativadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalcularFreteSoapIn">
+    <wsdl:part name="parameters" element="tns:CalcularFrete" />
+  </wsdl:message>
+  <wsdl:message name="CalcularFreteSoapOut">
+    <wsdl:part name="parameters" element="tns:CalcularFreteResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalcularFreteB2BSoapIn">
+    <wsdl:part name="parameters" element="tns:CalcularFreteB2B" />
+  </wsdl:message>
+  <wsdl:message name="CalcularFreteB2BSoapOut">
+    <wsdl:part name="parameters" element="tns:CalcularFreteB2BResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalcularOpcoesFreteSoapIn">
+    <wsdl:part name="parameters" element="tns:CalcularOpcoesFrete" />
+  </wsdl:message>
+  <wsdl:message name="CalcularOpcoesFreteSoapOut">
+    <wsdl:part name="parameters" element="tns:CalcularOpcoesFreteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IncluirPedidoB2BSoapIn">
+    <wsdl:part name="parameters" element="tns:IncluirPedidoB2B" />
+  </wsdl:message>
+  <wsdl:message name="IncluirPedidoB2BSoapOut">
+    <wsdl:part name="parameters" element="tns:IncluirPedidoB2BResponse" />
+  </wsdl:message>
+  <wsdl:message name="IncluirPedidoB2CSoapIn">
+    <wsdl:part name="parameters" element="tns:IncluirPedidoB2C" />
+  </wsdl:message>
+  <wsdl:message name="IncluirPedidoB2CSoapOut">
+    <wsdl:part name="parameters" element="tns:IncluirPedidoB2CResponse" />
+  </wsdl:message>
+  <wsdl:message name="IncluirPedidoCobrancaParceiroSoapIn">
+    <wsdl:part name="parameters" element="tns:IncluirPedidoCobrancaParceiro" />
+  </wsdl:message>
+  <wsdl:message name="IncluirPedidoCobrancaParceiroSoapOut">
+    <wsdl:part name="parameters" element="tns:IncluirPedidoCobrancaParceiroResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPedidoB2BSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarPedidoB2B" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPedidoB2BSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarPedidoB2BResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPedidoB2BParceiroSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarPedidoB2BParceiro" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPedidoB2BParceiroSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarPedidoB2BParceiroResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPedidoFISoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarPedidoFI" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPedidoFISoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarPedidoFIResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPedidoFISkuPaiSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarPedidoFISkuPai" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPedidoFISkuPaiSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarPedidoFISkuPaiResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarReviewSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarReview" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarReviewSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarReviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReiniciarAtualizacaoProdutosSoapIn">
+    <wsdl:part name="parameters" element="tns:ReiniciarAtualizacaoProdutos" />
+  </wsdl:message>
+  <wsdl:message name="ReiniciarAtualizacaoProdutosSoapOut">
+    <wsdl:part name="parameters" element="tns:ReiniciarAtualizacaoProdutosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReiniciarAtualizacaoSkuSoapIn">
+    <wsdl:part name="parameters" element="tns:ReiniciarAtualizacaoSku" />
+  </wsdl:message>
+  <wsdl:message name="ReiniciarAtualizacaoSkuSoapOut">
+    <wsdl:part name="parameters" element="tns:ReiniciarAtualizacaoSkuResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkuPorCategoriaSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarSkuPorCategoria" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkuPorCategoriaSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarSkuPorCategoriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkuPorMarcaSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarSkuPorMarca" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkuPorMarcaSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarSkuPorMarcaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkuPorDepartamentoSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarSkuPorDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkuPorDepartamentoSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarSkuPorDepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkusAtualizadosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarSkusAtualizados" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkusAtualizadosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarSkusAtualizadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObterDadosCPFSoapIn">
+    <wsdl:part name="parameters" element="tns:ObterDadosCPF" />
+  </wsdl:message>
+  <wsdl:message name="ObterDadosCPFSoapOut">
+    <wsdl:part name="parameters" element="tns:ObterDadosCPFResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObterDadosEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:ObterDadosEmail" />
+  </wsdl:message>
+  <wsdl:message name="ObterDadosEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:ObterDadosEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObterQtdItensCarrinhoSoapIn">
+    <wsdl:part name="parameters" element="tns:ObterQtdItensCarrinho" />
+  </wsdl:message>
+  <wsdl:message name="ObterQtdItensCarrinhoSoapOut">
+    <wsdl:part name="parameters" element="tns:ObterQtdItensCarrinhoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AprovarPedidoB2BSoapIn">
+    <wsdl:part name="parameters" element="tns:AprovarPedidoB2B" />
+  </wsdl:message>
+  <wsdl:message name="AprovarPedidoB2BSoapOut">
+    <wsdl:part name="parameters" element="tns:AprovarPedidoB2BResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPedidosPorPeriodoSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarPedidosPorPeriodo" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPedidosPorPeriodoSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarPedidosPorPeriodoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalcularFreteComDescontoSoapIn">
+    <wsdl:part name="parameters" element="tns:CalcularFreteComDesconto" />
+  </wsdl:message>
+  <wsdl:message name="CalcularFreteComDescontoSoapOut">
+    <wsdl:part name="parameters" element="tns:CalcularFreteComDescontoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarFiltrosDepartamentoSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarFiltrosDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarFiltrosDepartamentoSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarFiltrosDepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutoPorSkuSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarProdutoPorSku" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutoPorSkuSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarProdutoPorSkuResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutoCampoValorSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarProdutoCampoValor" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutoCampoValorSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarProdutoCampoValorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkuCampoValorSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarSkuCampoValor" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkuCampoValorSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarSkuCampoValorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCampoSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarCampo" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCampoSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarCampoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCampoValorSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarCampoValor" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCampoValorSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarCampoValorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarImagensAtualizadasSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarImagensAtualizadas" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarImagensAtualizadasSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarImagensAtualizadasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidarValeSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidarVale" />
+  </wsdl:message>
+  <wsdl:message name="ValidarValeSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidarValeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidarClienteBradescoSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidarClienteBradesco" />
+  </wsdl:message>
+  <wsdl:message name="ValidarClienteBradescoSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidarClienteBradescoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarParcelamentoSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarParcelamento" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarParcelamentoSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarParcelamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaSkuDestaqueSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaSkuDestaque" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaSkuDestaqueSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaSkuDestaqueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCategoriasAtualizadasSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCategoriasAtualizadas" />
+  </wsdl:message>
+  <wsdl:message name="GetCategoriasAtualizadasSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCategoriasAtualizadasResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCategoriaByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCategoriaById" />
+  </wsdl:message>
+  <wsdl:message name="GetCategoriaByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCategoriaByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCampoGrupoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCampoGrupo" />
+  </wsdl:message>
+  <wsdl:message name="GetCampoGrupoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCampoGrupoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCampoGrupoByTimestampSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCampoGrupoByTimestamp" />
+  </wsdl:message>
+  <wsdl:message name="GetCampoGrupoByTimestampSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCampoGrupoByTimestampResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCampoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCampo" />
+  </wsdl:message>
+  <wsdl:message name="GetCampoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCampoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCampoByTimestampSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCampoByTimestamp" />
+  </wsdl:message>
+  <wsdl:message name="GetCampoByTimestampSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCampoByTimestampResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCampoValorSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCampoValor" />
+  </wsdl:message>
+  <wsdl:message name="GetCampoValorSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCampoValorResponse" />
+  </wsdl:message>
+  <wsdl:message name="SolicitarCancelamentoPedidoSoapIn">
+    <wsdl:part name="parameters" element="tns:SolicitarCancelamentoPedido" />
+  </wsdl:message>
+  <wsdl:message name="SolicitarCancelamentoPedidoSoapOut">
+    <wsdl:part name="parameters" element="tns:SolicitarCancelamentoPedidoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutosMaisVendidosRandomSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarProdutosMaisVendidosRandom" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutosMaisVendidosRandomSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarProdutosMaisVendidosRandomResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutosDesativadosHttpGetIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutosDesativadosHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutoHttpGetIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+    <wsdl:part name="idProduto" type="s:string" />
+    <wsdl:part name="utm_campaign" type="s:string" />
+    <wsdl:part name="utm_medium" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutosMaisVendidosHttpGetIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+    <wsdl:part name="qtdPorCategoria" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutosMaisVendidosHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CatalogoPegarSkusAtualizadosHttpGetIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+    <wsdl:part name="utm_campaign" type="s:string" />
+    <wsdl:part name="utm_medium" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CatalogoPegarSkusAtualizadosHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkusDesativadosHttpGetIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkusDesativadosHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPedidoB2BHttpGetIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+    <wsdl:part name="idPedido" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPedidoB2BHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPedidoB2BParceiroHttpGetIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+    <wsdl:part name="IdOperacaoComercial" type="s:string" />
+    <wsdl:part name="IdPedidoParceiro" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPedidoB2BParceiroHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPedidoFIHttpGetIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+    <wsdl:part name="idPedido" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPedidoFIHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPedidoFISkuPaiHttpGetIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+    <wsdl:part name="idPedido" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPedidoFISkuPaiHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarReviewHttpGetIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarReviewHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ReiniciarAtualizacaoProdutosHttpGetIn">
+    <wsdl:part name="utmSource" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReiniciarAtualizacaoProdutosHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ReiniciarAtualizacaoSkuHttpGetIn">
+    <wsdl:part name="utmSource" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReiniciarAtualizacaoSkuHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkuPorCategoriaHttpGetIn">
+    <wsdl:part name="utmSource" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+    <wsdl:part name="idCategoria" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkuPorCategoriaHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkuPorMarcaHttpGetIn">
+    <wsdl:part name="utmSource" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+    <wsdl:part name="idMarca" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkuPorMarcaHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkuPorDepartamentoHttpGetIn">
+    <wsdl:part name="utmSource" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+    <wsdl:part name="idDepartamento" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkuPorDepartamentoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkusAtualizadosHttpGetIn">
+    <wsdl:part name="utmSource" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkusAtualizadosHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ObterDadosCPFHttpGetIn">
+    <wsdl:part name="utmSource" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+    <wsdl:part name="CpfCnpj" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObterDadosCPFHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ObterDadosEmailHttpGetIn">
+    <wsdl:part name="utmSource" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObterDadosEmailHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ObterQtdItensCarrinhoHttpGetIn">
+    <wsdl:part name="utmSource" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+    <wsdl:part name="GUID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObterQtdItensCarrinhoHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AprovarPedidoB2BHttpGetIn">
+    <wsdl:part name="utmSource" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+    <wsdl:part name="numeroPedido" type="s:string" />
+    <wsdl:part name="campanha" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AprovarPedidoB2BHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarFiltrosDepartamentoHttpGetIn">
+    <wsdl:part name="utmSource" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+    <wsdl:part name="idDepartamento" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarFiltrosDepartamentoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutoPorSkuHttpGetIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+    <wsdl:part name="idSku" type="s:string" />
+    <wsdl:part name="utm_campaign" type="s:string" />
+    <wsdl:part name="utm_medium" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutoPorSkuHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutoCampoValorHttpGetIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+    <wsdl:part name="timestamp" type="s:string" />
+    <wsdl:part name="page" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutoCampoValorHttpGetOut">
+    <wsdl:part name="Body" element="tns:ProductFieldValueIntegration" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkuCampoValorHttpGetIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+    <wsdl:part name="timestamp" type="s:string" />
+    <wsdl:part name="page" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkuCampoValorHttpGetOut">
+    <wsdl:part name="Body" element="tns:SkuFieldValueIntegration" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCampoHttpGetIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+    <wsdl:part name="timestamp" type="s:string" />
+    <wsdl:part name="page" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCampoHttpGetOut">
+    <wsdl:part name="Body" element="tns:FieldIntegration" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCampoValorHttpGetIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+    <wsdl:part name="timestamp" type="s:string" />
+    <wsdl:part name="page" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCampoValorHttpGetOut">
+    <wsdl:part name="Body" element="tns:FieldValueIntegration" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarImagensAtualizadasHttpGetIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+    <wsdl:part name="Timestamp" type="s:string" />
+    <wsdl:part name="TotalResults" type="s:string" />
+    <wsdl:part name="PageNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarImagensAtualizadasHttpGetOut">
+    <wsdl:part name="Body" element="tns:Image" />
+  </wsdl:message>
+  <wsdl:message name="ValidarValeHttpGetIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="accesstoken" type="s:string" />
+    <wsdl:part name="codigo" type="s:string" />
+    <wsdl:part name="cpfCnpj" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidarValeHttpGetOut">
+    <wsdl:part name="Body" element="tns:Vale" />
+  </wsdl:message>
+  <wsdl:message name="ValidarClienteBradescoHttpGetIn">
+    <wsdl:part name="idCliente" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidarClienteBradescoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaSkuDestaqueHttpGetIn">
+    <wsdl:part name="utmSource" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaSkuDestaqueHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCategoriasAtualizadasHttpGetIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+    <wsdl:part name="Timestamp" type="s:string" />
+    <wsdl:part name="TotalResults" type="s:string" />
+    <wsdl:part name="PageNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCategoriasAtualizadasHttpGetOut">
+    <wsdl:part name="Body" element="tns:Category" />
+  </wsdl:message>
+  <wsdl:message name="GetCategoriaByIdHttpGetIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+    <wsdl:part name="idCategoria" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCategoriaByIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:FeedCategoryDTO" />
+  </wsdl:message>
+  <wsdl:message name="GetCampoGrupoHttpGetIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+    <wsdl:part name="idGrupo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCampoGrupoHttpGetOut">
+    <wsdl:part name="Body" element="tns:FieldGroupDTO" />
+  </wsdl:message>
+  <wsdl:message name="GetCampoGrupoByTimestampHttpGetIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+    <wsdl:part name="timestamp" type="s:string" />
+    <wsdl:part name="page" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCampoGrupoByTimestampHttpGetOut">
+    <wsdl:part name="Body" element="tns:FieldGroupIntegration" />
+  </wsdl:message>
+  <wsdl:message name="GetCampoHttpGetIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+    <wsdl:part name="idCampo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCampoHttpGetOut">
+    <wsdl:part name="Body" element="tns:FieldDTO" />
+  </wsdl:message>
+  <wsdl:message name="GetCampoByTimestampHttpGetIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+    <wsdl:part name="timestamp" type="s:string" />
+    <wsdl:part name="page" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCampoByTimestampHttpGetOut">
+    <wsdl:part name="Body" element="tns:FieldIntegration" />
+  </wsdl:message>
+  <wsdl:message name="GetCampoValorHttpGetIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+    <wsdl:part name="idCampoValor" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCampoValorHttpGetOut">
+    <wsdl:part name="Body" element="tns:FieldValueDTO" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutosMaisVendidosRandomHttpGetIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+    <wsdl:part name="qtdPorCategoria" type="s:string" />
+    <wsdl:part name="qtdDeMaisVendidos" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutosMaisVendidosRandomHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutosDesativadosHttpPostIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutosDesativadosHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutoHttpPostIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+    <wsdl:part name="idProduto" type="s:string" />
+    <wsdl:part name="utm_campaign" type="s:string" />
+    <wsdl:part name="utm_medium" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutosMaisVendidosHttpPostIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+    <wsdl:part name="qtdPorCategoria" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutosMaisVendidosHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CatalogoPegarSkusAtualizadosHttpPostIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+    <wsdl:part name="utm_campaign" type="s:string" />
+    <wsdl:part name="utm_medium" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CatalogoPegarSkusAtualizadosHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkusDesativadosHttpPostIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkusDesativadosHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPedidoB2BHttpPostIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+    <wsdl:part name="idPedido" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPedidoB2BHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPedidoB2BParceiroHttpPostIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+    <wsdl:part name="IdOperacaoComercial" type="s:string" />
+    <wsdl:part name="IdPedidoParceiro" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPedidoB2BParceiroHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPedidoFIHttpPostIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+    <wsdl:part name="idPedido" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPedidoFIHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPedidoFISkuPaiHttpPostIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+    <wsdl:part name="idPedido" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPedidoFISkuPaiHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarReviewHttpPostIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarReviewHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ReiniciarAtualizacaoProdutosHttpPostIn">
+    <wsdl:part name="utmSource" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReiniciarAtualizacaoProdutosHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ReiniciarAtualizacaoSkuHttpPostIn">
+    <wsdl:part name="utmSource" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReiniciarAtualizacaoSkuHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkuPorCategoriaHttpPostIn">
+    <wsdl:part name="utmSource" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+    <wsdl:part name="idCategoria" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkuPorCategoriaHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkuPorMarcaHttpPostIn">
+    <wsdl:part name="utmSource" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+    <wsdl:part name="idMarca" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkuPorMarcaHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkuPorDepartamentoHttpPostIn">
+    <wsdl:part name="utmSource" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+    <wsdl:part name="idDepartamento" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkuPorDepartamentoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkusAtualizadosHttpPostIn">
+    <wsdl:part name="utmSource" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkusAtualizadosHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ObterDadosCPFHttpPostIn">
+    <wsdl:part name="utmSource" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+    <wsdl:part name="CpfCnpj" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObterDadosCPFHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ObterDadosEmailHttpPostIn">
+    <wsdl:part name="utmSource" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObterDadosEmailHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ObterQtdItensCarrinhoHttpPostIn">
+    <wsdl:part name="utmSource" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+    <wsdl:part name="GUID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ObterQtdItensCarrinhoHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AprovarPedidoB2BHttpPostIn">
+    <wsdl:part name="utmSource" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+    <wsdl:part name="numeroPedido" type="s:string" />
+    <wsdl:part name="campanha" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AprovarPedidoB2BHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarFiltrosDepartamentoHttpPostIn">
+    <wsdl:part name="utmSource" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+    <wsdl:part name="idDepartamento" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarFiltrosDepartamentoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutoPorSkuHttpPostIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+    <wsdl:part name="idSku" type="s:string" />
+    <wsdl:part name="utm_campaign" type="s:string" />
+    <wsdl:part name="utm_medium" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutoPorSkuHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutoCampoValorHttpPostIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+    <wsdl:part name="timestamp" type="s:string" />
+    <wsdl:part name="page" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutoCampoValorHttpPostOut">
+    <wsdl:part name="Body" element="tns:ProductFieldValueIntegration" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkuCampoValorHttpPostIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+    <wsdl:part name="timestamp" type="s:string" />
+    <wsdl:part name="page" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSkuCampoValorHttpPostOut">
+    <wsdl:part name="Body" element="tns:SkuFieldValueIntegration" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCampoHttpPostIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+    <wsdl:part name="timestamp" type="s:string" />
+    <wsdl:part name="page" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCampoHttpPostOut">
+    <wsdl:part name="Body" element="tns:FieldIntegration" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCampoValorHttpPostIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+    <wsdl:part name="timestamp" type="s:string" />
+    <wsdl:part name="page" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarCampoValorHttpPostOut">
+    <wsdl:part name="Body" element="tns:FieldValueIntegration" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarImagensAtualizadasHttpPostIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+    <wsdl:part name="Timestamp" type="s:string" />
+    <wsdl:part name="TotalResults" type="s:string" />
+    <wsdl:part name="PageNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarImagensAtualizadasHttpPostOut">
+    <wsdl:part name="Body" element="tns:Image" />
+  </wsdl:message>
+  <wsdl:message name="ValidarValeHttpPostIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="accesstoken" type="s:string" />
+    <wsdl:part name="codigo" type="s:string" />
+    <wsdl:part name="cpfCnpj" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidarValeHttpPostOut">
+    <wsdl:part name="Body" element="tns:Vale" />
+  </wsdl:message>
+  <wsdl:message name="ValidarClienteBradescoHttpPostIn">
+    <wsdl:part name="idCliente" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidarClienteBradescoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaSkuDestaqueHttpPostIn">
+    <wsdl:part name="utmSource" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaSkuDestaqueHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCategoriasAtualizadasHttpPostIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+    <wsdl:part name="Timestamp" type="s:string" />
+    <wsdl:part name="TotalResults" type="s:string" />
+    <wsdl:part name="PageNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCategoriasAtualizadasHttpPostOut">
+    <wsdl:part name="Body" element="tns:Category" />
+  </wsdl:message>
+  <wsdl:message name="GetCategoriaByIdHttpPostIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+    <wsdl:part name="idCategoria" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCategoriaByIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:FeedCategoryDTO" />
+  </wsdl:message>
+  <wsdl:message name="GetCampoGrupoHttpPostIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+    <wsdl:part name="idGrupo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCampoGrupoHttpPostOut">
+    <wsdl:part name="Body" element="tns:FieldGroupDTO" />
+  </wsdl:message>
+  <wsdl:message name="GetCampoGrupoByTimestampHttpPostIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+    <wsdl:part name="timestamp" type="s:string" />
+    <wsdl:part name="page" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCampoGrupoByTimestampHttpPostOut">
+    <wsdl:part name="Body" element="tns:FieldGroupIntegration" />
+  </wsdl:message>
+  <wsdl:message name="GetCampoHttpPostIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+    <wsdl:part name="idCampo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCampoHttpPostOut">
+    <wsdl:part name="Body" element="tns:FieldDTO" />
+  </wsdl:message>
+  <wsdl:message name="GetCampoByTimestampHttpPostIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+    <wsdl:part name="timestamp" type="s:string" />
+    <wsdl:part name="page" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCampoByTimestampHttpPostOut">
+    <wsdl:part name="Body" element="tns:FieldIntegration" />
+  </wsdl:message>
+  <wsdl:message name="GetCampoValorHttpPostIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acessToken" type="s:string" />
+    <wsdl:part name="idCampoValor" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCampoValorHttpPostOut">
+    <wsdl:part name="Body" element="tns:FieldValueDTO" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutosMaisVendidosRandomHttpPostIn">
+    <wsdl:part name="utm_source" type="s:string" />
+    <wsdl:part name="acesstoken" type="s:string" />
+    <wsdl:part name="qtdPorCategoria" type="s:string" />
+    <wsdl:part name="qtdDeMaisVendidos" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarProdutosMaisVendidosRandomHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="ParceiroIntegracaoSoap">
+    <wsdl:operation name="ConsultarProdutosAtualizados">
+      <wsdl:input message="tns:ConsultarProdutosAtualizadosSoapIn" />
+      <wsdl:output message="tns:ConsultarProdutosAtualizadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutosDesativados">
+      <wsdl:input message="tns:ConsultarProdutosDesativadosSoapIn" />
+      <wsdl:output message="tns:ConsultarProdutosDesativadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProduto">
+      <wsdl:input message="tns:ConsultarProdutoSoapIn" />
+      <wsdl:output message="tns:ConsultarProdutoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutosMaisVendidos">
+      <wsdl:input message="tns:ConsultarProdutosMaisVendidosSoapIn" />
+      <wsdl:output message="tns:ConsultarProdutosMaisVendidosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CatalogoPegarSkusAtualizados">
+      <wsdl:input message="tns:CatalogoPegarSkusAtualizadosSoapIn" />
+      <wsdl:output message="tns:CatalogoPegarSkusAtualizadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkusDesativados">
+      <wsdl:input message="tns:ConsultarSkusDesativadosSoapIn" />
+      <wsdl:output message="tns:ConsultarSkusDesativadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalcularFrete">
+      <wsdl:input message="tns:CalcularFreteSoapIn" />
+      <wsdl:output message="tns:CalcularFreteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalcularFreteB2B">
+      <wsdl:input message="tns:CalcularFreteB2BSoapIn" />
+      <wsdl:output message="tns:CalcularFreteB2BSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalcularOpcoesFrete">
+      <wsdl:input message="tns:CalcularOpcoesFreteSoapIn" />
+      <wsdl:output message="tns:CalcularOpcoesFreteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IncluirPedidoB2B">
+      <wsdl:input message="tns:IncluirPedidoB2BSoapIn" />
+      <wsdl:output message="tns:IncluirPedidoB2BSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IncluirPedidoB2C">
+      <wsdl:input message="tns:IncluirPedidoB2CSoapIn" />
+      <wsdl:output message="tns:IncluirPedidoB2CSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IncluirPedidoCobrancaParceiro">
+      <wsdl:input message="tns:IncluirPedidoCobrancaParceiroSoapIn" />
+      <wsdl:output message="tns:IncluirPedidoCobrancaParceiroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidoB2B">
+      <wsdl:input message="tns:ConsultarPedidoB2BSoapIn" />
+      <wsdl:output message="tns:ConsultarPedidoB2BSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidoB2BParceiro">
+      <wsdl:input message="tns:ConsultarPedidoB2BParceiroSoapIn" />
+      <wsdl:output message="tns:ConsultarPedidoB2BParceiroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidoFI">
+      <wsdl:input message="tns:ConsultarPedidoFISoapIn" />
+      <wsdl:output message="tns:ConsultarPedidoFISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidoFISkuPai">
+      <wsdl:input message="tns:ConsultarPedidoFISkuPaiSoapIn" />
+      <wsdl:output message="tns:ConsultarPedidoFISkuPaiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarReview">
+      <wsdl:input message="tns:ConsultarReviewSoapIn" />
+      <wsdl:output message="tns:ConsultarReviewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReiniciarAtualizacaoProdutos">
+      <wsdl:input message="tns:ReiniciarAtualizacaoProdutosSoapIn" />
+      <wsdl:output message="tns:ReiniciarAtualizacaoProdutosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReiniciarAtualizacaoSku">
+      <wsdl:input message="tns:ReiniciarAtualizacaoSkuSoapIn" />
+      <wsdl:output message="tns:ReiniciarAtualizacaoSkuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkuPorCategoria">
+      <wsdl:input message="tns:ConsultarSkuPorCategoriaSoapIn" />
+      <wsdl:output message="tns:ConsultarSkuPorCategoriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkuPorMarca">
+      <wsdl:input message="tns:ConsultarSkuPorMarcaSoapIn" />
+      <wsdl:output message="tns:ConsultarSkuPorMarcaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkuPorDepartamento">
+      <wsdl:input message="tns:ConsultarSkuPorDepartamentoSoapIn" />
+      <wsdl:output message="tns:ConsultarSkuPorDepartamentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkusAtualizados">
+      <wsdl:input message="tns:ConsultarSkusAtualizadosSoapIn" />
+      <wsdl:output message="tns:ConsultarSkusAtualizadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterDadosCPF">
+      <wsdl:input message="tns:ObterDadosCPFSoapIn" />
+      <wsdl:output message="tns:ObterDadosCPFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterDadosEmail">
+      <wsdl:input message="tns:ObterDadosEmailSoapIn" />
+      <wsdl:output message="tns:ObterDadosEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterQtdItensCarrinho">
+      <wsdl:input message="tns:ObterQtdItensCarrinhoSoapIn" />
+      <wsdl:output message="tns:ObterQtdItensCarrinhoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AprovarPedidoB2B">
+      <wsdl:input message="tns:AprovarPedidoB2BSoapIn" />
+      <wsdl:output message="tns:AprovarPedidoB2BSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidosPorPeriodo">
+      <wsdl:input message="tns:ConsultarPedidosPorPeriodoSoapIn" />
+      <wsdl:output message="tns:ConsultarPedidosPorPeriodoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalcularFreteComDesconto">
+      <wsdl:input message="tns:CalcularFreteComDescontoSoapIn" />
+      <wsdl:output message="tns:CalcularFreteComDescontoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFiltrosDepartamento">
+      <wsdl:input message="tns:ConsultarFiltrosDepartamentoSoapIn" />
+      <wsdl:output message="tns:ConsultarFiltrosDepartamentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutoPorSku">
+      <wsdl:input message="tns:ConsultarProdutoPorSkuSoapIn" />
+      <wsdl:output message="tns:ConsultarProdutoPorSkuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutoCampoValor">
+      <wsdl:input message="tns:ConsultarProdutoCampoValorSoapIn" />
+      <wsdl:output message="tns:ConsultarProdutoCampoValorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkuCampoValor">
+      <wsdl:input message="tns:ConsultarSkuCampoValorSoapIn" />
+      <wsdl:output message="tns:ConsultarSkuCampoValorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCampo">
+      <wsdl:input message="tns:ConsultarCampoSoapIn" />
+      <wsdl:output message="tns:ConsultarCampoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCampoValor">
+      <wsdl:input message="tns:ConsultarCampoValorSoapIn" />
+      <wsdl:output message="tns:ConsultarCampoValorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarImagensAtualizadas">
+      <wsdl:input message="tns:ConsultarImagensAtualizadasSoapIn" />
+      <wsdl:output message="tns:ConsultarImagensAtualizadasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarVale">
+      <wsdl:input message="tns:ValidarValeSoapIn" />
+      <wsdl:output message="tns:ValidarValeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarClienteBradesco">
+      <wsdl:input message="tns:ValidarClienteBradescoSoapIn" />
+      <wsdl:output message="tns:ValidarClienteBradescoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarParcelamento">
+      <wsdl:input message="tns:ConsultarParcelamentoSoapIn" />
+      <wsdl:output message="tns:ConsultarParcelamentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaSkuDestaque">
+      <wsdl:input message="tns:ConsultaSkuDestaqueSoapIn" />
+      <wsdl:output message="tns:ConsultaSkuDestaqueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoriasAtualizadas">
+      <wsdl:input message="tns:GetCategoriasAtualizadasSoapIn" />
+      <wsdl:output message="tns:GetCategoriasAtualizadasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoriaById">
+      <wsdl:input message="tns:GetCategoriaByIdSoapIn" />
+      <wsdl:output message="tns:GetCategoriaByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampoGrupo">
+      <wsdl:input message="tns:GetCampoGrupoSoapIn" />
+      <wsdl:output message="tns:GetCampoGrupoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampoGrupoByTimestamp">
+      <wsdl:input message="tns:GetCampoGrupoByTimestampSoapIn" />
+      <wsdl:output message="tns:GetCampoGrupoByTimestampSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampo">
+      <wsdl:input message="tns:GetCampoSoapIn" />
+      <wsdl:output message="tns:GetCampoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampoByTimestamp">
+      <wsdl:input message="tns:GetCampoByTimestampSoapIn" />
+      <wsdl:output message="tns:GetCampoByTimestampSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampoValor">
+      <wsdl:input message="tns:GetCampoValorSoapIn" />
+      <wsdl:output message="tns:GetCampoValorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitarCancelamentoPedido">
+      <wsdl:input message="tns:SolicitarCancelamentoPedidoSoapIn" />
+      <wsdl:output message="tns:SolicitarCancelamentoPedidoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutosMaisVendidosRandom">
+      <wsdl:input message="tns:ConsultarProdutosMaisVendidosRandomSoapIn" />
+      <wsdl:output message="tns:ConsultarProdutosMaisVendidosRandomSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ParceiroIntegracaoHttpGet">
+    <wsdl:operation name="ConsultarProdutosDesativados">
+      <wsdl:input message="tns:ConsultarProdutosDesativadosHttpGetIn" />
+      <wsdl:output message="tns:ConsultarProdutosDesativadosHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProduto">
+      <wsdl:input message="tns:ConsultarProdutoHttpGetIn" />
+      <wsdl:output message="tns:ConsultarProdutoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutosMaisVendidos">
+      <wsdl:input message="tns:ConsultarProdutosMaisVendidosHttpGetIn" />
+      <wsdl:output message="tns:ConsultarProdutosMaisVendidosHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CatalogoPegarSkusAtualizados">
+      <wsdl:input message="tns:CatalogoPegarSkusAtualizadosHttpGetIn" />
+      <wsdl:output message="tns:CatalogoPegarSkusAtualizadosHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkusDesativados">
+      <wsdl:input message="tns:ConsultarSkusDesativadosHttpGetIn" />
+      <wsdl:output message="tns:ConsultarSkusDesativadosHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidoB2B">
+      <wsdl:input message="tns:ConsultarPedidoB2BHttpGetIn" />
+      <wsdl:output message="tns:ConsultarPedidoB2BHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidoB2BParceiro">
+      <wsdl:input message="tns:ConsultarPedidoB2BParceiroHttpGetIn" />
+      <wsdl:output message="tns:ConsultarPedidoB2BParceiroHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidoFI">
+      <wsdl:input message="tns:ConsultarPedidoFIHttpGetIn" />
+      <wsdl:output message="tns:ConsultarPedidoFIHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidoFISkuPai">
+      <wsdl:input message="tns:ConsultarPedidoFISkuPaiHttpGetIn" />
+      <wsdl:output message="tns:ConsultarPedidoFISkuPaiHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarReview">
+      <wsdl:input message="tns:ConsultarReviewHttpGetIn" />
+      <wsdl:output message="tns:ConsultarReviewHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReiniciarAtualizacaoProdutos">
+      <wsdl:input message="tns:ReiniciarAtualizacaoProdutosHttpGetIn" />
+      <wsdl:output message="tns:ReiniciarAtualizacaoProdutosHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReiniciarAtualizacaoSku">
+      <wsdl:input message="tns:ReiniciarAtualizacaoSkuHttpGetIn" />
+      <wsdl:output message="tns:ReiniciarAtualizacaoSkuHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkuPorCategoria">
+      <wsdl:input message="tns:ConsultarSkuPorCategoriaHttpGetIn" />
+      <wsdl:output message="tns:ConsultarSkuPorCategoriaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkuPorMarca">
+      <wsdl:input message="tns:ConsultarSkuPorMarcaHttpGetIn" />
+      <wsdl:output message="tns:ConsultarSkuPorMarcaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkuPorDepartamento">
+      <wsdl:input message="tns:ConsultarSkuPorDepartamentoHttpGetIn" />
+      <wsdl:output message="tns:ConsultarSkuPorDepartamentoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkusAtualizados">
+      <wsdl:input message="tns:ConsultarSkusAtualizadosHttpGetIn" />
+      <wsdl:output message="tns:ConsultarSkusAtualizadosHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterDadosCPF">
+      <wsdl:input message="tns:ObterDadosCPFHttpGetIn" />
+      <wsdl:output message="tns:ObterDadosCPFHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterDadosEmail">
+      <wsdl:input message="tns:ObterDadosEmailHttpGetIn" />
+      <wsdl:output message="tns:ObterDadosEmailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterQtdItensCarrinho">
+      <wsdl:input message="tns:ObterQtdItensCarrinhoHttpGetIn" />
+      <wsdl:output message="tns:ObterQtdItensCarrinhoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AprovarPedidoB2B">
+      <wsdl:input message="tns:AprovarPedidoB2BHttpGetIn" />
+      <wsdl:output message="tns:AprovarPedidoB2BHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFiltrosDepartamento">
+      <wsdl:input message="tns:ConsultarFiltrosDepartamentoHttpGetIn" />
+      <wsdl:output message="tns:ConsultarFiltrosDepartamentoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutoPorSku">
+      <wsdl:input message="tns:ConsultarProdutoPorSkuHttpGetIn" />
+      <wsdl:output message="tns:ConsultarProdutoPorSkuHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutoCampoValor">
+      <wsdl:input message="tns:ConsultarProdutoCampoValorHttpGetIn" />
+      <wsdl:output message="tns:ConsultarProdutoCampoValorHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkuCampoValor">
+      <wsdl:input message="tns:ConsultarSkuCampoValorHttpGetIn" />
+      <wsdl:output message="tns:ConsultarSkuCampoValorHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCampo">
+      <wsdl:input message="tns:ConsultarCampoHttpGetIn" />
+      <wsdl:output message="tns:ConsultarCampoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCampoValor">
+      <wsdl:input message="tns:ConsultarCampoValorHttpGetIn" />
+      <wsdl:output message="tns:ConsultarCampoValorHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarImagensAtualizadas">
+      <wsdl:input message="tns:ConsultarImagensAtualizadasHttpGetIn" />
+      <wsdl:output message="tns:ConsultarImagensAtualizadasHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarVale">
+      <wsdl:input message="tns:ValidarValeHttpGetIn" />
+      <wsdl:output message="tns:ValidarValeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarClienteBradesco">
+      <wsdl:input message="tns:ValidarClienteBradescoHttpGetIn" />
+      <wsdl:output message="tns:ValidarClienteBradescoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaSkuDestaque">
+      <wsdl:input message="tns:ConsultaSkuDestaqueHttpGetIn" />
+      <wsdl:output message="tns:ConsultaSkuDestaqueHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoriasAtualizadas">
+      <wsdl:input message="tns:GetCategoriasAtualizadasHttpGetIn" />
+      <wsdl:output message="tns:GetCategoriasAtualizadasHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoriaById">
+      <wsdl:input message="tns:GetCategoriaByIdHttpGetIn" />
+      <wsdl:output message="tns:GetCategoriaByIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampoGrupo">
+      <wsdl:input message="tns:GetCampoGrupoHttpGetIn" />
+      <wsdl:output message="tns:GetCampoGrupoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampoGrupoByTimestamp">
+      <wsdl:input message="tns:GetCampoGrupoByTimestampHttpGetIn" />
+      <wsdl:output message="tns:GetCampoGrupoByTimestampHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampo">
+      <wsdl:input message="tns:GetCampoHttpGetIn" />
+      <wsdl:output message="tns:GetCampoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampoByTimestamp">
+      <wsdl:input message="tns:GetCampoByTimestampHttpGetIn" />
+      <wsdl:output message="tns:GetCampoByTimestampHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampoValor">
+      <wsdl:input message="tns:GetCampoValorHttpGetIn" />
+      <wsdl:output message="tns:GetCampoValorHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutosMaisVendidosRandom">
+      <wsdl:input message="tns:ConsultarProdutosMaisVendidosRandomHttpGetIn" />
+      <wsdl:output message="tns:ConsultarProdutosMaisVendidosRandomHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ParceiroIntegracaoHttpPost">
+    <wsdl:operation name="ConsultarProdutosDesativados">
+      <wsdl:input message="tns:ConsultarProdutosDesativadosHttpPostIn" />
+      <wsdl:output message="tns:ConsultarProdutosDesativadosHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProduto">
+      <wsdl:input message="tns:ConsultarProdutoHttpPostIn" />
+      <wsdl:output message="tns:ConsultarProdutoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutosMaisVendidos">
+      <wsdl:input message="tns:ConsultarProdutosMaisVendidosHttpPostIn" />
+      <wsdl:output message="tns:ConsultarProdutosMaisVendidosHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CatalogoPegarSkusAtualizados">
+      <wsdl:input message="tns:CatalogoPegarSkusAtualizadosHttpPostIn" />
+      <wsdl:output message="tns:CatalogoPegarSkusAtualizadosHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkusDesativados">
+      <wsdl:input message="tns:ConsultarSkusDesativadosHttpPostIn" />
+      <wsdl:output message="tns:ConsultarSkusDesativadosHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidoB2B">
+      <wsdl:input message="tns:ConsultarPedidoB2BHttpPostIn" />
+      <wsdl:output message="tns:ConsultarPedidoB2BHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidoB2BParceiro">
+      <wsdl:input message="tns:ConsultarPedidoB2BParceiroHttpPostIn" />
+      <wsdl:output message="tns:ConsultarPedidoB2BParceiroHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidoFI">
+      <wsdl:input message="tns:ConsultarPedidoFIHttpPostIn" />
+      <wsdl:output message="tns:ConsultarPedidoFIHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidoFISkuPai">
+      <wsdl:input message="tns:ConsultarPedidoFISkuPaiHttpPostIn" />
+      <wsdl:output message="tns:ConsultarPedidoFISkuPaiHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarReview">
+      <wsdl:input message="tns:ConsultarReviewHttpPostIn" />
+      <wsdl:output message="tns:ConsultarReviewHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReiniciarAtualizacaoProdutos">
+      <wsdl:input message="tns:ReiniciarAtualizacaoProdutosHttpPostIn" />
+      <wsdl:output message="tns:ReiniciarAtualizacaoProdutosHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReiniciarAtualizacaoSku">
+      <wsdl:input message="tns:ReiniciarAtualizacaoSkuHttpPostIn" />
+      <wsdl:output message="tns:ReiniciarAtualizacaoSkuHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkuPorCategoria">
+      <wsdl:input message="tns:ConsultarSkuPorCategoriaHttpPostIn" />
+      <wsdl:output message="tns:ConsultarSkuPorCategoriaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkuPorMarca">
+      <wsdl:input message="tns:ConsultarSkuPorMarcaHttpPostIn" />
+      <wsdl:output message="tns:ConsultarSkuPorMarcaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkuPorDepartamento">
+      <wsdl:input message="tns:ConsultarSkuPorDepartamentoHttpPostIn" />
+      <wsdl:output message="tns:ConsultarSkuPorDepartamentoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkusAtualizados">
+      <wsdl:input message="tns:ConsultarSkusAtualizadosHttpPostIn" />
+      <wsdl:output message="tns:ConsultarSkusAtualizadosHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterDadosCPF">
+      <wsdl:input message="tns:ObterDadosCPFHttpPostIn" />
+      <wsdl:output message="tns:ObterDadosCPFHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterDadosEmail">
+      <wsdl:input message="tns:ObterDadosEmailHttpPostIn" />
+      <wsdl:output message="tns:ObterDadosEmailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterQtdItensCarrinho">
+      <wsdl:input message="tns:ObterQtdItensCarrinhoHttpPostIn" />
+      <wsdl:output message="tns:ObterQtdItensCarrinhoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AprovarPedidoB2B">
+      <wsdl:input message="tns:AprovarPedidoB2BHttpPostIn" />
+      <wsdl:output message="tns:AprovarPedidoB2BHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFiltrosDepartamento">
+      <wsdl:input message="tns:ConsultarFiltrosDepartamentoHttpPostIn" />
+      <wsdl:output message="tns:ConsultarFiltrosDepartamentoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutoPorSku">
+      <wsdl:input message="tns:ConsultarProdutoPorSkuHttpPostIn" />
+      <wsdl:output message="tns:ConsultarProdutoPorSkuHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutoCampoValor">
+      <wsdl:input message="tns:ConsultarProdutoCampoValorHttpPostIn" />
+      <wsdl:output message="tns:ConsultarProdutoCampoValorHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkuCampoValor">
+      <wsdl:input message="tns:ConsultarSkuCampoValorHttpPostIn" />
+      <wsdl:output message="tns:ConsultarSkuCampoValorHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCampo">
+      <wsdl:input message="tns:ConsultarCampoHttpPostIn" />
+      <wsdl:output message="tns:ConsultarCampoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCampoValor">
+      <wsdl:input message="tns:ConsultarCampoValorHttpPostIn" />
+      <wsdl:output message="tns:ConsultarCampoValorHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarImagensAtualizadas">
+      <wsdl:input message="tns:ConsultarImagensAtualizadasHttpPostIn" />
+      <wsdl:output message="tns:ConsultarImagensAtualizadasHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarVale">
+      <wsdl:input message="tns:ValidarValeHttpPostIn" />
+      <wsdl:output message="tns:ValidarValeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarClienteBradesco">
+      <wsdl:input message="tns:ValidarClienteBradescoHttpPostIn" />
+      <wsdl:output message="tns:ValidarClienteBradescoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaSkuDestaque">
+      <wsdl:input message="tns:ConsultaSkuDestaqueHttpPostIn" />
+      <wsdl:output message="tns:ConsultaSkuDestaqueHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoriasAtualizadas">
+      <wsdl:input message="tns:GetCategoriasAtualizadasHttpPostIn" />
+      <wsdl:output message="tns:GetCategoriasAtualizadasHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoriaById">
+      <wsdl:input message="tns:GetCategoriaByIdHttpPostIn" />
+      <wsdl:output message="tns:GetCategoriaByIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampoGrupo">
+      <wsdl:input message="tns:GetCampoGrupoHttpPostIn" />
+      <wsdl:output message="tns:GetCampoGrupoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampoGrupoByTimestamp">
+      <wsdl:input message="tns:GetCampoGrupoByTimestampHttpPostIn" />
+      <wsdl:output message="tns:GetCampoGrupoByTimestampHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampo">
+      <wsdl:input message="tns:GetCampoHttpPostIn" />
+      <wsdl:output message="tns:GetCampoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampoByTimestamp">
+      <wsdl:input message="tns:GetCampoByTimestampHttpPostIn" />
+      <wsdl:output message="tns:GetCampoByTimestampHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCampoValor">
+      <wsdl:input message="tns:GetCampoValorHttpPostIn" />
+      <wsdl:output message="tns:GetCampoValorHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutosMaisVendidosRandom">
+      <wsdl:input message="tns:ConsultarProdutosMaisVendidosRandomHttpPostIn" />
+      <wsdl:output message="tns:ConsultarProdutosMaisVendidosRandomHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ParceiroIntegracaoSoap" type="tns:ParceiroIntegracaoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultarProdutosAtualizados">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarProdutosAtualizados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutosDesativados">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarProdutosDesativados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProduto">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarProduto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutosMaisVendidos">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarProdutosMaisVendidos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CatalogoPegarSkusAtualizados">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/CatalogoPegarSkusAtualizados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkusDesativados">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarSkusDesativados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalcularFrete">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/CalcularFrete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalcularFreteB2B">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/CalcularFreteB2B" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalcularOpcoesFrete">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/CalcularOpcoesFrete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IncluirPedidoB2B">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/IncluirPedidoB2B" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IncluirPedidoB2C">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/IncluirPedidoB2C" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IncluirPedidoCobrancaParceiro">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/IncluirPedidoCobrancaParceiro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidoB2B">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarPedidoB2B" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidoB2BParceiro">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarPedidoB2BParceiro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidoFI">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarPedidoFI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidoFISkuPai">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarPedidoFISkuPai" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarReview">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarReview" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReiniciarAtualizacaoProdutos">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ReiniciarAtualizacaoProdutos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReiniciarAtualizacaoSku">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ReiniciarAtualizacaoSku" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkuPorCategoria">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarSkuPorCategoria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkuPorMarca">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarSkuPorMarca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkuPorDepartamento">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarSkuPorDepartamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkusAtualizados">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarSkusAtualizados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterDadosCPF">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ObterDadosCPF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterDadosEmail">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ObterDadosEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterQtdItensCarrinho">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ObterQtdItensCarrinho" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AprovarPedidoB2B">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/AprovarPedidoB2B" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidosPorPeriodo">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarPedidosPorPeriodo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalcularFreteComDesconto">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/CalcularFreteComDesconto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFiltrosDepartamento">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarFiltrosDepartamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutoPorSku">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarProdutoPorSku" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutoCampoValor">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarProdutoCampoValor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkuCampoValor">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarSkuCampoValor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCampo">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarCampo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCampoValor">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarCampoValor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarImagensAtualizadas">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarImagensAtualizadas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarVale">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ValidarVale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarClienteBradesco">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ValidarClienteBradesco" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarParcelamento">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarParcelamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaSkuDestaque">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ConsultaSkuDestaque" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoriasAtualizadas">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/GetCategoriasAtualizadas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoriaById">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/GetCategoriaById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampoGrupo">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/GetCampoGrupo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampoGrupoByTimestamp">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/GetCampoGrupoByTimestamp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampo">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/GetCampo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampoByTimestamp">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/GetCampoByTimestamp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampoValor">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/GetCampoValor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitarCancelamentoPedido">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/SolicitarCancelamentoPedido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutosMaisVendidosRandom">
+      <soap:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarProdutosMaisVendidosRandom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ParceiroIntegracaoSoap12" type="tns:ParceiroIntegracaoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultarProdutosAtualizados">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarProdutosAtualizados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutosDesativados">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarProdutosDesativados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProduto">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarProduto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutosMaisVendidos">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarProdutosMaisVendidos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CatalogoPegarSkusAtualizados">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/CatalogoPegarSkusAtualizados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkusDesativados">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarSkusDesativados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalcularFrete">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/CalcularFrete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalcularFreteB2B">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/CalcularFreteB2B" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalcularOpcoesFrete">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/CalcularOpcoesFrete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IncluirPedidoB2B">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/IncluirPedidoB2B" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IncluirPedidoB2C">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/IncluirPedidoB2C" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IncluirPedidoCobrancaParceiro">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/IncluirPedidoCobrancaParceiro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidoB2B">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarPedidoB2B" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidoB2BParceiro">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarPedidoB2BParceiro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidoFI">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarPedidoFI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidoFISkuPai">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarPedidoFISkuPai" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarReview">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarReview" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReiniciarAtualizacaoProdutos">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ReiniciarAtualizacaoProdutos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReiniciarAtualizacaoSku">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ReiniciarAtualizacaoSku" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkuPorCategoria">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarSkuPorCategoria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkuPorMarca">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarSkuPorMarca" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkuPorDepartamento">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarSkuPorDepartamento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkusAtualizados">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarSkusAtualizados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterDadosCPF">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ObterDadosCPF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterDadosEmail">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ObterDadosEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterQtdItensCarrinho">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ObterQtdItensCarrinho" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AprovarPedidoB2B">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/AprovarPedidoB2B" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidosPorPeriodo">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarPedidosPorPeriodo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalcularFreteComDesconto">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/CalcularFreteComDesconto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFiltrosDepartamento">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarFiltrosDepartamento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutoPorSku">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarProdutoPorSku" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutoCampoValor">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarProdutoCampoValor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkuCampoValor">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarSkuCampoValor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCampo">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarCampo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCampoValor">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarCampoValor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarImagensAtualizadas">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarImagensAtualizadas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarVale">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ValidarVale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarClienteBradesco">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ValidarClienteBradesco" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarParcelamento">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarParcelamento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaSkuDestaque">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ConsultaSkuDestaque" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoriasAtualizadas">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/GetCategoriasAtualizadas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoriaById">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/GetCategoriaById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampoGrupo">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/GetCampoGrupo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampoGrupoByTimestamp">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/GetCampoGrupoByTimestamp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampo">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/GetCampo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampoByTimestamp">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/GetCampoByTimestamp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampoValor">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/GetCampoValor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitarCancelamentoPedido">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/SolicitarCancelamentoPedido" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutosMaisVendidosRandom">
+      <soap12:operation soapAction="http://www.walmart.com.br/parceiro/ConsultarProdutosMaisVendidosRandom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ParceiroIntegracaoHttpGet" type="tns:ParceiroIntegracaoHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ConsultarProdutosDesativados">
+      <http:operation location="/ConsultarProdutosDesativados" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProduto">
+      <http:operation location="/ConsultarProduto" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutosMaisVendidos">
+      <http:operation location="/ConsultarProdutosMaisVendidos" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CatalogoPegarSkusAtualizados">
+      <http:operation location="/CatalogoPegarSkusAtualizados" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkusDesativados">
+      <http:operation location="/ConsultarSkusDesativados" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidoB2B">
+      <http:operation location="/ConsultarPedidoB2B" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidoB2BParceiro">
+      <http:operation location="/ConsultarPedidoB2BParceiro" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidoFI">
+      <http:operation location="/ConsultarPedidoFI" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidoFISkuPai">
+      <http:operation location="/ConsultarPedidoFISkuPai" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarReview">
+      <http:operation location="/ConsultarReview" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReiniciarAtualizacaoProdutos">
+      <http:operation location="/ReiniciarAtualizacaoProdutos" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReiniciarAtualizacaoSku">
+      <http:operation location="/ReiniciarAtualizacaoSku" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkuPorCategoria">
+      <http:operation location="/ConsultarSkuPorCategoria" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkuPorMarca">
+      <http:operation location="/ConsultarSkuPorMarca" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkuPorDepartamento">
+      <http:operation location="/ConsultarSkuPorDepartamento" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkusAtualizados">
+      <http:operation location="/ConsultarSkusAtualizados" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterDadosCPF">
+      <http:operation location="/ObterDadosCPF" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterDadosEmail">
+      <http:operation location="/ObterDadosEmail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterQtdItensCarrinho">
+      <http:operation location="/ObterQtdItensCarrinho" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AprovarPedidoB2B">
+      <http:operation location="/AprovarPedidoB2B" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFiltrosDepartamento">
+      <http:operation location="/ConsultarFiltrosDepartamento" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutoPorSku">
+      <http:operation location="/ConsultarProdutoPorSku" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutoCampoValor">
+      <http:operation location="/ConsultarProdutoCampoValor" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkuCampoValor">
+      <http:operation location="/ConsultarSkuCampoValor" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCampo">
+      <http:operation location="/ConsultarCampo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCampoValor">
+      <http:operation location="/ConsultarCampoValor" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarImagensAtualizadas">
+      <http:operation location="/ConsultarImagensAtualizadas" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarVale">
+      <http:operation location="/ValidarVale" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarClienteBradesco">
+      <http:operation location="/ValidarClienteBradesco" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaSkuDestaque">
+      <http:operation location="/ConsultaSkuDestaque" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoriasAtualizadas">
+      <http:operation location="/GetCategoriasAtualizadas" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoriaById">
+      <http:operation location="/GetCategoriaById" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampoGrupo">
+      <http:operation location="/GetCampoGrupo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampoGrupoByTimestamp">
+      <http:operation location="/GetCampoGrupoByTimestamp" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampo">
+      <http:operation location="/GetCampo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampoByTimestamp">
+      <http:operation location="/GetCampoByTimestamp" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampoValor">
+      <http:operation location="/GetCampoValor" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutosMaisVendidosRandom">
+      <http:operation location="/ConsultarProdutosMaisVendidosRandom" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ParceiroIntegracaoHttpPost" type="tns:ParceiroIntegracaoHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ConsultarProdutosDesativados">
+      <http:operation location="/ConsultarProdutosDesativados" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProduto">
+      <http:operation location="/ConsultarProduto" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutosMaisVendidos">
+      <http:operation location="/ConsultarProdutosMaisVendidos" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CatalogoPegarSkusAtualizados">
+      <http:operation location="/CatalogoPegarSkusAtualizados" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkusDesativados">
+      <http:operation location="/ConsultarSkusDesativados" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidoB2B">
+      <http:operation location="/ConsultarPedidoB2B" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidoB2BParceiro">
+      <http:operation location="/ConsultarPedidoB2BParceiro" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidoFI">
+      <http:operation location="/ConsultarPedidoFI" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPedidoFISkuPai">
+      <http:operation location="/ConsultarPedidoFISkuPai" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarReview">
+      <http:operation location="/ConsultarReview" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReiniciarAtualizacaoProdutos">
+      <http:operation location="/ReiniciarAtualizacaoProdutos" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReiniciarAtualizacaoSku">
+      <http:operation location="/ReiniciarAtualizacaoSku" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkuPorCategoria">
+      <http:operation location="/ConsultarSkuPorCategoria" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkuPorMarca">
+      <http:operation location="/ConsultarSkuPorMarca" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkuPorDepartamento">
+      <http:operation location="/ConsultarSkuPorDepartamento" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkusAtualizados">
+      <http:operation location="/ConsultarSkusAtualizados" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterDadosCPF">
+      <http:operation location="/ObterDadosCPF" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterDadosEmail">
+      <http:operation location="/ObterDadosEmail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterQtdItensCarrinho">
+      <http:operation location="/ObterQtdItensCarrinho" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AprovarPedidoB2B">
+      <http:operation location="/AprovarPedidoB2B" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFiltrosDepartamento">
+      <http:operation location="/ConsultarFiltrosDepartamento" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutoPorSku">
+      <http:operation location="/ConsultarProdutoPorSku" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutoCampoValor">
+      <http:operation location="/ConsultarProdutoCampoValor" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSkuCampoValor">
+      <http:operation location="/ConsultarSkuCampoValor" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCampo">
+      <http:operation location="/ConsultarCampo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCampoValor">
+      <http:operation location="/ConsultarCampoValor" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarImagensAtualizadas">
+      <http:operation location="/ConsultarImagensAtualizadas" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarVale">
+      <http:operation location="/ValidarVale" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarClienteBradesco">
+      <http:operation location="/ValidarClienteBradesco" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaSkuDestaque">
+      <http:operation location="/ConsultaSkuDestaque" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoriasAtualizadas">
+      <http:operation location="/GetCategoriasAtualizadas" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoriaById">
+      <http:operation location="/GetCategoriaById" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampoGrupo">
+      <http:operation location="/GetCampoGrupo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampoGrupoByTimestamp">
+      <http:operation location="/GetCampoGrupoByTimestamp" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampo">
+      <http:operation location="/GetCampo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampoByTimestamp">
+      <http:operation location="/GetCampoByTimestamp" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCampoValor">
+      <http:operation location="/GetCampoValor" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarProdutosMaisVendidosRandom">
+      <http:operation location="/ConsultarProdutosMaisVendidosRandom" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ParceiroIntegracao">
+    <wsdl:port name="ParceiroIntegracaoSoap" binding="tns:ParceiroIntegracaoSoap">
+      <soap:address location="https://api.walmartb2b.com.br/v1.0.14/ParceiroIntegracao.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ParceiroIntegracaoSoap12" binding="tns:ParceiroIntegracaoSoap12">
+      <soap12:address location="https://api.walmartb2b.com.br/v1.0.14/ParceiroIntegracao.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ParceiroIntegracaoHttpGet" binding="tns:ParceiroIntegracaoHttpGet">
+      <http:address location="http://api.walmartb2b.com.br/v1.0.14/ParceiroIntegracao.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ParceiroIntegracaoHttpPost" binding="tns:ParceiroIntegracaoHttpPost">
+      <http:address location="http://api.walmartb2b.com.br/v1.0.14/ParceiroIntegracao.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

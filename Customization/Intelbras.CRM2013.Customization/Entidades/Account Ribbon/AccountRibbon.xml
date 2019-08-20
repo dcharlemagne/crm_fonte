@@ -1,0 +1,132 @@
+﻿<RibbonDiffXml>
+  <CustomActions>
+    <CustomAction Id="EdicaoEmMassa.account.grid.DisableExisting.CustomAction" Location="Mscrm.HomepageGrid.account.Edit" Sequence="21">
+      <CommandUIDefinition>
+        <Button Id="Mscrm.HomepageGrid.account.Edit" ToolTipTitle="$Resources:Ribbon.HomepageGrid.MainTab.Management.Edit" ToolTipDescription="$Resources(EntityDisplayName):Ribbon.Tooltip.Edit" Command="EdicaoEmMassa.account.grid.DisableExisting.Command" LabelText="$Resources:Ribbon.HomepageGrid.MainTab.Management.Edit" Alt="$Resources:Ribbon.HomepageGrid.MainTab.Management.Edit" Image16by16="/_imgs/ribbon/Edit_16.png" Image32by32="/_imgs/ribbon/edit32.png" TemplateAlias="o1" />
+      </CommandUIDefinition>
+    </CustomAction>
+    <CustomAction Id="EdicaoEmMassa.account.subgrid.DisableExisting.CustomAction" Location="Mscrm.SubGrid.account.Edit" Sequence="51">
+      <CommandUIDefinition>
+        <Button Id="Mscrm.SubGrid.account.Edit" ToolTipTitle="$Resources:Ribbon.HomepageGrid.MainTab.Management.Edit" ToolTipDescription="$Resources(EntityDisplayName):Ribbon.Tooltip.Edit" Command="EdicaoEmMassa.Mscrm.EditSelectedRecord" LabelText="$Resources:Ribbon.HomepageGrid.MainTab.Management.Edit" Alt="$Resources:Ribbon.HomepageGrid.MainTab.Management.Edit" Image16by16="/_imgs/ribbon/Edit_16.png" Image32by32="/_imgs/ribbon/edit32.png" TemplateAlias="o1" />
+      </CommandUIDefinition>
+    </CustomAction>
+    <CustomAction Id="itbc.{!EntityLogicalName}.SefazForm.Button.CustomAction" Location="Mscrm.Form.account.MainTab.Management.Controls._children" Sequence="10">
+      <CommandUIDefinition>
+        <Button Alt="$LocLabels:itbc.SefazForm.Button.Alt" Command="itbc.account.Command0.Command" Description="Validar Informações Fiscais" Id="itbc.account.SefazForm.Button" Image16by16="$webresource:itbc_img_actions_ok_icon_png" LabelText="$LocLabels:itbc.SefazForm.Button.LabelText" Sequence="10" TemplateAlias="o1" ToolTipTitle="$LocLabels:itbc.SefazForm.Button.ToolTipTitle" ToolTipDescription="$LocLabels:itbc.SefazForm.Button.ToolTipDescription" ToolTipHelpKeyWord="" />
+      </CommandUIDefinition>
+    </CustomAction>
+    <CustomAction Id="Intelbras.CRM2013.UI.Web.ListaDistribuidoresDaRevenda" Location="Mscrm.Form.account.MainTab.Management.Controls._children" Sequence="11">
+      <CommandUIDefinition>
+        <Button Alt="Distribuidores com Sellout da Revenda" Command="ListaDistribuidoresDaRevenda" Description="Distribuidores com Sellout da Revenda" Id="itbc.account.Revenda.Button" Image16by16="$webresource:itbc_img_actions_ok_icon_png" LabelText="Distribuidores com Sellout da Revenda" Sequence="11" TemplateAlias="o1" ToolTipTitle="Distribuidores com Sellout da Revenda" ToolTipDescription="Distribuidores com Sellout da Revenda" ToolTipHelpKeyWord="" />
+      </CommandUIDefinition>
+    </CustomAction>
+  </CustomActions>
+  <Templates>
+    <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
+  </Templates>
+  <CommandDefinitions>
+    <CommandDefinition Id="EdicaoEmMassa.account.grid.DisableExisting.Command">
+      <EnableRules>
+        <EnableRule Id="Mscrm.CheckBulkEditSupportForEntity" />
+        <EnableRule Id="Mscrm.VisualizationPaneNotMaximized" />
+        <EnableRule Id="EdicaoEmMassa.account.grid.OnSelection.EnableRule" />
+      </EnableRules>
+      <DisplayRules>
+        <DisplayRule Id="Mscrm.BulkEditPrivilege" />
+        <DisplayRule Id="Mscrm.WriteSelectedEntityPermission" />
+        <DisplayRule Id="Mscrm.HideOnModern" />
+      </DisplayRules>
+      <Actions>
+        <JavaScriptFunction FunctionName="Mscrm.GridRibbonActions.bulkEdit" Library="/_static/_common/scripts/RibbonActions.js">
+          <CrmParameter Value="SelectedControl" />
+          <CrmParameter Value="SelectedControlSelectedItemReferences" />
+          <CrmParameter Value="SelectedEntityTypeCode" />
+        </JavaScriptFunction>
+      </Actions>
+    </CommandDefinition>
+    <CommandDefinition Id="EdicaoEmMassa.Mscrm.EditSelectedRecord">
+      <EnableRules>
+        <EnableRule Id="Mscrm.CheckBulkEditSupportForEntity" />
+        <EnableRule Id="Mscrm.VisualizationPaneNotMaximized" />
+        <EnableRule Id="EdicaoEmMassa.account.grid.OnSelection.EnableRule" />
+      </EnableRules>
+      <DisplayRules>
+        <DisplayRule Id="Mscrm.BulkEditPrivilege" />
+        <DisplayRule Id="Mscrm.WriteSelectedEntityPermission" />
+        <DisplayRule Id="Mscrm.HideOnModern" />
+      </DisplayRules>
+      <Actions>
+        <JavaScriptFunction FunctionName="Mscrm.GridRibbonActions.bulkEdit" Library="/_static/_common/scripts/RibbonActions.js">
+          <CrmParameter Value="SelectedControl" />
+          <CrmParameter Value="SelectedControlSelectedItemReferences" />
+          <CrmParameter Value="SelectedEntityTypeCode" />
+        </JavaScriptFunction>
+      </Actions>
+    </CommandDefinition>
+    <CommandDefinition Id="itbc.account.Command0.Command">
+      <EnableRules />
+      <DisplayRules>
+        <DisplayRule Id="itbc.account.DisplayRule0.DisplayRule" />
+      </DisplayRules>
+      <Actions>
+        <JavaScriptFunction FunctionName="Conta.AtualizaInformacoesSefaz" Library="$webresource:itbc_conta" />
+      </Actions>
+    </CommandDefinition>
+    <CommandDefinition Id="ListaDistribuidoresDaRevenda">
+      <EnableRules />
+      <DisplayRules>
+        <DisplayRule Id="itbc.account.DisplayRule0.DisplayRule" />
+      </DisplayRules>
+      <Actions>
+        <JavaScriptFunction FunctionName="Conta.ListaDistribuidoresDaRevenda" Library="$webresource:itbc_conta" />
+      </Actions>
+    </CommandDefinition>
+  </CommandDefinitions>
+  <RuleDefinitions>
+    <TabDisplayRules />
+    <DisplayRules>
+      <DisplayRule Id="itbc.account.DisplayRule0.DisplayRule">
+        <CrmOfflineAccessStateRule State="Online" />
+        <OrRule>
+          <Or>
+            <FormStateRule State="Create" />
+          </Or>
+          <Or>
+            <FormStateRule State="Existing" />
+          </Or>
+        </OrRule>
+      </DisplayRule>
+    </DisplayRules>
+    <EnableRules>
+      <EnableRule Id="EdicaoEmMassa.account.grid.OnSelection.EnableRule">
+        <SelectionCountRule AppliesTo="SelectedEntity" Maximum="1" Minimum="1" />
+      </EnableRule>
+    </EnableRules>
+  </RuleDefinitions>
+  <LocLabels>
+    <LocLabel Id="itbc.SefazForm.Button.Alt">
+      <Titles>
+        <Title description="Validar Informações Fiscais" languagecode="1046" />
+        <Title description="Validate tax information" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="itbc.SefazForm.Button.LabelText">
+      <Titles>
+        <Title description="Validar Fiscal" languagecode="1046" />
+        <Title description="Validate Tax" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="itbc.SefazForm.Button.ToolTipDescription">
+      <Titles>
+        <Title description="Validar Informações Fiscais" languagecode="1046" />
+        <Title description="Validate tax information" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="itbc.SefazForm.Button.ToolTipTitle">
+      <Titles>
+        <Title description="Validar Informações Fiscais" languagecode="1046" />
+        <Title description="Validate tax information" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+  </LocLabels>
+</RibbonDiffXml>

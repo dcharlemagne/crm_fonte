@@ -1,0 +1,5 @@
+C:\crm\crm_fonte\Customization\Intelbras.CRM2013.Customization\obj\Debug\Intelbras.CRM2013.Customization.csprojResolveAssemblyReference.cache
+C:\crm\crm_fonte\Customization\Intelbras.CRM2013.Customization\bin\Debug\Intelbras.CRM2013.Customization.dll
+C:\crm\crm_fonte\Customization\Intelbras.CRM2013.Customization\bin\Debug\Intelbras.CRM2013.Customization.pdb
+C:\crm\crm_fonte\Customization\Intelbras.CRM2013.Customization\obj\Debug\Intelbras.CRM2013.Customization.dll
+C:\crm\crm_fonte\Customization\Intelbras.CRM2013.Customization\obj\Debug\Intelbras.CRM2013.Customization.pdb

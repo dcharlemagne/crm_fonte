@@ -1,0 +1,191 @@
+﻿body
+{
+    font-family: Tahoma, Verdana, Arial;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+#txt_Header
+{
+    margin-left: 0px;
+    margin-top: 0px;
+    width: 800px;
+    background-color: #d6e8ff;
+}
+.titulo
+{
+    text-align: center;
+    color: #6699cc;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.dashboard_direita
+{
+    float: right;
+    width: 10%;
+}
+.dashboard_esquerda
+{
+    float: left;
+    width: 90%;
+}
+
+
+.assinatura
+{
+    margin-top: 35px;
+    border-top: 1px solid #000000;
+    font-weight: bold;
+    text-align: center;    
+    font-size: 11px;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.assinatura_direita
+{
+    float: right;
+    width: 15%;
+    margin-top: 0px;
+}
+.assinatura_esquerda
+{
+    margin-top: 0px;
+    float: left;
+    width: 32%;
+}
+
+.direita
+{
+    float: right;
+    width: 50%;
+}
+.esquerda
+{
+    float: left;
+    width: 50%;
+}
+.centro
+{
+    width: 100%;
+}
+
+.clear
+{
+    clear: both;
+}
+
+.textBox
+{
+    float: right;
+    margin: 1px 20px 1px 0px;
+    border: #6699cc 1px solid;
+    color: #000000;
+    font-size: 11px;
+}
+
+.direita .textBox, .esquerda .textBox
+{
+    width: 60%;
+    height: 15px;
+}
+
+.direita * .textBox, .esquerda * .textBox
+{
+    width: 40%;
+    height: 15px;
+}
+
+.centro .textBox
+{
+    width: 80%;
+    height: 15px;
+}
+
+.label
+{
+    float: left;
+    margin: 1px 1px 1px 0px;
+    font-size: 11px;    
+}
+
+.centro_texto
+{
+    text-align:center;
+}
+
+.dashboard_label
+{
+    float: left;
+    margin: 4px 0px 4px 0px;
+    font-size: 11px;
+    height: 13px;
+}
+
+.table
+{
+    margin: 0px;
+    color: #000000;
+    font-size: 11px;
+    border: 1px solid black;
+}
+
+.table thead
+{
+}
+
+.table th 
+{
+    background-color: #6699cc;
+    text-align: left;
+}
+
+.table .tableCodigo
+{
+    width: 10%;
+}
+.table .tableDescricao
+{
+    width: 70%;
+}
+
+.table .tableColor1
+{
+    background-color: #BFDCFF;
+}
+
+.table .tableColor2
+{
+    background-color: #B3D5FF;
+}
+
+
+
+.divisoriaSessao
+{
+    padding: 2px 0px 2px 0px;
+    width: 100%;
+    color: #000000;
+    overflow: hidden;
+    font-weight: bold;
+    font-size: 11px;
+    border-bottom: #96b3dd 1px solid;
+}
+
+
+.msg-obs
+{
+    margin: 5px 20px 0px 5px;
+    font-size: 10px;
+}
+
+.obs 
+{
+	background-color: #FFFFFF;	
+	width: 780px;
+	height: 80px;	
+    margin: 4px 20px 4px 0px;
+    border: #6699cc 1px solid;
+    color: #000000;
+    font-size: 11px;
+}

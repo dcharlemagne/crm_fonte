@@ -1,0 +1,1118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="urn:crm:intelbras.com.br" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:S1="urn:soap-fault:details" xmlns:S2="urn:crm:intelbras.com.br:integracaoERP" xmlns:prodata="urn:schemas-progress-com:xml-prodata:0001" xmlns="http://schemas.xmlsoap.org/wsdl/" name="integracaoERP" targetNamespace="urn:crm:intelbras.com.br" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>EncodingType=RPC_ENCODED, WSA_Product=10.2B - N/A</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="urn:soap-fault:details">
+      <xsd:complexType name="FaultDetail">
+        <xsd:sequence>
+          <xsd:element name="errorMessage" type="xsd:string" />
+          <xsd:element name="requestID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="urn:crm:intelbras.com.br:integracaoERP">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="Buscar_DadosCep_ttRetornoCEPRow">
+        <xsd:sequence>
+          <xsd:element name="Endereco" nillable="true" type="xsd:string" />
+          <xsd:element name="Bairro" nillable="true" type="xsd:string" />
+          <xsd:element name="Cidade" nillable="true" type="xsd:string" />
+          <xsd:element name="UF" nillable="true" type="xsd:string" />
+          <xsd:element name="CidadeZF" nillable="true" type="xsd:boolean" />
+          <xsd:element name="ibge" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfBuscar_DadosCep_ttRetornoCEPRow">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="S2:Buscar_DadosCep_ttRetornoCEPRow[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="Integrar_ttRetornoRow">
+        <xsd:sequence>
+          <xsd:element name="mensagem" nillable="true" type="xsd:string" />
+          <xsd:element name="chaveintegracao" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-entrega" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfIntegrar_ttRetornoRow">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="S2:Integrar_ttRetornoRow[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="Buscar_dadosCliente_ttClienteRow">
+        <xsd:sequence>
+          <xsd:element name="cod-emitente" nillable="true" type="xsd:int" />
+          <xsd:element name="nome-emit" nillable="true" type="xsd:string" />
+          <xsd:element name="nome-abrev" nillable="true" type="xsd:string" />
+          <xsd:element name="nome-matriz" nillable="true" type="xsd:int" />
+          <xsd:element name="identific" nillable="true" type="xsd:int" />
+          <xsd:element name="portador" nillable="true" type="xsd:int" />
+          <xsd:element name="cod-banco" nillable="true" type="xsd:int" />
+          <xsd:element name="agencia" nillable="true" type="xsd:string" />
+          <xsd:element name="conta-corren" nillable="true" type="xsd:string" />
+          <xsd:element name="tp-rec-padrao" nillable="true" type="xsd:int" />
+          <xsd:element name="cod-cond-pag" nillable="true" type="xsd:string" />
+          <xsd:element name="emite-bloq" nillable="true" type="xsd:boolean" />
+          <xsd:element name="gera-ad" nillable="true" type="xsd:boolean" />
+          <xsd:element name="calcula-multa" nillable="true" type="xsd:boolean" />
+          <xsd:element name="recebe-inf-sci" nillable="true" type="xsd:boolean" />
+          <xsd:element name="address1_addresstypecode" nillable="true" type="xsd:int" />
+          <xsd:element name="address1_name" nillable="true" type="xsd:string" />
+          <xsd:element name="CEP" nillable="true" type="xsd:string" />
+          <xsd:element name="endereco" nillable="true" type="xsd:string" />
+          <xsd:element name="Bairro" nillable="true" type="xsd:string" />
+          <xsd:element name="Cidade" nillable="true" type="xsd:string" />
+          <xsd:element name="Estado" nillable="true" type="xsd:string" />
+          <xsd:element name="Pais" nillable="true" type="xsd:string" />
+          <xsd:element name="address2_addresstypecode" nillable="true" type="xsd:int" />
+          <xsd:element name="address2_name" nillable="true" type="xsd:string" />
+          <xsd:element name="cep-cob" nillable="true" type="xsd:string" />
+          <xsd:element name="endereco-cob" nillable="true" type="xsd:string" />
+          <xsd:element name="bairro-cob" nillable="true" type="xsd:string" />
+          <xsd:element name="cidade-cob" nillable="true" type="xsd:string" />
+          <xsd:element name="estado-cob" nillable="true" type="xsd:string" />
+          <xsd:element name="pais-cob" nillable="true" type="xsd:string" />
+          <xsd:element name="telephone" nillable="true" type="xsd:string" />
+          <xsd:element name="ramal" nillable="true" type="xsd:string" />
+          <xsd:element name="telephone2" nillable="true" type="xsd:string" />
+          <xsd:element name="ramal2" nillable="true" type="xsd:string" />
+          <xsd:element name="fax" nillable="true" type="xsd:string" />
+          <xsd:element name="ramalfax" nillable="true" type="xsd:string" />
+          <xsd:element name="email" nillable="true" type="xsd:string" />
+          <xsd:element name="home-page" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-rep" nillable="true" type="xsd:int" />
+          <xsd:element name="natureza" nillable="true" type="xsd:int" />
+          <xsd:element name="cgc" nillable="true" type="xsd:string" />
+          <xsd:element name="ins-estadual" nillable="true" type="xsd:string" />
+          <xsd:element name="ins-municipal" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-gr-cli" nillable="true" type="xsd:int" />
+          <xsd:element name="lim-credito" nillable="true" type="xsd:string" />
+          <xsd:element name="dt-lim-credito" nillable="true" type="xsd:string" />
+          <xsd:element name="modalidade" nillable="true" type="xsd:int" />
+          <xsd:element name="contrib-icms" nillable="true" type="xsd:boolean" />
+          <xsd:element name="cod-suframa" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-transp" nillable="true" type="xsd:int" />
+          <xsd:element name="cod-canal-venda" nillable="true" type="xsd:int" />
+          <xsd:element name="insc-subs-trib" nillable="true" type="xsd:string" />
+          <xsd:element name="i-susp-ipi" nillable="true" type="xsd:boolean" />
+          <xsd:element name="agente-retencao" nillable="true" type="xsd:boolean" />
+          <xsd:element name="i-calc-pis-cofins-unid" nillable="true" type="xsd:boolean" />
+          <xsd:element name="i-recebe-nfe" nillable="true" type="xsd:boolean" />
+          <xsd:element name="ind-forma-tributo" nillable="true" type="xsd:int" />
+          <xsd:element name="vl-desconto-cat" nillable="true" type="xsd:decimal" />
+          <xsd:element name="tipo-embalagem" nillable="true" type="xsd:string" />
+          <xsd:element name="observacao-ped" nillable="true" type="xsd:string" />
+          <xsd:element name="dispositivo-legal" nillable="true" type="xsd:string" />
+          <xsd:element name="dt-vcto-concessao" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-incoterm-exp" nillable="true" type="xsd:string" />
+          <xsd:element name="local-embarque" nillable="true" type="xsd:string" />
+          <xsd:element name="embarque-via" nillable="true" type="xsd:string" />
+          <xsd:element name="new_exporta_erp" nillable="true" type="xsd:string" />
+          <xsd:element name="new_mensagem" nillable="true" type="xsd:string" />
+          <xsd:element name="data-implant" nillable="true" type="xsd:string" />
+          <xsd:element name="new_status_integracao" nillable="true" type="xsd:string" />
+          <xsd:element name="new_status_cadastro" nillable="true" type="xsd:int" />
+          <xsd:element name="id-ativo" nillable="true" type="xsd:int" />
+          <xsd:element name="new_cpf" nillable="true" type="xsd:string" />
+          <xsd:element name="new_rg" nillable="true" type="xsd:string" />
+          <xsd:element name="ind-vendas-alc" nillable="true" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfBuscar_dadosCliente_ttClienteRow">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="S2:Buscar_dadosCliente_ttClienteRow[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="BuscarPreco_ttPrecoItemRow">
+        <xsd:sequence>
+          <xsd:element name="it-codigo" nillable="true" type="xsd:string" />
+          <xsd:element name="desc-item" nillable="true" type="xsd:string" />
+          <xsd:element name="fm-cod-com" nillable="true" type="xsd:string" />
+          <xsd:element name="desc-familia" nillable="true" type="xsd:string" />
+          <xsd:element name="preco" nillable="true" type="xsd:decimal" />
+          <xsd:element name="vl-ipi" nillable="true" type="xsd:decimal" />
+          <xsd:element name="quant-min" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfBuscarPreco_ttPrecoItemRow">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="S2:BuscarPreco_ttPrecoItemRow[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="BuscarPreco_ttErrosRow">
+        <xsd:sequence>
+          <xsd:element name="mensagem" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfBuscarPreco_ttErrosRow">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="S2:BuscarPreco_ttErrosRow[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="criarPedido_ttErroRow">
+        <xsd:sequence>
+          <xsd:element name="mensagem" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfcriarPedido_ttErroRow">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="S2:criarPedido_ttErroRow[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="Buscar_DadosGrCliente_ttRetornoGrupoRow">
+        <xsd:sequence>
+          <xsd:element name="cod-rep" nillable="true" type="xsd:int" />
+          <xsd:element name="desc-rep" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfBuscar_DadosGrCliente_ttRetornoGrupoRow">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="S2:Buscar_DadosGrCliente_ttRetornoGrupoRow[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="BuscarProdutosCliente_ttProdutosRow">
+        <xsd:sequence>
+          <xsd:element name="it-codigo" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfBuscarProdutosCliente_ttProdutosRow">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="S2:BuscarProdutosCliente_ttProdutosRow[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="BuscaTabelas_ttTbPrecoRow">
+        <xsd:sequence>
+          <xsd:element name="nr-tabpre" nillable="true" type="xsd:string" />
+          <xsd:element name="ds-descricao" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-rep" nillable="true" type="xsd:int" />
+          <xsd:element name="cd-categoria" nillable="true" type="xsd:int" />
+          <xsd:element name="ds-categoria" nillable="true" type="xsd:string" />
+          <xsd:element name="cd-unid-negoc" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-cond-pag" nillable="true" type="xsd:int" />
+          <xsd:element name="cod-gr-cli" nillable="true" type="xsd:int" />
+          <xsd:element name="ds-gr-cli" nillable="true" type="xsd:string" />
+          <xsd:element name="lg-tb-especifica" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfBuscaTabelas_ttTbPrecoRow">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="S2:BuscaTabelas_ttTbPrecoRow[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="BuscarEstabTabPreco_ttEstabelecRow">
+        <xsd:sequence>
+          <xsd:element name="cod-estabel" nillable="true" type="xsd:string" />
+          <xsd:element name="nome" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfBuscarEstabTabPreco_ttEstabelecRow">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="S2:BuscarEstabTabPreco_ttEstabelecRow[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="buscarEstruturaDoItemPor_ttEstruturaRow">
+        <xsd:sequence>
+          <xsd:element name="seq" nillable="true" type="xsd:int" />
+          <xsd:element name="nivel" nillable="true" type="xsd:int" />
+          <xsd:element name="it-codigo" nillable="true" type="xsd:string" />
+          <xsd:element name="descricao" nillable="true" type="xsd:string" />
+          <xsd:element name="it-pai" nillable="true" type="xsd:string" />
+          <xsd:element name="quant-usada" nillable="true" type="xsd:decimal" />
+          <xsd:element name="local-montag" nillable="true" type="xsd:string" />
+          <xsd:element name="garantia" nillable="true" type="xsd:int" />
+          <xsd:element name="venda" nillable="true" type="xsd:boolean" />
+          <xsd:element name="permite-os" nillable="true" type="xsd:boolean" />
+          <xsd:element name="data-fabric" nillable="true" type="xsd:dateTime" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfbuscarEstruturaDoItemPor_ttEstruturaRow">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="S2:buscarEstruturaDoItemPor_ttEstruturaRow[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="BuscarPrecoItemAstec_ttErrosRow">
+        <xsd:sequence>
+          <xsd:element name="mensagem" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfBuscarPrecoItemAstec_ttErrosRow">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="S2:BuscarPrecoItemAstec_ttErrosRow[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="BuscarPedidoOrdem_ttOrdensRow">
+        <xsd:sequence>
+          <xsd:element name="num-pedido" nillable="true" type="xsd:int" />
+          <xsd:element name="numero-ordem" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfBuscarPedidoOrdem_ttOrdensRow">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="S2:BuscarPedidoOrdem_ttOrdensRow[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="es0429rp_ttRawDigitaRow">
+        <xsd:sequence>
+          <xsd:element name="raw-digita" nillable="true" type="xsd:base64Binary" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfes0429rp_ttRawDigitaRow">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="S2:es0429rp_ttRawDigitaRow[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="es0574_ttRawDigitaRow">
+        <xsd:sequence>
+          <xsd:element name="raw-digita" nillable="true" type="xsd:base64Binary" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfes0574_ttRawDigitaRow">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="S2:es0574_ttRawDigitaRow[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="es0575rp_ttRawDigitaRow">
+        <xsd:sequence>
+          <xsd:element name="raw-digita" nillable="true" type="xsd:base64Binary" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfes0575rp_ttRawDigitaRow">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="S2:es0575rp_ttRawDigitaRow[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="es0576_ttRawDigitaRow">
+        <xsd:sequence>
+          <xsd:element name="raw-digita" nillable="true" type="xsd:base64Binary" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfes0576_ttRawDigitaRow">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="S2:es0576_ttRawDigitaRow[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="es0577rp_ttRawDigitaRow">
+        <xsd:sequence>
+          <xsd:element name="raw-digita" nillable="true" type="xsd:base64Binary" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfes0577rp_ttRawDigitaRow">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="S2:es0577rp_ttRawDigitaRow[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="es0589_ttRawDigitaRow">
+        <xsd:sequence>
+          <xsd:element name="raw-digita" nillable="true" type="xsd:base64Binary" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfes0589_ttRawDigitaRow">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="S2:es0589_ttRawDigitaRow[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="BuscarItemCDB_ttcomponenteRow">
+        <xsd:sequence>
+          <xsd:element name="seq" nillable="true" type="xsd:int" />
+          <xsd:element name="componente" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfBuscarItemCDB_ttcomponenteRow">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="S2:BuscarItemCDB_ttcomponenteRow[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="es4951rp_ttRawDigitaRow">
+        <xsd:sequence>
+          <xsd:element name="raw-digita" nillable="true" type="xsd:base64Binary" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfes4951rp_ttRawDigitaRow">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="S2:es4951rp_ttRawDigitaRow[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="integracaoERP_BuscarPedidoProgramado">
+    <wsdl:part name="pCodCliente" type="xsd:int" />
+    <wsdl:part name="pDsUnidComerc" type="xsd:string" />
+    <wsdl:part name="pCdCategoria" type="xsd:int" />
+    <wsdl:part name="pFmCodCom" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_BuscarEstabTabPreco">
+    <wsdl:part name="pNrTabpre" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_BuscarPedidoMinimo">
+    <wsdl:part name="pCodCliente" type="xsd:int" />
+    <wsdl:part name="pDsUnidComerc" type="xsd:string" />
+    <wsdl:part name="pCdCategoria" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_BuscaItemPorNrSerieResponse">
+    <wsdl:part name="pitCodigo" type="xsd:string" />
+    <wsdl:part name="pdescItem" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_es0574">
+    <wsdl:part name="rawParam" type="xsd:base64Binary" />
+    <wsdl:part name="ttRawDigita" type="S2:ArrayOfes0574_ttRawDigitaRow" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_BuscarItemCDB">
+    <wsdl:part name="pCdb" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="FaultDetailMessage">
+    <wsdl:part name="FaultDetail" type="S1:FaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_BuscarDescontoResponse">
+    <wsdl:part name="pDescontoQtd" type="xsd:decimal" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_BuscarEstabTabPrecoResponse">
+    <wsdl:part name="ttEstabelec" type="S2:ArrayOfBuscarEstabTabPreco_ttEstabelecRow" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_BuscarPedidoProgramadoResponse">
+    <wsdl:part name="pDescMaximo" type="xsd:decimal" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_es0888a" />
+  <wsdl:message name="integracaoERP_BuscarPrecoItemAstecResponse">
+    <wsdl:part name="pPreco" type="xsd:decimal" />
+    <wsdl:part name="pIpi" type="xsd:decimal" />
+    <wsdl:part name="pIcm" type="xsd:decimal" />
+    <wsdl:part name="ttErros" type="S2:ArrayOfBuscarPrecoItemAstec_ttErrosRow" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_BuscarDescMangaResponse">
+    <wsdl:part name="pDescMaximo" type="xsd:decimal" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_BuscarCidadeZFResponse">
+    <wsdl:part name="pCidadeZf" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_buscarEstruturaDoItemPor">
+    <wsdl:part name="pSerie" type="xsd:string" />
+    <wsdl:part name="pItem" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_Integrar">
+    <wsdl:part name="peEntity" type="xsd:string" />
+    <wsdl:part name="peAction" type="xsd:string" />
+    <wsdl:part name="peMessage" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_es0575rp">
+    <wsdl:part name="rawParam" type="xsd:base64Binary" />
+    <wsdl:part name="ttRawDigita" type="S2:ArrayOfes0575rp_ttRawDigitaRow" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_BuscaTabelas">
+    <wsdl:part name="pCodCliente" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_es0576">
+    <wsdl:part name="rawParam" type="xsd:base64Binary" />
+    <wsdl:part name="ttRawDigita" type="S2:ArrayOfes0576_ttRawDigitaRow" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_Buscar_dadosClienteResponse">
+    <wsdl:part name="ttCliente" type="S2:ArrayOfBuscar_dadosCliente_ttClienteRow" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_buscarEstruturaDoItemPorResponse">
+    <wsdl:part name="ttEstrutura" type="S2:ArrayOfbuscarEstruturaDoItemPor_ttEstruturaRow" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_BuscarProdutosClienteResponse">
+    <wsdl:part name="ttProdutos" type="S2:ArrayOfBuscarProdutosCliente_ttProdutosRow" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_BuscarPrecoItemAstec">
+    <wsdl:part name="pCodEstabel" type="xsd:string" />
+    <wsdl:part name="pcodEmitente" type="xsd:int" />
+    <wsdl:part name="pItem" type="xsd:string" />
+    <wsdl:part name="pTabPreco" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_BuscarItemCDBResponse">
+    <wsdl:part name="pCorporativo" type="xsd:boolean" />
+    <wsdl:part name="pSerie" type="xsd:string" />
+    <wsdl:part name="pNrNotaFis" type="xsd:string" />
+    <wsdl:part name="pDtEmisNota" type="xsd:date" />
+    <wsdl:part name="pNomeEmit" type="xsd:string" />
+    <wsdl:part name="pItCodigo" type="xsd:string" />
+    <wsdl:part name="pDescItem" type="xsd:string" />
+    <wsdl:part name="pNrOrdProd" type="xsd:int" />
+    <wsdl:part name="pSigla" type="xsd:string" />
+    <wsdl:part name="pDescSigla" type="xsd:string" />
+    <wsdl:part name="pDataFabric" type="xsd:dateTime" />
+    <wsdl:part name="ttcomponente" type="S2:ArrayOfBuscarItemCDB_ttcomponenteRow" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_BuscarDescManga">
+    <wsdl:part name="pCodRep" type="xsd:int" />
+    <wsdl:part name="pCodCliente" type="xsd:int" />
+    <wsdl:part name="pDsUnidComerc" type="xsd:string" />
+    <wsdl:part name="pCdCategoria" type="xsd:int" />
+    <wsdl:part name="pFmCodCom" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_BuscaItemPorNrSerie">
+    <wsdl:part name="pSerie" type="xsd:string" />
+    <wsdl:part name="pKc" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_Buscar_DadosGrClienteResponse">
+    <wsdl:part name="ttRetornoGrupo" type="S2:ArrayOfBuscar_DadosGrCliente_ttRetornoGrupoRow" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_Buscar_DadosCepResponse">
+    <wsdl:part name="ttRetornoCEP" type="S2:ArrayOfBuscar_DadosCep_ttRetornoCEPRow" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_BuscarIndiceFinanciamentoResponse">
+    <wsdl:part name="pIndiceFinanciamento" type="xsd:decimal" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_es0575rpResponse" />
+  <wsdl:message name="integracaoERP_Buscar_dadosCliente">
+    <wsdl:part name="pccgc" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_entradaPedidoAstecResponse">
+    <wsdl:part name="pRetorno" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_es0576Response" />
+  <wsdl:message name="integracaoERP_entradaPedidoAstec">
+    <wsdl:part name="pPedVendaMessagem" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_BuscarPedidoOrdem">
+    <wsdl:part name="pnumPedido" type="xsd:int" />
+    <wsdl:part name="pnumeroOrdem" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_esapi001Response" />
+  <wsdl:message name="integracaoERP_es0589Response" />
+  <wsdl:message name="integracaoERP_BuscarPrecoResponse">
+    <wsdl:part name="ttPrecoItem" type="S2:ArrayOfBuscarPreco_ttPrecoItemRow" />
+    <wsdl:part name="ttErros" type="S2:ArrayOfBuscarPreco_ttErrosRow" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_BuscarPedidoOrdemResponse">
+    <wsdl:part name="ttOrdens" type="S2:ArrayOfBuscarPedidoOrdem_ttOrdensRow" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_criarPedidoResponse">
+    <wsdl:part name="ttErro" type="S2:ArrayOfcriarPedido_ttErroRow" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_es0429rpResponse" />
+  <wsdl:message name="integracaoERP_BuscarDesconto">
+    <wsdl:part name="pCodCliente" type="xsd:int" />
+    <wsdl:part name="pDsUnidComerc" type="xsd:string" />
+    <wsdl:part name="pCdCategoria" type="xsd:int" />
+    <wsdl:part name="pFmCodCom" type="xsd:string" />
+    <wsdl:part name="pQuantidade" type="xsd:decimal" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_es0429rp">
+    <wsdl:part name="rawParam" type="xsd:base64Binary" />
+    <wsdl:part name="ttRawDigita" type="S2:ArrayOfes0429rp_ttRawDigitaRow" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_criarPedido">
+    <wsdl:part name="pPedVendaMessagem" type="xsd:string" />
+    <wsdl:part name="pPedItemMessage" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_es0574Response" />
+  <wsdl:message name="integracaoERP_es0589">
+    <wsdl:part name="rawParam" type="xsd:base64Binary" />
+    <wsdl:part name="ttRawDigita" type="S2:ArrayOfes0589_ttRawDigitaRow" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_es0577rp">
+    <wsdl:part name="rawParam" type="xsd:base64Binary" />
+    <wsdl:part name="ttRawDigita" type="S2:ArrayOfes0577rp_ttRawDigitaRow" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_BuscarPreco">
+    <wsdl:part name="pCodEstabel" type="xsd:string" />
+    <wsdl:part name="pCodCliente" type="xsd:int" />
+    <wsdl:part name="pDsUnidComerc" type="xsd:string" />
+    <wsdl:part name="pCdCategoria" type="xsd:int" />
+    <wsdl:part name="pItCodigo" type="xsd:string" />
+    <wsdl:part name="pNrTabpre" type="xsd:string" />
+    <wsdl:part name="pLgTbEspecifica" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_esapi001" />
+  <wsdl:message name="integracaoERP_es0577rpResponse" />
+  <wsdl:message name="integracaoERP_Buscar_DadosCep">
+    <wsdl:part name="piCep" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_BuscarCidadeZF">
+    <wsdl:part name="pCidade" type="xsd:string" />
+    <wsdl:part name="pUf" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_es4951rpResponse" />
+  <wsdl:message name="integracaoERP_BuscaTabelasResponse">
+    <wsdl:part name="ttTbPreco" type="S2:ArrayOfBuscaTabelas_ttTbPrecoRow" />
+    <wsdl:part name="pValLimTotalSupcard" type="xsd:decimal" />
+    <wsdl:part name="pValLimDispoSupcard" type="xsd:decimal" />
+    <wsdl:part name="pValLimTotalIntelbras" type="xsd:decimal" />
+    <wsdl:part name="pValLimDispoIntelbras" type="xsd:decimal" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_Buscar_DadosGrCliente">
+    <wsdl:part name="piGrCli" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_IntegrarResponse">
+    <wsdl:part name="ttRetorno" type="S2:ArrayOfIntegrar_ttRetornoRow" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_BuscarProdutosCliente">
+    <wsdl:part name="pCodCliente" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_es4951rp">
+    <wsdl:part name="rawParam" type="xsd:base64Binary" />
+    <wsdl:part name="ttRawDigita" type="S2:ArrayOfes4951rp_ttRawDigitaRow" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_es0888aResponse" />
+  <wsdl:message name="integracaoERP_BuscarIndiceFinanciamento">
+    <wsdl:part name="pCodCondPag" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="integracaoERP_BuscarPedidoMinimoResponse">
+    <wsdl:part name="pVlMinimo" type="xsd:decimal" />
+  </wsdl:message>
+  <wsdl:portType name="integracaoERPObj">
+    <wsdl:operation name="Buscar_DadosCep" parameterOrder="piCep ttRetornoCEP">
+      <wsdl:input message="tns:integracaoERP_Buscar_DadosCep" />
+      <wsdl:output message="tns:integracaoERP_Buscar_DadosCepResponse" />
+      <wsdl:fault name="integracaoERPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Integrar" parameterOrder="peEntity peAction peMessage ttRetorno">
+      <wsdl:input message="tns:integracaoERP_Integrar" />
+      <wsdl:output message="tns:integracaoERP_IntegrarResponse" />
+      <wsdl:fault name="integracaoERPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Buscar_dadosCliente" parameterOrder="pccgc ttCliente">
+      <wsdl:input message="tns:integracaoERP_Buscar_dadosCliente" />
+      <wsdl:output message="tns:integracaoERP_Buscar_dadosClienteResponse" />
+      <wsdl:fault name="integracaoERPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPreco" parameterOrder="pCodEstabel pCodCliente pDsUnidComerc pCdCategoria pItCodigo pNrTabpre pLgTbEspecifica ttPrecoItem ttErros">
+      <wsdl:input message="tns:integracaoERP_BuscarPreco" />
+      <wsdl:output message="tns:integracaoERP_BuscarPrecoResponse" />
+      <wsdl:fault name="integracaoERPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarDesconto" parameterOrder="pCodCliente pDsUnidComerc pCdCategoria pFmCodCom pQuantidade pDescontoQtd">
+      <wsdl:input message="tns:integracaoERP_BuscarDesconto" />
+      <wsdl:output message="tns:integracaoERP_BuscarDescontoResponse" />
+      <wsdl:fault name="integracaoERPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarDescManga" parameterOrder="pCodRep pCodCliente pDsUnidComerc pCdCategoria pFmCodCom pDescMaximo">
+      <wsdl:input message="tns:integracaoERP_BuscarDescManga" />
+      <wsdl:output message="tns:integracaoERP_BuscarDescMangaResponse" />
+      <wsdl:fault name="integracaoERPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPedidoProgramado" parameterOrder="pCodCliente pDsUnidComerc pCdCategoria pFmCodCom pDescMaximo">
+      <wsdl:input message="tns:integracaoERP_BuscarPedidoProgramado" />
+      <wsdl:output message="tns:integracaoERP_BuscarPedidoProgramadoResponse" />
+      <wsdl:fault name="integracaoERPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPedidoMinimo" parameterOrder="pCodCliente pDsUnidComerc pCdCategoria pVlMinimo">
+      <wsdl:input message="tns:integracaoERP_BuscarPedidoMinimo" />
+      <wsdl:output message="tns:integracaoERP_BuscarPedidoMinimoResponse" />
+      <wsdl:fault name="integracaoERPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="criarPedido" parameterOrder="pPedVendaMessagem pPedItemMessage ttErro">
+      <wsdl:input message="tns:integracaoERP_criarPedido" />
+      <wsdl:output message="tns:integracaoERP_criarPedidoResponse" />
+      <wsdl:fault name="integracaoERPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Buscar_DadosGrCliente" parameterOrder="piGrCli ttRetornoGrupo">
+      <wsdl:input message="tns:integracaoERP_Buscar_DadosGrCliente" />
+      <wsdl:output message="tns:integracaoERP_Buscar_DadosGrClienteResponse" />
+      <wsdl:fault name="integracaoERPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarProdutosCliente" parameterOrder="pCodCliente ttProdutos">
+      <wsdl:input message="tns:integracaoERP_BuscarProdutosCliente" />
+      <wsdl:output message="tns:integracaoERP_BuscarProdutosClienteResponse" />
+      <wsdl:fault name="integracaoERPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaTabelas" parameterOrder="pCodCliente ttTbPreco pValLimTotalSupcard pValLimDispoSupcard pValLimTotalIntelbras pValLimDispoIntelbras">
+      <wsdl:input message="tns:integracaoERP_BuscaTabelas" />
+      <wsdl:output message="tns:integracaoERP_BuscaTabelasResponse" />
+      <wsdl:fault name="integracaoERPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarEstabTabPreco" parameterOrder="pNrTabpre ttEstabelec">
+      <wsdl:input message="tns:integracaoERP_BuscarEstabTabPreco" />
+      <wsdl:output message="tns:integracaoERP_BuscarEstabTabPrecoResponse" />
+      <wsdl:fault name="integracaoERPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCidadeZF" parameterOrder="pCidade pUf pCidadeZf">
+      <wsdl:input message="tns:integracaoERP_BuscarCidadeZF" />
+      <wsdl:output message="tns:integracaoERP_BuscarCidadeZFResponse" />
+      <wsdl:fault name="integracaoERPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarIndiceFinanciamento" parameterOrder="pCodCondPag pIndiceFinanciamento">
+      <wsdl:input message="tns:integracaoERP_BuscarIndiceFinanciamento" />
+      <wsdl:output message="tns:integracaoERP_BuscarIndiceFinanciamentoResponse" />
+      <wsdl:fault name="integracaoERPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="entradaPedidoAstec" parameterOrder="pPedVendaMessagem pRetorno">
+      <wsdl:input message="tns:integracaoERP_entradaPedidoAstec" />
+      <wsdl:output message="tns:integracaoERP_entradaPedidoAstecResponse" />
+      <wsdl:fault name="integracaoERPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarEstruturaDoItemPor" parameterOrder="pSerie pItem ttEstrutura">
+      <wsdl:input message="tns:integracaoERP_buscarEstruturaDoItemPor" />
+      <wsdl:output message="tns:integracaoERP_buscarEstruturaDoItemPorResponse" />
+      <wsdl:fault name="integracaoERPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPrecoItemAstec" parameterOrder="pCodEstabel pcodEmitente pItem pTabPreco pPreco pIpi pIcm ttErros">
+      <wsdl:input message="tns:integracaoERP_BuscarPrecoItemAstec" />
+      <wsdl:output message="tns:integracaoERP_BuscarPrecoItemAstecResponse" />
+      <wsdl:fault name="integracaoERPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaItemPorNrSerie" parameterOrder="pSerie pKc pitCodigo pdescItem">
+      <wsdl:input message="tns:integracaoERP_BuscaItemPorNrSerie" />
+      <wsdl:output message="tns:integracaoERP_BuscaItemPorNrSerieResponse" />
+      <wsdl:fault name="integracaoERPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPedidoOrdem" parameterOrder="pnumPedido pnumeroOrdem ttOrdens">
+      <wsdl:input message="tns:integracaoERP_BuscarPedidoOrdem" />
+      <wsdl:output message="tns:integracaoERP_BuscarPedidoOrdemResponse" />
+      <wsdl:fault name="integracaoERPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="es0429rp" parameterOrder="rawParam ttRawDigita">
+      <wsdl:input message="tns:integracaoERP_es0429rp" />
+      <wsdl:output message="tns:integracaoERP_es0429rpResponse" />
+      <wsdl:fault name="integracaoERPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="es0574" parameterOrder="rawParam ttRawDigita">
+      <wsdl:input message="tns:integracaoERP_es0574" />
+      <wsdl:output message="tns:integracaoERP_es0574Response" />
+      <wsdl:fault name="integracaoERPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="es0575rp" parameterOrder="rawParam ttRawDigita">
+      <wsdl:input message="tns:integracaoERP_es0575rp" />
+      <wsdl:output message="tns:integracaoERP_es0575rpResponse" />
+      <wsdl:fault name="integracaoERPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="es0576" parameterOrder="rawParam ttRawDigita">
+      <wsdl:input message="tns:integracaoERP_es0576" />
+      <wsdl:output message="tns:integracaoERP_es0576Response" />
+      <wsdl:fault name="integracaoERPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="es0577rp" parameterOrder="rawParam ttRawDigita">
+      <wsdl:input message="tns:integracaoERP_es0577rp" />
+      <wsdl:output message="tns:integracaoERP_es0577rpResponse" />
+      <wsdl:fault name="integracaoERPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="es0589" parameterOrder="rawParam ttRawDigita">
+      <wsdl:input message="tns:integracaoERP_es0589" />
+      <wsdl:output message="tns:integracaoERP_es0589Response" />
+      <wsdl:fault name="integracaoERPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarItemCDB" parameterOrder="pCdb pCorporativo pSerie pNrNotaFis pDtEmisNota pNomeEmit pItCodigo pDescItem pNrOrdProd pSigla pDescSigla pDataFabric ttcomponente">
+      <wsdl:input message="tns:integracaoERP_BuscarItemCDB" />
+      <wsdl:output message="tns:integracaoERP_BuscarItemCDBResponse" />
+      <wsdl:fault name="integracaoERPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="es0888a">
+      <wsdl:input message="tns:integracaoERP_es0888a" />
+      <wsdl:output message="tns:integracaoERP_es0888aResponse" />
+      <wsdl:fault name="integracaoERPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="es4951rp" parameterOrder="rawParam ttRawDigita">
+      <wsdl:input message="tns:integracaoERP_es4951rp" />
+      <wsdl:output message="tns:integracaoERP_es4951rpResponse" />
+      <wsdl:fault name="integracaoERPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="esapi001">
+      <wsdl:input message="tns:integracaoERP_esapi001" />
+      <wsdl:output message="tns:integracaoERP_esapi001Response" />
+      <wsdl:fault name="integracaoERPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="integracaoERPObj" type="tns:integracaoERPObj">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="Buscar_DadosCep">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoERPFault">
+        <soap:fault use="encoded" name="integracaoERPFault" namespace="http://wsa.intelbras.com.br:8080/wsa11/wsa11" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Integrar">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoERPFault">
+        <soap:fault use="encoded" name="integracaoERPFault" namespace="http://wsa.intelbras.com.br:8080/wsa11/wsa11" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Buscar_dadosCliente">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoERPFault">
+        <soap:fault use="encoded" name="integracaoERPFault" namespace="http://wsa.intelbras.com.br:8080/wsa11/wsa11" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPreco">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoERPFault">
+        <soap:fault use="encoded" name="integracaoERPFault" namespace="http://wsa.intelbras.com.br:8080/wsa11/wsa11" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarDesconto">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoERPFault">
+        <soap:fault use="encoded" name="integracaoERPFault" namespace="http://wsa.intelbras.com.br:8080/wsa11/wsa11" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarDescManga">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoERPFault">
+        <soap:fault use="encoded" name="integracaoERPFault" namespace="http://wsa.intelbras.com.br:8080/wsa11/wsa11" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPedidoProgramado">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoERPFault">
+        <soap:fault use="encoded" name="integracaoERPFault" namespace="http://wsa.intelbras.com.br:8080/wsa11/wsa11" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPedidoMinimo">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoERPFault">
+        <soap:fault use="encoded" name="integracaoERPFault" namespace="http://wsa.intelbras.com.br:8080/wsa11/wsa11" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="criarPedido">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoERPFault">
+        <soap:fault use="encoded" name="integracaoERPFault" namespace="http://wsa.intelbras.com.br:8080/wsa11/wsa11" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Buscar_DadosGrCliente">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoERPFault">
+        <soap:fault use="encoded" name="integracaoERPFault" namespace="http://wsa.intelbras.com.br:8080/wsa11/wsa11" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarProdutosCliente">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoERPFault">
+        <soap:fault use="encoded" name="integracaoERPFault" namespace="http://wsa.intelbras.com.br:8080/wsa11/wsa11" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaTabelas">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoERPFault">
+        <soap:fault use="encoded" name="integracaoERPFault" namespace="http://wsa.intelbras.com.br:8080/wsa11/wsa11" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarEstabTabPreco">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoERPFault">
+        <soap:fault use="encoded" name="integracaoERPFault" namespace="http://wsa.intelbras.com.br:8080/wsa11/wsa11" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCidadeZF">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoERPFault">
+        <soap:fault use="encoded" name="integracaoERPFault" namespace="http://wsa.intelbras.com.br:8080/wsa11/wsa11" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarIndiceFinanciamento">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoERPFault">
+        <soap:fault use="encoded" name="integracaoERPFault" namespace="http://wsa.intelbras.com.br:8080/wsa11/wsa11" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="entradaPedidoAstec">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoERPFault">
+        <soap:fault use="encoded" name="integracaoERPFault" namespace="http://wsa.intelbras.com.br:8080/wsa11/wsa11" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="buscarEstruturaDoItemPor">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoERPFault">
+        <soap:fault use="encoded" name="integracaoERPFault" namespace="http://wsa.intelbras.com.br:8080/wsa11/wsa11" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPrecoItemAstec">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoERPFault">
+        <soap:fault use="encoded" name="integracaoERPFault" namespace="http://wsa.intelbras.com.br:8080/wsa11/wsa11" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaItemPorNrSerie">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoERPFault">
+        <soap:fault use="encoded" name="integracaoERPFault" namespace="http://wsa.intelbras.com.br:8080/wsa11/wsa11" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPedidoOrdem">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoERPFault">
+        <soap:fault use="encoded" name="integracaoERPFault" namespace="http://wsa.intelbras.com.br:8080/wsa11/wsa11" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="es0429rp">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoERPFault">
+        <soap:fault use="encoded" name="integracaoERPFault" namespace="http://wsa.intelbras.com.br:8080/wsa11/wsa11" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="es0574">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoERPFault">
+        <soap:fault use="encoded" name="integracaoERPFault" namespace="http://wsa.intelbras.com.br:8080/wsa11/wsa11" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="es0575rp">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoERPFault">
+        <soap:fault use="encoded" name="integracaoERPFault" namespace="http://wsa.intelbras.com.br:8080/wsa11/wsa11" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="es0576">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoERPFault">
+        <soap:fault use="encoded" name="integracaoERPFault" namespace="http://wsa.intelbras.com.br:8080/wsa11/wsa11" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="es0577rp">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoERPFault">
+        <soap:fault use="encoded" name="integracaoERPFault" namespace="http://wsa.intelbras.com.br:8080/wsa11/wsa11" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="es0589">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoERPFault">
+        <soap:fault use="encoded" name="integracaoERPFault" namespace="http://wsa.intelbras.com.br:8080/wsa11/wsa11" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarItemCDB">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoERPFault">
+        <soap:fault use="encoded" name="integracaoERPFault" namespace="http://wsa.intelbras.com.br:8080/wsa11/wsa11" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="es0888a">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoERPFault">
+        <soap:fault use="encoded" name="integracaoERPFault" namespace="http://wsa.intelbras.com.br:8080/wsa11/wsa11" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="es4951rp">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoERPFault">
+        <soap:fault use="encoded" name="integracaoERPFault" namespace="http://wsa.intelbras.com.br:8080/wsa11/wsa11" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="esapi001">
+      <soap:operation soapAction="" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:crm:intelbras.com.br:integracaoERP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoERPFault">
+        <soap:fault use="encoded" name="integracaoERPFault" namespace="http://wsa.intelbras.com.br:8080/wsa11/wsa11" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="integracaoERPService">
+    <wsdl:port name="integracaoERPObj" binding="tns:integracaoERPObj">
+      <wsdl:documentation>
+      </wsdl:documentation>
+      <soap:address location="http://wsa.intelbras.com.br:8080/wsa11/wsa11" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

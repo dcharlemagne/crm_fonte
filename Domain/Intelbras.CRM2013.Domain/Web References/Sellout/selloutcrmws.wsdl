@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="PersistirProduto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PersistirProdutoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PersistirProdutoResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="resposta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MudarStatusProduto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MudarStatusProdutoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MudarStatusProdutoResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="resposta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MudarStatusRevenda">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MudarStatusRevendaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MudarStatusRevendaResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="resposta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MudarStatusDistribuidor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MudarStatusDistribuidorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MudarStatusDistribuidorResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="resposta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PersistirRevenda">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PersistirRevendaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PersistirRevendaResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="resposta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarContagemVenda">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dataIni" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dataFim" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="distGuid" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="listaProdIds" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarContagemVendaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarContagemVendaResult" type="tns:ArrayOfQtdProdutoSellout" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfQtdProdutoSellout">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="QtdProdutoSellout" nillable="true" type="tns:QtdProdutoSellout" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="QtdProdutoSellout">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoProdutoERP" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalUnidades" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PersistirDistribuidor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PersistirDistribuidorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PersistirDistribuidorResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="resposta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Ping">
+        <s:complexType />
+      </s:element>
+      <s:element name="PingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PingResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="PersistirProdutoSoapIn">
+    <wsdl:part name="parameters" element="tns:PersistirProduto" />
+  </wsdl:message>
+  <wsdl:message name="PersistirProdutoSoapOut">
+    <wsdl:part name="parameters" element="tns:PersistirProdutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="MudarStatusProdutoSoapIn">
+    <wsdl:part name="parameters" element="tns:MudarStatusProduto" />
+  </wsdl:message>
+  <wsdl:message name="MudarStatusProdutoSoapOut">
+    <wsdl:part name="parameters" element="tns:MudarStatusProdutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="MudarStatusRevendaSoapIn">
+    <wsdl:part name="parameters" element="tns:MudarStatusRevenda" />
+  </wsdl:message>
+  <wsdl:message name="MudarStatusRevendaSoapOut">
+    <wsdl:part name="parameters" element="tns:MudarStatusRevendaResponse" />
+  </wsdl:message>
+  <wsdl:message name="MudarStatusDistribuidorSoapIn">
+    <wsdl:part name="parameters" element="tns:MudarStatusDistribuidor" />
+  </wsdl:message>
+  <wsdl:message name="MudarStatusDistribuidorSoapOut">
+    <wsdl:part name="parameters" element="tns:MudarStatusDistribuidorResponse" />
+  </wsdl:message>
+  <wsdl:message name="PersistirRevendaSoapIn">
+    <wsdl:part name="parameters" element="tns:PersistirRevenda" />
+  </wsdl:message>
+  <wsdl:message name="PersistirRevendaSoapOut">
+    <wsdl:part name="parameters" element="tns:PersistirRevendaResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarContagemVendaSoapIn">
+    <wsdl:part name="parameters" element="tns:listarContagemVenda" />
+  </wsdl:message>
+  <wsdl:message name="listarContagemVendaSoapOut">
+    <wsdl:part name="parameters" element="tns:listarContagemVendaResponse" />
+  </wsdl:message>
+  <wsdl:message name="PersistirDistribuidorSoapIn">
+    <wsdl:part name="parameters" element="tns:PersistirDistribuidor" />
+  </wsdl:message>
+  <wsdl:message name="PersistirDistribuidorSoapOut">
+    <wsdl:part name="parameters" element="tns:PersistirDistribuidorResponse" />
+  </wsdl:message>
+  <wsdl:message name="PingSoapIn">
+    <wsdl:part name="parameters" element="tns:Ping" />
+  </wsdl:message>
+  <wsdl:message name="PingSoapOut">
+    <wsdl:part name="parameters" element="tns:PingResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SellOutCRMWSSoap">
+    <wsdl:operation name="PersistirProduto">
+      <wsdl:input message="tns:PersistirProdutoSoapIn" />
+      <wsdl:output message="tns:PersistirProdutoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MudarStatusProduto">
+      <wsdl:input message="tns:MudarStatusProdutoSoapIn" />
+      <wsdl:output message="tns:MudarStatusProdutoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MudarStatusRevenda">
+      <wsdl:input message="tns:MudarStatusRevendaSoapIn" />
+      <wsdl:output message="tns:MudarStatusRevendaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MudarStatusDistribuidor">
+      <wsdl:input message="tns:MudarStatusDistribuidorSoapIn" />
+      <wsdl:output message="tns:MudarStatusDistribuidorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PersistirRevenda">
+      <wsdl:input message="tns:PersistirRevendaSoapIn" />
+      <wsdl:output message="tns:PersistirRevendaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarContagemVenda">
+      <wsdl:input message="tns:listarContagemVendaSoapIn" />
+      <wsdl:output message="tns:listarContagemVendaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PersistirDistribuidor">
+      <wsdl:input message="tns:PersistirDistribuidorSoapIn" />
+      <wsdl:output message="tns:PersistirDistribuidorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <wsdl:input message="tns:PingSoapIn" />
+      <wsdl:output message="tns:PingSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SellOutCRMWSSoap" type="tns:SellOutCRMWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PersistirProduto">
+      <soap:operation soapAction="http://tempuri.org/PersistirProduto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MudarStatusProduto">
+      <soap:operation soapAction="http://tempuri.org/MudarStatusProduto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MudarStatusRevenda">
+      <soap:operation soapAction="http://tempuri.org/MudarStatusRevenda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MudarStatusDistribuidor">
+      <soap:operation soapAction="http://tempuri.org/MudarStatusDistribuidor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PersistirRevenda">
+      <soap:operation soapAction="http://tempuri.org/PersistirRevenda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarContagemVenda">
+      <soap:operation soapAction="http://tempuri.org/listarContagemVenda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PersistirDistribuidor">
+      <soap:operation soapAction="http://tempuri.org/PersistirDistribuidor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <soap:operation soapAction="http://tempuri.org/Ping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SellOutCRMWSSoap12" type="tns:SellOutCRMWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PersistirProduto">
+      <soap12:operation soapAction="http://tempuri.org/PersistirProduto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MudarStatusProduto">
+      <soap12:operation soapAction="http://tempuri.org/MudarStatusProduto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MudarStatusRevenda">
+      <soap12:operation soapAction="http://tempuri.org/MudarStatusRevenda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MudarStatusDistribuidor">
+      <soap12:operation soapAction="http://tempuri.org/MudarStatusDistribuidor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PersistirRevenda">
+      <soap12:operation soapAction="http://tempuri.org/PersistirRevenda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarContagemVenda">
+      <soap12:operation soapAction="http://tempuri.org/listarContagemVenda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PersistirDistribuidor">
+      <soap12:operation soapAction="http://tempuri.org/PersistirDistribuidor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <soap12:operation soapAction="http://tempuri.org/Ping" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SellOutCRMWS">
+    <wsdl:port name="SellOutCRMWSSoap" binding="tns:SellOutCRMWSSoap">
+      <soap:address location="http://crm2013d.intelbras.com.br:5554/ISV/wssellout/selloutcrmws.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SellOutCRMWSSoap12" binding="tns:SellOutCRMWSSoap12">
+      <soap12:address location="http://crm2013d.intelbras.com.br:5554/ISV/wssellout/selloutcrmws.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

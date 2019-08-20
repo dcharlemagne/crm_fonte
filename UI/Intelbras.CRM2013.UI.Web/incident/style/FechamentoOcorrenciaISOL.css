@@ -1,0 +1,112 @@
+﻿body
+{
+    width: 100%;
+    font-family: Tahoma, Verdana, Arial;
+    margin-left: 0px;
+    margin-top: 0px;
+    background-color: #d6e8ff;
+}
+
+/*** Id ***/
+#th_valor_despesa
+{
+    text-align: left;
+    width: 40%;
+    float:none;
+}
+#th_tipo_despesa
+{
+    text-align: left;
+    width: 40%;
+}
+#adicionar_despesas
+{
+    float: right;
+    cursor: pointer;
+}
+
+#div_logo
+{
+    float: left;
+    color: Green;
+    font-size: 40px;
+    font-family: Bauhaus 93;
+    margin: 2% 2% 2% 2%;
+}
+
+#div_titulo
+{
+    margin: 5px 0px 5px 0px;
+}
+
+
+#divBody
+{
+    margin: auto;
+    width: 100%;
+    max-width: 430px;
+}
+
+/*** Classes ***/
+
+.titulo
+{
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+}
+.textBox
+{
+    width: 100%;
+    margin: 1px 1px 1px 0px;
+    border: #6699cc 1px solid;
+    color: #000000;
+    font-size: 12px;
+}
+
+.textBoxDetalhamento
+{
+    height: 100px;
+}
+
+.label
+{
+    float: left;
+    margin: 1px 1px 1px 0px;
+    font-size: 11px;
+    height: 13px;
+    font-weight: bold;
+}
+
+.Validation
+{
+    font-size: 11px;
+    font-weight: bold;
+    clear: both;
+}
+
+.table
+{
+    color: #000000;
+    width: 100%;
+}
+
+.btnOk
+{
+    float: right;
+    width: auto;
+    margin: 0% 5% 0% 3%;
+}
+.MsgSucesso
+{
+    color: Green;
+    font-family: Bauhaus 93;
+    margin: 2% 2% 2% 2%;   
+}
+.MsgErro
+{
+    color: Red;
+    font-family: Bauhaus 93;
+    margin: 2% 2% 2% 2%;   
+}

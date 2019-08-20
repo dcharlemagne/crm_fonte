@@ -1,0 +1,1762 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="urn:sharepoint:intelbras.com.br" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:S2="urn:sharepoint:intelbras.com.br:integracaoSP" xmlns:S1="urn:soap-fault:details" xmlns:prodata="urn:schemas-progress-com:xml-prodata:0001" name="integracaoSP" targetNamespace="urn:sharepoint:intelbras.com.br" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>EncodingType=DOC_LITERAL, WSA_Product=11.5 - Fri Nov 28 18:10:07 EST 2014</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="urn:soap-fault:details">
+      <xsd:element name="FaultDetail">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="errorMessage" type="xsd:string" />
+            <xsd:element name="requestID" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:sharepoint:intelbras.com.br:integracaoSP">
+      <xsd:complexType name="ListagemCentroCusto_ttCentroCustoRow">
+        <xsd:sequence>
+          <xsd:element name="cod-estabel" nillable="true" type="xsd:string" />
+          <xsd:element name="cc-codigo" nillable="true" type="xsd:string" />
+          <xsd:element name="descricao" nillable="true" type="xsd:string" />
+          <xsd:element name="usu-aprovador" nillable="true" type="xsd:string" />
+          <xsd:element name="nome-aprovador" nillable="true" type="xsd:string" />
+          <xsd:element name="e-mail" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ListagemCentroCusto_ttCentroCustoParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttCentroCustoRow" type="S2:ListagemCentroCusto_ttCentroCustoRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ListagemCidades_ttCidadeRow">
+        <xsd:sequence>
+          <xsd:element name="pais" nillable="true" type="xsd:string" />
+          <xsd:element name="uf" nillable="true" type="xsd:string" />
+          <xsd:element name="estado" nillable="true" type="xsd:string" />
+          <xsd:element name="cidade" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ListagemCidades_ttCidadeParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttCidadeRow" type="S2:ListagemCidades_ttCidadeRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="zoomFamiliaItem_ttFamiliaItemRow">
+        <xsd:sequence>
+          <xsd:element name="cod-familia" nillable="true" type="xsd:int" />
+          <xsd:element name="descricao" nillable="true" type="xsd:string" />
+          <xsd:element name="abreviatura" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="zoomFamiliaItem_ttFamiliaItemParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttFamiliaItemRow" type="S2:zoomFamiliaItem_ttFamiliaItemRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="zoomSubFamilia_ttSubFamiliaItemRow">
+        <xsd:sequence>
+          <xsd:element name="cod-familia" nillable="true" type="xsd:int" />
+          <xsd:element name="cod-sub-familia" nillable="true" type="xsd:string" />
+          <xsd:element name="descricao" nillable="true" type="xsd:string" />
+          <xsd:element name="abreviatura" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="zoomSubFamilia_ttSubFamiliaItemParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttSubFamiliaItemRow" type="S2:zoomSubFamilia_ttSubFamiliaItemRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="zoomCarFamilia_ttCarFamiliaItemRow">
+        <xsd:sequence>
+          <xsd:element name="cod-familia" nillable="true" type="xsd:int" />
+          <xsd:element name="cod-sub-familia" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-car-familia" nillable="true" type="xsd:string" />
+          <xsd:element name="descricao" nillable="true" type="xsd:string" />
+          <xsd:element name="abreviatura" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="zoomCarFamilia_ttCarFamiliaItemParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttCarFamiliaItemRow" type="S2:zoomCarFamilia_ttCarFamiliaItemRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="zoomCompFamilia_ttCompFamiliaItemRow">
+        <xsd:sequence>
+          <xsd:element name="cod-familia" nillable="true" type="xsd:int" />
+          <xsd:element name="cod-sub-familia" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-car-familia" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-comp-familia" nillable="true" type="xsd:int" />
+          <xsd:element name="descricao" nillable="true" type="xsd:string" />
+          <xsd:element name="abreviatura" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="zoomCompFamilia_ttCompFamiliaItemParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttCompFamiliaItemRow" type="S2:zoomCompFamilia_ttCompFamiliaItemRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="zoomNcm_ttNcmRow">
+        <xsd:sequence>
+          <xsd:element name="class-fiscal" nillable="true" type="xsd:string" />
+          <xsd:element name="descricao" nillable="true" type="xsd:string" />
+          <xsd:element name="aliquota-ii" nillable="true" type="xsd:decimal" />
+          <xsd:element name="aliquota-ipi" nillable="true" type="xsd:decimal" />
+          <xsd:element name="aliquota-pis" nillable="true" type="xsd:decimal" />
+          <xsd:element name="aliquota-cofins" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="zoomNcm_ttNcmParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttNcmRow" type="S2:zoomNcm_ttNcmRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="zoomDestaque_ttDestaqueNcmRow">
+        <xsd:sequence>
+          <xsd:element name="class-fiscal" nillable="true" type="xsd:string" />
+          <xsd:element name="destaque" nillable="true" type="xsd:string" />
+          <xsd:element name="descricao" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="zoomDestaque_ttDestaqueNcmParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttDestaqueNcmRow" type="S2:zoomDestaque_ttDestaqueNcmRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="zoomAcondicionamento_ttAcondRow">
+        <xsd:sequence>
+          <xsd:element name="sequencia" nillable="true" type="xsd:int" />
+          <xsd:element name="descricao" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="zoomAcondicionamento_ttAcondParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttAcondRow" type="S2:zoomAcondicionamento_ttAcondRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="zoomItem_ttItemRow">
+        <xsd:sequence>
+          <xsd:element name="it-codigo" nillable="true" type="xsd:string" />
+          <xsd:element name="desc-item" nillable="true" type="xsd:string" />
+          <xsd:element name="ge-codigo" nillable="true" type="xsd:int" />
+          <xsd:element name="fm-codigo" nillable="true" type="xsd:string" />
+          <xsd:element name="fm-cod-com" nillable="true" type="xsd:string" />
+          <xsd:element name="un" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="zoomItem_ttItemParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttItemRow" type="S2:zoomItem_ttItemRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="integracaoItem_ttItemFabricRow">
+        <xsd:sequence>
+          <xsd:element name="cod-fabric" nillable="true" type="xsd:int" />
+          <xsd:element name="it-fabric" nillable="true" type="xsd:string" />
+          <xsd:element name="referencia" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="integracaoItem_ttItemFabricParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttItemFabricRow" type="S2:integracaoItem_ttItemFabricRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="integracaoItem_ttMensagemRow">
+        <xsd:sequence>
+          <xsd:element name="tip-msgs" nillable="true" type="xsd:int" />
+          <xsd:element name="mensagem" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="integracaoItem_ttMensagemParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttMensagemRow" type="S2:integracaoItem_ttMensagemRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="zoomFabricante_ttFabricanteRow">
+        <xsd:sequence>
+          <xsd:element name="cod-fabric" nillable="true" type="xsd:int" />
+          <xsd:element name="nome" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="zoomFabricante_ttFabricanteParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttFabricanteRow" type="S2:zoomFabricante_ttFabricanteRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="zoomUnMedida_ttTabUnidadeRow">
+        <xsd:sequence>
+          <xsd:element name="un" nillable="true" type="xsd:string" />
+          <xsd:element name="descricao" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="zoomUnMedida_ttTabUnidadeParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttTabUnidadeRow" type="S2:zoomUnMedida_ttTabUnidadeRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="zoomGrupEstoque_ttGrupEstoqueRow">
+        <xsd:sequence>
+          <xsd:element name="ge-codigo" nillable="true" type="xsd:int" />
+          <xsd:element name="descricao" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="zoomGrupEstoque_ttGrupEstoqueParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttGrupEstoqueRow" type="S2:zoomGrupEstoque_ttGrupEstoqueRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="zoomFamComercial_ttFamComercRow">
+        <xsd:sequence>
+          <xsd:element name="fm-cod-com" nillable="true" type="xsd:string" />
+          <xsd:element name="descricao" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="zoomFamComercial_ttFamComercParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttFamComercRow" type="S2:zoomFamComercial_ttFamComercRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="folhaEspec_ttFolhEspecRow">
+        <xsd:sequence>
+          <xsd:element name="cd-folha" nillable="true" type="xsd:string" />
+          <xsd:element name="descricao" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="folhaEspec_ttFolhEspecParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttFolhEspecRow" type="S2:folhaEspec_ttFolhEspecRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="consultaItem_ttItemRow">
+        <xsd:sequence>
+          <xsd:element name="it-codigo" nillable="true" type="xsd:string" />
+          <xsd:element name="un" nillable="true" type="xsd:string" />
+          <xsd:element name="desc-item" nillable="true" type="xsd:string" />
+          <xsd:element name="desc-inter" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-estabel" nillable="true" type="xsd:string" />
+          <xsd:element name="fm-codigo" nillable="true" type="xsd:string" />
+          <xsd:element name="desc-fam-mat" nillable="true" type="xsd:string" />
+          <xsd:element name="class-fiscal" nillable="true" type="xsd:string" />
+          <xsd:element name="des-class-fiscal" nillable="true" type="xsd:string" />
+          <xsd:element name="narrativa" nillable="true" type="xsd:string" />
+          <xsd:element name="narrat-manaus" nillable="true" type="xsd:string" />
+          <xsd:element name="responsavel" nillable="true" type="xsd:string" />
+          <xsd:element name="peso-liquido" nillable="true" type="xsd:decimal" />
+          <xsd:element name="peso-bruto" nillable="true" type="xsd:decimal" />
+          <xsd:element name="comprim" nillable="true" type="xsd:decimal" />
+          <xsd:element name="largura" nillable="true" type="xsd:decimal" />
+          <xsd:element name="altura" nillable="true" type="xsd:decimal" />
+          <xsd:element name="cd-folh-item" nillable="true" type="xsd:string" />
+          <xsd:element name="ind-serv-mat" nillable="true" type="xsd:int" />
+          <xsd:element name="tipo-contr" nillable="true" type="xsd:int" />
+          <xsd:element name="ge-codigo" nillable="true" type="xsd:int" />
+          <xsd:element name="contr-qualid" nillable="true" type="xsd:boolean" />
+          <xsd:element name="fraciona" nillable="true" type="xsd:boolean" />
+          <xsd:element name="criticidade" nillable="true" type="xsd:int" />
+          <xsd:element name="fm-cod-com" nillable="true" type="xsd:string" />
+          <xsd:element name="desc-fam-com" nillable="true" type="xsd:string" />
+          <xsd:element name="perc-nqa" nillable="true" type="xsd:decimal" />
+          <xsd:element name="cd-planejado" nillable="true" type="xsd:string" />
+          <xsd:element name="reporte-ggf" nillable="true" type="xsd:int" />
+          <xsd:element name="destaq-ncm" nillable="true" type="xsd:int" />
+          <xsd:element name="desc-dest-ncm" nillable="true" type="xsd:string" />
+          <xsd:element name="perc-gatt" nillable="true" type="xsd:decimal" />
+          <xsd:element name="ex-tarifario" nillable="true" type="xsd:string" />
+          <xsd:element name="nve" nillable="true" type="xsd:string" />
+          <xsd:element name="seq-suframa" nillable="true" type="xsd:string" />
+          <xsd:element name="tipo-item" nillable="true" type="xsd:string" />
+          <xsd:element name="versao" nillable="true" type="xsd:decimal" />
+          <xsd:element name="data-versao" nillable="true" type="xsd:date" />
+          <xsd:element name="cod-acond" nillable="true" type="xsd:string" />
+          <xsd:element name="des-acond" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-amost" nillable="true" type="xsd:int" />
+          <xsd:element name="des-amost" nillable="true" type="xsd:string" />
+          <xsd:element name="inf-adic" nillable="true" type="xsd:string" />
+          <xsd:element name="un-neg" nillable="true" type="xsd:string" />
+          <xsd:element name="aliquota-ii" nillable="true" type="xsd:decimal" />
+          <xsd:element name="aliquota-ipi" nillable="true" type="xsd:decimal" />
+          <xsd:element name="aliquota-pis" nillable="true" type="xsd:decimal" />
+          <xsd:element name="aliquota-cofins" nillable="true" type="xsd:decimal" />
+          <xsd:element name="log-necessita-li" nillable="true" type="xsd:boolean" />
+          <xsd:element name="log-antidumping" nillable="true" type="xsd:boolean" />
+          <xsd:element name="obs-antidumping" nillable="true" type="xsd:string" />
+          <xsd:element name="cest" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="consultaItem_ttItemParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttItemRow" type="S2:consultaItem_ttItemRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="consultaItem_ttItemFabricRow">
+        <xsd:sequence>
+          <xsd:element name="cod-fabric" nillable="true" type="xsd:int" />
+          <xsd:element name="nome-abrev" nillable="true" type="xsd:string" />
+          <xsd:element name="it-codigo" nillable="true" type="xsd:string" />
+          <xsd:element name="it-fabric" nillable="true" type="xsd:string" />
+          <xsd:element name="referencia" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="consultaItem_ttItemFabricParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttItemFabricRow" type="S2:consultaItem_ttItemFabricRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="consultaItem_ttMensagemRow">
+        <xsd:sequence>
+          <xsd:element name="sequencia" nillable="true" type="xsd:int" />
+          <xsd:element name="codigo" nillable="true" type="xsd:int" />
+          <xsd:element name="tipo" nillable="true" type="xsd:string" />
+          <xsd:element name="mensagem" nillable="true" type="xsd:string" />
+          <xsd:element name="complemento" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="consultaItem_ttMensagemParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttMensagemRow" type="S2:consultaItem_ttMensagemRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="buscaCodigoItem_ttItemRow">
+        <xsd:sequence>
+          <xsd:element name="it-codigo" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="buscaCodigoItem_ttItemParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttItemRow" type="S2:buscaCodigoItem_ttItemRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="buscaCodigoItem_ttMensagemRow">
+        <xsd:sequence>
+          <xsd:element name="sequencia" nillable="true" type="xsd:int" />
+          <xsd:element name="codigo" nillable="true" type="xsd:int" />
+          <xsd:element name="tipo" nillable="true" type="xsd:string" />
+          <xsd:element name="mensagem" nillable="true" type="xsd:string" />
+          <xsd:element name="ajuda" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="buscaCodigoItem_ttMensagemParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttMensagemRow" type="S2:buscaCodigoItem_ttMensagemRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="buscaItemCampoFaixa_ttItemRow">
+        <xsd:sequence>
+          <xsd:element name="it-codigo" nillable="true" type="xsd:string" />
+          <xsd:element name="desc-item" nillable="true" type="xsd:string" />
+          <xsd:element name="fm-codigo" nillable="true" type="xsd:string" />
+          <xsd:element name="fm-cod-com" nillable="true" type="xsd:string" />
+          <xsd:element name="class-fiscal" nillable="true" type="xsd:string" />
+          <xsd:element name="nve" nillable="true" type="xsd:string" />
+          <xsd:element name="ex-tarifario" nillable="true" type="xsd:string" />
+          <xsd:element name="aliquota-ipi" nillable="true" type="xsd:decimal" />
+          <xsd:element name="it-fabric" nillable="true" type="xsd:string" />
+          <xsd:element name="nome-abrev" nillable="true" type="xsd:string" />
+          <xsd:element name="log-necessita-li" nillable="true" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="buscaItemCampoFaixa_ttItemParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttItemRow" type="S2:buscaItemCampoFaixa_ttItemRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="consultaFamiliaMaterial_ttFamiliaRow">
+        <xsd:sequence>
+          <xsd:element name="fm-codigo" nillable="true" type="xsd:string" />
+          <xsd:element name="descricao" nillable="true" type="xsd:string" />
+          <xsd:element name="un" nillable="true" type="xsd:string" />
+          <xsd:element name="contr-qualid" nillable="true" type="xsd:boolean" />
+          <xsd:element name="fraciona" nillable="true" type="xsd:boolean" />
+          <xsd:element name="criticidade" nillable="true" type="xsd:int" />
+          <xsd:element name="perc-nqa" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="consultaFamiliaMaterial_ttFamiliaParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttFamiliaRow" type="S2:consultaFamiliaMaterial_ttFamiliaRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="consultaFamiliaMaterial_ttMensagemRow">
+        <xsd:sequence>
+          <xsd:element name="sequencia" nillable="true" type="xsd:int" />
+          <xsd:element name="codigo" nillable="true" type="xsd:int" />
+          <xsd:element name="tipo" nillable="true" type="xsd:string" />
+          <xsd:element name="mensagem" nillable="true" type="xsd:string" />
+          <xsd:element name="complemento" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="consultaFamiliaMaterial_ttMensagemParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttMensagemRow" type="S2:consultaFamiliaMaterial_ttMensagemRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="alterarMedidasItem_ttItemRow">
+        <xsd:sequence>
+          <xsd:element name="it-codigo" nillable="true" type="xsd:string" />
+          <xsd:element name="responsavel" nillable="true" type="xsd:string" />
+          <xsd:element name="peso-liquido" nillable="true" type="xsd:decimal" />
+          <xsd:element name="peso-bruto" nillable="true" type="xsd:decimal" />
+          <xsd:element name="comprim" nillable="true" type="xsd:decimal" />
+          <xsd:element name="largura" nillable="true" type="xsd:decimal" />
+          <xsd:element name="altura" nillable="true" type="xsd:decimal" />
+          <xsd:element name="versao" nillable="true" type="xsd:decimal" />
+          <xsd:element name="data-versao" nillable="true" type="xsd:date" />
+          <xsd:element name="cod-acond" nillable="true" type="xsd:string" />
+          <xsd:element name="des-acond" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="alterarMedidasItem_ttItemParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttItemRow" type="S2:alterarMedidasItem_ttItemRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="alterarMedidasItem_ttMensagemRow">
+        <xsd:sequence>
+          <xsd:element name="sequencia" nillable="true" type="xsd:int" />
+          <xsd:element name="codigo" nillable="true" type="xsd:int" />
+          <xsd:element name="tipo" nillable="true" type="xsd:string" />
+          <xsd:element name="mensagem" nillable="true" type="xsd:string" />
+          <xsd:element name="complemento" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="alterarMedidasItem_ttMensagemParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttMensagemRow" type="S2:alterarMedidasItem_ttMensagemRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="alterarFiscalItem_ttItemRow">
+        <xsd:sequence>
+          <xsd:element name="it-codigo" nillable="true" type="xsd:string" />
+          <xsd:element name="fm-codigo" nillable="true" type="xsd:string" />
+          <xsd:element name="narrativa" nillable="true" type="xsd:string" />
+          <xsd:element name="responsavel" nillable="true" type="xsd:string" />
+          <xsd:element name="class-fiscal" nillable="true" type="xsd:string" />
+          <xsd:element name="ge-codigo" nillable="true" type="xsd:int" />
+          <xsd:element name="destaq-ncm" nillable="true" type="xsd:int" />
+          <xsd:element name="perc-gatt" nillable="true" type="xsd:decimal" />
+          <xsd:element name="ex-tarifario" nillable="true" type="xsd:string" />
+          <xsd:element name="nve" nillable="true" type="xsd:string" />
+          <xsd:element name="seq-suframa" nillable="true" type="xsd:string" />
+          <xsd:element name="tipo-item" nillable="true" type="xsd:string" />
+          <xsd:element name="versao" nillable="true" type="xsd:decimal" />
+          <xsd:element name="data-versao" nillable="true" type="xsd:date" />
+          <xsd:element name="aliquota-ii" nillable="true" type="xsd:decimal" />
+          <xsd:element name="aliquota-ipi" nillable="true" type="xsd:decimal" />
+          <xsd:element name="aliquota-pis" nillable="true" type="xsd:decimal" />
+          <xsd:element name="aliquota-cofins" nillable="true" type="xsd:decimal" />
+          <xsd:element name="log-necessita-li" nillable="true" type="xsd:boolean" />
+          <xsd:element name="log-antidumping" nillable="true" type="xsd:boolean" />
+          <xsd:element name="obs-antidumping" nillable="true" type="xsd:string" />
+          <xsd:element name="cest" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="alterarFiscalItem_ttItemParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttItemRow" type="S2:alterarFiscalItem_ttItemRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="alterarFiscalItem_ttMensagemRow">
+        <xsd:sequence>
+          <xsd:element name="sequencia" nillable="true" type="xsd:int" />
+          <xsd:element name="codigo" nillable="true" type="xsd:int" />
+          <xsd:element name="tipo" nillable="true" type="xsd:string" />
+          <xsd:element name="mensagem" nillable="true" type="xsd:string" />
+          <xsd:element name="complemento" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="alterarFiscalItem_ttMensagemParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttMensagemRow" type="S2:alterarFiscalItem_ttMensagemRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="buscaEstFamMat_ttEstabelecRow">
+        <xsd:sequence>
+          <xsd:element name="cod-estabel" nillable="true" type="xsd:string" />
+          <xsd:element name="nome-estabel" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="buscaEstFamMat_ttEstabelecParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttEstabelecRow" type="S2:buscaEstFamMat_ttEstabelecRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="buscaEstFamMat_ttMensagemRow">
+        <xsd:sequence>
+          <xsd:element name="sequencia" nillable="true" type="xsd:int" />
+          <xsd:element name="codigo" nillable="true" type="xsd:int" />
+          <xsd:element name="tipo" nillable="true" type="xsd:string" />
+          <xsd:element name="mensagem" nillable="true" type="xsd:string" />
+          <xsd:element name="ajuda" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="buscaEstFamMat_ttMensagemParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttMensagemRow" type="S2:buscaEstFamMat_ttMensagemRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="buscaFamiliaDescParcial_ttFamiliaRow">
+        <xsd:sequence>
+          <xsd:element name="fm-codigo" nillable="true" type="xsd:string" />
+          <xsd:element name="descricao" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="buscaFamiliaDescParcial_ttFamiliaParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttFamiliaRow" type="S2:buscaFamiliaDescParcial_ttFamiliaRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="buscaFamiliaCodParcial_ttFamiliaRow">
+        <xsd:sequence>
+          <xsd:element name="fm-codigo" nillable="true" type="xsd:string" />
+          <xsd:element name="descricao" nillable="true" type="xsd:string" />
+          <xsd:element name="un" nillable="true" type="xsd:string" />
+          <xsd:element name="contr-qualid" nillable="true" type="xsd:boolean" />
+          <xsd:element name="fraciona" nillable="true" type="xsd:boolean" />
+          <xsd:element name="criticidade" nillable="true" type="xsd:int" />
+          <xsd:element name="perc-nqa" nillable="true" type="xsd:decimal" />
+          <xsd:element name="class-fiscal" nillable="true" type="xsd:string" />
+          <xsd:element name="fluxo-sp" nillable="true" type="xsd:string" />
+          <xsd:element name="ex" nillable="true" type="xsd:string" />
+          <xsd:element name="ge-codigo" nillable="true" type="xsd:int" />
+          <xsd:element name="acond" nillable="true" type="xsd:int" />
+          <xsd:element name="norma" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="buscaFamiliaCodParcial_ttFamiliaParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttFamiliaRow" type="S2:buscaFamiliaCodParcial_ttFamiliaRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ListaItensBloqueados_ttWebPedRow">
+        <xsd:sequence>
+          <xsd:element name="nome-repres" nillable="true" type="xsd:string" />
+          <xsd:element name="nome-emit" nillable="true" type="xsd:string" />
+          <xsd:element name="nome-abrev" nillable="true" type="xsd:string" />
+          <xsd:element name="nr-pedcli" nillable="true" type="xsd:string" />
+          <xsd:element name="it-codigo" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-refer" nillable="true" type="xsd:string" />
+          <xsd:element name="nr-sequencia" nillable="true" type="xsd:int" />
+          <xsd:element name="desc-item" nillable="true" type="xsd:string" />
+          <xsd:element name="qt-pedida" nillable="true" type="xsd:decimal" />
+          <xsd:element name="preco-inf" nillable="true" type="xsd:decimal" />
+          <xsd:element name="preco-min-tab" nillable="true" type="xsd:decimal" />
+          <xsd:element name="aprovador" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ListaItensBloqueados_ttWebPedParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttWebPedRow" type="S2:ListaItensBloqueados_ttWebPedRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ListaItensBloqueados_ttErroRow">
+        <xsd:sequence>
+          <xsd:element name="codigo" nillable="true" type="xsd:int" />
+          <xsd:element name="descricao" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ListaItensBloqueados_ttErroParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttErroRow" type="S2:ListaItensBloqueados_ttErroRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="aprovaReprovaPreco_ttWebPedStatusRow">
+        <xsd:sequence>
+          <xsd:element name="nr-pedido" nillable="true" type="xsd:int" />
+          <xsd:element name="aprovador" nillable="true" type="xsd:string" />
+          <xsd:element name="it-codigo" nillable="true" type="xsd:string" />
+          <xsd:element name="cod-refer" nillable="true" type="xsd:string" />
+          <xsd:element name="nr-sequencia" nillable="true" type="xsd:int" />
+          <xsd:element name="log-aprovado" nillable="true" type="xsd:boolean" />
+          <xsd:element name="log-reprovado" nillable="true" type="xsd:boolean" />
+          <xsd:element name="motivo-aprov" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="aprovaReprovaPreco_ttWebPedStatusParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttWebPedStatusRow" type="S2:aprovaReprovaPreco_ttWebPedStatusRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="aprovaReprovaPreco_ttErroRow">
+        <xsd:sequence>
+          <xsd:element name="codigo" nillable="true" type="xsd:int" />
+          <xsd:element name="descricao" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="aprovaReprovaPreco_ttErroParam">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ttErroRow" type="S2:aprovaReprovaPreco_ttErroRow" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ListagemCentroCusto">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ListagemCentroCustoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttCentroCusto" nillable="true" type="S2:ListagemCentroCusto_ttCentroCustoParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ListagemCidades">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ListagemCidadesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttCidade" nillable="true" type="S2:ListagemCidades_ttCidadeParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DetalheEmitente">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pCGC" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DetalheEmitenteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="pCodEmitente" nillable="true" type="xsd:int" />
+            <xsd:element name="pNomeEmit" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="zoomFamiliaItem">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="zoomFamiliaItemResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttFamiliaItem" nillable="true" type="S2:zoomFamiliaItem_ttFamiliaItemParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="zoomSubFamilia">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pCodFamilia" nillable="true" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="zoomSubFamiliaResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttSubFamiliaItem" nillable="true" type="S2:zoomSubFamilia_ttSubFamiliaItemParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="zoomCarFamilia">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pCodFamilia" nillable="true" type="xsd:int" />
+            <xsd:element name="pCodSubFamilia" nillable="true" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="zoomCarFamiliaResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttCarFamiliaItem" nillable="true" type="S2:zoomCarFamilia_ttCarFamiliaItemParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="zoomCompFamilia">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pCodFamilia" nillable="true" type="xsd:int" />
+            <xsd:element name="pCodSubFamilia" nillable="true" type="xsd:int" />
+            <xsd:element name="pCodCarFamilia" nillable="true" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="zoomCompFamiliaResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttCompFamiliaItem" nillable="true" type="S2:zoomCompFamilia_ttCompFamiliaItemParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="zoomNcm">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="zoomNcmResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttNcm" nillable="true" type="S2:zoomNcm_ttNcmParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="zoomDestaque">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pNCM" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="zoomDestaqueResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttDestaqueNcm" nillable="true" type="S2:zoomDestaque_ttDestaqueNcmParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="zoomAcondicionamento">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="zoomAcondicionamentoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttAcond" nillable="true" type="S2:zoomAcondicionamento_ttAcondParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="zoomItem">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="zoomItemResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttItem" nillable="true" type="S2:zoomItem_ttItemParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="integracaoItem">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pTipoRequisicao" nillable="true" type="xsd:int" />
+            <xsd:element name="pItemMessage" nillable="true" type="xsd:string" />
+            <xsd:element name="ttItemFabric" nillable="true" type="S2:integracaoItem_ttItemFabricParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="integracaoItemResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttMensagem" nillable="true" type="S2:integracaoItem_ttMensagemParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="buscaProduto">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pItCodigo" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="buscaProdutoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="pDesc" nillable="true" type="xsd:string" />
+            <xsd:element name="pError" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="buscaComponente">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pItCodigo" nillable="true" type="xsd:string" />
+            <xsd:element name="pEstab" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="buscaComponenteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="pDesc" nillable="true" type="xsd:string" />
+            <xsd:element name="pDescPosicao" nillable="true" type="xsd:string" />
+            <xsd:element name="pCustoItem" nillable="true" type="xsd:string" />
+            <xsd:element name="pUn" nillable="true" type="xsd:string" />
+            <xsd:element name="pError" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="zoomFabricante">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="zoomFabricanteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttFabricante" nillable="true" type="S2:zoomFabricante_ttFabricanteParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="zoomUnMedida">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="zoomUnMedidaResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttTabUnidade" nillable="true" type="S2:zoomUnMedida_ttTabUnidadeParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="zoomGrupEstoque">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="zoomGrupEstoqueResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttGrupEstoque" nillable="true" type="S2:zoomGrupEstoque_ttGrupEstoqueParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="zoomFamComercial">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="zoomFamComercialResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttFamComerc" nillable="true" type="S2:zoomFamComercial_ttFamComercParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="folhaEspec">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pFmCodigo" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="folhaEspecResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttFolhEspec" nillable="true" type="S2:folhaEspec_ttFolhEspecParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="consultaItem">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pItCodigo" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="consultaItemResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttItem" nillable="true" type="S2:consultaItem_ttItemParam" />
+            <xsd:element name="ttItemFabric" nillable="true" type="S2:consultaItem_ttItemFabricParam" />
+            <xsd:element name="ttMensagem" nillable="true" type="S2:consultaItem_ttMensagemParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="buscaCodigoItem">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pItCodigo" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="buscaCodigoItemResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttItem" nillable="true" type="S2:buscaCodigoItem_ttItemParam" />
+            <xsd:element name="ttMensagem" nillable="true" type="S2:buscaCodigoItem_ttMensagemParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="buscaItemCampoFaixa">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pCampo" nillable="true" type="xsd:string" />
+            <xsd:element name="pParamIni" nillable="true" type="xsd:string" />
+            <xsd:element name="pParamFin" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="buscaItemCampoFaixaResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttItem" nillable="true" type="S2:buscaItemCampoFaixa_ttItemParam" />
+            <xsd:element name="pMensagem" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="consultaFamiliaMaterial">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pFmCodigo" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="consultaFamiliaMaterialResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttFamilia" nillable="true" type="S2:consultaFamiliaMaterial_ttFamiliaParam" />
+            <xsd:element name="ttMensagem" nillable="true" type="S2:consultaFamiliaMaterial_ttMensagemParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="alterarMedidasItem">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ttItem" nillable="true" type="S2:alterarMedidasItem_ttItemParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="alterarMedidasItemResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttMensagem" nillable="true" type="S2:alterarMedidasItem_ttMensagemParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="alterarFiscalItem">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ttItem" nillable="true" type="S2:alterarFiscalItem_ttItemParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="alterarFiscalItemResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttMensagem" nillable="true" type="S2:alterarFiscalItem_ttMensagemParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="buscaEstFamMat">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pFmCodigo" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="buscaEstFamMatResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttEstabelec" nillable="true" type="S2:buscaEstFamMat_ttEstabelecParam" />
+            <xsd:element name="ttMensagem" nillable="true" type="S2:buscaEstFamMat_ttMensagemParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="buscaFamiliaDescParcial">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pDesc" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="buscaFamiliaDescParcialResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttFamilia" nillable="true" type="S2:buscaFamiliaDescParcial_ttFamiliaParam" />
+            <xsd:element name="pMensagem" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="buscaFamiliaCodParcial">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pFmCodigo" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="buscaFamiliaCodParcialResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttFamilia" nillable="true" type="S2:buscaFamiliaCodParcial_ttFamiliaParam" />
+            <xsd:element name="pMensagem" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ListaItensBloqueados">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pNrPedido" nillable="true" type="xsd:int" />
+            <xsd:element name="pAprovador" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ListaItensBloqueadosResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttWebPed" nillable="true" type="S2:ListaItensBloqueados_ttWebPedParam" />
+            <xsd:element name="ttErro" nillable="true" type="S2:ListaItensBloqueados_ttErroParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="aprovaReprovaPreco">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="pNrPedido" nillable="true" type="xsd:int" />
+            <xsd:element name="pCodAprovador" nillable="true" type="xsd:string" />
+            <xsd:element name="pSenha" nillable="true" type="xsd:string" />
+            <xsd:element name="ttWebPedStatus" nillable="true" type="S2:aprovaReprovaPreco_ttWebPedStatusParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="aprovaReprovaPrecoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" nillable="true" type="xsd:string" />
+            <xsd:element name="ttErro" nillable="true" type="S2:aprovaReprovaPreco_ttErroParam" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="integracaoSP_buscaProdutoResponse">
+    <wsdl:part name="parameters" element="S2:buscaProdutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_zoomNcm">
+    <wsdl:part name="parameters" element="S2:zoomNcm" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_buscaComponenteResponse">
+    <wsdl:part name="parameters" element="S2:buscaComponenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_integracaoItemResponse">
+    <wsdl:part name="parameters" element="S2:integracaoItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_zoomDestaque">
+    <wsdl:part name="parameters" element="S2:zoomDestaque" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_zoomGrupEstoqueResponse">
+    <wsdl:part name="parameters" element="S2:zoomGrupEstoqueResponse" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_ListagemCentroCusto">
+    <wsdl:part name="parameters" element="S2:ListagemCentroCusto" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_consultaFamiliaMaterial">
+    <wsdl:part name="parameters" element="S2:consultaFamiliaMaterial" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_zoomDestaqueResponse">
+    <wsdl:part name="parameters" element="S2:zoomDestaqueResponse" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_ListaItensBloqueadosResponse">
+    <wsdl:part name="parameters" element="S2:ListaItensBloqueadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_buscaItemCampoFaixa">
+    <wsdl:part name="parameters" element="S2:buscaItemCampoFaixa" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_integracaoItem">
+    <wsdl:part name="parameters" element="S2:integracaoItem" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_folhaEspecResponse">
+    <wsdl:part name="parameters" element="S2:folhaEspecResponse" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_buscaComponente">
+    <wsdl:part name="parameters" element="S2:buscaComponente" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_alterarMedidasItemResponse">
+    <wsdl:part name="parameters" element="S2:alterarMedidasItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_ListagemCentroCustoResponse">
+    <wsdl:part name="parameters" element="S2:ListagemCentroCustoResponse" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_ListaItensBloqueados">
+    <wsdl:part name="parameters" element="S2:ListaItensBloqueados" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_consultaItemResponse">
+    <wsdl:part name="parameters" element="S2:consultaItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_ListagemCidades">
+    <wsdl:part name="parameters" element="S2:ListagemCidades" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_zoomAcondicionamentoResponse">
+    <wsdl:part name="parameters" element="S2:zoomAcondicionamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_zoomSubFamiliaResponse">
+    <wsdl:part name="parameters" element="S2:zoomSubFamiliaResponse" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_consultaItem">
+    <wsdl:part name="parameters" element="S2:consultaItem" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_zoomCompFamilia">
+    <wsdl:part name="parameters" element="S2:zoomCompFamilia" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_zoomSubFamilia">
+    <wsdl:part name="parameters" element="S2:zoomSubFamilia" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_buscaFamiliaDescParcial">
+    <wsdl:part name="parameters" element="S2:buscaFamiliaDescParcial" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_folhaEspec">
+    <wsdl:part name="parameters" element="S2:folhaEspec" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_buscaEstFamMat">
+    <wsdl:part name="parameters" element="S2:buscaEstFamMat" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_buscaItemCampoFaixaResponse">
+    <wsdl:part name="parameters" element="S2:buscaItemCampoFaixaResponse" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_zoomFabricante">
+    <wsdl:part name="parameters" element="S2:zoomFabricante" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_buscaCodigoItemResponse">
+    <wsdl:part name="parameters" element="S2:buscaCodigoItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_zoomItemResponse">
+    <wsdl:part name="parameters" element="S2:zoomItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="FaultDetailMessage">
+    <wsdl:part name="FaultDetail" element="S1:FaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_alterarFiscalItemResponse">
+    <wsdl:part name="parameters" element="S2:alterarFiscalItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_DetalheEmitente">
+    <wsdl:part name="parameters" element="S2:DetalheEmitente" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_zoomFamiliaItem">
+    <wsdl:part name="parameters" element="S2:zoomFamiliaItem" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_buscaFamiliaCodParcial">
+    <wsdl:part name="parameters" element="S2:buscaFamiliaCodParcial" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_ListagemCidadesResponse">
+    <wsdl:part name="parameters" element="S2:ListagemCidadesResponse" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_zoomFamiliaItemResponse">
+    <wsdl:part name="parameters" element="S2:zoomFamiliaItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_consultaFamiliaMaterialResponse">
+    <wsdl:part name="parameters" element="S2:consultaFamiliaMaterialResponse" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_zoomCarFamilia">
+    <wsdl:part name="parameters" element="S2:zoomCarFamilia" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_zoomAcondicionamento">
+    <wsdl:part name="parameters" element="S2:zoomAcondicionamento" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_zoomUnMedidaResponse">
+    <wsdl:part name="parameters" element="S2:zoomUnMedidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_zoomNcmResponse">
+    <wsdl:part name="parameters" element="S2:zoomNcmResponse" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_buscaEstFamMatResponse">
+    <wsdl:part name="parameters" element="S2:buscaEstFamMatResponse" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_alterarFiscalItem">
+    <wsdl:part name="parameters" element="S2:alterarFiscalItem" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_zoomGrupEstoque">
+    <wsdl:part name="parameters" element="S2:zoomGrupEstoque" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_zoomCarFamiliaResponse">
+    <wsdl:part name="parameters" element="S2:zoomCarFamiliaResponse" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_alterarMedidasItem">
+    <wsdl:part name="parameters" element="S2:alterarMedidasItem" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_zoomFamComercial">
+    <wsdl:part name="parameters" element="S2:zoomFamComercial" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_buscaCodigoItem">
+    <wsdl:part name="parameters" element="S2:buscaCodigoItem" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_buscaFamiliaDescParcialResponse">
+    <wsdl:part name="parameters" element="S2:buscaFamiliaDescParcialResponse" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_zoomCompFamiliaResponse">
+    <wsdl:part name="parameters" element="S2:zoomCompFamiliaResponse" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_aprovaReprovaPreco">
+    <wsdl:part name="parameters" element="S2:aprovaReprovaPreco" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_buscaFamiliaCodParcialResponse">
+    <wsdl:part name="parameters" element="S2:buscaFamiliaCodParcialResponse" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_zoomFabricanteResponse">
+    <wsdl:part name="parameters" element="S2:zoomFabricanteResponse" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_zoomItem">
+    <wsdl:part name="parameters" element="S2:zoomItem" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_zoomFamComercialResponse">
+    <wsdl:part name="parameters" element="S2:zoomFamComercialResponse" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_aprovaReprovaPrecoResponse">
+    <wsdl:part name="parameters" element="S2:aprovaReprovaPrecoResponse" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_buscaProduto">
+    <wsdl:part name="parameters" element="S2:buscaProduto" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_DetalheEmitenteResponse">
+    <wsdl:part name="parameters" element="S2:DetalheEmitenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="integracaoSP_zoomUnMedida">
+    <wsdl:part name="parameters" element="S2:zoomUnMedida" />
+  </wsdl:message>
+  <wsdl:portType name="integracaoSPObj">
+    <wsdl:operation name="ListagemCentroCusto">
+      <wsdl:input message="tns:integracaoSP_ListagemCentroCusto" />
+      <wsdl:output message="tns:integracaoSP_ListagemCentroCustoResponse" />
+      <wsdl:fault name="integracaoSPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListagemCidades">
+      <wsdl:input message="tns:integracaoSP_ListagemCidades" />
+      <wsdl:output message="tns:integracaoSP_ListagemCidadesResponse" />
+      <wsdl:fault name="integracaoSPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DetalheEmitente">
+      <wsdl:input message="tns:integracaoSP_DetalheEmitente" />
+      <wsdl:output message="tns:integracaoSP_DetalheEmitenteResponse" />
+      <wsdl:fault name="integracaoSPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="zoomFamiliaItem">
+      <wsdl:documentation>Zoom da Família do Item</wsdl:documentation>
+      <wsdl:input message="tns:integracaoSP_zoomFamiliaItem" />
+      <wsdl:output message="tns:integracaoSP_zoomFamiliaItemResponse" />
+      <wsdl:fault name="integracaoSPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="zoomSubFamilia">
+      <wsdl:documentation>Zoom da Sub-Família do Item</wsdl:documentation>
+      <wsdl:input message="tns:integracaoSP_zoomSubFamilia" />
+      <wsdl:output message="tns:integracaoSP_zoomSubFamiliaResponse" />
+      <wsdl:fault name="integracaoSPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="zoomCarFamilia">
+      <wsdl:documentation>Zoom da Característica da Família do Item</wsdl:documentation>
+      <wsdl:input message="tns:integracaoSP_zoomCarFamilia" />
+      <wsdl:output message="tns:integracaoSP_zoomCarFamiliaResponse" />
+      <wsdl:fault name="integracaoSPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="zoomCompFamilia">
+      <wsdl:documentation>Zoom do Complemento da Família do Item</wsdl:documentation>
+      <wsdl:input message="tns:integracaoSP_zoomCompFamilia" />
+      <wsdl:output message="tns:integracaoSP_zoomCompFamiliaResponse" />
+      <wsdl:fault name="integracaoSPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="zoomNcm">
+      <wsdl:documentation>Zoom de NCM</wsdl:documentation>
+      <wsdl:input message="tns:integracaoSP_zoomNcm" />
+      <wsdl:output message="tns:integracaoSP_zoomNcmResponse" />
+      <wsdl:fault name="integracaoSPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="zoomDestaque">
+      <wsdl:documentation>Zoom de Destaque da NCM</wsdl:documentation>
+      <wsdl:input message="tns:integracaoSP_zoomDestaque" />
+      <wsdl:output message="tns:integracaoSP_zoomDestaqueResponse" />
+      <wsdl:fault name="integracaoSPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="zoomAcondicionamento">
+      <wsdl:documentation>Zoom de Acondicionamento</wsdl:documentation>
+      <wsdl:input message="tns:integracaoSP_zoomAcondicionamento" />
+      <wsdl:output message="tns:integracaoSP_zoomAcondicionamentoResponse" />
+      <wsdl:fault name="integracaoSPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="zoomItem">
+      <wsdl:documentation>Zoom de Item</wsdl:documentation>
+      <wsdl:input message="tns:integracaoSP_zoomItem" />
+      <wsdl:output message="tns:integracaoSP_zoomItemResponse" />
+      <wsdl:fault name="integracaoSPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="integracaoItem">
+      <wsdl:documentation>Integracao do Item (Inclusao e Alteracao)</wsdl:documentation>
+      <wsdl:input message="tns:integracaoSP_integracaoItem" />
+      <wsdl:output message="tns:integracaoSP_integracaoItemResponse" />
+      <wsdl:fault name="integracaoSPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="buscaProduto">
+      <wsdl:input message="tns:integracaoSP_buscaProduto" />
+      <wsdl:output message="tns:integracaoSP_buscaProdutoResponse" />
+      <wsdl:fault name="integracaoSPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="buscaComponente">
+      <wsdl:input message="tns:integracaoSP_buscaComponente" />
+      <wsdl:output message="tns:integracaoSP_buscaComponenteResponse" />
+      <wsdl:fault name="integracaoSPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="zoomFabricante">
+      <wsdl:input message="tns:integracaoSP_zoomFabricante" />
+      <wsdl:output message="tns:integracaoSP_zoomFabricanteResponse" />
+      <wsdl:fault name="integracaoSPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="zoomUnMedida">
+      <wsdl:input message="tns:integracaoSP_zoomUnMedida" />
+      <wsdl:output message="tns:integracaoSP_zoomUnMedidaResponse" />
+      <wsdl:fault name="integracaoSPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="zoomGrupEstoque">
+      <wsdl:input message="tns:integracaoSP_zoomGrupEstoque" />
+      <wsdl:output message="tns:integracaoSP_zoomGrupEstoqueResponse" />
+      <wsdl:fault name="integracaoSPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="zoomFamComercial">
+      <wsdl:input message="tns:integracaoSP_zoomFamComercial" />
+      <wsdl:output message="tns:integracaoSP_zoomFamComercialResponse" />
+      <wsdl:fault name="integracaoSPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="folhaEspec">
+      <wsdl:input message="tns:integracaoSP_folhaEspec" />
+      <wsdl:output message="tns:integracaoSP_folhaEspecResponse" />
+      <wsdl:fault name="integracaoSPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultaItem">
+      <wsdl:input message="tns:integracaoSP_consultaItem" />
+      <wsdl:output message="tns:integracaoSP_consultaItemResponse" />
+      <wsdl:fault name="integracaoSPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="buscaCodigoItem">
+      <wsdl:input message="tns:integracaoSP_buscaCodigoItem" />
+      <wsdl:output message="tns:integracaoSP_buscaCodigoItemResponse" />
+      <wsdl:fault name="integracaoSPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="buscaItemCampoFaixa">
+      <wsdl:input message="tns:integracaoSP_buscaItemCampoFaixa" />
+      <wsdl:output message="tns:integracaoSP_buscaItemCampoFaixaResponse" />
+      <wsdl:fault name="integracaoSPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="consultaFamiliaMaterial">
+      <wsdl:input message="tns:integracaoSP_consultaFamiliaMaterial" />
+      <wsdl:output message="tns:integracaoSP_consultaFamiliaMaterialResponse" />
+      <wsdl:fault name="integracaoSPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="alterarMedidasItem">
+      <wsdl:input message="tns:integracaoSP_alterarMedidasItem" />
+      <wsdl:output message="tns:integracaoSP_alterarMedidasItemResponse" />
+      <wsdl:fault name="integracaoSPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="alterarFiscalItem">
+      <wsdl:input message="tns:integracaoSP_alterarFiscalItem" />
+      <wsdl:output message="tns:integracaoSP_alterarFiscalItemResponse" />
+      <wsdl:fault name="integracaoSPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="buscaEstFamMat">
+      <wsdl:input message="tns:integracaoSP_buscaEstFamMat" />
+      <wsdl:output message="tns:integracaoSP_buscaEstFamMatResponse" />
+      <wsdl:fault name="integracaoSPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="buscaFamiliaDescParcial">
+      <wsdl:input message="tns:integracaoSP_buscaFamiliaDescParcial" />
+      <wsdl:output message="tns:integracaoSP_buscaFamiliaDescParcialResponse" />
+      <wsdl:fault name="integracaoSPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="buscaFamiliaCodParcial">
+      <wsdl:input message="tns:integracaoSP_buscaFamiliaCodParcial" />
+      <wsdl:output message="tns:integracaoSP_buscaFamiliaCodParcialResponse" />
+      <wsdl:fault name="integracaoSPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaItensBloqueados">
+      <wsdl:input message="tns:integracaoSP_ListaItensBloqueados" />
+      <wsdl:output message="tns:integracaoSP_ListaItensBloqueadosResponse" />
+      <wsdl:fault name="integracaoSPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="aprovaReprovaPreco">
+      <wsdl:input message="tns:integracaoSP_aprovaReprovaPreco" />
+      <wsdl:output message="tns:integracaoSP_aprovaReprovaPrecoResponse" />
+      <wsdl:fault name="integracaoSPFault" message="tns:FaultDetailMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="integracaoSPObj" type="tns:integracaoSPObj">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListagemCentroCusto">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoSPFault">
+        <soap:fault use="literal" name="integracaoSPFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListagemCidades">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoSPFault">
+        <soap:fault use="literal" name="integracaoSPFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DetalheEmitente">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoSPFault">
+        <soap:fault use="literal" name="integracaoSPFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="zoomFamiliaItem">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoSPFault">
+        <soap:fault use="literal" name="integracaoSPFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="zoomSubFamilia">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoSPFault">
+        <soap:fault use="literal" name="integracaoSPFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="zoomCarFamilia">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoSPFault">
+        <soap:fault use="literal" name="integracaoSPFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="zoomCompFamilia">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoSPFault">
+        <soap:fault use="literal" name="integracaoSPFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="zoomNcm">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoSPFault">
+        <soap:fault use="literal" name="integracaoSPFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="zoomDestaque">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoSPFault">
+        <soap:fault use="literal" name="integracaoSPFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="zoomAcondicionamento">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoSPFault">
+        <soap:fault use="literal" name="integracaoSPFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="zoomItem">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoSPFault">
+        <soap:fault use="literal" name="integracaoSPFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="integracaoItem">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoSPFault">
+        <soap:fault use="literal" name="integracaoSPFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="buscaProduto">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoSPFault">
+        <soap:fault use="literal" name="integracaoSPFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="buscaComponente">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoSPFault">
+        <soap:fault use="literal" name="integracaoSPFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="zoomFabricante">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoSPFault">
+        <soap:fault use="literal" name="integracaoSPFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="zoomUnMedida">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoSPFault">
+        <soap:fault use="literal" name="integracaoSPFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="zoomGrupEstoque">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoSPFault">
+        <soap:fault use="literal" name="integracaoSPFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="zoomFamComercial">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoSPFault">
+        <soap:fault use="literal" name="integracaoSPFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="folhaEspec">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoSPFault">
+        <soap:fault use="literal" name="integracaoSPFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultaItem">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoSPFault">
+        <soap:fault use="literal" name="integracaoSPFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="buscaCodigoItem">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoSPFault">
+        <soap:fault use="literal" name="integracaoSPFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="buscaItemCampoFaixa">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoSPFault">
+        <soap:fault use="literal" name="integracaoSPFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultaFamiliaMaterial">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoSPFault">
+        <soap:fault use="literal" name="integracaoSPFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="alterarMedidasItem">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoSPFault">
+        <soap:fault use="literal" name="integracaoSPFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="alterarFiscalItem">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoSPFault">
+        <soap:fault use="literal" name="integracaoSPFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="buscaEstFamMat">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoSPFault">
+        <soap:fault use="literal" name="integracaoSPFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="buscaFamiliaDescParcial">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoSPFault">
+        <soap:fault use="literal" name="integracaoSPFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="buscaFamiliaCodParcial">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoSPFault">
+        <soap:fault use="literal" name="integracaoSPFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ListaItensBloqueados">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoSPFault">
+        <soap:fault use="literal" name="integracaoSPFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="aprovaReprovaPreco">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="integracaoSPFault">
+        <soap:fault use="literal" name="integracaoSPFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="integracaoSPService">
+    <wsdl:port name="integracaoSPObj" binding="tns:integracaoSPObj">
+      <wsdl:documentation>
+      </wsdl:documentation>
+      <soap:address location="http://wsa.intelbras.com.br:8080/wsa2/wsa2" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
